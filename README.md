@@ -1,5 +1,8 @@
 # Enrich-ity(えんりっちてぃー)
 
+<br>
+<br>
+
 ## サイト概要
 
 人生を豊かにするための「仲間」探しサイト
@@ -21,6 +24,7 @@ AI に仕事が奪われると危惧されるこの世界で、生き残って�
 ではどうすれば成長しつづけることができるのだろうか。その答えは**仲間**がいるかいないかだと私は考えている。
 労働経済学では「ピア効果」とも言われているが、共に切磋琢磨できる仲間の存在は成長の大きな外部的要因になりうる。
 成長のための「仲間探し」を私のプログラミングスキルでサポートしたいと思い、このテーマを選ぶに至った。
+<br>
 <br>
 
 #### ２：社会人のコミュニティ形成は難易度が高いと感じるため
@@ -56,8 +60,8 @@ AI に仕事が奪われると危惧されるこの世界で、生き残って�
 
 ## 設計書
 
-![ER図](https://user-images.githubusercontent.com/65483033/113300136-9a3be400-9338-11eb-8472-116756ed505a.png)
-[テーブル定義書](https://docs.google.com/spreadsheets/d/1YgOBLgpdU9jex5Q32fSng10eN3muoxe-w-8gzkpTG7c/edit#gid=1247326819)
+![ER図](https://user-images.githubusercontent.com/65483033/113300136-9a3be400-9338-11eb-8472-116756ed505a.png)<br>
+[テーブル定義書](https://docs.google.com/spreadsheets/d/1YgOBLgpdU9jex5Q32fSng10eN3muoxe-w-8gzkpTG7c/edit#gid=1247326819)<br>
 [アプリケーション詳細設計](https://docs.google.com/spreadsheets/d/1GfmoIgWYWwRi0FsoZoKnm0xGThhiSfdfCTNaqozyDP4/edit#gid=1224226657)
 <br>
 <br>
@@ -80,8 +84,8 @@ AI に仕事が奪われると危惧されるこの世界で、生き残って�
 
 ## 使用素材
 
-・[ぱくたそ](https://www.pakutaso.com/)
-・[StockSnap](https://stocksnap.io/)
-・[pixabay](https://pixabay.com/ja/)
+・[ぱくたそ](https://www.pakutaso.com/)<br>
+・[StockSnap](https://stocksnap.io/)<br>
+・[pixabay](https://pixabay.com/ja/)<br>
 
 <!-- 順次追加記述予定 -->
