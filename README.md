@@ -86,5 +86,4 @@ AI に仕事が奪われると危惧されるこの世界で、生き残って�
 ・[ぱくたそ](https://www.pakutaso.com/)<br>
 ・[StockSnap](https://stocksnap.io/)<br>
 ・[pixabay](https://pixabay.com/ja/)<br>
-
 <!-- 順次追加記述予定 -->
