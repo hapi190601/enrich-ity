@@ -7,9 +7,20 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+    <%= render "layouts/header"%>
+    <%= render "layouts/flash" %>
     <%= yield %>
+
+    <span id="up-scroll">
+      <a href="">
+        <%= image_tag asset_path("up-image.png"), data: {"turbolinks"=>false}, class: "up" %>
+      </a>
+    </span>
+
+    <%= render "layouts/footer" %>
   </body>
 </html>

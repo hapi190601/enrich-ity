@@ -1,0 +1,33 @@
+<footer>
+  <div class="flex-around footer-box">
+    <div class="inquiry-btn">
+      <%= link_to "お問い合わせ", inquiries_get_path, class:"btn btn-sm btn-info bigger-btn"%>
+    </div>
+
+    <div class="footer-message">
+      <p>© All rights reserved by Enrich-ity.</p>
+    </div>
+
+    <div class="sns-rink">
+      <!--下記３つのリンクのURLはドメインを取得したら変更する！-->
+      <span>
+        <%= link_to("https://twitter.com/intent/tweet?text=君もEnrich-ityで「仲間」を探そう！%20%0d&url=https://qiita.com/", target: :_blank) do %>
+          <i class="fab fa-twitter-square fa-2x"></i>
+        <% end %>
+      </span>
+
+      <span>
+        <%= link_to("https://www.facebook.com/", target: :_blank) do %>
+          <i class="fab fa-facebook-square fa-2x"></i>
+        <% end %>
+      </span>
+
+      <span>
+        <%= link_to("https://www.instagram.com/", target: :_blank) do %>
+          <i class="fab fa-instagram fa-2x"></i>
+        <% end %>
+      </span>
+    </div>
+  </div>
+
+</footer>

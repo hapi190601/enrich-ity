@@ -86,3 +86,5 @@ gem 'omniauth-rails_csrf_protection'
 gem 'dotenv-rails'
 
 gem 'ransack'
+
+gem 'jp_prefecture'

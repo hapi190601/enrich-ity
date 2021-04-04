@@ -23,8 +23,21 @@ class User < ApplicationRecord
   validates :birthday, presence: true
   validates :postal_code, presence: true
   validates :nearest_station, presence: true
-  validates :prefecture, presence: true
+  validates :prefecture_code, presence: true
   validates :municipality, presence: true
-  validates :uid, presence: true
-  validates :proveider, presence: true
+
+  enum gender: { "ひみつ":0, "男性":1, "女性":2 }
+
+  attachment :image
+
+  # include JpPrefecture
+  # jp_prefecture :prefecture_code
+
+  def prefecture_name
+    JpPrefecture::Prefecture.find(code: prefecture_code).try(:name)
+  end
+
+  def prefecture_name=(prefecture_name)
+    self.prefecture_code = JpPrefecture::Prefecture.find(name: prefecture_name).code
+  end
 end

@@ -1,3 +1,5 @@
+<script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
+
 <h2>Sign up</h2>
 
 <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
@@ -11,25 +13,68 @@
 
   <div class="field">
     <%= f.label :"フリガナ(フルネーム)" %><br />
-    <%= f.text_field :name_kana, autofocus: true %>
+    <%= f.text_field :name_kana %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"ニックネーム" %><br />
+    <%= f.text_field :nickname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"生年月日" %><br />
+    <%== sprintf(f.date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=> Time.now.year-15, :end_year =>1950, prompt:"---"), '年','月') + '日' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"性別" %><br />
+    <%= f.label :"男性"  %>
+    <%= f.radio_button :gender, :"男性" %>
+    <%= f.label :"女性"  %>
+    <%= f.radio_button :gender, :"女性" %>
+    <%= f.label :"秘密"  %>
+    <%= f.radio_button :gender, :"ひみつ" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"郵便番号" %><br />
+    <span>ハイフン不要</span><br>
+    <%= f.text_field :postal_code, autocomplete: "postcode" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"お住まいの都道府県" %><br />
+    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, prompt:"---" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"お住まいの市区町村" %><br />
+    <%= f.text_field :municipality, autocomplete: "municipality" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"最寄駅" %><br />
+    <%= f.text_field :nearest_station, autocomplete: "nearest_station" %>駅
   </div>
 
   <div class="field">
     <%= f.label :"メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :"パスワード" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <%= f.label :"パスワード" %><br />
+    <span>※６文字以上</span><br>
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :"パスワード確認" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div>
+    <%= f.hidden_field :is_deleted, value: false %>
   </div>
 
   <div class="actions">

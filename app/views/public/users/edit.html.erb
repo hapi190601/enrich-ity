@@ -1,2 +1,68 @@
-<h1>Public::Users#edit</h1>
-<p>Find me in app/views/public/users/edit.html.erb</p>
+<div class="container">
+  <h2>プロフィール編集</h2>
+
+  <%= form_with model: @user, url: user_path, local: true do |f| %>
+
+  <div class="field">
+    <%= f.label :"アイコン" %><br />
+    <%= f.attachment_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"名前(フルネーム)" %><br />
+    <span>※苗字と名前の間スペースは不要</span><br>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"フリガナ(フルネーム)" %><br />
+    <%= f.text_field :name_kana %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"ニックネーム" %><br />
+    <%= f.text_field :nickname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"生年月日" %><br />
+    <%== sprintf(f.date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=> Time.now.year-15, :end_year =>1950, prompt:"---"), '年','月') + '日' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"性別" %><br />
+    <%= f.label :"男性"  %>
+    <%= f.radio_button :gender, :"男性" %>
+    <%= f.label :"女性"  %>
+    <%= f.radio_button :gender, :"女性" %>
+    <%= f.label :"秘密"  %>
+    <%= f.radio_button :gender, :"ひみつ" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"郵便番号" %><br />
+    <span>ハイフン不要</span><br>
+    <%= f.text_field :postal_code, autocomplete: "postcode" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"お住まいの都道府県" %><br />
+    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, prompt:"---" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"お住まいの市区町村" %><br />
+    <%= f.text_field :municipality, autocomplete: "municipality" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"最寄駅" %><br />
+    <%= f.text_field :nearest_station, autocomplete: "nearest_station" %>駅
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "編集内容を保存する", class:"btn btn-sm btn-success bigger-btn" %>
+  </div>
+  <% end %>
+</div>
