@@ -1,0 +1,2 @@
+module Private::PostsHelper
+end
