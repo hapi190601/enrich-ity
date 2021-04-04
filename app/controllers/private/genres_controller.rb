@@ -1,4 +1,7 @@
 class Private::GenresController < ApplicationController
+  def new
+  end
+
   def index
   end
 

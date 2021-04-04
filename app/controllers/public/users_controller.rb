@@ -8,9 +8,6 @@ class Public::UsersController < ApplicationController
   def update
   end
 
-  def destroy
-  end
-
   def favorite
   end
 
