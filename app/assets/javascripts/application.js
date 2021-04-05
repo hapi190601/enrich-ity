@@ -49,7 +49,7 @@ $(function(){
     $('.slide-images').slick({
       dots: true,
       autoplay: true,
-      autoplaySpeed: 2000,
+      autoplaySpeed: 2300,
       pauseOnFocus: false,
       pauseOnHover: false,
       pauseOnDotsHover: false
@@ -65,12 +65,37 @@ $(function(){
 
   ityped.init(document.querySelector("#ityped"), {
     strings: [
-      "Welcome to Enrich-ity!",
-      "Let's make friends!",
+      "Welcome to Enrich-ity !",
+      "Let's make friends !",
     ],
     typeSpeed: 130,
     backSpeed: 10,
     showCursor: true,
     cursorChar: "|"
   })
+
+  var option = {
+    duration: 6000,
+    origin: 'left',
+    distance: '100px',
+    delay: 200,
+  };
+
+  var delaieroption = {
+    duration: 6000,
+    origin: 'left',
+    distance: '100px',
+    delay: 1000,
+  };
+
+  var delaiestoption = {
+    duration: 6000,
+    origin: 'left',
+    distance: '100px',
+    delay: 1800,
+  };
+
+  ScrollReveal().reveal('.left-message', option);
+  ScrollReveal().reveal('.right-message', delaieroption);
+  ScrollReveal().reveal('.animate',delaiestoption);
 });

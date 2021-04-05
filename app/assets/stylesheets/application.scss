@@ -18,6 +18,18 @@
 @import "font-awesome";
 @import "bootstrap";
 
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap');
+
+body {
+  font-family: 'Kiwi Maru', serif;
+}
+
+.background-color {
+  background: #36D1DC;
+  background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);
+  background: linear-gradient(to right, #5B86E5, #36D1DC);
+}
+
 // ボタン
 .bigger-btn {
   padding: 8px 15px;
@@ -84,4 +96,26 @@ footer {
 .up {
   width: 50px;
   height: 50px;
+}
+
+// フラッシュメッセージ
+.notice {
+  padding: 50px 0;
+  text-align: center;
+  color: green;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #36D1DC;
+  background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);
+  background: linear-gradient(to right, #5B86E5, #36D1DC);
+}
+
+// 共通
+
+.page-title {
+  width: 70%;
+  margin: 0 auto;
+  text-align:center;
+  padding: 70px 0;
+  font-weight: bold;
 }

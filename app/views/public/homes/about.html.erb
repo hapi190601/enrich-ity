@@ -1,49 +1,66 @@
-<div class="container">
-  <h2>About</h2>
+<div class="background-color">
 
-  <h3>Enrich-ityとは</h3>
+  <div class="container">
+    <h2 class="page-title">【About】</h2>
 
-  <div class="main-message">
-    <p>Enrich-ityは、人生を充実にするための<storng>「仲間」</storng>を見つけることのできるWebアプリです</p>
+    <div class="main-message">
+      <div>
+        <h3 class="about-h3">Enrich-ityとは</h3>
+        <p>Enrich-ityは<br>人生を充実にするための<storng>「仲間」</storng>を見つけることができるWebアプリです。</p>
 
-    <p>
-      自分の求めている<strong>「仲間」</strong>を
-      <br>
-      「検索」と「投稿」の２つの方法から探すことができます！
-    </p>
+        <p>
+          自分の求めている<strong>「仲間」</strong>を
+          <br>
+          「検索」と「投稿」の２つの方法から探すことができます！
+        </p>
+      </div>
 
-    <h4>-検索-</h4>
-    <p>
-      気の合いそうな投稿を見つけたら、投稿者とチャットでやりとりができます<br>
-      オンラインで話すもよし、実際に会うもよし、その後のやりとりは皆様にお任せします<br>
-      <span>※ Enrich-ityはやり取り間でのトラブルについて一切責任を負いません</span>
-    </p>
+      <div>
+        <h4 class="about-h4">-- 検索 --</h4>
+        <p>
+          気の合いそうな投稿を見つけたら、投稿者とチャットでやりとりができます。<br><br>
+          オンラインで話すもよし、実際に会うもよし、<br>その後のやりとりは皆さまにお任せしています。<br>
+          <span>※ Enrich-ityはやり取り間でのトラブルについて一切責任を負いません。</span>
+        </p>
+      </div>
 
-    <h4>-投稿-</h4>
-    <p>
-      自ら投稿したい場合は、エリアや年代、性別などの希望条件を選ぶことができます<br>
-      投稿ができたら、チャットが来るのを楽しみに待ちましょう
-    </p>
+      <div>
+        <h4 class="about-h4">-- 投稿 --</h4>
+        <p>
+          自ら投稿したい場合は、エリアや年代、性別などの希望条件を選ぶことができます。<br>
+          投稿ができたら、チャットが来るのを楽しみに待ちましょう。<br><br>
+          皆さんの人生がこのEnrich-ityを使うことによって少しでも好転することを祈っています！
+        </p>
+      </div>
+    </div>
 
-    <p>皆さんの人生がこのEnrich-ityを使うことによって少しでも好転することを祈っています！</p>
-  </div>
+    <div class="link-box">
+      <div class="link">
+        <%= link_to "　　ホームへ　　", homes_top_path, class:"btn btn-sm btn-light bigger-btn" %>
+      </div>
 
-  <div class="recommented-user">
-    <h4>こんな人におすすめ！</h4>
-    <ul>
-      <li>新しい習慣形成をしたい人</li>
-      <li>共に切磋琢磨できる「仲間」がほしい人</li>
-      <li>実家を出て新天地で「友達」を作りたい人</li>
-      <li>転勤先で「趣味仲間」を見つけたい人</li>
-    </ul>
-  </div>
+      <div class="link">
+        <%= link_to "使い方を見てみよう！", homes_explain_path, class:"btn btn-sm btn-info bigger-btn" %>
+      </div>
+    </div>
 
-  <div class="purpose">
-    <h4>こんな目的で使ってね！</h4>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <div class="recommented-user">
+      <h4 class="about-h4">こんな人におすすめ！</h4>
+      <ul>
+        <li>新しい習慣形成をしたい人</li>
+        <li>共に切磋琢磨できる「仲間」がほしい人</li>
+        <li>実家を出て新天地で「友達」を作りたい人</li>
+        <li>転勤先で「趣味仲間」を見つけたい人</li>
+      </ul>
+    </div>
+
+    <div class="manner">
+      <h4 class="about-h4">マナーは守って使おう！</h4>
+      <ul>
+        <li>相手に失礼な発言は控えよう</li>
+        <li>公序良俗に反する投稿は控えよう</li>
+        <span>※マナーの悪い会員は、見つけ次第アカウントを削除します。</span>
+      </ul>
+    </div>
   </div>
 </div>

@@ -27,6 +27,7 @@ class Public::UsersController < ApplicationController
   end
 
   def out
+    
   end
 
   def withdraw
