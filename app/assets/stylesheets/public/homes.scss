@@ -1,3 +1,69 @@
 // Place all the styles related to the public::homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.slide-image {
+  height: 500px;
+  width: 90%;
+  margin: 0 auto;
+  opacity: 0.7;
+}
+
+.slick-dots {
+  li {
+    font-size: 30px !important;
+    button:before {
+      font-size: 18px !important;
+      color: rgb(60, 60, 60) !important;
+    }
+  }
+}
+
+
+.ityped-cursor {
+  font-size: 1em;
+  opacity: 1;
+  -webkit-animation: blink 0.3s infinite;
+  -moz-animation: blink 0.3s infinite;
+  animation: blink 0.3s infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  100% {
+      opacity: 0;
+  }
+}
+
+@-webkit-keyframes blink {
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes blink {
+  100% {
+    opacity: 0;
+  }
+}
+
+.postion-box {
+  position: relative;
+}
+
+.ityped-message-box {
+  width: 90%;
+  margin: 0 auto;
+  position: absolute;
+  top: 35%;
+  left: 10%;
+}
+
+.ityped-message {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 5px;
+  background-color: rgba(242,242,242,0.3);
+}
+

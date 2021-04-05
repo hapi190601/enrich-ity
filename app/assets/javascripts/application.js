@@ -36,26 +36,41 @@ $(function() {
 
 $(function(){
   $("#up-scroll").hide();
-
-  // スクロールが十分された時に#back-to-topを表示。スクロールされたら非表示
   $(window).scroll(function(){
-    // this(window要素)がどれだけスクロールしたかをscrollTop()を使って値を取る
     $('#pos').text($(this).scrollTop());
     if ($(this).scrollTop() > 60){
       $("#up-scroll").fadeIn();
     }else{
       $('#up-scroll').fadeOut();
     }
-
   });
 
-  //#back-to-topがクリックされたら上に戻る
-  // animateメソッドを使用
+  $(function() {
+    $('.slide-images').slick({
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      pauseOnFocus: false,
+      pauseOnHover: false,
+      pauseOnDotsHover: false
+    });
+});
+
   $('#up-scroll a').click(function() {
-      $('html, body').animate({
-          scrollTop:0
-      }, 800);
-      return false;
+    $('html, body').animate({
+        scrollTop:0
+    }, 800);
+    return false;
   });
 
+  ityped.init(document.querySelector("#ityped"), {
+    strings: [
+      "Welcome to Enrich-ity!",
+      "Let's make friends!",
+    ],
+    typeSpeed: 130,
+    backSpeed: 10,
+    showCursor: true,
+    cursorChar: "|"
+  })
 });
