@@ -1,2 +1,28 @@
-<h1>Public::Users#withdraw</h1>
-<p>Find me in app/views/public/users/withdraw.html.erb</p>
+<div class="background-color">
+  <h2 class="page-title">退会確認ページ</h2>
+
+  <div class="withdraw-page">
+    <h4><strong>本当に退会しますか？</strong></h4>
+    <div class="withdraw-message">
+      <p>
+        ご不満をお持ちの方は
+        <%= link_to "お問い合わせ", inquiries_get_path, class:"text-dark" %>
+        よりご意見お待ちしております。
+      </p>
+      <br>
+      <p>
+        退会されると、ログインができなくなります。<br>
+        また、チャット機能やお気に入り機能などは閲覧不可になります。
+          ※投稿の閲覧や検索は可能
+        <br><br>
+        退会する場合は、「退会する」をクリックしてください。
+      </p>
+
+    </div>
+    <div class="link-box">
+      <%= link_to "退会しない", user_path(current_user), class:"btn btn-sm btn-primary bigger-btn" %>
+      <span>　　　</span>
+      <%= link_to "退会する", users_out_path, method: :patch, data: { confirm: "本当に退会しますか？" }, class:"btn btn-sm btn-danger bigger-btn" %>
+    </div>
+  </div>
+</div>

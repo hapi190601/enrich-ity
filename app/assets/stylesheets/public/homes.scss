@@ -135,11 +135,29 @@ p {
 
 .common-message-style > span {
   font-weight: bold;
-  font-weight: 1.4rem;
-  color: #7B68EE;
+  font-size: 1.7rem;
+  color: #F6ADC6;
   letter-spacing: 3px;
 }
 
 .top-messages > p {
   text-align: center;
+}
+
+.recommended-user {
+  padding-bottom: 50px;
+}
+
+.recommended-ul > li {
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+}
+
+.manner-ul > li {
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+}
+
+.animate {
+  font-size: 2rem!important;
 }

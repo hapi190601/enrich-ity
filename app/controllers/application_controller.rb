@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   #ログイン後の遷移パス
   def after_sign_in_path_for(resource)
     if user_signed_in?
+      flash[:notice] = "ログインに成功しました！"
       root_path
     else
       private_users_path
@@ -15,6 +16,7 @@ class ApplicationController < ActionController::Base
   #新規登録後の遷移パス
   def after_sign_up_path(resource)
     if user_sined_up?
+      flash[:notice] = "会員登録しました！"
       root_path
     else
       private_users_path
@@ -26,6 +28,7 @@ class ApplicationController < ActionController::Base
     if resource == :admin
       admin_session_path
     else
+      flash[:notice] = "ログアウトしました！"
       homes_top_path
     end
   end

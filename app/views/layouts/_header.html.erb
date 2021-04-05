@@ -2,15 +2,18 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light flex">
     <nav class="navbar navbar-nav navbar-left title">
       <div>
+        <!--アイコンできたら変える-->
         <% if user_signed_in? %>
-          <%=link_to root_path do %>
+          <%=link_to posts_path do %>
+            <%= image_tag "no-image.jpeg", :size => '100x80' %>
+          <% end %>
+        <% elsif admin_signed_in? %>
+          <%=link_to private_users_path do %>
             <%= image_tag "no-image.jpeg", :size => '100x80' %>
           <% end %>
         <% else %>
-          <div>
-            <%=link_to private_users_path do %>
+          <%=link_to root_path do %>
             <%= image_tag "no-image.jpeg", :size => '100x80' %>
-          </div>
           <% end %>
         <% end %>
       </div>
@@ -18,7 +21,7 @@
 
     <% if user_signed_in? %>
       <div class="nav-item mr-3 mt-2">
-        <span><%= current_user.nickname %>ログイン中</span>
+        <span class="sign-in-nickname"><%= current_user.nickname %>ログイン中</span>
       </div>
     <% end %>
 

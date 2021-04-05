@@ -18,84 +18,93 @@
 //= require jquery.jpostal
 //= require_tree .
 
-
-$(function() {
-  $(document).on('turbolinks:load', () => {
-    $('#user_postal_code').jpostal({
-      postcode : [
-        '#user_postal_code'
-      ],
-      address: {
-        "#user_prefecture_code": "%3",
-        "#user_municipality": "%4"
-      }
-    });
+/*global $*/
+$(document).on('turbolinks:load', function() {
+  $('#user_postal_code').jpostal({
+    postcode : [
+      '#user_postal_code'
+    ],
+    address: {
+      "#user_prefecture_code": "%3",
+      "#user_municipality": "%4",
+    }
   });
 });
 
 
-$(function(){
-  $("#up-scroll").hide();
+
+$(document).on('turbolinks:load', function() {
+  $('#up-scroll').hide();
   $(window).scroll(function(){
     $('#pos').text($(this).scrollTop());
     if ($(this).scrollTop() > 60){
-      $("#up-scroll").fadeIn();
+      $('#up-scroll').fadeIn();
     }else{
       $('#up-scroll').fadeOut();
     }
-  });
-
-  $(function() {
-    $('.slide-images').slick({
-      dots: true,
-      autoplay: true,
-      autoplaySpeed: 2300,
-      pauseOnFocus: false,
-      pauseOnHover: false,
-      pauseOnDotsHover: false
-    });
 });
 
-  $('#up-scroll a').click(function() {
-    $('html, body').animate({
-        scrollTop:0
-    }, 800);
-    return false;
+$(function() {
+  $('.slide-images').slick({
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 2300,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    pauseOnDotsHover: false
   });
+});
 
-  ityped.init(document.querySelector("#ityped"), {
-    strings: [
-      "Welcome to Enrich-ity !",
-      "Let's make friends !",
-    ],
-    typeSpeed: 130,
-    backSpeed: 10,
-    showCursor: true,
-    cursorChar: "|"
-  })
+$('#up-scroll a').click(function() {
+  $('html, body').animate({
+      scrollTop:0
+  }, 800);
+  return false;
+});
 
-  var option = {
-    duration: 6000,
-    origin: 'left',
-    distance: '100px',
-    delay: 200,
-  };
+/*global ityped*/
+ityped.init(document.querySelector('#ityped'), {
+  strings: [
+    "Welcome to Enrich-ity !",
+    "Let's make friends !",
+  ],
+  typeSpeed: 130,
+  backSpeed: 10,
+  showCursor: true,
+  cursorChar: '|'
+})
 
-  var delaieroption = {
-    duration: 6000,
-    origin: 'left',
-    distance: '100px',
-    delay: 1000,
-  };
+var option = {
+  duration: 6000,
+  origin: 'left',
+  distance: '100px',
+  delay: 200,
+};
 
-  var delaiestoption = {
-    duration: 6000,
-    origin: 'left',
-    distance: '100px',
-    delay: 1800,
-  };
+var delaieroption = {
+  duration: 6000,
+  origin: 'left',
+  distance: '100px',
+  delay: 1000,
+};
 
-  ScrollReveal().reveal('.left-message', option);
-  ScrollReveal().reveal('.right-message', delaieroption);
-  ScrollReveal().reveal('.animate',delaiestoption);
+var delaiestoption = {
+  duration: 6000,
+  origin: 'left',
+  distance: '100px',
+  delay: 1800,
+};
+
+var lastoption = {
+  duration: 6000,
+  origin: 'left',
+  distance: '100px',
+  delay: 2600,
+};
+
+/*global ScrollReveal*/
+ScrollReveal().reveal('.left-message', option);
+ScrollReveal().reveal('.right-message', delaieroption);
+ScrollReveal().reveal('.animate',delaiestoption);
+ScrollReveal().reveal('.link-box',lastoption);
 });

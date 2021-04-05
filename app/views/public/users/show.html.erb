@@ -1,77 +1,83 @@
-<div class="container">
-  <h2>
-    <% if @user.id = current_user.id %>
-    マイページ
-    <% else %>
-    <%= @user.nickname %>さんのページ
-    <% end %>
-  </h2>
+<div class="background-color">
 
-  <div class="row">
-    <div class="col-md-4">
-      <h3>プロフィール詳細</h3>
-      <table>
-        <tbody>
-          <tr>
-            <td>アイコン</td>
-            <td><%= attachment_image_tag @user, :image, :fill ,80 ,80, fallback: "no-image.jpeg", size:"80x80" %></td>
-          </tr>
-          <tr>
-            <td>ニックネーム</td>
-            <td><%= @user.nickname %></td>
-          </tr>
-          <tr>
-            <td>年齢</td>
-            <td><%= @age %>歳</td>
-          </tr>
-          <tr>
-            <td>性別</td>
-            <td><%= @user.gender %></td>
-          </tr>
-          <tr>
-            <td>エリア</td>
-            <td><%= @user.municipality %></td>
-          </tr>
-
-          <tr>
-            <td>最寄駅</td>
-            <td><%= @user.nearest_station %></td>
-          </tr>
-
-          <% if @user.id == current_user.id %>
-          <tr>
-            <td>お気に入り：<%= @user.favorites.count %>件</td>
-            <td><%= link_to "お気に入り一覧", users_favorite_path, class:"btn btn-sm btn-primary bigger-btn" %></td>
-          </tr>
-
-          <tr>
-            <td>
-              <%= link_to "プロフィール編集", edit_user_path, class:"btn btn-sm btn-success bigger-btn"%>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="col-md-7 offset-md-1">
-      <h3>最近の投稿</h3>
-
-      <% @user.posts.each do |pos| %>
-      <div class="post-box">
-        <div class="left-post">
-          <%= pos.title %>
-          <br>
-          <%= pos.content %>
-        </div>
-
-        <div class="right-post">
-          <%= attachment_image_tag pos, :image, :fill, 40, 40, fallback: "no_image.jpeg", size:"40x40" %>
-          <br>
-          <%= link_to "詳しく見る", post_path(pos.id) %>
-        </div>
-      </div>
+  <div class="container">
+    <h2 class="page-title">
+      <% if @user.id = current_user.id %>
+      マイページ
+      <% else %>
+      <%= @user.nickname %>さんのページ
       <% end %>
+    </h2>
+
+    <div class="row">
+      <div class="col-md-5 profile-area">
+        <h3 class="profile-h3">プロフィール詳細</h3>
+        <table class="table text-center">
+          <tbody>
+            <tr>
+              <td width="45%" class="icon-height">アイコン</td>
+              <td width="55%"><%= attachment_image_tag @user, :image, :fill ,80 ,80, fallback: "no-image.jpeg", size:"80x80" %></td>
+            </tr>
+            <tr>
+              <td>ニックネーム</td>
+              <td><%= @user.nickname %></td>
+            </tr>
+            <tr>
+              <td>年齢</td>
+              <td><%= @age %>歳</td>
+            </tr>
+            <tr>
+              <td>性別</td>
+              <td><%= @user.gender %></td>
+            </tr>
+            <tr>
+              <td>エリア</td>
+              <td><%= @user.municipality %></td>
+            </tr>
+
+            <tr>
+              <td>最寄駅</td>
+              <td><%= @user.nearest_station %></td>
+            </tr>
+
+            <% if @user.id == current_user.id %>
+            <tr>
+              <td>お気に入り</td>
+              <td><%= @user.favorites.count %>件</td>
+            </tr>
+
+            <tr>
+              <td>
+                <%= link_to "会員情報編集", edit_user_path, class:"btn btn-sm btn-success bigger-btn"%>
+              </td>
+              <td>
+                <%= link_to "お気に入り一覧", users_favorite_path, class:"btn btn-sm btn-primary bigger-btn" %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-6 offset-md-1">
+        <h3 class="profile-h3">最近の投稿</h3>
+
+        <% @user.posts.each do |pos| %>
+        <div class="post-box">
+          <div class="left-post">
+            <%= pos.title %>
+            <br>
+            <%= pos.content %>
+          </div>
+
+          <div class="right-post">
+            <%= attachment_image_tag pos, :image, :fill, 40, 40, fallback: "no_image.jpeg", size:"40x40" %>
+            <br>
+            <%= link_to "詳しく見る", post_path(pos.id) %>
+          </div>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

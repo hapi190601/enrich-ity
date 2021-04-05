@@ -23,14 +23,18 @@ class Public::UsersController < ApplicationController
     end
   end
 
-  def favorite
-  end
-
   def out
-    
   end
 
   def withdraw
+    @user = current_user
+    @user.update(is_deleted: true)
+    reset_session
+    flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
+    redirect_to root_path
+  end
+
+  def favorite
   end
 
   private

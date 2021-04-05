@@ -1,3 +1,106 @@
 // Place all the styles related to the public::users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.withdraw-page {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.withdraw-page > h4 {
+  padding: 50px 0;
+  font-size: 1.6rem;
+}
+
+.withdraw-message {
+  padding: 50px 0 30px;
+}
+
+.profile-h3 {
+  display: inline-block;
+  margin: 10px 0 30px!important;
+  padding: 10px 20px;
+  font-size: 1.5rem!important;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+.icon-height {
+  line-height: 80px;
+}
+
+.field {
+  width: 80%;
+  margin:0 auto;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.field > span {
+  font-size: 0.7rem;
+}
+
+.actions {
+  width: 80%;
+  margin:0 auto;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.sign-in-link {
+  width: 80%;
+  margin:0 auto;
+  text-align: center;
+  padding: 20px 0 40px;
+}
+
+.sign-up-link {
+  width: 80%;
+  margin:0 auto;
+  text-align: center;
+  padding: 20px 0 40px;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#user_prefecture_code {
+  height: 45px!important;
+}
+
+#user_birthday_1i {
+  height: 35px;
+}
+
+#user_birthday_2i {
+  height: 35px;
+}
+
+#user_birthday_3i {
+  height: 35px;
+}
+
+.current-icon {
+  margin-left: 75px;
+}
+
+.choose-image {
+  margin-left: 10px;
+}
+
+.profile-area {
+  padding-bottom: 75px;
+}
+
+.posts-area {
+  padding-bottom: 75px;
+}
+
+.forget-password {
+  display: inline-block;
+
+}
+

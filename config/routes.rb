@@ -8,17 +8,17 @@ Rails.application.routes.draw do
   }
 
   scope module: :public do
-    root to: "posts#top"
+    root to: "homes#top"
 
     get 'homes/top' => 'homes#top'
     get 'homes/about' => 'homes#about'
     get 'homes/explain' => 'homes#explain'
 
-    resources :users, only: [:show,:update,:edit]
     # ↓間違っているかも。お気に入りした投稿一覧ルーティング
     get 'users/favorite' => 'users#favorite'
     get 'users/withdraw' => 'users#withdraw'
     patch 'users/out' => 'users#out'
+    resources :users, only: [:show,:update,:edit]
 
     resources :posts do
       resource :favorites, only: [:create, :destroy]
@@ -56,7 +56,7 @@ Rails.application.routes.draw do
 
     resources :posts, only: [:index, :show, :destroy]
 
-    resources :users, only: [:index, :show]
     patch 'users/out' => 'users#out'
+    resources :users, only: [:index, :show]
   end
 end
