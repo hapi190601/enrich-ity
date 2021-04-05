@@ -1,0 +1,20 @@
+[33mbb73504[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: commit: Add退会ぺージと論理削除機能
+[33m8eba868[m HEAD@{1}: reset: moving to HEAD^
+[33m04e2402[m HEAD@{2}: commit: Add退会ページto
+[33m8eba868[m HEAD@{3}: commit: Addhomes_top画面
+[33md3ab124[m HEAD@{4}: commit: AddAbout画面
+[33m5f5c42d[m HEAD@{5}: commit: Add会員詳細と会員編集
+[33m1b1d01c[m HEAD@{6}: commit: Addアソシエーションとバリデーション
+[33m2d355e7[m HEAD@{7}: commit: Addルーティングとdeviseのcontroller
+[33mded498f[m HEAD@{8}: commit: モデル、コントローラの作成など
+[33mf298c2e[m HEAD@{9}: pull origin main: Fast-forward
+[33me884e82[m[33m ([m[1;32mdevelop[m[33m, [m[1;32mAddmodel[m[33m)[m HEAD@{10}: checkout: moving from Adddevise to main
+[33m2dfa1b4[m[33m ([m[1;31morigin/Adddevise[m[33m, [m[1;32mAdddevise[m[33m)[m HEAD@{11}: commit: Add-devise機能
+[33me884e82[m[33m ([m[1;32mdevelop[m[33m, [m[1;32mAddmodel[m[33m)[m HEAD@{12}: checkout: moving from Addmodel to Adddevise
+[33me884e82[m[33m ([m[1;32mdevelop[m[33m, [m[1;32mAddmodel[m[33m)[m HEAD@{13}: checkout: moving from develop to Addmodel
+[33me884e82[m[33m ([m[1;32mdevelop[m[33m, [m[1;32mAddmodel[m[33m)[m HEAD@{14}: checkout: moving from main to develop
+[33me884e82[m[33m ([m[1;32mdevelop[m[33m, [m[1;32mAddmodel[m[33m)[m HEAD@{15}: commit: 必要なGem追加
+[33mdb67e9a[m HEAD@{16}: commit: FirstCommit
+[33m104e876[m HEAD@{17}: merge origin/main: Merge made by the 'recursive' strategy.
+[33mc43f43d[m HEAD@{18}: Branch: renamed refs/heads/master to refs/heads/main
+[33mc43f43d[m HEAD@{20}: commit (initial): AddREADME
