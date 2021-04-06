@@ -1,4 +1,5 @@
 <div class="background-color">
+  <%= render "layouts/flash" %>
   <div class="container">
         <h2 class="page-title">プロフィール編集</h2>
     <div class="row">
@@ -36,7 +37,7 @@
           <%= f.label :"【性別】", class:"col-sm-5" %>
           <label>男性 <%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"m-3" %></label>
           <label>女性 <%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"m-3" %></label>
-          <label>ひみつ <%= f.radio_button :gender, :"ひみつ", checked: true, style:"transform:scale(2.0);", class:"m-3" %></label>
+          <label>ひみつ <%= f.radio_button :gender, :"ひみつ", style:"transform:scale(2.0);", class:"m-3" %></label>
         </div>
 
         <div class="field">

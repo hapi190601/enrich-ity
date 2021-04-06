@@ -89,7 +89,7 @@ var option = {
   duration: 6000,
   origin: 'left',
   distance: '100px',
-  delay: 200,
+  delay: 300,
 };
 
 var delaieroption = {
@@ -103,14 +103,14 @@ var delaiestoption = {
   duration: 6000,
   origin: 'left',
   distance: '100px',
-  delay: 1800,
+  delay: 1600,
 };
 
 var lastoption = {
   duration: 6000,
   origin: 'left',
   distance: '100px',
-  delay: 2600,
+  delay: 1800,
 };
 
 /*global ScrollReveal*/
