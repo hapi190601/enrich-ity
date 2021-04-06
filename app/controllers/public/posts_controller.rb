@@ -9,6 +9,10 @@ class Public::PostsController < ApplicationController
   end
 
   def index
+    @posts = Post.page(params[:page]).per(5).order(updated_at: :desc)
+    @posts_all = Post.all
+    @my_posts= Post.where(user_id: current_user.id)
+    @other_posts= Post.where.not(user_id: current_user.id)
   end
 
   def create

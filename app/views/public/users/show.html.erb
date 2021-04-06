@@ -3,7 +3,7 @@
 
   <div class="container">
     <h2 class="page-title">
-      <% if @user.id = current_user.id %>
+      <% if @user.id == current_user.id %>
       マイページ
       <% else %>
       <%= @user.nickname %>さんのページ
@@ -58,26 +58,40 @@
             <% end %>
           </tbody>
         </table>
+
+        <% unless @user.id == current_user.id %>
+        <div>
+          <!--パス修正の必要あり-->
+          <%= link_to "#{@user.nickname}さんとチャットする", rooms_path, class:"btn btn-sm btn-primary bigger-btn p-3" %>
+        </div>
+        <% end %>
       </div>
 
       <div class="col-md-6 offset-md-1">
-        <h3 class="profile-h3">最近の投稿</h3>
+        <h3 class="profile-h3">最近の投稿 (最大3件) </h3>
 
-        <% @user.posts.each do |pos| %>
+        <% @user.posts.order("created_at desc").first(3).each do |pos| %>
         <div class="post-box">
           <div class="left-post">
+            <span>■タイトル</span><br>
             <%= pos.title %>
             <br>
-            <%= pos.content %>
+            <br>
+            <span>■本文</span><br>
+            <%= safe_join(pos.content.truncate(75).split("\n"),tag(:br)) %>
           </div>
 
-          <div class="right-post">
-            <%= attachment_image_tag pos, :image, :fill, 40, 40, fallback: "no-post-image.png", size:"40x40" %>
+          <div class="right-post text-center">
+            <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm btn-light bigger-btn mb-3" %>
             <br>
-            <%= link_to "詳しく見る", post_path(pos.id) %>
+            <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size" %>
           </div>
         </div>
         <% end %>
+
+        <div class="post-index-link text-center">
+          <%= link_to "全投稿を見る", posts_path, class:"btn btn-sm btn-success bigger-btn" %>
+        </div>
       </div>
     </div>
   </div>

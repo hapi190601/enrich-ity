@@ -1,7 +1,42 @@
 <div class="background-color">
   <%= render "layouts/flash" %>
+  <h2 class="page-title">投稿一覧</h2>
 
-  <div>Find me in app/views/public/posts/index.html.erb</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <% @posts.each do |pos| %>
+        <div class="post-box flex-around">
+          <div class="left-post posts-index-width">
+            <span>■タイトル</span><br>
+            <%= pos.title %>
+            <br>
+            <br>
+            <span>■希望性別</span><br>
+            <%= pos.gender %>
+            <br>
+            <br>
+            <span>■エリア</span><br>
+            <%= pos.prefecture_name %>
+            <%= pos.municipality %>
+            <br>
+            <br>
+            <span>■本文</span><br>
+            <%= safe_join(pos.content.truncate(75).split("\n"),tag(:br)) %>
+          </div>
+
+          <div class="right-post text-center posts-index-width" width="50%">
+            <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size pt-3 mt-3" %>
+            <br>
+            <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm btn-light bigger-btn mb-3" %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+    <div class="paginate">
+    <%= paginate @posts %>
+  </div>
 </div>
-
-
