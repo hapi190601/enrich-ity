@@ -1,76 +1,72 @@
 <div class="background-color">
   <div class="container">
-    <h2 class="page-title">プロフィール編集</h2>
+        <h2 class="page-title">プロフィール編集</h2>
+    <div class="row">
+      <div class="col-md-10 offset-2">
 
-    <%= form_with model: @user, url: user_path, local: true do |f| %>
+        <%= form_with model: @user, url: user_path, local: true do |f| %>
 
-    <div class="field">
-      <%= f.label :"【アイコン】" %><br />
-      <%= attachment_image_tag @user, :image, :fill ,80 ,80, fallback: "no-image.jpeg", size:"80x80", class:"current-icon" %>
-      <%= f.attachment_field :image, class:"choose-image" %>
+        <div class="field">
+          <%= f.label :"【アイコン】", class:"col-sm-5" %>
+          <%= f.attachment_field :image, class:"choose-image", class:"col-sm-6" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【名前】", class:"col-sm-5" %>
+          <%= f.text_field :name, class:"col-sm-7 input-longer-form p-2", autofocus: true %><br>
+          <span>※苗字と名前の間にスペース不要</span>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【フリガナ】", class:"col-sm-5" %>
+          <%= f.text_field :name_kana, class:"col-sm-7 input-longer-form p-2" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【ニックネーム】", class:"col-sm-5" %>
+          <%= f.text_field :nickname, class:"col-sm-7 input-longer-form p-2" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【生年月日】", class:"col-sm-5" %>
+          <%== sprintf(f.date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=> Time.now.year-15, :end_year =>1950, prompt:"---"), '年　','月　') + '日　' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【性別】", class:"col-sm-5" %>
+          <label>男性 <%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"m-3" %></label>
+          <label>女性 <%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"m-3" %></label>
+          <label>ひみつ <%= f.radio_button :gender, :"ひみつ", checked: true, style:"transform:scale(2.0);", class:"m-3" %></label>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【郵便番号】", class:"col-sm-5"  %>
+          <%= f.text_field :postal_code, class:"col-sm-7 input-longer-form p-2", autocomplete: "postcode" %><br>
+          <span>※ハイフン不要</span>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【お住まいの都道府県】", class:"col-sm-5"  %>
+          <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, prompt:"---", class:"col-sm-6 p-2", id:"user_prefecture_code" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【お住まいの市区町村】", class:"col-sm-5"  %>
+          <%= f.text_field :municipality, class:"col-sm-7 input-longer-form p-2", autocomplete: "municipality" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【最寄駅】", class:"col-sm-5" %>
+          <%= f.text_field :nearest_station, class:"col-sm-7 input-longer-form p-2", autocomplete: "nearest_station", width:"60%"  %><br>
+          <span>※駅不要 例：×東京駅 ○東京</span>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "編集内容を保存する", class:"btn btn-sm btn-success bigger-btn pt-3 pb-3 user-edit-btn" %>
+          <%= link_to "　退会する　", users_withdraw_path, class:"btn btn-sm btn-danger bigger-btn pt-3 pb-3" %>
+        </div>
+        <% end %>
+      </div>
     </div>
-
-    <div class="field">
-      <%= f.label :"【名前(フルネーム)】" %><br />
-      <%= f.text_field :name, class:"input-longer-form p-2", autofocus: true %><br>
-      <span>※苗字と名前の間にスペース不要</span>
-    </div>
-
-    <div class="field">
-      <%= f.label :"【フリガナ(フルネーム)】" %><br />
-      <%= f.text_field :name_kana, class:"input-longer-form p-2" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :"【ニックネーム】" %><br />
-      <%= f.text_field :nickname, class:"input-longer-form p-2" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :"【生年月日】" %><br />
-      <%== sprintf(f.date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=> Time.now.year-15, :end_year =>1950, prompt:"---"), '年　','月　') + '日　' %>
-    </div>
-
-    <div class="field">
-      <%= f.label :"【性別】" %><br />
-      <%= f.label :"男性"  %>
-      <%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"m-3" %>
-      <%= f.label :"女性"  %>
-      <%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"m-3" %>
-      <%= f.label :"秘密"  %>
-      <%= f.radio_button :gender, :"ひみつ", style:"transform:scale(2.0);", class:"m-3" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :"【郵便番号】" %><br />
-      <%= f.text_field :postal_code, class:"input-longer-form p-2", autocomplete: "postcode" %><br>
-      <span>※ハイフン不要</span>
-    </div>
-
-    <div class="field">
-      <%= f.label :"【お住まいの都道府県】" %><br />
-      <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, prompt:"---", class:"p-2", id:"user_prefecture_code" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :"【お住まいの市区町村】" %><br />
-      <%= f.text_field :municipality, class:"input-longer-form p-2", autocomplete: "municipality" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :"【最寄駅】" %><br />
-      <%= f.text_field :nearest_station, class:"input-longer-form p-2", autocomplete: "nearest_station" %><br>
-      <span>※駅不要 例：×東京駅 ○東京</span>
-    </div>
-
-
-    <div class="actions">
-      <%= f.submit "編集内容を保存する", class:"btn btn-sm btn-success bigger-btn pt-3 pb-3" %>
-    </div>
-
-    <div class="actions">
-      <%= link_to "　退会する　", users_withdraw_path, class:"btn btn-sm btn-danger bigger-btn" %>
-    </div>
-    <% end %>
   </div>
 </div>

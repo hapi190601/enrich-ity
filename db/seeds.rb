@@ -10,3 +10,32 @@ Admin.create!(
   email: "admin@test.com",
   password: "password"
 )
+
+Genre.create!(
+  name: "筋力トレーニング"
+)
+
+Genre.create!(
+  name: "ダイエット"
+)
+
+Genre.create!(
+  name: "勉強(スキルアップ)"
+)
+
+Genre.create!(
+  name: "スポーツ"
+)
+
+Genre.create!(
+  name: "ライブ観戦"
+)
+
+Genre.create!(
+  name: "イベント"
+)
+
+Genre.create!(
+  name: "その他"
+)
+

@@ -1,3 +1,19 @@
 // Place all the styles related to the public::posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#post_prefecture_code {
+  height: 44px!important;
+}
+
+#post_genre_id {
+  height: 44px!important;
+}
+
+.post-info-area {
+  padding-bottom: 75px;
+}
+
+.post-content-area {
+  padding-bottom: 75px;
+}

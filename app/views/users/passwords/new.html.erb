@@ -1,16 +1,28 @@
-<h2>Forgot your password?</h2>
+<div class="background-color design-height">
+  <h2 class="page-title" id="forget-password-title">パスワード再発行ページ</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-2">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <div class="field">
+            <%= f.label :"メールアドレス", class:"col-sm-5" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "パスワード再発行メールを送る", class:"btn btn-sm btn-success bigger-btn pl-3 pr-3" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="sign-up-link">
+    <%= render "users/shared/links" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+</div>
 
-<%= render "users/shared/links" %>
+

@@ -1,6 +1,13 @@
 // Place all the styles related to the public::users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.design-height {
+  height: 600px;
+}
+
+#forget-password-title {
+  padding-top: 130px;
+}
 
 .withdraw-page {
   width: 90%;
@@ -31,21 +38,24 @@
 }
 
 .field {
-  width: 80%;
-  margin:0 auto;
-  padding-bottom: 40px;
-  text-align: center;
+  padding-bottom: 30px;
 }
 
 .field > span {
+  color: white;
+  display: inline-block;
   font-size: 0.7rem;
+  padding-left: 25px;
 }
 
 .actions {
   width: 80%;
-  margin:0 auto;
   text-align: center;
   padding: 40px 0;
+}
+
+.user-edit-btn {
+  margin-right: 30px;
 }
 
 .sign-in-link {
@@ -68,7 +78,11 @@ label {
 }
 
 #user_prefecture_code {
-  height: 45px!important;
+  height: 44px!important;
+}
+
+#prefecture_code {
+  height: 44px!important;
 }
 
 #user_birthday_1i {
@@ -99,8 +113,4 @@ label {
   padding-bottom: 75px;
 }
 
-.forget-password {
-  display: inline-block;
-
-}
 

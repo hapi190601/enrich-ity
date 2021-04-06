@@ -24,6 +24,8 @@ Rails.application.routes.draw do
       resource :favorites, only: [:create, :destroy]
     end
     get 'posts/top' => 'posts#top'
+    # 新規投稿失敗時にURL(posts/new)にrenderさせるために無理やり再定義
+    post 'posts/new', to: 'posts#create'
 
     resources :genres, only: [:index]
 

@@ -26,7 +26,7 @@ class User < ApplicationRecord
   validates :prefecture_code, presence: true
   validates :municipality, presence: true
 
-  enum gender: { "ひみつ":0, "男性":1, "女性":2 }
+  enum gender: { "ひみつ":0, "男性":1, "女性":2, }
 
   attachment :image
 

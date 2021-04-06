@@ -1,2 +1,70 @@
-<h1>Public::Posts#show</h1>
-<p>Find me in app/views/public/posts/show.html.erb</p>
+<div class="background-color">
+  <h2 class="page-title">投稿詳細</h2>
+  <div class="container">
+    <div class="row post-info-area">
+      <div class="col-md-8">
+        <div class="post-show-element">
+          <label class="col-md-4">投稿者</label>
+          <%= @post.user.nickname %>
+        </div>
+
+        <div class="post-show-element">
+          <label class="col-md-4">投稿者の年齢</label>
+          <%= @post.age %>
+        </div>
+
+        <div class="post-show-element">
+          <label class="col-md-4">ジャンル</label>
+          <%= @post.genre.name %>
+        </div>
+
+        <div class="post-show-element">
+          <label class="col-md-4">希望の性別</label>
+          <%= @post.gender %>
+        </div>
+
+        <div class="post-show-element">
+          <label class="col-md-4">希望のエリア</label>
+          <%= @post.prefecture_name %>
+          <%= @post.municipality %>
+          <span>近辺</span>
+        </div>
+
+        <div class="post-show-element">
+          <label class="col-md-4">タイトル</label>
+          <%= @post.title %>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <%= attachment_image_tag @post, :image, :fill ,250 ,250, fallback: "no-post-image.png", size:"250x250" %>
+      </div>
+    </div>
+
+    <div class="post-content-area">
+      <h3 class="col-md-4">内容</h3>
+      <div class="col-md-10">
+        <%= @post.content %>
+      </div>
+    </div>
+
+    <div class="link-box">
+      <% if @post.user_id == current_user.id %>
+        <div class="link">
+          <%= link_to "編集する", edit_post_path(@post.id), class:"btn btn-sm btn-primary bigger-btn p-3" %>
+        </div>
+        <div class="link">
+          <%= link_to "削除する", post_path(@post.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class:"btn btn-sm btn-danger bigger-btn p-3" %>
+        </div>
+      <% else %>
+        <div class="link">
+          <%= link_to "お気に入り追加", post_favorites_path(@post.id), method: :post, class:"btn btn-sm btn-success bigger-btn p-3"%>
+        </div>
+        <div class="link">
+          <!--パス修正の必要あり-->
+          <%= link_to "#{@post.user.nickname}さんとチャット", rooms_path, class:"btn btn-sm btn-primary bigger-btn p-3" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

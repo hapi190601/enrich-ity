@@ -1,11 +1,8 @@
 class Public::UsersController < ApplicationController
+  before_action :calculate_user_age
 
   def show
     @user = User.find(params[:id])
-
-    today = Date.today.strftime("%Y%m%d").to_i
-    birthday = @user.birthday.strftime("%Y%m%d").to_i
-    @age = (today - birthday) / 10000
   end
 
   def edit
@@ -43,4 +40,10 @@ class Public::UsersController < ApplicationController
     params.require(:user).permit(:image, :name, :name_kana, :nickname, :gender, :birthday, :postal_code, :prefecture_code, :municipality, :nearest_station)
   end
 
+  def calculate_user_age
+    user = User.find(params[:id])
+    today = Date.today.strftime("%Y%m%d").to_i
+    birthday = user.birthday.strftime("%Y%m%d").to_i
+    @age = (today - birthday) / 10000
+  end
 end

@@ -1,2 +1,57 @@
-<h1>Public::Posts#new</h1>
-<p>Find me in app/views/public/posts/new.html.erb</p>
+<div class="background-color">
+    <h2 class="page-title">新規投稿フォーム</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <%= form_with model: @post, url: posts_new_path, local: true do |f| %>
+
+        <div class="field">
+          <%= f.label :"【写真】", class:"col-sm-4" %>
+          <br>
+          <%= f.attachment_field :image, class:"choose-image" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【タイトル】" , class:"col-sm-4" %>
+          <br>
+          <%= f.text_field :title, placeholder: "タイトルを入力してください", class:"col-sm-8 text-left" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【説明文】", class:"col-sm-4" %>
+          <br>
+          <%= f.text_area :content, class:"col-sm-11 text-left", rows:10, placeholder: "あなたが探している仲間を具体的に書きましょう！" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【希望の性別】", class:"col-sm-4" %>
+          <label>男性 <%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"m-3" %></label>
+          <label>女性 <%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"m-3" %></label>
+          <label>どちらでも <%= f.radio_button :gender, :"どちらでも", checked: true, style:"transform:scale(2.0);", class:"m-3" %></label>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【ジャンル】", class:"col-sm-4" %>
+          <%= f.collection_select :genre_id, Genre.all, :id, :name, prompt: "-- 選択してください --", class:"input-longer-form p-2 text-left" %></td>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【希望の都道府県】", class:"col-sm-4" %>
+          <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, { include_blank: true, selected: current_user.prefecture_code }, class:" p-2" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"【希望の市区町村】", class:"col-sm-4" %>
+          <%= f.text_field :municipality, class:"input-longer-form p-2 text-left", value:current_user.municipality, autocomplete: "municipality" %>
+          <br>
+          <span>※市区町村必須　例：×新宿 ○新宿区</span>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "　投稿する　", class:"btn btn-sm btn-success bigger-btn p-3" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
