@@ -2,6 +2,10 @@ class Public::PostsController < ApplicationController
   before_action :calculate_current_user_age
 
   def top
+    from  = (Time.current - 6.day).at_beginning_of_day
+    to    = Time.current.at_end_of_day
+    @weekly_posts = Post.where(updated_at: from...to)
+    @posts_all = Post.all
   end
 
   def new

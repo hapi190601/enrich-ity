@@ -20,10 +20,10 @@ Rails.application.routes.draw do
     patch 'users/out' => 'users#out'
     resources :users, only: [:show,:update,:edit]
 
+    get 'posts/top' => 'posts#top'
     resources :posts do
       resource :favorites, only: [:create, :destroy]
     end
-    get 'posts/top' => 'posts#top'
     # 新規投稿失敗時にURL(posts/new)にrenderさせるために無理やり再定義
     post 'posts/new', to: 'posts#create'
 

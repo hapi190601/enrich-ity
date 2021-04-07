@@ -11,6 +11,16 @@ class Post < ApplicationRecord
 
   attachment :image
 
+  # バッチ処理
+  _monthly_from  = Time.current.at_beginning_of_day
+  _monthly_to    = (_monthly_from + 1.month)
+
+  def self.monthly_destroy_all
+    posts = Post.where(updated_at: _monthly_from..._monthly_to)
+    posts.destroy_all
+  end
+
+  # 住所自動反映
   def prefecture_name
     JpPrefecture::Prefecture.find(code: prefecture_code).try(:name)
   end

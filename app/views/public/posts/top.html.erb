@@ -1,3 +1,37 @@
-<%= render "layouts/flash" %>
-<h1>Public::Posts#top</h1>
-<p>Find me in app/views/public/posts/top.html.erb</p>
+<div class="background-color">
+  <%= render "layouts/flash" %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="main-messages text-center">
+          <p>
+            ここ１週間で
+            <span class="weekly_posts"><%= @weekly_posts.count %></span>
+            件の投稿がありました
+          </p>
+        </div>
+
+        <div class="new-post">
+          <h3 class="text-left new-post-title">新着投稿</h3>
+          <div class="flex-around">
+            <% @posts_all.order("created_at desc").first(3).each do |pos| %>
+            <div class="new-post">
+              <%= pos.user.nickname %><br>
+              <%= pos.title %><br>
+              <%= pos.prefecture_name %><%= pos.municipality %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="genre-ranking">
+          <h3 class="genre-ranking-title">ジャンルランキング</h3>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

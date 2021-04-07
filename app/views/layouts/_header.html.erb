@@ -4,7 +4,7 @@
       <div>
         <!--アイコンできたら変える-->
         <% if user_signed_in? %>
-          <%=link_to posts_path do %>
+          <%=link_to posts_top_path do %>
             <%= image_tag "no-image.jpeg", :size => '100x80' %>
           <% end %>
         <% elsif admin_signed_in? %>

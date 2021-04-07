@@ -88,3 +88,5 @@ gem 'dotenv-rails'
 gem 'ransack'
 
 gem 'jp_prefecture'
+
+gem 'whenever', require: false
