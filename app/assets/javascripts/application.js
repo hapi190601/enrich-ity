@@ -119,14 +119,4 @@ ScrollReveal().reveal('.right-message', delaieroption);
 ScrollReveal().reveal('.animate',delaiestoption);
 ScrollReveal().reveal('.link-box',lastoption);
 
-
-// // 機能していない(写真のレビュー機能)
-// $('#post_image').on('change', function (e) {
-//   var reader = new FileReader();
-//   reader.onload = function (e) {
-//       $("#preview").attr('src', e.target.result);
-//   }
-//   reader.readAsDataURL(e.target.files[0]);
-// });
-
 });

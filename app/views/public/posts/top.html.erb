@@ -17,9 +17,15 @@
           <div class="flex-around">
             <% @posts_all.order("created_at desc").first(3).each do |pos| %>
             <div class="new-post">
-              <%= pos.user.nickname %><br>
-              <%= pos.title %><br>
-              <%= pos.prefecture_name %><%= pos.municipality %>
+              <span>■投稿者<br>　<%= link_to pos.user.nickname, user_path(pos.user.id), class:"text-dark" %></span>
+              <br>
+              <span>■タイトル<br>　<%= pos.title %></span>
+              <br>
+              <span>■エリア<br>　<%= pos.prefecture_name %><%= pos.municipality %> 近辺</span>
+              <br>
+              <span>■本文<br><%= safe_join(pos.content.truncate(30).split("\n"),tag(:br)) %></span>
+              <br>
+              <span><%= link_to "詳細へ", post_path(pos.id), class:"btn btn-sm btn-light" %></span>
             </div>
             <% end %>
           </div>

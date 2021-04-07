@@ -1,5 +1,5 @@
 set :output, 'log/crontab.log'
-# デプロイしたら:developmentを変える必要あり？調べる
+# デプロイする時、:developmentを変える必要あり？後で調べる
 set :environment, :development
 
 # 投稿掲載期限1ヶ月
