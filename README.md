@@ -59,7 +59,7 @@ AI に仕事が奪われると危惧されるこの世界で、生き残って�
 
 ## 設計書
 
-![ER図](https://user-images.githubusercontent.com/65483033/113497234-fa9b7300-953c-11eb-9f5f-c2b1c311a2e3.png)<br>
+![ER図](https://user-images.githubusercontent.com/65483033/113976020-533f7880-987b-11eb-88f5-a83bf5957cc0.png)<br>
 [テーブル定義書](https://docs.google.com/spreadsheets/d/1YgOBLgpdU9jex5Q32fSng10eN3muoxe-w-8gzkpTG7c/edit#gid=1247326819)<br>
 [アプリケーション詳細設計](https://docs.google.com/spreadsheets/d/1GfmoIgWYWwRi0FsoZoKnm0xGThhiSfdfCTNaqozyDP4/edit#gid=1224226657)
 <br>
