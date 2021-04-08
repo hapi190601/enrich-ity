@@ -1,2 +1,16 @@
-<h1>Private::Genres#edit</h1>
-<p>Find me in app/views/private/genres/edit.html.erb</p>
+<div class="background-color">
+  <h2 class="page-title">ジャンル編集</h2>
+  <div class="new-genre-form">
+    <%= form_with model: @genre, url: private_genre_path(@genre.id), local: true do |f| %>
+      <div class="field">
+        <%= f.label :"【ジャンル名】" , class:"col-sm-8" %>
+        <br>
+        <%= f.text_field :name, class:"col-sm-8 text-left" %>
+      </div>
+
+      <div class="admin-btn-area">
+        <%= f.submit "　編集する　", class:"btn btn-sm btn-success bigger-btn p-3" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -156,7 +156,7 @@ footer {
 }
 
 .paginate {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   padding: 45px 0;
 }
@@ -193,3 +193,37 @@ footer {
 .position-relative {
   position: relative;
 }
+
+#preview {
+  width: 40%;
+}
+
+// 管理者関連
+
+.admin-btn-area {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.genre-name {
+  font-size: 1.4rem!important;
+  vertical-align: middle!important;
+}
+
+.new-genre-form {
+  padding-top: 30px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#genre_name {
+  height: 50px;
+}
+
+.genres-index {
+  margin-bottom: 0!important;
+}
+

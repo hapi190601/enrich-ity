@@ -57,7 +57,6 @@
 
       <!--管理者ログイン時-->
       <% elsif admin_signed_in? %>
-      <div class="admin-sign">
         <li class="nav-item">
           <%= link_to "投稿一覧", private_posts_path, class: "d-none d-lg-block btn btn-outline-secondary" %>
           <%= link_to "投稿一覧", private_posts_path, class: "d-block d-lg-none nav-link" %>

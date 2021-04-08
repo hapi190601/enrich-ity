@@ -1,2 +1,23 @@
-<h1>Private::Genres#index</h1>
-<p>Find me in app/views/private/genres/index.html.erb</p>
+<div class="background-color">
+  <%= render "layouts/flash" %>
+  <div style="padding-bottom: 75px;">
+    <h2 class="page-title">ジャンル一覧</h2>
+
+    <div>
+      <p class="text-center pb-3"><%= link_to "　　新規登録　　", new_private_genre_path, class:"btn btn-sm btn-light bigger-btn p-3 mb-3" %></p>
+    </div>
+
+    <table class="table genres-index">
+      <tbody>
+        <% @genres.each do |genre| %>
+        <tr>
+          <td width="50%" class="genre-name text-center"><%= genre.name %></td>
+          <td width="20%" class="text-center"><%= link_to "編集する", edit_private_genre_path(genre.id), class:"btn btn-sm bigger-btn btn-success p-3" %></td>
+          <td width="20%" class="text-center"><%= link_to "削除する", private_genre_path(genre.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class:"btn btn-sm bigger-btn btn-danger p-3" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>

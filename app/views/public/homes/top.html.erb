@@ -63,3 +63,19 @@
     </div>
   </div>
 </div>
+
+<script>
+$(document).on('turbolinks:load', function() {
+    /*global ityped*/
+  ityped.init(document.querySelector('#ityped'), {
+    strings: [
+      "Welcome to Enrich-ity !",
+      "Let's make friends !",
+    ],
+    typeSpeed: 130,
+    backSpeed: 10,
+    showCursor: true,
+    cursorChar: '|'
+  });
+});
+</script>

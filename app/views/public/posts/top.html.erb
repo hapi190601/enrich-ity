@@ -63,19 +63,23 @@
             </div>
             <% end %>
           </div>
+
+          <div class="link-to-index">
+            <%= link_to "一覧を見る", posts_path, class:"btn btn-sm btn-info btn-bigger p-3" %>
+          </div>
         </div>
 
         <div class="genre-ranking">
           <h3 class="genre-ranking-title">ジャンルランキング</h3>
 
           <div class="flex-around">
-
           <% @genre_ranks.zip(@three_key, @three_index) do |genre_rank, posts_count, i| %>
             <div class="genre-ranking-box">
-              <span class="ranking-number"><i class="fas fa-crown"></i>第<%= i %>位</span>
+              <span class="ranking-number"><i class="fas fa-crown"></i> 第<%= i %>位</span>
               <br>
-              <span class="ranking-genre-name"><%= genre_rank.name %></span>
-              <span class="pl-3">投稿数：<%= posts_count %></span>
+              <br>
+              <p class="ranking-genre-name text-center"><%= genre_rank.name %></p>
+              <p class="text-center">投稿数：<%= posts_count %></p>
             </div>
           <% end %>
           </div>

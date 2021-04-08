@@ -18,19 +18,8 @@
 //= require jquery.jpostal
 //= require_tree .
 
-/*global $*/
-$(document).on('turbolinks:load', function() {
-  $('#user_postal_code').jpostal({
-    postcode : [
-      '#user_postal_code'
-    ],
-    address: {
-      "#user_prefecture_code": "%3",
-      "#user_municipality": "%4",
-    }
-  });
-});
 
+/*global $*/
 $(document).on('turbolinks:load', function() {
   $('#up-scroll').hide();
   $(window).scroll(function(){
@@ -40,9 +29,18 @@ $(document).on('turbolinks:load', function() {
     }else{
       $('#up-scroll').fadeOut();
     }
-});
+  });
 
-$(function() {
+  $('#user_postal_code').jpostal({
+    postcode : [
+      '#user_postal_code'
+    ],
+    address: {
+      "#user_prefecture_code": "%3",
+      "#user_municipality": "%4",
+    }
+  });
+
   $('.slide-images').slick({
     dots: true,
     autoplay: true,
@@ -51,69 +49,73 @@ $(function() {
     pauseOnHover: false,
     pauseOnDotsHover: false
   });
-});
 
-$('#up-scroll a').click(function() {
-  $('html, body').animate({
-      scrollTop:0
-  }, 800);
-  return false;
-});
+  $('#up-scroll a').click(function() {
+    $('html, body').animate({
+        scrollTop:0
+    }, 800);
+    return false;
+  });
 
-/*global ityped*/
-ityped.init(document.querySelector('#ityped'), {
-  strings: [
-    "Welcome to Enrich-ity !",
-    "Let's make friends !",
-  ],
-  typeSpeed: 130,
-  backSpeed: 10,
-  showCursor: true,
-  cursorChar: '|'
-})
+  var option = {
+    duration: 6000,
+    origin: 'left',
+    distance: '100px',
+    delay: 300,
+  };
 
-var option = {
-  duration: 6000,
-  origin: 'left',
-  distance: '100px',
-  delay: 300,
-};
+  var delaieroption = {
+    duration: 6000,
+    origin: 'left',
+    distance: '100px',
+    delay: 1000,
+  };
 
-var delaieroption = {
-  duration: 6000,
-  origin: 'left',
-  distance: '100px',
-  delay: 1000,
-};
+  var delaiestoption = {
+    duration: 6000,
+    origin: 'left',
+    distance: '100px',
+    delay: 1600,
+  };
 
-var delaiestoption = {
-  duration: 6000,
-  origin: 'left',
-  distance: '100px',
-  delay: 1600,
-};
+  var lastoption = {
+    duration: 6000,
+    origin: 'right',
+    distance: '200px',
+    delay: 1800,
+  };
 
-var lastoption = {
-  duration: 6000,
-  origin: 'left',
-  distance: '100px',
-  delay: 1800,
-};
+  /*global ScrollReveal*/
+  ScrollReveal().reveal('.left-message', option);
+  ScrollReveal().reveal('.right-message', delaieroption);
+  ScrollReveal().reveal('.animate',delaiestoption);
+  ScrollReveal().reveal('.link-box',lastoption);
 
-/*global ScrollReveal*/
-ScrollReveal().reveal('.left-message', option);
-ScrollReveal().reveal('.right-message', delaieroption);
-ScrollReveal().reveal('.animate',delaiestoption);
-ScrollReveal().reveal('.link-box',lastoption);
+  function readURL(input) {
+    if(input.files && input.files[0]){
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('#preview').attr('src', e.target.result);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  $("#post_image").change(function(){
+    console.log("hoge");
+    readURL(this);
+  });
 
-
-// // 機能していない(写真のレビュー機能)
-// $('#post_image').on('change', function (e) {
-//   var reader = new FileReader();
-//   reader.onload = function (e) {
-//       $("#preview").attr('src', e.target.result);
-//   }
-//   reader.readAsDataURL(e.target.files[0]);
-// });
-
+  function readURL(input) {
+    if(input.files && input.files[0]){
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('#preview').attr('src', e.target.result);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  $("#user_image").change(function(){
+    console.log("hoge");
+    readURL(this);
+  });
 });

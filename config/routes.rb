@@ -27,8 +27,6 @@ Rails.application.routes.draw do
     # 新規投稿失敗時にURL(posts/new)にrenderさせるために無理やり再定義
     post 'posts/new', to: 'posts#create'
 
-    resources :genres, only: [:index]
-
     get 'inquiries/get' => 'inquiries#get'
     post 'inquiries/create' => 'inquiries#create'
     get 'inquiries/thank' => 'inquiries#thank'
