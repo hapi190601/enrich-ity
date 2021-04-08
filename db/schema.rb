@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_043505) do
+ActiveRecord::Schema.define(version: 2021_04_08_025436) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_04_06_043505) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_genres_on_name"
   end
 
   create_table "inquiries", force: :cascade do |t|
@@ -78,11 +79,12 @@ ActiveRecord::Schema.define(version: 2021_04_06_043505) do
     t.text "content", null: false
     t.string "age", null: false
     t.integer "gender", null: false
-    t.string "municipality", null: false
     t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "prefecture_code"
+    t.string "desired_area"
+    t.index ["desired_area"], name: "index_posts_on_desired_area"
+    t.index ["title"], name: "index_posts_on_title"
   end
 
   create_table "rooms", force: :cascade do |t|

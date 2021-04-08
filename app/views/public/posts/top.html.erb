@@ -21,7 +21,7 @@
               <br>
               <span>■タイトル<br>　<%= pos.title %></span>
               <br>
-              <span>■エリア<br>　<%= pos.prefecture_name %><%= pos.municipality %> 近辺</span>
+              <span>■エリア<br>　<%= pos.user.prefecture_name %><%= pos.user.municipality %> 近辺</span>
               <br>
               <span>■本文<br><%= safe_join(pos.content.truncate(30).split("\n"),tag(:br)) %></span>
               <br>

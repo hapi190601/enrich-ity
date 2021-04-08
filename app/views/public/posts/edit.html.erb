@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <%= form_with model: @post, url: post_path, local: true do |f| %>
+      <%= form_with model: @post, url: post_path, local: true do |f| %>
 
         <div class="field">
           <%= f.label :"【写真】", class:"col-sm-4" %>
@@ -37,23 +37,50 @@
           <%= f.collection_select :genre_id, Genre.all, :id, :name, prompt: "-- 選択してください --", class:"input-longer-form p-2 text-left" %></td>
         </div>
 
-        <div class="field">
-          <%= f.label :"【希望の都道府県】", class:"col-sm-4" %>
-          <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, { include_blank: true, selected: current_user.prefecture_code }, class:" p-2" %>
-        </div>
+        <div class="area-of-hope">
+          <label class="col-sm-4">
+            <span>【希望のエリア】</span>
+          </label>
 
-        <div class="field">
-          <%= f.label :"【希望の市区町村】", class:"col-sm-4" %>
-          <%= f.text_field :municipality, class:"input-longer-form p-2 text-left", value:current_user.municipality, autocomplete: "municipality" %>
-          <br>
-          <span>※市区町村必須　例：×新宿 ○新宿区</span>
-        </div>
+          <div class="col-sm-8">
+            <section class="choose-area-of-hope">
+              <label>
+              <%= f.radio_button :option, 0, class:"radio-button mr-3" %>
+              ご自身の住所
+              </label>
+              <br>
+              <span>
+                <%= current_user.prefecture_name %>
+                <%= current_user.municipality %>
+              </span>
+            </section>
 
-        <div class="actions">
-          <%= f.submit "　編集する　", class:"btn btn-sm btn-success bigger-btn p-3" %>
-        </div>
-        <% end %>
+            <section class="choose-area-of-hope">
+              <label>
+              <%= f.radio_button :option, 1, class:"radio-button mr-3" %>
+              ご自身の最寄駅
+              </label>
+              <br>
+              <span>
+                <%= current_user.nearest_station %>
+              </span>
+            </section>
+
+            <section class="choose-area-of-hope">
+              <label>
+              <%= f.radio_button :option, 2, class:"radio-button mr-3" %>
+              新しく入力する
+              </label>
+              <br>
+              <%= f.text_field :desired_area, value: "", class:"col-sm-8 text-left ml-4" %>
+            </section>
+          </div>
       </div>
+
+      <div class="actions">
+        <%= f.submit "編集する", class:"btn btn-sm btn-success bigger-btn p-3" %>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>

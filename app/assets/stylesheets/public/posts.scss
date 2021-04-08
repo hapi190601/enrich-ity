@@ -65,3 +65,16 @@
   border-radius: 10px;
 }
 
+.area-of-hope {
+  display: flex;
+}
+
+.choose-area-of-hope {
+  margin: 15px 0;
+}
+
+.choose-area-of-hope > span {
+  display: inline-block;
+  padding-left: 30px;
+  font-size: 1.1rem;
+}

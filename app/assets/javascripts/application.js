@@ -32,19 +32,6 @@ $(document).on('turbolinks:load', function() {
 });
 
 $(document).on('turbolinks:load', function() {
-  $('#post_postal_code').jpostal({
-    postcode : [
-      '#post_postal_code'
-    ],
-    address: {
-      "#post_prefecture_code": "%3",
-      "#post_municipality": "%4",
-    }
-  });
-});
-
-
-$(document).on('turbolinks:load', function() {
   $('#up-scroll').hide();
   $(window).scroll(function(){
     $('#pos').text($(this).scrollTop());
@@ -118,5 +105,15 @@ ScrollReveal().reveal('.left-message', option);
 ScrollReveal().reveal('.right-message', delaieroption);
 ScrollReveal().reveal('.animate',delaiestoption);
 ScrollReveal().reveal('.link-box',lastoption);
+
+
+// // 機能していない(写真のレビュー機能)
+// $('#post_image').on('change', function (e) {
+//   var reader = new FileReader();
+//   reader.onload = function (e) {
+//       $("#preview").attr('src', e.target.result);
+//   }
+//   reader.readAsDataURL(e.target.files[0]);
+// });
 
 });

@@ -8,17 +8,19 @@
         <% @posts.each do |pos| %>
         <div class="post-box flex-around">
           <div class="left-post posts-index-width">
-            <span>■タイトル</span><br>
+            <span>■タイトル</span>
+            <br>
             <%= pos.title %>
             <br>
             <br>
-            <span>■希望性別</span><br>
+            <span>■希望性別</span>
+            <br>
             <%= pos.gender %>
             <br>
             <br>
-            <span>■エリア</span><br>
-            <%= pos.prefecture_name %>
-            <%= pos.municipality %>
+            <span>■希望エリア</span>
+            <br>
+            <%= pos.desired_area %>
             <br>
             <br>
             <span>■本文</span><br>
