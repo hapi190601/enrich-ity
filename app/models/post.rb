@@ -18,5 +18,4 @@ class Post < ApplicationRecord
     posts = Post.where(updated_at: _monthly_from..._monthly_to)
     posts.destroy_all
   end
-  
 end

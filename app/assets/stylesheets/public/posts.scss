@@ -43,12 +43,11 @@
 }
 
 .main-messages {
-  width: 100%;
-  height: 200px;
-}
-
-.main-messages > p {
-  line-height: 200px  ;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  color: white;
+  letter-spacing: 3px;
 }
 
 .weekly_posts {
@@ -77,4 +76,48 @@
   display: inline-block;
   padding-left: 30px;
   font-size: 1.1rem;
+}
+
+.new-post {
+  width: 30%;
+  background-color: lavender;
+  border-radius: 10px;
+  margin: 0 20px;
+  transition: all 0.4s;
+}
+
+.new-post:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.new-post-top {
+  min-height: 375px;
+}
+
+.new-post > div > span {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.new-posts-area {
+  margin: 75px 0;
+}
+
+
+.ranking-number {
+  font-size: 1.5rem;
+}
+
+.ranking-genre-name {
+  margin-left: 20px;
+}
+
+.genre-ranking-box {
+  background-color: lavender;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.genre-ranking {
+  padding-bottom: 75px;
 }

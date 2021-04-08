@@ -2,10 +2,19 @@ class Public::PostsController < ApplicationController
   before_action :calculate_current_user_age
 
   def top
+    @posts_all = Post.all
+
     from  = (Time.current - 6.day).at_beginning_of_day
     to    = Time.current.at_end_of_day
     @weekly_posts = Post.where(updated_at: from...to)
-    @posts_all = Post.all
+
+    # ランキング機能+ジャンル毎の投稿数
+    # もっと良い書き方考える
+    @genre_ranks = Genre.find(Post.group(:genre_id).order('count(genre_id) desc').limit(3).pluck(:genre_id))
+
+    three_hash = Post.group(:genre_id).order('count(genre_id) desc').limit(3).count
+    @three_key = three_hash.values
+    @three_index = [1, 2, 3]
   end
 
   def new

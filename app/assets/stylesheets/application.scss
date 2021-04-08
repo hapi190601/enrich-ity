@@ -74,6 +74,12 @@ header {
   align-items: center;
 }
 
+.flex-around-top {
+  display: flex;
+  justify-content: space-around;
+  align-items: top;
+}
+
 .nav-item {
   margin: 10px;
 }
@@ -182,4 +188,8 @@ footer {
   border: 1px solid skyblue;
   background-color: skyblue;
   border-radius: 5px;
+}
+
+.position-relative {
+  position: relative;
 }

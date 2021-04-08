@@ -3,29 +3,63 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12 position-relative">
+        <div class="slide-images pt-3">
+          <div class="image-box">
+            <%= image_tag 'pc.jpg', class:"slide-image" %>
+          </div>
+
+          <div class="image-box">
+            <%= image_tag 'baseball.jpg', class:"slide-image" %>
+          </div>
+
+          <div class="image-box">
+            <%= image_tag 'gym.jpg', class:"slide-image" %>
+          </div>
+
+          <div class="image-box">
+            <%= image_tag 'live.jpg', class:"slide-image" %>
+          </div>
+
+          <div class="image-box">
+            <%= image_tag 'running.jpg', class:"slide-image" %>
+          </div>
+
+          <div class="image-box">
+            <%= image_tag 'party.jpg', class:"slide-image" %>
+          </div>
+
+          <div class="image-box">
+            <%= image_tag 'reading.jpg', class:"slide-image" %>
+          </div>
+        </div>
+
         <div class="main-messages text-center">
           <p>
             ここ１週間で
             <span class="weekly_posts"><%= @weekly_posts.count %></span>
-            件の投稿がありました
+            件の投稿がありました！
           </p>
         </div>
 
-        <div class="new-post">
+        <div class="new-posts-area">
           <h3 class="text-left new-post-title">新着投稿</h3>
-          <div class="flex-around">
+          <div class="flex-around-top">
             <% @posts_all.order("created_at desc").first(3).each do |pos| %>
             <div class="new-post">
-              <span>■投稿者<br>　<%= link_to pos.user.nickname, user_path(pos.user.id), class:"text-dark" %></span>
-              <br>
-              <span>■タイトル<br>　<%= pos.title %></span>
-              <br>
-              <span>■エリア<br>　<%= pos.user.prefecture_name %><%= pos.user.municipality %> 近辺</span>
-              <br>
-              <span>■本文<br><%= safe_join(pos.content.truncate(30).split("\n"),tag(:br)) %></span>
-              <br>
-              <span><%= link_to "詳細へ", post_path(pos.id), class:"btn btn-sm btn-light" %></span>
+              <div class="new-post-top">
+                <span>■投稿者<br>　<%= link_to pos.user.nickname, user_path(pos.user.id), class:"text-dark" %></span>
+                <br>
+                <span>■タイトル<br>　<%= pos.title %></span>
+                <br>
+                <span>■エリア<br>　<%= pos.user.prefecture_name %><%= pos.user.municipality %> 近辺</span>
+                <br>
+                <span>■本文<br><%= safe_join(pos.content.truncate(30).split("\n"),tag(:br)) %></span>
+              </div>
+              <div class="new-post-bottom text-center">
+                <span><%= attachment_image_tag pos, :image, :fill ,90 ,70, fallback: "no-post-image.png", size:"90x70" %></span>
+                <span><%= link_to "詳細へ", post_path(pos.id), class:"btn btn-sm btn-light" %></span>
+              </div>
             </div>
             <% end %>
           </div>
@@ -34,6 +68,17 @@
         <div class="genre-ranking">
           <h3 class="genre-ranking-title">ジャンルランキング</h3>
 
+          <div class="flex-around">
+
+          <% @genre_ranks.zip(@three_key, @three_index) do |genre_rank, posts_count, i| %>
+            <div class="genre-ranking-box">
+              <span class="ranking-number"><i class="fas fa-crown"></i>第<%= i %>位</span>
+              <br>
+              <span class="ranking-genre-name"><%= genre_rank.name %></span>
+              <span class="pl-3">投稿数：<%= posts_count %></span>
+            </div>
+          <% end %>
+          </div>
         </div>
       </div>
     </div>

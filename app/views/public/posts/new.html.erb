@@ -25,15 +25,15 @@
         </div>
 
         <div class="field">
+          <%= f.label :"【ジャンル】", class:"col-sm-4" %>
+          <%= f.collection_select :genre_id, Genre.all, :id, :name, prompt: "-- 選択してください --", class:"input-longer-form p-2 text-left" %></td>
+        </div>
+
+        <div class="field">
           <%= f.label :"【希望の性別】", class:"col-sm-4" %>
           <label>男性 <%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"m-3" %></label>
           <label>女性 <%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"m-3" %></label>
           <label>どちらでも <%= f.radio_button :gender, :"どちらでも", checked: true, style:"transform:scale(2.0);", class:"m-3" %></label>
-        </div>
-
-        <div class="field">
-          <%= f.label :"【ジャンル】", class:"col-sm-4" %>
-          <%= f.collection_select :genre_id, Genre.all, :id, :name, prompt: "-- 選択してください --", class:"input-longer-form p-2 text-left" %></td>
         </div>
 
         <div class="area-of-hope field">
