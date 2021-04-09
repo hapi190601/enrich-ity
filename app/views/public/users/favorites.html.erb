@@ -1,0 +1,42 @@
+<div class="background-color">
+  <%= render "layouts/flash" %>
+  <h2 class="page-title">
+    お気に入り一覧
+    <span style="font-size: 1.2rem;">　( <%= @favorites_index.count %> 件)</span>
+  </h2>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="favorites-index col-sm-12">
+        <table class="table favorites-post">
+          <thead class="text-center thead-dark">
+            <tr>
+              <th width="21%">タイトル</th>
+              <th width="14%">投稿者</th>
+              <th width="12%">希望</th>
+              <th width="35%">本文</th>
+              <th width="28%"></th>
+            </tr>
+          </thead>
+
+          <% @favorites_index.each do |pos| %>
+          <tbody>
+            <tr>
+              <td class="vertical-middle"><%= pos.title %></td>
+              <td class="text-center vertical-middle"><%= link_to pos.user.nickname, user_path(pos.user.id), class:"text-dark" %></td>
+              <td class="text-center vertical-middle"><%= pos.gender %><br><br><%= pos.desired_area %></td>
+              <td class="vertical-middle"><%= safe_join(pos.content.truncate(50).split("\n"),tag(:br)) %></td>
+              <td class="vertical-middle">
+                <%= link_to "詳細へ", post_path(pos.id), class:"btn btn-light bigger-btn"%>
+                <br><br>
+                <%= link_to "お気に入り解除", post_favorites_path(pos.id), method: :delete, class:"btn btn-sm btn-light bigger-btn"%>
+              </td>
+            </tr>
+          </tbody>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,11 +14,11 @@ Rails.application.routes.draw do
     get 'homes/about' => 'homes#about'
     get 'homes/explain' => 'homes#explain'
 
-    # ↓間違っているかも。お気に入りした投稿一覧ルーティング
-    get 'users/favorite' => 'users#favorite'
     get 'users/withdraw' => 'users#withdraw'
     patch 'users/out' => 'users#out'
-    resources :users, only: [:show,:update,:edit]
+    resources :users, only: [:show,:update,:edit] do
+      get :favorites, on: :collection
+    end
 
     get 'posts/top' => 'posts#top'
     resources :posts do

@@ -90,6 +90,7 @@ $(document).on('turbolinks:load', function() {
   ScrollReveal().reveal('.right-message', delaieroption);
   ScrollReveal().reveal('.animate',delaiestoption);
   ScrollReveal().reveal('.link-box',lastoption);
+  ScrollReveal().reveal('.three-btn',option);
 
   function readURL(input) {
     if(input.files && input.files[0]){

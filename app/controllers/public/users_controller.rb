@@ -1,8 +1,12 @@
 class Public::UsersController < ApplicationController
-  before_action :calculate_user_age
+  before_action :calculate_user_age, except: :favorites
 
   def show
     @user = User.find(params[:id])
+
+    @posts = @user.posts
+    favorites = Favorite.where(user_id: current_user.id).pluck(:post_id)
+    @favorites_index = Post.find(favorites)
   end
 
   def edit
@@ -31,7 +35,10 @@ class Public::UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def favorite
+  def favorites
+    @posts = current_user.posts
+    favorites = Favorite.where(user_id: current_user.id).pluck(:post_id)
+    @favorites_index = Post.find(favorites)
   end
 
   private
