@@ -62,6 +62,12 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+
+    @deadline =@post.updated_at.months_since(1)
+
+    dead_line =@post.updated_at.months_since(1).to_date
+    today = Date.today
+    @remain = (dead_line - today).to_i
   end
 
   def edit
@@ -108,4 +114,9 @@ class Public::PostsController < ApplicationController
     birthday = current_user.birthday.strftime("%Y%m%d").to_i
     @age = (today - birthday) / 10000
   end
+
+    # def calculate_days_per_month
+    #   month_days = [31,28,31,30,31,30,31,31,30,31,30,31]
+    #   return month_days[month - 1]
+    # end
 end

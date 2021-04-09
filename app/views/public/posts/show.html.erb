@@ -5,6 +5,11 @@
     <div class="row post-info-area">
       <div class="col-md-8">
         <div class="post-show-element">
+          <label class="col-md-4">掲載期間</label>
+          <%= @deadline.strftime("%Y年%m月%d日") %>まで　(残り<%= @remain %>日)
+        </div>
+
+        <div class="post-show-element">
           <label class="col-md-4">投稿者</label>
           <%= link_to @post.user.nickname, user_path(@post.user_id), class:"text-dark"%>
         </div>
