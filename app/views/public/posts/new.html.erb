@@ -7,14 +7,13 @@
         <%= form_with model: @post, url: posts_new_path, local: true do |f| %>
 
         <div class="field">
+          <%= attachment_image_tag @post, :image, fallback: "no-post-image.png", id: "preview", style: "height: 150px; width:200px;" %>
+          <br>
+          <br>
           <%= f.label :"【写真】", class:"col-sm-4" %>
           <br>
           <%= f.attachment_field :image, class:"choose-image" %>
-          <br>
-          <br>
-          <img id="preview" style="width:40%;">
         </div>
-
 
         <div class="field">
           <%= f.label :"【タイトル】" , class:"col-sm-4" %>

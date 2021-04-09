@@ -7,4 +7,5 @@ class Public::HomesController < ApplicationController
 
   def explain
   end
+
 end

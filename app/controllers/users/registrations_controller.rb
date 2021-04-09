@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :check_guest, only: [:destroy, :update]
+
+  def check_guest
+    if current_user.email == "guest@guest.com"
+      redirect_to posts_top_path
+      flash[:notice] = "ゲストユーザーは削除はできません。"
+    end
+  end
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 

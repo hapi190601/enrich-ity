@@ -8,28 +8,28 @@
         <%= form_with model: @user, url: user_path, local: true do |f| %>
 
         <div class="field">
-          <%= f.label :"【アイコン】", class:"col-sm-5" %>
-          <%= f.attachment_field :image, class:"choose-image", class:"col-sm-6 text-center" %>
-          <br>
-          <br>
           <span class="inline col-sm-5"></span>
-          <img id="preview">
+          <%= attachment_image_tag @user, :image, fallback: "no-image.jpeg", id: "preview", style: "height: 150px; width:200px;" %>
+          <br>
+          <br>
+          <%= f.label :"【アイコン】", class:"col-sm-5" %>
+          <%= f.attachment_field :image, class:"choose-image", class:"col-sm-6 text-center", style: " padding-left: 0;" %>
         </div>
 
         <div class="field">
           <%= f.label :"【名前】", class:"col-sm-5" %>
-          <%= f.text_field :name, class:"col-sm-6 text-center input-longer-form p-2", autofocus: true %><br>
+          <%= f.text_field :name, class:"col-sm-6 text-center input-longest-form p-2", autofocus: true %><br>
           <span class="inline col-sm-4">※苗字と名前の間にスペース不要</span>
         </div>
 
         <div class="field">
           <%= f.label :"【フリガナ】", class:"col-sm-5" %>
-          <%= f.text_field :name_kana, class:"col-sm-6 text-center input-longer-form p-2" %>
+          <%= f.text_field :name_kana, class:"col-sm-6 text-center input-longest-form p-2" %>
         </div>
 
         <div class="field">
           <%= f.label :"【ニックネーム】", class:"col-sm-5" %>
-          <%= f.text_field :nickname, class:"col-sm-6  text-center input-longer-form p-2" %>
+          <%= f.text_field :nickname, class:"col-sm-6  text-center input-longest-form p-2" %>
         </div>
 
         <div class="field">

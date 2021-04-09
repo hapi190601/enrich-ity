@@ -130,6 +130,37 @@ $(document).on('turbolinks:load', function() {
   });
   });
 
+  var Menu = {
 
+    el: {
+      ham: $('.navbar-toggler'),
+      menuTop: $('.top'),
+      menuMiddle: $('.middle'),
+      menuBottom: $('.bottom')
+    },
+
+    init: function() {
+      Menu.bindUIactions();
+    },
+
+    bindUIactions: function() {
+      Menu.el.ham
+          .on(
+            'click',
+          function(event) {
+          Menu.activateMenu(event);
+          event.preventDefault();
+        }
+      );
+    },
+
+    activateMenu: function() {
+      Menu.el.menuTop.toggleClass('top-click');
+      Menu.el.menuMiddle.toggleClass('middle-click');
+      Menu.el.menuBottom.toggleClass('bottom-click');
+    }
+  };
+
+  Menu.init();
 
 });

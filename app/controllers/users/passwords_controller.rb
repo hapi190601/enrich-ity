@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
 class Users::PasswordsController < Devise::PasswordsController
+  before_action :check_guest, only: [:create]
+
+  def check_guest
+    if params[:user][:email].downcase == "guest@guest.com"
+      redirect_to root_path
+      flash[:notice] = "ゲストユーザーのパスワード再発行はできません。"
+    end
+  end
   # GET /resource/password/new
   # def new
   #   super

@@ -8,6 +8,9 @@
       <%= form_with model: @post, url: post_path, local: true do |f| %>
 
         <div class="field">
+          <%= attachment_image_tag @post, :image, fallback: "no-post-image.png", id: "preview", style: "height: 150px; width:200px;" %>
+          <br>
+          <br>
           <%= f.label :"【写真】", class:"col-sm-4" %>
           <br>
           <%= f.attachment_field :image, class:"choose-image" %>
@@ -68,7 +71,7 @@
 
             <section class="choose-area-of-hope">
               <label>
-              <%= f.radio_button :option, 2, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
+              <%= f.radio_button :option, 2, checked: true, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
               新しく入力する
               </label>
               <br>

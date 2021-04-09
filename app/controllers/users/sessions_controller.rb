@@ -3,6 +3,13 @@
 class Users::SessionsController < Devise::SessionsController
   before_action :reject_user, only: [:create]
 
+  def guest_sign_in
+    user = User.guest
+    sign_in user
+    redirect_to posts_top_path
+    flash[:notice] = "ゲストユーザーとしてログインしました！"
+  end
+
   protected
 
   def reject_user

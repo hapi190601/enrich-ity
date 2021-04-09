@@ -44,4 +44,21 @@ class User < ApplicationRecord
   def active_for_authentication?
     super && (self.is_deleted == false)
   end
+
+  def self.guest
+    find_or_create_by(email: "guest@guest.com") do |user|
+      user.password = SecureRandom.urlsafe_base64
+
+      user.name = "ゲストユーザー(閲覧用)"
+      user.name_kana = "ゲストユーザー(エツランヨウ)"
+      user.nickname = "ゲスト"
+      user.gender = 1
+      user.birthday = "2000-1-2"
+      user.postal_code = "1690075"
+      user.prefecture_code = 13
+      user.municipality = "新宿区"
+      user.nearest_station = "新宿"
+      user.is_deleted = false
+    end
+  end
 end

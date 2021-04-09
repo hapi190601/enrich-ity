@@ -81,13 +81,88 @@ header {
   align-items: top;
 }
 
-.nav-item {
-  margin: 10px;
-}
-
 .hamburger-design {
   background: #add8e6;
 }
+
+#navbarNavDropdown {
+  background-color: rgb(240,248,255);
+}
+
+#full-size {
+  padding: 0;
+  height: inherit;
+}
+
+.navbar-left {
+  margin-left: 15px!important;
+}
+
+.navbar-toggler {
+  margin-right: 40px!important;
+}
+
+#slide-btn {
+  width: 100%;
+  display: inline-block;
+	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, lavender 50%);
+	background-position: 0 0;
+	background-size: 200% auto;
+	transition: all .3s ease 0s;
+	text-decoration: none;
+}
+
+#slide-btn:hover {
+  cursor: pointer;
+	background-position: -100% 0;
+}
+
+.navbar-toggler {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  width: 40px;
+  height: 40px;
+}
+
+.common-horizontal-line {
+  backface-visibility: hidden;
+  position: absolute;
+  left: 0;
+  border-top: 7px solid skyblue;
+  width: 100%;
+  transition: 0.55s;
+}
+
+.top {
+  top: 0;
+}
+.middle {
+  top: 18px;
+}
+.bottom {
+  top: 36px;
+}
+
+.top-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(50deg);
+  transition: 0.55s 0.5s;
+}
+
+.middle-click {
+  opacity: 0;
+}
+
+.bottom-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(-410deg);
+  transition: 0.55s 0.5s;
+}
+
 
 // フッター
 footer {
@@ -98,6 +173,7 @@ footer {
 
 .footer-box {
   height: 100px;
+  background-color: rgb(240,248,255);
 }
 
 .footer-message > p {
@@ -133,7 +209,7 @@ footer {
 
 // フラッシュメッセージ
 .notice {
-  padding: 75px 0 10px;
+  padding: 75px 0 40px;
   text-align: center;
   color: #D3E173;
   font-size: 1.3rem;

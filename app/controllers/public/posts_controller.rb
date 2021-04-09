@@ -82,14 +82,24 @@ class Public::PostsController < ApplicationController
     elsif params[:post][:option] == "1"
       @post.desired_area = "#{current_user.nearest_station}駅"
     elsif params[:post][:option] == "2"
-      if  params[:post][:desired_area].empty?
+      if params[:post][:desired_area].empty?
         flash[:notice] = "希望エリア未入力です！"
         render :edit and return
       end
       @post.desired_area = params[:post][:desired_area]
     end
 
-    if @post.save
+    # desired_areaをupdateするために無理やり書いてる。もっと良い書き方調べる
+    if @post.update(
+      genre_id: params[:post][:genre_id],
+      title: params[:post][:title],
+      content: params[:post][:content],
+      age: @post.age,
+      gender: params[:post][:gender],
+      image: params[:post][:image],
+      desired_area: @post.desired_area,
+      )
+
       flash[:notice] = "投稿内容を編集しました！"
       redirect_to post_path(@post.id)
     else
@@ -114,9 +124,4 @@ class Public::PostsController < ApplicationController
     birthday = current_user.birthday.strftime("%Y%m%d").to_i
     @age = (today - birthday) / 10000
   end
-
-    # def calculate_days_per_month
-    #   month_days = [31,28,31,30,31,30,31,31,30,31,30,31]
-    #   return month_days[month - 1]
-    # end
 end

@@ -1,5 +1,6 @@
 class Public::UsersController < ApplicationController
-  before_action :calculate_user_age, except: :favorites
+  before_action :calculate_user_age, except: [:favorites, :withdraw]
+  before_action :check_guest, only: :withdraw
 
   def show
     @user = User.find(params[:id])
@@ -52,5 +53,12 @@ class Public::UsersController < ApplicationController
     today = Date.today.strftime("%Y%m%d").to_i
     birthday = user.birthday.strftime("%Y%m%d").to_i
     @age = (today - birthday) / 10000
+  end
+
+  def check_guest
+    if current_user.email == "guest@guest.com"
+      redirect_to posts_top_path
+      flash[:notice] = "ゲストユーザーは削除できません。"
+    end
   end
 end
