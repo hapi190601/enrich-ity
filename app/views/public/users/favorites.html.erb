@@ -10,7 +10,7 @@
     <div class="row">
       <div class="favorites-index col-sm-12">
         <table class="table favorites-post">
-          <thead class="text-center thead-dark">
+          <thead class="text-center favorites-thead">
             <tr>
               <th width="21%">タイトル</th>
               <th width="14%">投稿者</th>
@@ -28,9 +28,9 @@
               <td class="text-center vertical-middle"><%= pos.gender %><br><br><%= pos.desired_area %></td>
               <td class="vertical-middle"><%= safe_join(pos.content.truncate(50).split("\n"),tag(:br)) %></td>
               <td class="vertical-middle">
-                <%= link_to "詳細へ", post_path(pos.id), class:"btn btn-light bigger-btn"%>
+                <%= link_to "詳細へ", post_path(pos.id), class:"btn btn-info bigger-btn"%>
                 <br><br>
-                <%= link_to "お気に入り解除", post_favorites_path(pos.id), method: :delete, class:"btn btn-sm btn-light bigger-btn"%>
+                <%= link_to "お気に入り解除", post_favorites_path(pos.id), method: :delete, class:"btn btn-sm btn-danger bigger-btn"%>
               </td>
             </tr>
           </tbody>

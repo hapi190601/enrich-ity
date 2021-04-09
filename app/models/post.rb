@@ -9,6 +9,8 @@ class Post < ApplicationRecord
   enum gender: { "男性":1, "女性":2, "どちらでも":3 }
 
   attachment :image
+  
+  is_impressionable
 
   # バッチ処理
   _monthly_from  = Time.current.at_beginning_of_day

@@ -6,11 +6,11 @@ Rails.application.routes.draw do
     passwords: "users/passwords",
     sessions: "users/sessions",
   }
-  
+
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
-    
+
 
   scope module: :public do
     root to: "homes#top"
@@ -18,7 +18,6 @@ Rails.application.routes.draw do
     get 'homes/top' => 'homes#top'
     get 'homes/about' => 'homes#about'
     get 'homes/explain' => 'homes#explain'
-    post '/homes/guest_sign_in' => 'homes#guest_sign_in'
 
     get 'users/withdraw' => 'users#withdraw'
     patch 'users/out' => 'users#out'

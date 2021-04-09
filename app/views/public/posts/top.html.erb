@@ -58,7 +58,7 @@
               </div>
               <div class="new-post-bottom text-center">
                 <span><%= attachment_image_tag pos, :image, :fill ,90 ,70, fallback: "no-post-image.png", size:"90x70" %></span>
-                <span><%= link_to "詳細へ", post_path(pos.id), class:"btn btn-sm btn-light" %></span>
+                <span><%= link_to "詳細へ", post_path(pos.id), class:"btn btn-sm btn-info" %></span>
               </div>
             </div>
             <% end %>

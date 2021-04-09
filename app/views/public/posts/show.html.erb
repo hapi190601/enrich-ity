@@ -1,9 +1,23 @@
 <div class="background-color">
   <%= render "layouts/flash" %>
   <h2 class="page-title">投稿詳細</h2>
+
+  <div class="match-messages-box">
+    <% if @post.desired_area == current_user.nearest_station %>
+      <p class="match-messages">希望のエリアが<%= current_user.nickname %>さんの最寄駅と一致しています！</p>
+    <% elsif @post.desired_area == (current_user.prefecture_name + current_user.municipality) %>
+      <p>希望のエリアが<%= current_user.nickname %>さんのお住まいと一致しています！</p>
+    <% end %>
+
+    <% if @post.gender = current_user.gender %>
+      <p class="match-messages">希望の性別が<%= current_user.nickname %>さんの性別と一致しています！</p>
+    <% end %>
+  </div>
+
   <div class="container">
     <div class="row post-info-area">
       <div class="col-md-8">
+
         <div class="post-show-element">
           <label class="col-md-4">掲載期間</label>
           <%= @deadline.strftime("%Y年%m月%d日") %>まで　(残り<%= @remain %>日)
@@ -33,6 +47,11 @@
           <label class="col-md-4">希望のエリア</label>
           <%= @post.desired_area %>
           <span>近辺</span>
+        </div>
+
+        <div class="post-show-element">
+          <label class="col-md-4">閲覧数</label>
+          <%=  @post.impressionist_count %>　views
         </div>
 
         <div class="post-show-element">

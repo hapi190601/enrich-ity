@@ -1,6 +1,8 @@
 class Public::PostsController < ApplicationController
   before_action :calculate_current_user_age
 
+  impressionist :actions=> [:show]
+
   def top
     @posts_all = Post.all
 
@@ -68,6 +70,8 @@ class Public::PostsController < ApplicationController
     dead_line =@post.updated_at.months_since(1).to_date
     today = Date.today
     @remain = (dead_line - today).to_i
+
+    impressionist(@post, nil)
   end
 
   def edit
