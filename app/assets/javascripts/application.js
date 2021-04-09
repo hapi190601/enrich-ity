@@ -119,4 +119,17 @@ $(document).on('turbolinks:load', function() {
     console.log("hoge");
     readURL(this);
   });
+
+  $(document).ready(function() {
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 50) {
+      $('header').css('opacity', 0.7);
+    } else {
+      $('header').css('opacity', 1);
+    }
+  });
+  });
+
+
+
 });
