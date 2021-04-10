@@ -1,2 +1,106 @@
-<h1>Public::Searches#index</h1>
-<p>Find me in app/views/public/searches/index.html.erb</p>
+<div class="background-color">
+  <%= render "layouts/flash" %>
+  <h2 class="page-title">検索結果：<%= @results_all.count %>件</h2>
+
+  <div class="container">
+    <div class"row">
+      <% if @results.present? %>
+      <div class='posts-lists col-sm-12'>
+        <% @results.each do |pos| %>
+        <div class="post-box flex-around">
+          <div class="left-post posts-index-width">
+            <span>■タイトル</span>
+            <br>
+            <%= pos.title %>
+            <br>
+            <br>
+            <span>■希望性別</span>
+            <br>
+            <%= pos.gender %>
+            <br>
+            <br>
+            <span>■希望エリア</span>
+            <br>
+            <%= pos.desired_area %>
+            <br>
+            <br>
+            <span>■本文</span><br>
+            <%= safe_join(pos.content.truncate(75).split("\n"),tag(:br)) %>
+          </div>
+
+          <div class="right-post text-center posts-index-width" width="50%">
+            <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size pt-3 mt-3" %>
+            <br>
+            <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm btn-light bigger-btn mb-3" %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% else %>
+        <div class="no-hit-message">
+          <p>一致する投稿はありませんでした</p>
+          <p>検索結果を変えてみましょう！</p>
+        </div>
+
+        <div class="search-form">
+        <%= search_form_for @p, url: searches_index_path do |f| %>
+          <div class="field search-fields first-search-field">
+            <%= f.label :"【キーワード】" %>
+            <br>
+            <%= f.text_field :title_or_content_cont, placeholder: "キーワードを入力してください", class: "search-field focus-green" %>
+            <br>
+          </div>
+
+          <div class="field search-fields">
+            <%= f.label :"【ジャンル】" %>
+            <br>
+            <%= f.collection_select :genre_id_eq, Genre.where.not(id: 0), :id, :name, {prompt: "指定なし"}, class: " col-sm-7 search-select focus-green" %>
+          </div>
+
+          <div class="field search-fields">
+            <%= f.label :"【性別】" %>
+            <br>
+            <%= f.select :gender_eq, Post.genders.keys.to_a, {prompt: "指定なし"},class: " col-sm-3 search-select focus-green" %>
+          </div>
+
+          <div class="field search-fields">
+            <%= f.label :"【年齢】" %>
+            <br>
+            <%= f.select :age_gteq, (15..75).to_a, {prompt: "指定なし"}, class:"col-sm-3 search-select focus-green" %>
+            <strong>　　〜　　</strong>
+            <%= f.select :age_lteq, (15..75).to_a, {prompt: "指定なし"}, class:"col-sm-3 search-select focus-green" %>
+            まで
+          </div>
+
+          <div class="field search-fields">
+            <%= f.label :"【エリア】" %>
+            <span class="text-dark">※指定するとヒット件数が大幅に減る可能性があります</span>
+            <br>
+            <label>
+              <%= f.radio_button :desired_area_cont, "", checkd:true, style:"transform:scale(1.5);", class:"m-3" %>
+              指定しない
+            </label>
+            <br>
+            <label><%= f.radio_button :desired_area_cont, (current_user.prefecture_name + current_user.municipality), style:"transform:scale(1.5);", class:"m-3" %>
+              お住まいのエリア　<%= current_user.prefecture_name + current_user.municipality %>
+            </label>
+            <br>
+            <label>
+              <%= f.radio_button :desired_area_cont, current_user.nearest_station, style:"transform:scale(1.5);", class:"m-3" %>
+              お住まいの最寄駅　<%= current_user.nearest_station %>駅
+            </label>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "　検索する　", class:"btn btn-sm biggger-btn btn-primary p-3"%>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="paginate">
+    <%= paginate @results %>
+  </div>
+</div>

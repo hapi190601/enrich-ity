@@ -3,14 +3,18 @@
   <h2 class="page-title">投稿詳細</h2>
 
   <div class="match-messages-box">
-    <% if @post.desired_area == current_user.nearest_station %>
-      <p class="match-messages">希望のエリアが<%= current_user.nickname %>さんの最寄駅と一致しています！</p>
-    <% elsif @post.desired_area == (current_user.prefecture_name + current_user.municipality) %>
-      <p>希望のエリアが<%= current_user.nickname %>さんのお住まいと一致しています！</p>
-    <% end %>
+    <% if @post.user_id == current_user.id %>
+      <p class="text-center">※これは<%= current_user.nickname %>さん自身の投稿です</p>
+    <% else %>
+      <% if @post.desired_area == current_user.nearest_station %>
+        <p class="match-messages">希望のエリアが<%= current_user.nickname %>さんの最寄駅と一致しています！</p>
+      <% elsif @post.desired_area == (current_user.prefecture_name + current_user.municipality) %>
+        <p class="match-messages">希望のエリアが<%= current_user.nickname %>さんのお住まいと一致しています！</p>
+      <% end %>
 
-    <% if @post.gender = current_user.gender %>
-      <p class="match-messages">希望の性別が<%= current_user.nickname %>さんの性別と一致しています！</p>
+      <% if @post.gender = current_user.gender %>
+        <p class="match-messages">希望の性別が<%= current_user.nickname %>さんの性別と一致しています！</p>
+      <% end %>
     <% end %>
   </div>
 

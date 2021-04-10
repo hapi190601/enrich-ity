@@ -57,6 +57,13 @@ $(document).on('turbolinks:load', function() {
     return false;
   });
 
+  var lateroption = {
+    duration: 3000,
+    origin: 'right',
+    distance: '100px',
+    delay: 100,
+  };
+
   var option = {
     duration: 6000,
     origin: 'left',
@@ -91,6 +98,7 @@ $(document).on('turbolinks:load', function() {
   ScrollReveal().reveal('.animate',delaiestoption);
   ScrollReveal().reveal('.link-box',lastoption);
   ScrollReveal().reveal('.three-btn',option);
+  ScrollReveal().reveal('.search-form',lateroption);
 
   function readURL(input) {
     if(input.files && input.files[0]){

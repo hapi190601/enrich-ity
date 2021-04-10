@@ -42,6 +42,7 @@ input {
   background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);
   background: linear-gradient(to right, #5B86E5, #36D1DC);
   padding-top: 120px;
+  padding-bottom: 100px;
 }
 
 // ボタン
@@ -220,6 +221,11 @@ footer {
 }
 
 // 共通
+.focus-green:focus {
+  border: 3px solid green;
+  outline: 0;
+}
+
 .page-title {
   width: 70%;
   margin: 0 auto;

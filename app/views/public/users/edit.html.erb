@@ -18,18 +18,18 @@
 
         <div class="field">
           <%= f.label :"【名前】", class:"col-sm-5" %>
-          <%= f.text_field :name, class:"col-sm-6 text-center input-longest-form p-2", autofocus: true %><br>
+          <%= f.text_field :name, class:"col-sm-6 text-center input-longest-form p-2 focus-green", autofocus: true %><br>
           <span class="inline col-sm-4">※苗字と名前の間にスペース不要</span>
         </div>
 
         <div class="field">
           <%= f.label :"【フリガナ】", class:"col-sm-5" %>
-          <%= f.text_field :name_kana, class:"col-sm-6 text-center input-longest-form p-2" %>
+          <%= f.text_field :name_kana, class:"col-sm-6 text-center input-longest-form p-2 focus-green" %>
         </div>
 
         <div class="field">
           <%= f.label :"【ニックネーム】", class:"col-sm-5" %>
-          <%= f.text_field :nickname, class:"col-sm-6  text-center input-longest-form p-2" %>
+          <%= f.text_field :nickname, class:"col-sm-6  text-center input-longest-form p-2 focus-green" %>
         </div>
 
         <div class="field">
@@ -46,23 +46,23 @@
 
         <div class="field">
           <%= f.label :"【郵便番号】", class:"col-sm-5" %>
-          <%= f.text_field :postal_code, class:"col-sm-6 text-center input-longer-form p-2", autocomplete: "postcode" %><br>
+          <%= f.text_field :postal_code, class:"col-sm-6 text-center input-longer-form p-2 focus-green", autocomplete: "postcode" %><br>
           <span class="inline col-sm-4">※ハイフン不要</span>
         </div>
 
         <div class="field">
           <%= f.label :"【お住まいの都道府県】", class:"col-sm-5"  %>
-          <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, prompt:"---", class:" text-center col-sm-6 p-2", id:"user_prefecture_code" %>
+          <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {prompt:"---"}, class:" text-center input-longer-form p-2 focus-green", id:"user_prefecture_code" %>
         </div>
 
         <div class="field">
           <%= f.label :"【お住まいの市区町村】", class:"col-sm-5" %>
-          <%= f.text_field :municipality, class:"col-sm-6 text-center input-longer-form p-2", autocomplete: "municipality" %>
+          <%= f.text_field :municipality, class:"col-sm-6 text-center input-longer-form p-2 focus-green", autocomplete: "municipality" %>
         </div>
 
         <div class="field">
           <%= f.label :"【最寄駅】", class:"col-sm-5" %>
-          <%= f.text_field :nearest_station, class:"col-sm-6 text-center input-longer-form p-2", autocomplete: "nearest_station", width:"60%"  %><br>
+          <%= f.text_field :nearest_station, class:"col-sm-6 text-center input-longer-form p-2 focus-green", autocomplete: "nearest_station", width:"60%"  %><br>
           <span class="inline col-sm-4">※駅不要 例：×東京駅 ○東京</span>
         </div>
 
