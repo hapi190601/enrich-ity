@@ -2,6 +2,7 @@
   <%= render "layouts/flash" %>
   <h2 class="page-title">投稿詳細</h2>
 
+  <% if user_signed_in? %>
   <div class="match-messages-box">
     <% if @post.user_id == current_user.id %>
       <p class="text-center">※これは<%= current_user.nickname %>さん自身の投稿です</p>
@@ -17,6 +18,15 @@
       <% end %>
     <% end %>
   </div>
+  <% else %>
+  <div class="match-messages-box">
+    <p class="text-center">
+      未ログイン状態
+      <br>
+      ※ログインすると<%= @post.user.nickname %>さんとチャットができるようになります
+    </p>
+  </div>
+  <% end %>
 
   <div class="container">
     <div class="row post-info-area">
@@ -29,7 +39,7 @@
 
         <div class="post-show-element">
           <label class="col-md-4">投稿者</label>
-          <%= link_to @post.user.nickname, user_path(@post.user_id), class:"text-dark"%>
+          <%= @post.user.nickname %>
         </div>
 
         <div class="post-show-element">
@@ -76,6 +86,7 @@
       </div>
     </div>
 
+    <% if user_signed_in? %>
     <div class="link-box three-btn">
       <% if @post.user_id == current_user.id %>
         <div class="link">
@@ -103,5 +114,6 @@
         </div>
       <% end %>
     </div>
+    <% end %>
   </div>
 </div>

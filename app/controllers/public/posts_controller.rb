@@ -1,5 +1,5 @@
 class Public::PostsController < ApplicationController
-  before_action :calculate_current_user_age, only: [:top, :show]
+  # before_action :calculate_current_user_age, only: [:top, :show]
 
   impressionist :actions=> [:show]
 
@@ -120,7 +120,8 @@ class Public::PostsController < ApplicationController
   end
 
   def incremental_search
-    @posts = Post.where('title LIKE(?)', "%#{params[:title]}%")
+    posts = Post.where('title LIKE(?)', "%#{params[:keyword]}%")
+    @posts = posts.limit(5).order(updated_at: :desc)
 
     respond_to do |format|
       format.html
@@ -133,9 +134,9 @@ class Public::PostsController < ApplicationController
     params.require(:post).permit(:genre_id, :title, :content, :age, :gender, :image, :desired_area)
   end
 
-  def calculate_current_user_age
-    today = Date.today.strftime("%Y%m%d").to_i
-    birthday = current_user.birthday.strftime("%Y%m%d").to_i
-    @age = (today - birthday) / 10000
-  end
+  # def calculate_current_user_age
+  #   today = Date.today.strftime("%Y%m%d").to_i
+  #   birthday = current_user.birthday.strftime("%Y%m%d").to_i
+  #   @age = (today - birthday) / 10000
+  # end
 end

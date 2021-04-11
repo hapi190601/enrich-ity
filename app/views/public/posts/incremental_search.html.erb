@@ -1,17 +1,117 @@
 <div class="background-color">
+
+  <h2 class="page-title">タイトルかんたん検索</h2>
+
   <div class="incremental-search-area text-center">
-    <%= text_field_tag :title, '', class: "js-text_field col-sm-8 m-3", placeholder: 'タイトルを入力してください' %>
+    <%= text_field_tag :title, '', class: "js-text_field focus-green col-sm-6 m-3", placeholder: 'タイトルを入力してください' %>
   </div>
 
-  <ul class="incremental-search-result">
-  </ul>
-
-
-  <div class="contents row">
-    <% @posts.each do |pos| %>
-
-    <% end %>
+  <div class="incremental-search-result">
   </div>
 
-  <div>
 </div>
+
+<script>
+  // インクリメンタルサーチ
+  $(document).on('turbolinks:load', function() {
+    $('.js-text_field').on('keyup', function (e) {
+
+      console.log(e.key,　":", e.keyCode);
+      /*
+      *  IME確定のときだけの場合
+      * if(e.key != 'Enter') {
+      *
+      *
+      */
+
+      var title = $.trim($(this).val());
+
+      $.ajax({
+        type: 'GET',
+        url: '/posts/incremental_search',
+        data: { keyword: title },
+        dataType: 'json'
+      })
+
+      .done(function(posts) {
+        $(".incremental-search-result").empty();
+        if (title.length !== 0) {
+          console.log("find!");
+
+          posts.forEach(function(post) {
+            addPost(post);
+          });
+
+        //入力欄に文字が入力されてない場合処理を終了
+        } else if (title.length == 0) {
+          console.log("title.length => 0")
+          $(".incremental-search-result").empty();
+          return false;
+
+        //検索に一致する投稿がない場合はaddNoPostに飛ばす
+        } else {
+          console.log("other");
+          addNoPost();
+        }
+      });
+    });
+
+
+    function addPost(post) {
+      var html = `
+        <div class="post-box flex-around">
+          <div class="left-post posts-index-width">
+            <span>■タイトル</span>
+            <br>
+            ${post.title}
+            <br>
+            <br>
+            <span>■希望性別</span>
+            <br>
+            ${post.gender}
+            <br>
+            <br>
+            <span>■希望エリア</span>
+            <br>
+            ${post.desired_area}
+            <br>
+            <br>
+            <span>■本文</span><br>
+            <span style="white-space: pre-wrap;">${post.content}</span>
+          </div>
+
+          <div class="right-post text-center posts-index-width" width="50%">
+            <img id="change-src" src="${post.image_url}" style="width:250px;">
+            <br>
+            <a href="/posts/${post.id}" data-method="get" class="btn btn-sm bigger-btn btn-info m-3 p-3">くわしく見る</a>
+          </div>
+        </div>
+      `;
+
+      // メンターさんに質問する(初期画像の設定)
+      // if (post.image_url == null) {
+      //   console.log("nullだ！")
+      //   // var aaa =
+      //   document.getElementById("change-src").empty();
+      //   // console.log(aaa)
+      //   // aaa.empty()
+      //   // var bbb = aaa.attr('src', '/assets/no-post-image.png');
+      //   // console.log(bbb)
+      // };
+
+      // 変数htmlをviewに反映
+      $(".incremental-search-result").append(html);
+    }
+
+
+    function addNoPost(post) {
+      var html = `
+        <div style="text-align:center;">投稿が見つかりません</div>
+      `;
+
+      // 変数htmlをviewに反映
+      $(".incremental-search-result").append(html);
+    }
+  });
+
+</script>

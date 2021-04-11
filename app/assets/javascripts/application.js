@@ -73,7 +73,7 @@ $(document).on('turbolinks:load', function() {
 
   var delaieroption = {
     duration: 6000,
-    origin: 'left',
+    origin: 'right',
     distance: '100px',
     delay: 1000,
   };
@@ -87,7 +87,7 @@ $(document).on('turbolinks:load', function() {
 
   var lastoption = {
     duration: 6000,
-    origin: 'right',
+    origin: 'left',
     distance: '200px',
     delay: 1800,
   };
@@ -100,6 +100,7 @@ $(document).on('turbolinks:load', function() {
   ScrollReveal().reveal('.three-btn',option);
   ScrollReveal().reveal('.search-form',lateroption);
 
+  // プレビュー機能
   function readURL(input) {
     if(input.files && input.files[0]){
       var reader = new FileReader();
@@ -109,24 +110,18 @@ $(document).on('turbolinks:load', function() {
       reader.readAsDataURL(input.files[0]);
     }
   }
+  // 投稿画像プレビュー
   $("#post_image").change(function(){
     console.log("hoge");
     readURL(this);
   });
 
-  function readURL(input) {
-    if(input.files && input.files[0]){
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        $('#preview').attr('src', e.target.result);
-      };
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
+  // 会員画像プレビュー
   $("#user_image").change(function(){
     console.log("hoge");
     readURL(this);
   });
+
 
   $(document).ready(function() {
   $(window).scroll(function() {
@@ -170,68 +165,4 @@ $(document).on('turbolinks:load', function() {
   };
 
   Menu.init();
-
-
-
-
-  // インクリメンタルサーチ
-  $(function () {
-
-    $('.js-text_field').on('keyup', function () {
-      var title = $.trim($(this).val());
-      console.log(title);
-
-      $.ajax({
-        type: 'GET',
-        url: '/posts/incremental_search',
-        data: { title: title },
-        dataType: 'json'
-      })
-
-      .done(function(posts) {
-        $(".incremental-search-result").empty();
-        if (posts.length !== 0) {
-
-          posts.forEach(function(post) {
-            addPost(post);
-          });
-
-        //入力欄に文字が入力されてない場合処理を終了
-        } else if (title.length == 0) {
-
-          return false;
-
-        //検索に一致する投稿がない場合はaddNoPostに飛ばす
-        } else {
-          addNoPost();
-        }
-      });
-    });
-
-    function addPost(post) {
-      var html = `
-        <p>${post.title}</p>
-      `;
-
-      //作ったhtmlをぶち込む
-      $(".incremental-search-result").append(html);
-    }
-
-
-    function addNoPost(post) {
-      var html = `
-        <p>記事なし</p>
-      `;
-
-      //作ったhtmlをぶち込む
-      $(".incremental-search-result").append(html);
-    }
-  });
-
-
-
-
-
-
-
 });
