@@ -21,6 +21,7 @@
 
 /*global $*/
 $(document).on('turbolinks:load', function() {
+  // トップへスクロールするアニメーション
   $('#up-scroll').hide();
   $(window).scroll(function(){
     $('#pos').text($(this).scrollTop());
@@ -30,7 +31,16 @@ $(document).on('turbolinks:load', function() {
       $('#up-scroll').fadeOut();
     }
   });
-
+  
+  // トップへスクロールするアニメーション
+  $('#up-scroll a').click(function() {
+    $('html, body').animate({
+        scrollTop:0
+    }, 800);
+    return false;
+  });
+  
+  // 郵便番号入力による住所自動反映
   $('#user_postal_code').jpostal({
     postcode : [
       '#user_postal_code'
@@ -41,6 +51,7 @@ $(document).on('turbolinks:load', function() {
     }
   });
 
+  // 画像スライダー
   $('.slide-images').slick({
     dots: true,
     autoplay: true,
@@ -50,13 +61,7 @@ $(document).on('turbolinks:load', function() {
     pauseOnDotsHover: false
   });
 
-  $('#up-scroll a').click(function() {
-    $('html, body').animate({
-        scrollTop:0
-    }, 800);
-    return false;
-  });
-
+  // スライドアニメーション
   var lateroption = {
     duration: 3000,
     origin: 'right',
@@ -123,6 +128,7 @@ $(document).on('turbolinks:load', function() {
   });
 
 
+  // スクロール時ヘッダー透過
   $(document).ready(function() {
   $(window).scroll(function() {
     if ($(this).scrollTop() > 50) {
@@ -133,6 +139,8 @@ $(document).on('turbolinks:load', function() {
   });
   });
 
+
+  // ハンバーガーアイコンアニメーション
   var Menu = {
 
     el: {
