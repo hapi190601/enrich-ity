@@ -1,5 +1,5 @@
 class Public::PostsController < ApplicationController
-  before_action :calculate_current_user_age
+  before_action :calculate_current_user_age, only: [:top, :show]
 
   impressionist :actions=> [:show]
 
@@ -119,6 +119,16 @@ class Public::PostsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
+  def incremental_search
+    @posts = Post.where('title LIKE(?)', "%#{params[:title]}%")
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  private
   def post_params
     params.require(:post).permit(:genre_id, :title, :content, :age, :gender, :image, :desired_area)
   end

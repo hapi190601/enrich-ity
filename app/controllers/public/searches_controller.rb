@@ -1,4 +1,5 @@
 class Public::SearchesController < ApplicationController
+
   def index
     @user = current_user
     @p = Post.ransack(params[:q])

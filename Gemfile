@@ -92,3 +92,5 @@ gem 'jp_prefecture'
 gem 'whenever', require: false
 
 gem 'impressionist', '~>1.6.1'
+
+gem 'pry-rails'

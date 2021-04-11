@@ -171,4 +171,67 @@ $(document).on('turbolinks:load', function() {
 
   Menu.init();
 
+
+
+
+  // インクリメンタルサーチ
+  $(function () {
+
+    $('.js-text_field').on('keyup', function () {
+      var title = $.trim($(this).val());
+      console.log(title);
+
+      $.ajax({
+        type: 'GET',
+        url: '/posts/incremental_search',
+        data: { title: title },
+        dataType: 'json'
+      })
+
+      .done(function(posts) {
+        $(".incremental-search-result").empty();
+        if (posts.length !== 0) {
+
+          posts.forEach(function(post) {
+            addPost(post);
+          });
+
+        //入力欄に文字が入力されてない場合処理を終了
+        } else if (title.length == 0) {
+
+          return false;
+
+        //検索に一致する投稿がない場合はaddNoPostに飛ばす
+        } else {
+          addNoPost();
+        }
+      });
+    });
+
+    function addPost(post) {
+      var html = `
+        <p>${post.title}</p>
+      `;
+
+      //作ったhtmlをぶち込む
+      $(".incremental-search-result").append(html);
+    }
+
+
+    function addNoPost(post) {
+      var html = `
+        <p>記事なし</p>
+      `;
+
+      //作ったhtmlをぶち込む
+      $(".incremental-search-result").append(html);
+    }
+  });
+
+
+
+
+
+
+
 });

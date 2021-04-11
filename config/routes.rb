@@ -28,6 +28,9 @@ Rails.application.routes.draw do
     get 'posts/top' => 'posts#top'
     resources :posts do
       resource :favorites, only: [:create, :destroy]
+      collection do
+          get 'incremental_search'
+      end
     end
     # 新規投稿失敗時にURL(posts/new)にrenderさせるために無理やり再定義
     post 'posts/new', to: 'posts#create'
