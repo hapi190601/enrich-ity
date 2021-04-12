@@ -10,4 +10,14 @@ class Public::SearchesController < ApplicationController
   def search
     @p = Post.ransack(params[:q])
   end
+
+  def incremental_search
+    posts = Post.where('title LIKE(?)', "%#{params[:keyword]}%")
+    @posts = posts.limit(7).order(updated_at: :desc)
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
 end

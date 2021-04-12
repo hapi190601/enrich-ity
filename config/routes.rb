@@ -28,11 +28,8 @@ Rails.application.routes.draw do
     get 'posts/top' => 'posts#top'
     resources :posts do
       resource :favorites, only: [:create, :destroy]
-      collection do
-          get 'incremental_search'
-      end
     end
-    # 新規投稿失敗時にURL(posts/new)にrenderさせるために無理やり再定義
+    # 新規投稿失敗時にURL(posts/new)にrenderさせるために無理やり定義
     post 'posts/new', to: 'posts#create'
 
     get 'inquiries/get' => 'inquiries#get'
@@ -40,14 +37,15 @@ Rails.application.routes.draw do
     get 'inquiries/thank' => 'inquiries#thank'
 
     resources :notifications, only: [:index]
-    resources :messages, only: [:create]
+    resources :direct_messages, only: [:create]
     resources :rooms, only: [:create, :show]
 
     get 'searches/index' => 'searches#index'
     get 'searches/search' => 'searches#search'
+    get 'searches/incremental_search' => 'searches/incremental_search'
   end
 
-
+  # 管理者側
   devise_for :admins, controllers: {
     registrations: "admins/registrations",
     passwords: "admins/passwords",

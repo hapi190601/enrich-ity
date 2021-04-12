@@ -127,7 +127,6 @@ $(document).on('turbolinks:load', function() {
     readURL(this);
   });
 
-
   // スクロール時ヘッダー透過
   $(document).ready(function() {
   $(window).scroll(function() {
@@ -138,7 +137,6 @@ $(document).on('turbolinks:load', function() {
     }
   });
   });
-
 
   // ハンバーガーアイコンアニメーション
   var Menu = {

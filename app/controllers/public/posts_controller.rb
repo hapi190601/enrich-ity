@@ -119,16 +119,6 @@ class Public::PostsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
-  def incremental_search
-    posts = Post.where('title LIKE(?)', "%#{params[:keyword]}%")
-    @posts = posts.limit(7).order(updated_at: :desc)
-
-    respond_to do |format|
-      format.html
-      format.json
-    end
-  end
-
   private
   def post_params
     params.require(:post).permit(:genre_id, :title, :content, :age, :gender, :image, :desired_area)

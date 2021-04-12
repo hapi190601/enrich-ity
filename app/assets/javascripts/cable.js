@@ -8,6 +8,7 @@
 (function() {
   this.App || (this.App = {});
 
+  /* global ActionCable */
   App.cable = ActionCable.createConsumer();
 
 }).call(this);

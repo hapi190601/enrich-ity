@@ -1,6 +1,7 @@
 class Room < ApplicationRecord
-  has_many :entries
-  has_many :messages
+  has_many :users, through: :entries
+  has_many :entries, dependent: :destroy
+  has_many :direct_messages, dependent: :destroy
   has_many :notifications
 
   validates :name, presence: true

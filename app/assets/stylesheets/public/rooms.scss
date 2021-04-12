@@ -1,3 +1,46 @@
 // Place all the styles related to the public::rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.chat-space {
+ padding: 0px 40px;
+}
+
+.create-message {
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.create-message-input {
+  width: 100%;
+  line-height: 2.5rem;
+}
+
+.chat-icon {
+  width: 70px;
+  height: 60px;
+}
+
+.balloon-top {
+  position: relative;
+  display: inline-block;
+  padding: 7px 40px;
+  min-width: 120px;
+  max-width: 70%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+}
+
+.balloon-top p {
+  margin: 20px 0;
+  padding: 0;
+}
+
+.position-relative {
+  postion: relative;
+  bottom: 85px;
+}

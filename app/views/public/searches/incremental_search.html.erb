@@ -28,7 +28,7 @@
 
       $.ajax({
         type: 'GET',
-        url: '/posts/incremental_search',
+        url: '/searches/incremental_search',
         data: { keyword: title },
         dataType: 'json'
       })
@@ -36,6 +36,7 @@
       .done(function(posts) {
         $(".incremental-search-result").empty();
         if (title.length !== 0) {
+          // デバッグ用
           console.log("find!");
 
           posts.forEach(function(post) {
@@ -44,12 +45,14 @@
 
         //入力欄に文字が入力されてない場合処理を終了
         } else if (title.length == 0) {
+          // デバッグ用
           console.log("title.length => 0")
           $(".incremental-search-result").empty();
           return false;
 
-        //検索に一致する投稿がない場合はaddNoPostに飛ばす
+        //検索に一致する投稿がない場合はaddNoPost
         } else {
+          // デバッグ用
           console.log("other");
           addNoPost();
         }
@@ -57,7 +60,13 @@
     });
 
 
+
     function addPost(post) {
+      if (post.image_url == null)
+        var image_source = '/assets/no-post-image.png'
+      else
+        var image_source = post.image_url
+
       var html = `
         <div class="post-box flex-around">
           <div class="left-post posts-index-width">
@@ -81,23 +90,12 @@
           </div>
 
           <div class="right-post text-center posts-index-width" width="50%">
-            <img id="change-src" src="${post.image_url}" style="width:250px;">
+            <img class="change-src" src="${image_source}" style="width:250px;">
             <br>
             <a href="/posts/${post.id}" data-method="get" class="btn btn-sm bigger-btn btn-info m-3 p-3">くわしく見る</a>
           </div>
         </div>
       `;
-
-      // メンターさんに質問する(初期画像の設定)
-      // if (post.image_url == null) {
-      //   console.log("nullだ！")
-      //   // var aaa =
-      //   document.getElementById("change-src").empty();
-      //   // console.log(aaa)
-      //   // aaa.empty()
-      //   // var bbb = aaa.attr('src', '/assets/no-post-image.png');
-      //   // console.log(bbb)
-      // };
 
       // 変数htmlをviewに反映
       $(".incremental-search-result").append(html);
@@ -113,5 +111,4 @@
       $(".incremental-search-result").append(html);
     }
   });
-
 </script>

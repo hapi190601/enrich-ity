@@ -19,6 +19,8 @@
 }
 
 .post-index-link {
+  width: 60%;
+  margin: 0 auto;
   padding-bottom: 30px;
 }
 
@@ -33,7 +35,7 @@
 }
 
 .img-size {
-  width: 85%;
+  width: 80%;
   margin: 0 auto;
   padding-bottom: 10px;
 }
@@ -135,22 +137,4 @@
 .match-messages {
   font-size: 1.2rem;
   color: #D3E173;
-}
-
-// インクリメンタルサーチ関連
-
-.incremental-search-result {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.js-text_field {
-  line-height: 2.5rem;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-}
-
-#change-src {
-  margin: 30px 0;
 }

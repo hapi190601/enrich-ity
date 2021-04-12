@@ -1,0 +1,35 @@
+
+<div class="chat-space">
+  <div class="<%= direct_message.id %>">
+    <%= attachment_image_tag direct_message.user, :image, fallback: "no-image.jpeg", class:"#{direct_message.id}chat-icon chat-icon" %>
+    <br>
+    <%= direct_message.user.nickname %>
+  </div>
+
+  <div class="<%= direct_message.id %>-relative position-relative">
+    <div class="balloon-top text-center">
+      <p class="dm_content text-center"><%= direct_message.message %></p>
+      <spanstyle="color: #C0C0C0;"><%= direct_message.created_at.strftime("%-m/%d %H:%M") %></span>
+    </div>
+  </div>
+</div>
+
+<!-- メッセージの表示位置を指定する -->
+<script>
+  //メッセージのユーザーidを取ってくる
+  var direct_message = <%= direct_message.user.id %>;
+  //id="current_user"の内容を取得
+  var dm_user = document.getElementById('current_user');
+  //dm_userのdata-idを取得する
+  var current_user = dm_user.getAttribute('data-id')
+  //dm_userがログインユーザーであれば右に表示する
+
+  if(direct_message == current_user) {
+    $('div.' + <%= direct_message.id %>).css('text-align', 'right');
+    $('div.' + <%= direct_message.id %> + '-relative').css('text-align', 'right');
+    $('div.' + <%= direct_message.id %> + '-relative').css('right', '20%');
+  } else {
+    $('div.' + <%= direct_message.id %>).css('width', '25%');
+    $('div.' + <%= direct_message.id %> + '-relative').css('left', '20%');
+  }
+</script>

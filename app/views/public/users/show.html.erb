@@ -60,10 +60,18 @@
         </table>
 
         <% unless @user.id == current_user.id %>
-        <div>
-          <!--パス修正の必要あり-->
-          <%= link_to "#{@user.nickname}さんとチャットする", rooms_path, class:"btn btn-sm btn-primary bigger-btn p-3" %>
-        </div>
+          <div class="text-center">
+            <% if @isRoom == true %>
+              <%= link_to "チャットページへ", room_path(@roomId), class:"btn btn-info m-size-btn" %>
+            <% else %>
+              <%= form_for @room do |f| %>
+                <%= fields_for @entry do |e| %>
+                  <%= e.hidden_field :user_id, :value=> @user.id %>
+                <% end %>
+                <%= f.submit "チャットを始める", class:"btn btn-success m-size-btn" %>
+              <% end %>
+            <% end %>
+          </div>
         <% end %>
       </div>
 
@@ -88,10 +96,6 @@
           </div>
         </div>
         <% end %>
-
-        <div class="post-index-link text-center">
-          <%= link_to "全投稿を見る", posts_path, class:"btn btn-sm btn-info bigger-btn" %>
-        </div>
       </div>
     </div>
   </div>
