@@ -87,7 +87,7 @@
     </div>
 
     <% if user_signed_in? %>
-    <div class="link-box three-btn">
+    <div class="link-box two-btn">
       <% if @post.user_id == current_user.id %>
         <div class="link">
           <%= link_to "編集する", edit_post_path(@post.id), class:"btn btn-sm btn-primary bigger-btn p-3" %>

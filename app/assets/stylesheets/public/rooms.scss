@@ -16,31 +16,30 @@
 .create-message-input {
   width: 100%;
   line-height: 2.5rem;
+  border-radius: 10px;
+  border: none;
 }
 
 .chat-icon {
   width: 70px;
   height: 60px;
+  border-radius: 50%;
 }
 
 .balloon-top {
-  position: relative;
+  margin-left: 40px;
   display: inline-block;
   padding: 7px 40px;
-  min-width: 120px;
-  max-width: 70%;
-  color: #555;
+  min-width: 150px;
+  max-width: 60%;
+  color: black;
   font-size: 16px;
   background: #e0edff;
   border-radius: 15px;
+  text-align: left;
 }
 
 .balloon-top p {
   margin: 20px 0;
   padding: 0;
-}
-
-.position-relative {
-  postion: relative;
-  bottom: 85px;
 }

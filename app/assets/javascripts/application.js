@@ -31,7 +31,7 @@ $(document).on('turbolinks:load', function() {
       $('#up-scroll').fadeOut();
     }
   });
-  
+
   // トップへスクロールするアニメーション
   $('#up-scroll a').click(function() {
     $('html, body').animate({
@@ -39,7 +39,7 @@ $(document).on('turbolinks:load', function() {
     }, 800);
     return false;
   });
-  
+
   // 郵便番号入力による住所自動反映
   $('#user_postal_code').jpostal({
     postcode : [
@@ -62,11 +62,11 @@ $(document).on('turbolinks:load', function() {
   });
 
   // スライドアニメーション
-  var lateroption = {
-    duration: 3000,
+  var early = {
+    duration: 6000,
     origin: 'right',
     distance: '100px',
-    delay: 100,
+    delay: 50,
   };
 
   var option = {
@@ -102,8 +102,8 @@ $(document).on('turbolinks:load', function() {
   ScrollReveal().reveal('.right-message', delaieroption);
   ScrollReveal().reveal('.animate',delaiestoption);
   ScrollReveal().reveal('.link-box',lastoption);
-  ScrollReveal().reveal('.three-btn',option);
-  ScrollReveal().reveal('.search-form',lateroption);
+  ScrollReveal().reveal('.two-btn',early);
+  ScrollReveal().reveal('.search-form',early);
 
   // プレビュー機能
   function readURL(input) {
