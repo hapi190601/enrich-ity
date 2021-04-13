@@ -42,13 +42,14 @@ class Public::PostsController < ApplicationController
     @post.age = @age
     @post.user_id = current_user.id
 
+    # ラジオボタン条件分岐
     if params[:post][:option] == "0"
       @post.prefecture_code = current_user.prefecture_code
       @post.municipality = current_user.municipality
     elsif params[:post][:option] == "1"
       if  params[:post][:municipality].empty? or params[:post][:prefecture_code] == "----"
         flash[:notice] = "希望エリア未入力です！"
-        render :new
+        render :new and return
       end
       @post.prefecture_code = params[:post][:prefecture_code]
       @post.municipality = params[:post][:municipality]
@@ -66,13 +67,34 @@ class Public::PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
 
+    # 掲載期限表示用
     @deadline =@post.updated_at.months_since(1)
-
     dead_line =@post.updated_at.months_since(1).to_date
     today = Date.today
     @remain = (dead_line - today).to_i
 
+    # view数表示用
     impressionist(@post, nil)
+
+    # チャット機能用
+    @user = User.find(@post.user_id)
+    @currentUserEntry = Entry.where(user_id: current_user.id)
+    @userEntry = Entry.where(user_id: @user.id)
+
+    unless @user.id == current_user.id
+      @currentUserEntry.each do |cu|
+        @userEntry.each do |u|
+          if cu.room_id == u.room_id then
+            @isRoom = true
+            @roomId = cu.room_id
+          end
+        end
+      end
+      unless @isRoom
+        @room = Room.new
+        @entry = Entry.new
+      end
+    end
   end
 
   def edit
@@ -82,16 +104,20 @@ class Public::PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
+    # 希望のエリア条件分岐
     if params[:post][:option] == "0"
-      @post.prefecture_code = current_user.prefecture_code
-      @post.municipality = current_user.municipality
+      # 0のときはprefecture_codeもmunicipalityもそのまま＝なにも処理しない
     elsif params[:post][:option] == "1"
-      if  params[:post][:municipality].empty? or params[:post][:prefecture_code] == "----"
+      if  params[:post][:municipality].empty?
         flash[:notice] = "希望エリア未入力です！"
         render :edit and return
       end
       @post.prefecture_code = params[:post][:prefecture_code]
       @post.municipality = params[:post][:municipality]
+
+    elsif params[:post][:option] == "2"
+      @post.prefecture_code = current_user.prefecture_code
+      @post.municipality = current_user.municipality
     end
 
     if @post.update(
@@ -101,10 +127,7 @@ class Public::PostsController < ApplicationController
         age: @post.age,
         gender: params[:post][:gender],
         image: params[:post][:image],
-        prefecture_code: params[:post][:prefecture_code],
-        municipality: params[:post][:municipality]
-      )
-
+    )
       flash[:notice] = "投稿内容を編集しました！"
       redirect_to post_path(@post.id)
     else

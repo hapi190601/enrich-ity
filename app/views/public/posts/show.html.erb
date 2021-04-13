@@ -87,7 +87,7 @@
     </div>
 
     <% if user_signed_in? %>
-    <div class="link-box two-btn">
+    <div class="link-box three-btn">
       <% if @post.user_id == current_user.id %>
         <div class="link">
           <%= link_to "編集する", edit_post_path(@post.id), class:"btn btn-sm btn-primary bigger-btn p-3" %>
@@ -105,7 +105,11 @@
         </div>
 
         <div class="link">
-          <%= link_to "#{@post.user.nickname}さんのページへ", user_path(@post.user.id), class:"btn btn-sm btn-light bigger-btn p-3"%>
+          <%= link_to "#{@post.user.nickname}とチャットする", room_path(@roomId), class:"btn btn-sm btn-info bigger-btn p-3"%>
+        </div>
+
+        <div class="link">
+          <%= link_to "#{@post.user.nickname}のページへ", user_path(@post.user.id), class:"btn btn-sm btn-light bigger-btn p-3"%>
         </div>
 
       <% end %>

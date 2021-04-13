@@ -37,7 +37,7 @@
           <%= f.label :"【希望の性別】", class:"col-sm-4" %>
           <label><%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"m-3" %> 男性</label>
           <label><%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"m-3" %> 女性</label>
-          <label><%= f.radio_button :gender, :"どちらでも", checked: true, style:"transform:scale(2.0);", class:"m-3" %> どちらでも</label>
+          <label><%= f.radio_button :gender, :"どちらでも", style:"transform:scale(2.0);", class:"m-3" %> どちらでも</label>
         </div>
 
         <div class="area-of-hope">
@@ -48,24 +48,33 @@
           <div class="col-sm-8">
             <section class="choose-area-of-hope">
               <label>
-              <%= f.radio_button :option, 0, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
-              ご自身の住所
+              <%= f.radio_button :option, 0, checked: true, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
+              変更しない
+              </label>
+              <br>
+              <span><%= @post.prefecture_name + @post.municipality %></span>
+            </section>
+
+            <section class="choose-area-of-hope">
+              <label>
+              <%= f.radio_button :option, 1, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
+              変更する
+              </label>
+              <br>
+              <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {prompt:" ---- "}, selected:"----", class:" p-2", id:"post_prefecture_code" %>
+              <%= f.text_field :municipality, placeholder: "希望の市区町村を入力してください", class:"col-sm-8 text-left ml-4 focus-green" %>
+            </section>
+
+            <section class="choose-area-of-hope">
+              <label>
+              <%= f.radio_button :option, 2, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
+              ご自身の住所に変更する
               </label>
               <br>
               <span>
                 <%= current_user.prefecture_name %>
                 <%= current_user.municipality %>
               </span>
-            </section>
-
-            <section class="choose-area-of-hope">
-              <label>
-              <%= f.radio_button :option, 1, checked: true, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
-              新しく入力する
-              </label>
-              <br>
-              <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, prompt:" ---- ", class:" p-2", id:"post_prefecture_code" %>
-              <%= f.text_field :municipality, placeholder: "希望の市区町村を入力してください", class:"col-sm-8 text-left ml-4 focus-green" %>
             </section>
           </div>
       </div>

@@ -48,7 +48,7 @@
             <% @posts_all.order("created_at desc").first(3).each do |pos| %>
             <div class="new-post">
               <div class="new-post-top">
-                <span>■投稿者<br>　<%= link_to pos.user.nickname, user_path(pos.user.id), class:"text-dark" %></span>
+                <span>■投稿者<br>　<%= pos.user.nickname %></span>
                 <br>
                 <span>■タイトル<br>　<%= pos.title %></span>
                 <br>

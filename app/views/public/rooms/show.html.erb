@@ -30,14 +30,9 @@
   </div>
 
   <script>
-    // $(document).on('turbolinks:load', function() {
-      //トークルーム遷移時に入力フォーム記載場所にスクロールする
-      var element = document.getElementById('target');
-      var rect = element.getBoundingClientRect();
-      var position = rect.top;
-      setTimeout( function() {
-          scrollTo(0, position);}
-          , 3000);
-    // });
+    // チャットルーム遷移時に入力フォーム記載場所にスクロールする
+    var element = document.documentElement;
+    var bottom = element.scrollHeight - element.clientHeight;
+    window.scroll(0, bottom);
   </script>
 </div>
