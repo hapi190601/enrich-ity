@@ -1,6 +1,6 @@
 <div class="background-color">
 
-  <div class="test">
+  <div class="room-show-area">
     <% @entries.each do |e| %>
       <!-- eachで回したentryユーザーがログインユーザーであれば、@classに"current_user"の文字列を代入する。ログインユーザーであれば、空白を代入する -->
       <% current_user == e.user ? @class = "current_user" : @class = ""  %>
@@ -31,13 +31,13 @@
 
   <script>
     // $(document).on('turbolinks:load', function() {
-      //トークルーム遷移時に入力フォーム記載場所にスクロールする(最新トークは下にあるため)
-      var element = document.getElementById('target'); // 移動させたい位置の要素を取得
+      //トークルーム遷移時に入力フォーム記載場所にスクロールする
+      var element = document.getElementById('target');
       var rect = element.getBoundingClientRect();
       var position = rect.top;
       setTimeout( function() {
           scrollTo(0, position);}
-          , 1000);
+          , 3000);
     // });
   </script>
 </div>
