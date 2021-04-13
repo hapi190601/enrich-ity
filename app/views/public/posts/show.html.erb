@@ -7,10 +7,10 @@
     <% if @post.user_id == current_user.id %>
       <p class="text-center">※これは<%= current_user.nickname %>さん自身の投稿です</p>
     <% else %>
-      <% if @post.desired_area == current_user.nearest_station %>
-        <p class="match-messages">希望のエリアが<%= current_user.nickname %>さんの最寄駅と一致しています！</p>
-      <% elsif @post.desired_area == (current_user.prefecture_name + current_user.municipality) %>
+      <% if @post.prefecture_code == current_user.prefecture_code and @post.municipality == current_user.municipality %>
         <p class="match-messages">希望のエリアが<%= current_user.nickname %>さんのお住まいと一致しています！</p>
+      <% elsif @post.prefecture_code == current_user.prefecture_code %>
+        <p class="match-messages">希望のエリアが<%= current_user.nickname %>の都道府県と一致しています！</p>
       <% end %>
 
       <% if @post.gender = current_user.gender %>
@@ -59,7 +59,7 @@
 
         <div class="post-show-element">
           <label class="col-md-4">希望のエリア</label>
-          <%= @post.desired_area %>
+          <%= @post.prefecture_name %> <%= @post.municipality %>
           <span>近辺</span>
         </div>
 

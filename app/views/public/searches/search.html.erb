@@ -23,7 +23,7 @@
           <div class="field search-fields">
             <%= f.label :"【性別】" %>
             <br>
-            <%= f.select :gender_eq, Post.genders.keys.to_a, {prompt: "指定なし"},class: " col-sm-3 search-select focus-green" %>
+            <%= f.select :gender_eq, Post.genders.keys.to_a, {prompt: "指定なし"}, class: " col-sm-3 search-select focus-green" %>
           </div>
 
           <div class="field search-fields">
@@ -39,19 +39,15 @@
             <%= f.label :"【エリア】" %>
             <span class="text-dark">※指定するとヒット件数が大幅に減る可能性があります</span>
             <br>
-            <label>
-              <%= f.radio_button :desired_area_cont, "", checkd:true, style:"transform:scale(2.0);", class:"m-3" %>
-              指定しない
-            </label>
+            <%= f.label :"都道府県" %>
             <br>
-            <label><%= f.radio_button :desired_area_cont, (current_user.prefecture_name + current_user.municipality), style:"transform:scale(2.0);", class:"m-3" %>
-              お住まいのエリア　<%= current_user.prefecture_name + current_user.municipality %>
-            </label>
+            <%= f.collection_select :prefecture_code_eq, JpPrefecture::Prefecture.all, :code, :name, {prompt:" ---- "}, class:"col-sm-3 search-select focus-green", id:"post_prefecture_code" %>
             <br>
-            <label>
-              <%= f.radio_button :desired_area_cont, current_user.nearest_station, style:"transform:scale(2.0);", class:"m-3" %>
-              お住まいの最寄駅　<%= current_user.nearest_station %>駅
-            </label>
+            <br>
+            <%= f.label :"市区町村" %>
+            <br>
+            <%= f.text_field :municipality_cont, placeholder: "指定しない", class: "col-sm-3 search-field focus-green text-left", style:"width:100%" %>
+            <br>
           </div>
 
           <div class="actions">

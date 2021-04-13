@@ -13,7 +13,7 @@ document.addEventListener 'turbolinks:load', ->
     speak: (direct_message) ->
       @perform 'speak', direct_message: direct_message
 
-  $('#chat-input').on 'keypress', (event) ->
+  $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
     if event.keyCode is 13
       App.room.speak event.target.value
       event.target.value = ''

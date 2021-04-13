@@ -43,14 +43,15 @@ class Public::PostsController < ApplicationController
     @post.user_id = current_user.id
 
     if params[:post][:option] == "0"
-      @post.desired_area = (current_user.prefecture_name + current_user.municipality)
+      @post.prefecture_code = current_user.prefecture_code
+      @post.municipality = current_user.municipality
     elsif params[:post][:option] == "1"
-      @post.desired_area = "#{current_user.nearest_station}駅"
-    elsif params[:post][:option] == "2"
-      if  params[:post][:desired_area].empty?
+      if  params[:post][:municipality].empty? or params[:post][:prefecture_code] == "----"
         flash[:notice] = "希望エリア未入力です！"
         render :new
       end
+      @post.prefecture_code = params[:post][:prefecture_code]
+      @post.municipality = params[:post][:municipality]
     end
 
     if @post.save
@@ -82,26 +83,26 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if params[:post][:option] == "0"
-      @post.desired_area = (current_user.prefecture_name + current_user.municipality)
+      @post.prefecture_code = current_user.prefecture_code
+      @post.municipality = current_user.municipality
     elsif params[:post][:option] == "1"
-      @post.desired_area = "#{current_user.nearest_station}駅"
-    elsif params[:post][:option] == "2"
-      if params[:post][:desired_area].empty?
+      if  params[:post][:municipality].empty? or params[:post][:prefecture_code] == "----"
         flash[:notice] = "希望エリア未入力です！"
         render :edit and return
       end
-      @post.desired_area = params[:post][:desired_area]
+      @post.prefecture_code = params[:post][:prefecture_code]
+      @post.municipality = params[:post][:municipality]
     end
 
-    # desired_areaをupdateするために無理やり書いてる。もっと良い書き方調べる
     if @post.update(
-      genre_id: params[:post][:genre_id],
-      title: params[:post][:title],
-      content: params[:post][:content],
-      age: @post.age,
-      gender: params[:post][:gender],
-      image: params[:post][:image],
-      desired_area: @post.desired_area,
+        genre_id: params[:post][:genre_id],
+        title: params[:post][:title],
+        content: params[:post][:content],
+        age: @post.age,
+        gender: params[:post][:gender],
+        image: params[:post][:image],
+        prefecture_code: params[:post][:prefecture_code],
+        municipality: params[:post][:municipality]
       )
 
       flash[:notice] = "投稿内容を編集しました！"
@@ -121,7 +122,7 @@ class Public::PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:genre_id, :title, :content, :age, :gender, :image, :desired_area)
+    params.require(:post).permit(:genre_id, :title, :content, :age, :gender, :image, :prefecture_code, :municipality)
   end
 
   def calculate_current_user_age

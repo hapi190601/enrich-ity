@@ -9,7 +9,19 @@
   <div class="incremental-search-result">
   </div>
 
-</div>
+  <div class="link-box two-btn">
+    <div class="link">
+      <% if user_signed_in? %>
+        <%= link_to "トップへ", posts_top_path, class:"btn btn-sm btn-success bigger-btn p-3" %>
+      <% else %>
+        <%= link_to "トップへ", root_path, class:"btn btn-sm btn-success bigger-btn p-3" %>
+      <% end %>
+    </div>
+
+    <div class="link">
+      <%= link_to "投稿一覧へ", posts_path, class:"btn btn-sm btn-info bigger-btn p-3"%>
+    </div>
+  </div>
 
 <script>
   // インクリメンタルサーチ
@@ -20,7 +32,6 @@
       /*
       *  IME確定のときだけの場合
       * if(e.key != 'Enter') {
-      *
       *
       */
 
@@ -82,7 +93,8 @@
             <br>
             <span>■希望エリア</span>
             <br>
-            ${post.desired_area}
+            ${post.prefecture_name}
+            ${post.municipality}
             <br>
             <br>
             <span>■本文</span><br>

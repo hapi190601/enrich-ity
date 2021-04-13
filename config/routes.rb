@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
 
 # 会員側
   devise_for :users, controllers: {

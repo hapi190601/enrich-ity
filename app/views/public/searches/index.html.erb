@@ -21,7 +21,8 @@
             <br>
             <span>■希望エリア</span>
             <br>
-            <%= pos.desired_area %>
+            <%= pos.prefecture_name %>
+            <%= pos.municipality %>
             <br>
             <br>
             <span>■本文</span><br>
@@ -42,59 +43,18 @@
           <p>検索結果を変えてみましょう！</p>
         </div>
 
-        <div class="search-form">
-        <%= search_form_for @p, url: searches_index_path do |f| %>
-          <div class="field search-fields first-search-field">
-            <%= f.label :"【キーワード】" %>
-            <br>
-            <%= f.text_field :title_or_content_cont, placeholder: "キーワードを入力してください", class: "search-field focus-green" %>
-            <br>
+        <div class="link-box three-btn">
+          <div class="link">
+            <%= link_to "再検索", searches_search_path, class:"btn btn-sm btn-primary bigger-btn p-3" %>
           </div>
 
-          <div class="field search-fields">
-            <%= f.label :"【ジャンル】" %>
-            <br>
-            <%= f.collection_select :genre_id_eq, Genre.where.not(id: 0), :id, :name, {prompt: "指定なし"}, class: " col-sm-7 search-select focus-green" %>
+          <div class="link">
+            <%= link_to "簡易検索へ", searches_incremental_search_path, class:"btn btn-sm btn-success bigger-btn p-3" %>
           </div>
 
-          <div class="field search-fields">
-            <%= f.label :"【性別】" %>
-            <br>
-            <%= f.select :gender_eq, Post.genders.keys.to_a, {prompt: "指定なし"},class: " col-sm-3 search-select focus-green" %>
+          <div class="link">
+            <%= link_to "投稿一覧へ", posts_path, class:"btn btn-sm btn-info bigger-btn p-3"%>
           </div>
-
-          <div class="field search-fields">
-            <%= f.label :"【年齢】" %>
-            <br>
-            <%= f.select :age_gteq, (15..75).to_a, {prompt: "指定なし"}, class:"col-sm-3 search-select focus-green" %>
-            <strong>　　〜　　</strong>
-            <%= f.select :age_lteq, (15..75).to_a, {prompt: "指定なし"}, class:"col-sm-3 search-select focus-green" %>
-            まで
-          </div>
-
-          <div class="field search-fields">
-            <%= f.label :"【エリア】" %>
-            <span class="text-dark">※指定するとヒット件数が大幅に減る可能性があります</span>
-            <br>
-            <label>
-              <%= f.radio_button :desired_area_cont, "", checkd:true, style:"transform:scale(1.5);", class:"m-3" %>
-              指定しない
-            </label>
-            <br>
-            <label><%= f.radio_button :desired_area_cont, (current_user.prefecture_name + current_user.municipality), style:"transform:scale(1.5);", class:"m-3" %>
-              お住まいのエリア　<%= current_user.prefecture_name + current_user.municipality %>
-            </label>
-            <br>
-            <label>
-              <%= f.radio_button :desired_area_cont, current_user.nearest_station, style:"transform:scale(1.5);", class:"m-3" %>
-              お住まいの最寄駅　<%= current_user.nearest_station %>駅
-            </label>
-          </div>
-
-          <div class="actions">
-            <%= f.submit "　検索する　", class:"btn btn-sm biggger-btn btn-primary p-3"%>
-          </div>
-          <% end %>
         </div>
       <% end %>
     </div>

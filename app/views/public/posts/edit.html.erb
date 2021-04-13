@@ -35,9 +35,9 @@
 
         <div class="field">
           <%= f.label :"【希望の性別】", class:"col-sm-4" %>
-          <label>男性 <%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"m-3" %></label>
-          <label>女性 <%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"m-3" %></label>
-          <label>どちらでも <%= f.radio_button :gender, :"どちらでも", style:"transform:scale(2.0);", class:"m-3" %></label>
+          <label><%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"m-3" %> 男性</label>
+          <label><%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"m-3" %> 女性</label>
+          <label><%= f.radio_button :gender, :"どちらでも", checked: true, style:"transform:scale(2.0);", class:"m-3" %> どちらでも</label>
         </div>
 
         <div class="area-of-hope">
@@ -60,22 +60,12 @@
 
             <section class="choose-area-of-hope">
               <label>
-              <%= f.radio_button :option, 1, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
-              ご自身の最寄駅
-              </label>
-              <br>
-              <span>
-                <%= current_user.nearest_station %>
-              </span>
-            </section>
-
-            <section class="choose-area-of-hope">
-              <label>
-              <%= f.radio_button :option, 2, checked: true, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
+              <%= f.radio_button :option, 1, checked: true, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
               新しく入力する
               </label>
               <br>
-              <%= f.text_field :desired_area, value: "", class:"col-sm-8 text-left ml-4 focus-green" %>
+              <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, prompt:" ---- ", class:" p-2", id:"post_prefecture_code" %>
+              <%= f.text_field :municipality, placeholder: "希望の市区町村を入力してください", class:"col-sm-8 text-left ml-4 focus-green" %>
             </section>
           </div>
       </div>

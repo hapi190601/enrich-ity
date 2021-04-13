@@ -108,8 +108,8 @@ ActiveRecord::Schema.define(version: 2021_04_12_144757) do
     t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "desired_area"
-    t.index ["desired_area"], name: "index_posts_on_desired_area"
+    t.integer "prefecture_code"
+    t.string "municipality"
     t.index ["title"], name: "index_posts_on_title"
   end
 

@@ -7,5 +7,7 @@ json.array! @posts do |post|
   json.content post.content.truncate(50)
   json.age post.age
   json.gender post.gender
-  json.desired_area post.desired_area
+  json.prefecture_code post.prefecture_code
+  json.prefecture_name post.prefecture_name
+  json.municipality post.municipality
 end

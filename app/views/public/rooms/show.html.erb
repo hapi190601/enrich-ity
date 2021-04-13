@@ -1,7 +1,5 @@
 <div class="background-color">
 
-
-
   <div class="test">
     <% @entries.each do |e| %>
       <!-- eachで回したentryユーザーがログインユーザーであれば、@classに"current_user"の文字列を代入する。ログインユーザーであれば、空白を代入する -->
@@ -17,7 +15,6 @@
           <p class="text-left <%= @class %>" id="<%= @class %>" data-id="<%= e.user.id %>"></p>
         <% end %>
     <% end %>
-
 
     <!-- メッセージ内容は、パーシャルにします -->
     <div id="direct_messages" data-room_id="<%= @room.id %>">
