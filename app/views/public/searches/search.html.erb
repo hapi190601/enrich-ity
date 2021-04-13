@@ -17,13 +17,16 @@
           <div class="field search-fields">
             <%= f.label :"【ジャンル】" %>
             <br>
-            <%= f.collection_select :genre_id_eq, Genre.where.not(id: 0), :id, :name, {prompt: "指定なし"}, class: " col-sm-7 search-select focus-green" %>
+            <%= f.collection_select :genre_id_eq, Genre.where.not(id: 0), :id, :name, {prompt: "指定なし"}, class: " col-sm-6 search-select focus-green" %>
           </div>
 
           <div class="field search-fields">
             <%= f.label :"【性別】" %>
             <br>
-            <%= f.select :gender_eq, Post.genders.keys.to_a, {prompt: "指定なし"}, class: " col-sm-3 search-select focus-green" %>
+
+            <label><%= f.radio_button :gender_eq, :"", checked: true, style:"transform:scale(2.0);", class:"m-3" %> 指定しない</label>
+            <label><%= f.radio_button :gender_eq, :"1", style:"transform:scale(2.0);", class:"m-3" %> 男性</label>
+            <label><%= f.radio_button :gender_eq, :"2", style:"transform:scale(2.0);", class:"m-3" %> 女性</label>
           </div>
 
           <div class="field search-fields">
@@ -41,12 +44,12 @@
             <br>
             <%= f.label :"都道府県" %>
             <br>
-            <%= f.collection_select :prefecture_code_eq, JpPrefecture::Prefecture.all, :code, :name, {prompt:" ---- "}, class:"col-sm-3 search-select focus-green", id:"post_prefecture_code" %>
+            <%= f.collection_select :prefecture_code_eq, JpPrefecture::Prefecture.all, :code, :name, {prompt:" 指定なし "}, class:"col-sm-3 search-select focus-green", id:"post_prefecture_code" %>
             <br>
             <br>
             <%= f.label :"市区町村" %>
             <br>
-            <%= f.text_field :municipality_cont, placeholder: "指定しない", class: "col-sm-3 search-field focus-green text-left", style:"width:100%" %>
+            <%= f.text_field :municipality_cont, placeholder: "指定なし", class: "col-sm-3 search-field focus-green text-left", style:"width:100%" %>
             <br>
           </div>
 
