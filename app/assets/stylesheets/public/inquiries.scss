@@ -1,3 +1,77 @@
 // Place all the styles related to the public::inquiries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.inquiry-form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-item {
+  border-top: 1px solid #ddd;
+  padding: 24px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.form-item:nth-child(5) {
+  border-bottom: 1px solid #ddd;
+}
+
+.form-item-label {
+  letter-spacing: 0.05rem;
+  font-weight: bold;
+}
+
+.form-item-label.adjustment {
+  margin-top: 8px;
+  margin-bottom: auto;
+}
+
+.form-item-label-required {
+  border-radius: 5px;
+  margin-right: 8px;
+  padding: 8px 0;
+  width: 48px;
+  display: inline-block;
+  background: #5bc8ac;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.form-item-input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-left: 40px;
+  padding: 0 1rem;
+  height: 3rem;
+  flex: 1;
+  background: #eaedf2;
+  text-align: left!important;
+}
+
+.form-item-textarea {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-left: 40px;
+  padding: 0 1rem;
+  height: 220px;
+  flex: 1;
+  width: 80%;
+  background: #eaedf2;
+}
+
+.form-btn {
+  border-radius: 5px;
+  padding: 20px 0;
+  margin: 0 auto;
+  width: 60%;
+  display: block;
+  letter-spacing: 0.05em;
+  background: #5bc8ac;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}

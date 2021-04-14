@@ -8,13 +8,13 @@
       <p class="text-center">※これは<%= current_user.nickname %>さん自身の投稿です</p>
     <% else %>
       <% if @post.prefecture_code == current_user.prefecture_code and @post.municipality == current_user.municipality %>
-        <p class="match-messages">希望のエリアが<%= current_user.nickname %>さんのお住まいと一致しています！</p>
+        <p class="match-messages">「希望のエリア」が <%= current_user.nickname %>さんのお住まいと一致しています！</p>
       <% elsif @post.prefecture_code == current_user.prefecture_code %>
-        <p class="match-messages">希望のエリアが<%= current_user.nickname %>の都道府県と一致しています！</p>
+        <p class="match-messages">「希望のエリア」が <%= current_user.nickname %>の都道府県と一致しています！</p>
       <% end %>
 
       <% if @post.gender = current_user.gender %>
-        <p class="match-messages">希望の性別が<%= current_user.nickname %>さんの性別と一致しています！</p>
+        <p class="match-messages">「希望の性別」が <%= current_user.nickname %>さんの性別と一致しています！</p>
       <% end %>
     <% end %>
   </div>
@@ -105,7 +105,16 @@
         </div>
 
         <div class="link">
-          <%= link_to "#{@post.user.nickname}とチャットする", room_path(@roomId), class:"btn btn-sm btn-info bigger-btn p-3"%>
+          <% if @isRoom == true %>
+            <%= link_to "チャットページへ", room_path(@roomId), class:"btn btn-sm btn-success bigger-btn p-3"%>
+          <% else %>
+            <%= form_with model: @room, local: true do |f| %>
+              <%= fields_for @entry do |e| %>
+                <%= e.hidden_field :user_id, :value=> @user.id %>
+              <% end %>
+              <%= f.submit "#{@post.user.nickname}とチャットをする", class:"btn btn-sm btn-info bigger-btn p-3"%>
+            <% end %>
+          <% end %>
         </div>
 
         <div class="link">

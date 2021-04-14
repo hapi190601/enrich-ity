@@ -1,2 +1,52 @@
-<h1>Public::Inquiries#get</h1>
-<p>Find me in app/views/public/inquiries/get.html.erb</p>
+<div class="background-color">
+
+  <%= render "layouts/flash" %>
+  <h2 class="page-title">お問い合わせ と Q&A</h2>
+
+  <div class="container">
+    <div class="row">
+      <div class="inquiry-form">
+        <%= form_with(model: @inquiry, url: inquiries_create_path, local: true) do |f| %>
+        <div class="form-item">
+          <p class="form-item-label col-sm-4">
+            <span class="form-item-label-required">必須</span>
+            名前
+          </p>
+          <%= f.text_field :name, placeholder:"フルネームで入力してください", class:"form-item-input" %>
+        </div>
+
+        <div class="form-item">
+          <p class="form-item-label col-sm-4">
+            <span class="form-item-label-required">必須</span>
+            メールアドレス
+          </p>
+          <%= f.text_field :email, placeholder:"例）example@gmail.com", class:"form-item-input" %>
+        </div>
+
+        <div class="form-item">
+          <p class="form-item-label col-sm-4">
+            <span class="form-item-label-required">必須</span>
+            タイトル
+          </p>
+          <%= f.select :title, [["ジャンル追加希望", "ジャンル追加希望"], ["問い合わせ", "問い合わせ"], ["その他要望など", "その他要望など"]], {include_blank: "選択して下さい"}, class:"form-item-input" %>
+        </div>
+
+        <div class="form-item">
+          <p class="form-item-label col-sm-4 adjustment"><span class="form-item-label-required">必須</span>お問い合わせ内容</p>
+          <%= f.text_area :content, placeholder:"入力してください", class:"form-item-textarea" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "送信する", class:"form-btn" %>
+        </div>
+
+        <% end %>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

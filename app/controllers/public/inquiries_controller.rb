@@ -1,5 +1,6 @@
 class Public::InquiriesController < ApplicationController
   def get
+    @inquiry = Inquiry.new
   end
 
   def create
