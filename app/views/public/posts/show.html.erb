@@ -59,8 +59,12 @@
 
         <div class="post-show-element">
           <label class="col-md-4">希望のエリア</label>
-          <%= @post.prefecture_name %> <%= @post.municipality %>
-          <span>近辺</span>
+          <% if @post.prefecture_code == nil %>
+            指定なし
+          <% else %>
+            <%= @post.prefecture_name %> <%= @post.municipality %>
+            <span>近辺</span>
+          <% end %>
         </div>
 
         <div class="post-show-element">

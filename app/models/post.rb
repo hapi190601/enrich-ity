@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   belongs_to :genre
 
   validates :title, presence: true
+  validates :content, presence: true
 
   enum gender: { "男性":1, "女性":2, "どちらでも":3 }
 

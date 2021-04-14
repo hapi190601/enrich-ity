@@ -43,10 +43,13 @@ class Public::PostsController < ApplicationController
     @post.user_id = current_user.id
 
     # ラジオボタン条件分岐
+    # 0のときはprefecture_codeもmunicipalityもそのまま＝nil
     if params[:post][:option] == "0"
+
+    elsif params[:post][:option] == "1"
       @post.prefecture_code = current_user.prefecture_code
       @post.municipality = current_user.municipality
-    elsif params[:post][:option] == "1"
+    elsif params[:post][:option] == "2"
       if  params[:post][:municipality].empty? or params[:post][:prefecture_code] == "----"
         flash[:notice] = "希望エリア未入力です！"
         render :new and return
@@ -99,7 +102,6 @@ class Public::PostsController < ApplicationController
     end
   end
 
-
   def edit
     @post = Post.find(params[:id])
   end
@@ -111,16 +113,18 @@ class Public::PostsController < ApplicationController
     if params[:post][:option] == "0"
       # 0のときはprefecture_codeもmunicipalityもそのまま＝なにも処理しない
     elsif params[:post][:option] == "1"
+      @post.prefecture_code = current_user.prefecture_code
+      @post.municipality = current_user.municipality
+    elsif params[:post][:option] == "2"
       if  params[:post][:municipality].empty?
         flash[:notice] = "希望エリア未入力です！"
         render :edit and return
       end
       @post.prefecture_code = params[:post][:prefecture_code]
       @post.municipality = params[:post][:municipality]
-
-    elsif params[:post][:option] == "2"
-      @post.prefecture_code = current_user.prefecture_code
-      @post.municipality = current_user.municipality
+    elsif params[:post][:option] == "3"
+      @post.prefecture_code = nil
+      @post.municipality = ""
     end
 
     if @post.update(

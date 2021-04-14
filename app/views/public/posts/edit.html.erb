@@ -52,22 +52,17 @@
               変更しない
               </label>
               <br>
-              <span><%= @post.prefecture_name + @post.municipality %></span>
+              <% unless @post.prefecture_name == nil %>
+                <span><%= @post.prefecture_name %> <%= @post.municipality %></span>
+              <% else %>
+                <span>指定なし</span>
+              <% end %>
             </section>
 
+            <% unless @post.prefecture_code == current_user.prefecture_code and @post.municipality == current_user.municipality %>
             <section class="choose-area-of-hope">
               <label>
               <%= f.radio_button :option, 1, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
-              変更する
-              </label>
-              <br>
-              <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {prompt:" ---- "}, selected:"----", class:" p-2", id:"post_prefecture_code" %>
-              <%= f.text_field :municipality, placeholder: "希望の市区町村を入力してください", class:"col-sm-8 text-left ml-4 focus-green" %>
-            </section>
-
-            <section class="choose-area-of-hope">
-              <label>
-              <%= f.radio_button :option, 2, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
               ご自身の住所に変更する
               </label>
               <br>
@@ -76,6 +71,26 @@
                 <%= current_user.municipality %>
               </span>
             </section>
+            <% end %>
+
+            <section class="choose-area-of-hope">
+              <label>
+              <%= f.radio_button :option, 2, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
+              変更する
+              </label>
+              <br>
+              <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {prompt:" ---- "}, selected:"----", class:" p-2", id:"post_prefecture_code" %>
+              <%= f.text_field :municipality, placeholder: "希望の市区町村を入力してください", class:"col-sm-8 text-left ml-4 focus-green" %>
+            </section>
+
+            <% unless @post.prefecture_code == nil %>
+            <section class="choose-area-of-hope">
+              <label>
+              <%= f.radio_button :option, 3, class:"radio-button mr-3", style:"transform:scale(2.0);" %>
+              エリアは指定しない
+              </label>
+            </section>
+            <% end %>
           </div>
       </div>
 
