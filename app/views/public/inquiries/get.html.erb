@@ -1,29 +1,37 @@
 <div class="background-color">
 
   <%= render "layouts/flash" %>
-  <h2 class="page-title">お問い合わせ と Q&A</h2>
+  <h2 class="page-title">お問い合わせ</h2>
 
   <div class="container">
     <div class="row">
       <div class="inquiry-form">
         <%= form_with(model: @inquiry, url: inquiries_create_path, local: true) do |f| %>
-        <div class="form-item">
+        <div class="form-content">
           <p class="form-item-label col-sm-4">
             <span class="form-item-label-required">必須</span>
             名前
           </p>
-          <%= f.text_field :name, placeholder:"フルネームで入力してください", class:"form-item-input" %>
+          <% if user_signed_in? %>
+            <%= f.text_field :name, placeholder:"フルネームで入力してください", value: @user.name, class:"form-item-input" %>
+          <% else %>
+            <%= f.text_field :name, placeholder:"フルネームで入力してください", class:"form-item-input" %>
+          <% end %>
         </div>
 
-        <div class="form-item">
+        <div class="form-content">
           <p class="form-item-label col-sm-4">
             <span class="form-item-label-required">必須</span>
             メールアドレス
           </p>
-          <%= f.text_field :email, placeholder:"例）example@gmail.com", class:"form-item-input" %>
+          <% if user_signed_in? %>
+            <%= f.text_field :email, placeholder:"例）example@gmail.com", value: @user.email, class:"form-item-input" %>
+          <% else %>
+            <%= f.text_field :email, placeholder:"例）example@gmail.com", class:"form-item-input" %>
+          <% end %>
         </div>
 
-        <div class="form-item">
+        <div class="form-content">
           <p class="form-item-label col-sm-4">
             <span class="form-item-label-required">必須</span>
             タイトル
@@ -31,21 +39,94 @@
           <%= f.select :title, [["ジャンル追加希望", "ジャンル追加希望"], ["問い合わせ", "問い合わせ"], ["その他要望など", "その他要望など"]], {include_blank: "選択して下さい"}, class:"form-item-input" %>
         </div>
 
-        <div class="form-item">
+        <div class="form-content">
           <p class="form-item-label col-sm-4 adjustment"><span class="form-item-label-required">必須</span>お問い合わせ内容</p>
           <%= f.text_area :content, placeholder:"入力してください", class:"form-item-textarea" %>
         </div>
 
         <div class="actions">
-          <%= f.submit "送信する", class:"form-btn" %>
+          <%= f.submit "送信する",data: { confirm: "問い合わせを送りますか？" }, class:"form-btn" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="page-title">よくある質問</h2>
+  <div class="container">
+    <div class="row">
+      <div class="qa-area">
+        <div class="question-content">
+          <div class="qa-question">
+            <p>Q1. ジャンルを追加する方法はありますか？</p>
+            <i class="fas fa-angle-down qa-icon qa-icon1"></i>
+            <i class="fas fa-angle-up qa-icon qa-icon2"></i>
+          </div>
+
+          <div class="hide-class">
+            <p class="question-answer">問い合わせフォームより、タイトルに「ジャンル追加希望」を選択の上、お問い合わせください。また、その際に理由を明記していただけると幸いです。管理人が検討致します。</p>
+          </div>
         </div>
 
-        <% end %>
+        <div class="question-content">
+          <div class="qa-question">
+            <p>Q2. 投稿の掲載期限を延長することはできますか？</p>
+            <i class="fas fa-angle-down qa-icon qa-icon1"></i>
+            <i class="fas fa-angle-up qa-icon qa-icon2"></i>
+          </div>
 
+          <div class="hide-class">
+            <p class="question-answer">投稿は1ヶ月間更新されないと自動削除されます。<br>そのため、1ヶ月以内に投稿内容を編集すれば自動削除期限を変更することは可能です。</p>
+          </div>
+        </div>
 
+        <div class="question-content">
+          <div class="qa-question">
+            <p>Q3. 検索が全然ヒットしません。</p>
+            <i class="fas fa-angle-down qa-icon qa-icon1"></i>
+            <i class="fas fa-angle-up qa-icon qa-icon2"></i>
+          </div>
 
+          <div class="hide-class">
+            <p class="question-answer">詳細検索にて、「年齢」や「地域」などを指定しすぎるとヒット件数は大幅に減少する可能性があります。<br>ヒットしない場合は検索範囲を広げてみてください。</p>
+          </div>
+        </div>
 
+        <div class="question-content">
+          <div class="qa-question">
+            <p>Q4. 知り合った人と別ツール(LINEなど)で連絡を取ることは可能ですか？</p>
+            <i class="fas fa-angle-down qa-icon qa-icon1"></i>
+            <i class="fas fa-angle-up qa-icon qa-icon2"></i>
+          </div>
 
+          <div class="hide-class">
+            <p class="question-answer">Enrich-ity内でしか連絡をしてはいけないというルールはございません。<br>そのため、ユーザー様同士が同意の元であれば構いません。</p>
+          </div>
+        </div>
+
+        <div class="question-content">
+          <div class="qa-question">
+            <p>Q5. 質問内容５</p>
+            <i class="fas fa-angle-down qa-icon qa-icon1"></i>
+            <i class="fas fa-angle-up qa-icon qa-icon2"></i>
+          </div>
+
+          <div class="hide-class">
+            <p class="question-answer">質問答え質問答え質問答え質問答え質問答え質問答え</p>
+          </div>
+        </div>
+
+        <div class="question-content">
+          <div class="qa-question">
+            <p>Q5. 質問内容６</p>
+            <i class="fas fa-angle-down qa-icon qa-icon1"></i>
+            <i class="fas fa-angle-up qa-icon qa-icon2"></i>
+          </div>
+
+          <div class="hide-class">
+            <p class="question-answer">質問答え質問答え質問答え質問答え質問答え質問答え</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

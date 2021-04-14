@@ -34,8 +34,9 @@ Rails.application.routes.draw do
     post 'posts/new', to: 'posts#create'
 
     get 'inquiries/get' => 'inquiries#get'
+    # 問い合わせ保存失敗時render :get処理後のURL。そこでリロードしてもエラーにならないように定義
+    get 'inquiries/create' => 'inquiries#get'
     post 'inquiries/create' => 'inquiries#create'
-    get 'inquiries/thank' => 'inquiries#thank'
 
     resources :notifications, only: [:index]
     resources :direct_messages, only: [:create]

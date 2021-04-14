@@ -1,6 +1,6 @@
 class Inquiry < ApplicationRecord
-  belongs_to :user
-
+  validates :name, presence: true
+  validates :email, presence: true
   validates :title, presence: true
   validates :content, presence: true
 end

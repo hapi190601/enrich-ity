@@ -2,21 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// 問い合わせ
 .inquiry-form {
   width: 80%;
   margin: 0 auto;
 }
 
-.form-item {
+.form-content {
   border-top: 1px solid #ddd;
   padding: 24px 0;
   width: 100%;
   display: flex;
   align-items: center;
-}
-
-.form-item:nth-child(5) {
-  border-bottom: 1px solid #ddd;
 }
 
 .form-item-label {
@@ -74,4 +71,53 @@
   color: #fff;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+// よくある質問
+
+.qa-area {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.question-content {
+  background-color: lavender;
+  opacity: 0.9;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.qa-question {
+  padding: 15px 30px;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qa-question:hover {
+  cursor: pointer;
+}
+
+.qa-question > p {
+  margin-bottom: 0!important;
+}
+
+.question-answer {
+  padding: 10px;
+  margin: 0 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.question-answer:hover {
+  cursor: pointer;
+}
+
+.qa-icon {
+  font-size: 2rem;
+}
+
+.hide-class {
+  padding-bottom: 15px;
 }

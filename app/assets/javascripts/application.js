@@ -172,4 +172,26 @@ $(document).on('turbolinks:load', function() {
   };
 
   Menu.init();
+
+
+  // よくある質問
+  $('.hide-class').hide();
+  $('.qa-icon2').hide();
+
+  $('.question-content').click(function(){
+    var $answer = $(this).find('.hide-class');
+
+    if($answer.hasClass('open')) {
+      $answer.removeClass('open');
+      $answer.slideUp();
+      $(this).find('.qa-icon1').show();
+      $(this).find('.qa-icon2').hide();
+    } else {
+     $answer.addClass('open');
+     $answer.slideDown();
+     $(this).find('.qa-icon1').hide();
+    $(this).find('.qa-icon2').show();
+   }
+  });
+
 });
