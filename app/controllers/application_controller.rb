@@ -7,19 +7,19 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if user_signed_in?
       flash[:notice] = "ログインに成功しました！"
-      root_path
+      posts_top_path
     else
-      private_users_path
+      root_path
     end
   end
 
   #新規登録後の遷移パス
   def after_sign_up_path(resource)
-    if user_sined_up?
+    if user_signed_up?
       flash[:notice] = "会員登録しました！"
       root_path
     else
-      private_users_path
+      root_path
     end
   end
 

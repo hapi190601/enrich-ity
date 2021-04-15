@@ -23,10 +23,26 @@
           <% @favorites_index.each do |pos| %>
           <tbody>
             <tr>
-              <td class="vertical-middle"><%= pos.title %></td>
-              <td class="text-center vertical-middle"><%= link_to pos.user.nickname, user_path(pos.user.id), class:"text-dark" %></td>
-              <td class="text-center vertical-middle"><%= pos.gender %><br><br><%= pos.desired_area %></td>
-              <td class="vertical-middle"><%= safe_join(pos.content.truncate(50).split("\n"),tag(:br)) %></td>
+              <td class="vertical-middle">
+                <%= pos.title %>
+              </td>
+              <td class="text-center vertical-middle">
+                <%= link_to pos.user.nickname, user_path(pos.user.id), class:"text-dark" %>
+              </td>
+              <td class="text-center vertical-middle">
+                <%= pos.gender %>
+                <br>
+                <br>
+                <% unless pos.prefecture_code == nil %>
+                  <%= pos.prefecture_name %>
+                  <%= pos.municipality %>
+                <% else %>
+                  希望エリアなし
+                <% end %>
+              </td>
+              <td class="vertical-middle">
+                <%= safe_join(pos.content.truncate(50).split("\n"),tag(:br)) %>
+              </td>
               <td class="vertical-middle">
                 <%= link_to "詳細へ", post_path(pos.id), class:"btn btn-info bigger-btn"%>
                 <br><br>

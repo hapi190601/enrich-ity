@@ -12,6 +12,35 @@ Admin.create!(
   password: "password"
 )
 
+# ジャンル
+Genre.create!(
+  name: "筋トレ・ダイエット"
+)
+
+Genre.create!(
+  name: "勉強(スキルアップ)"
+)
+
+Genre.create!(
+  name: "スポーツ"
+)
+
+Genre.create!(
+  name: "ライブ観戦"
+)
+
+Genre.create!(
+  name: "イベント"
+)
+
+Genre.create!(
+  name: "友達募集"
+)
+
+Genre.create!(
+  name: "その他"
+)
+
 # 会員
 # 男性
 User.create!(
@@ -36,7 +65,7 @@ User.create!(
   gender: 1,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1999-3-21",
-  postal_code: "358-0007",
+  postal_code: "3580007",
   prefecture_code: 11,
   municipality: "入間市",
   nearest_station: "入間",
@@ -51,7 +80,7 @@ User.create!(
   gender: 1,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1975-5-4",
-  postal_code: "340-0043",
+  postal_code: "3400043",
   prefecture_code: 11,
   municipality: "草加市",
   nearest_station: "草加",
@@ -66,7 +95,7 @@ User.create!(
   gender: 1,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1980-4-7",
-  postal_code: "273-0041",
+  postal_code: "2730041",
   prefecture_code: 12,
   municipality: "船橋市",
   nearest_station: "船橋",
@@ -81,7 +110,7 @@ User.create!(
   gender: 1,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1977-9-17",
-  postal_code: "292-0055",
+  postal_code: "2920055",
   prefecture_code: 12,
   municipality: "木更津市",
   nearest_station: "旭",
@@ -96,7 +125,7 @@ User.create!(
   gender: 1,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1983-10-14",
-  postal_code: "270-2223",
+  postal_code: "2702223",
   prefecture_code: 12,
   municipality: "松戸市",
   nearest_station: "松戸",
@@ -171,7 +200,7 @@ User.create!(
   gender: 1,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1989-10-24",
-  postal_code: "229-0024",
+  postal_code: "2290024",
   prefecture_code: 14,
   municipality: "相模原市",
   nearest_station: "青葉",
@@ -186,7 +215,7 @@ User.create!(
   gender: 1,
   # image_id: File.open("./app/assets/images/"),
   birthday: "2001-7-19",
-  postal_code: "210-0847",
+  postal_code: "2100847",
   prefecture_code: 14,
   municipality: "川崎市川崎区",
   nearest_station: "川崎",
@@ -218,7 +247,7 @@ User.create!(
   gender: 2,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1992-2-10",
-  postal_code: "359-0000",
+  postal_code: "3590000",
   prefecture_code: 11,
   municipality: "所沢市",
   nearest_station: "所沢",
@@ -233,7 +262,7 @@ User.create!(
   gender: 2,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1978-4-1",
-  postal_code: "333-0826",
+  postal_code: "3330826",
   prefecture_code: 11,
   municipality: "川口市",
   nearest_station: "西川口",
@@ -248,7 +277,7 @@ User.create!(
   gender: 2,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1992-4-17",
-  postal_code: "272-0143",
+  postal_code: "2720143",
   prefecture_code: 12,
   municipality: "市川市",
   nearest_station: "市川",
@@ -263,7 +292,7 @@ User.create!(
   gender: 2,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1993-1-19",
-  postal_code: "277-0055",
+  postal_code: "2770055",
   prefecture_code: 12,
   municipality: "柏市",
   nearest_station: "柏",
@@ -278,7 +307,7 @@ User.create!(
   gender: 2,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1994-10-11",
-  postal_code: "263-0034",
+  postal_code: "2630034",
   prefecture_code: 12,
   municipality: "千葉市稲毛区",
   nearest_station: "稲毛",
@@ -293,7 +322,7 @@ User.create!(
   gender: 2,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1989-8-8",
-  postal_code: "192-0082",
+  postal_code: "1920082",
   prefecture_code: 13,
   municipality: "八王子市",
   nearest_station: "西八王子",
@@ -323,10 +352,10 @@ User.create!(
   gender: 2,
   # image_id: File.open("./app/assets/images/"),
   birthday: "2000-1-1",
-  postal_code: "105-0014",
+  postal_code: "1050014",
   prefecture_code: 13,
   municipality: "港区",
-  nearest_station: "品川駅",
+  nearest_station: "品川",
   email: "test21@test.com",
   password: "aaaaaa",
 )
@@ -338,7 +367,7 @@ User.create!(
   gender: 2,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1988-5-20",
-  postal_code: "243-0437",
+  postal_code: "2430437",
   prefecture_code: 14,
   municipality: "海老名市",
   nearest_station: "座間",
@@ -353,7 +382,7 @@ User.create!(
   gender: 2,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1979-6-2",
-  postal_code: "245-0061",
+  postal_code: "2450061",
   prefecture_code: 14,
   municipality: "横浜市戸塚区",
   nearest_station: "戸塚",
@@ -368,7 +397,7 @@ User.create!(
   gender: 2,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1969-11-17",
-  postal_code: "243-0028",
+  postal_code: "2430028",
   prefecture_code: 14,
   municipality: "厚木市",
   nearest_station: "本厚木",
@@ -385,7 +414,7 @@ User.create!(
   gender: 0,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1990-12-12",
-  postal_code: "190-0012",
+  postal_code: "1900012",
   prefecture_code: 13,
   municipality: "立川市",
   nearest_station: "立川",
@@ -400,7 +429,7 @@ User.create!(
   gender: 0,
   # image_id: File.open("./app/assets/images/"),
   birthday: "1998-1-6",
-  postal_code: "249-0002",
+  postal_code: "2490002",
   prefecture_code: 14,
   municipality: "逗子市",
   nearest_station: "逗子",
@@ -862,33 +891,4 @@ Post.create!(
   prefecture_code: 11,
   municipality: "川越市",
   # image_id: File.open("./app/assets/images/")
-)
-
-# ジャンル
-Genre.create!(
-  name: "筋トレ・ダイエット"
-)
-
-Genre.create!(
-  name: "勉強(スキルアップ)"
-)
-
-Genre.create!(
-  name: "スポーツ"
-)
-
-Genre.create!(
-  name: "ライブ観戦"
-)
-
-Genre.create!(
-  name: "イベント"
-)
-
-Genre.create!(
-  name: "友達募集"
-)
-
-Genre.create!(
-  name: "その他"
 )

@@ -52,7 +52,11 @@
                 <br>
                 <span>■タイトル<br>　<%= pos.title %></span>
                 <br>
-                <span>■エリア<br>　<%= pos.prefecture_name %><%= pos.municipality %> 近辺</span>
+                <% unless pos.prefecture_code == nil %>
+                  <span>■エリア<br>　<%= pos.prefecture_name %><%= pos.municipality %> 近辺</span>
+                <% else %>
+                  <span>■エリア<br>　指定なし</span>
+                <% end %>
                 <br>
                 <span>■本文<br><%= safe_join(pos.content.truncate(30).split("\n"),tag(:br)) %></span>
               </div>

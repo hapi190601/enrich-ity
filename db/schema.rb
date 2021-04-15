@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_14_060534) do
+ActiveRecord::Schema.define(version: 2021_04_15_040601) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 2021_04_14_060534) do
     t.integer "visitor_id", null: false
     t.integer "visited_id", null: false
     t.integer "room_id", null: false
-    t.integer "message_id", null: false
+    t.integer "direct_message_id", null: false
     t.string "action", null: false
     t.boolean "checked", default: false, null: false
     t.datetime "created_at", null: false
@@ -104,20 +104,20 @@ ActiveRecord::Schema.define(version: 2021_04_14_060534) do
     t.integer "genre_id", null: false
     t.string "title", null: false
     t.text "content", null: false
-    t.string "age", null: false
+    t.string "age"
     t.integer "gender", null: false
+    t.string "municipality", null: false
     t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "prefecture_code"
-    t.string "municipality"
     t.index ["title"], name: "index_posts_on_title"
   end
 
   create_table "rooms", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
