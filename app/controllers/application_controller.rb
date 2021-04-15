@@ -1,7 +1,23 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  # before_action :render_notifications
 
   protected
+
+  # if user_signed_in?
+  #   def render_notifications
+  #     notifications = current_user.passive_notifications.page(params[:page]).per(8)
+
+      # if notifications.present?
+      #   notifications.where(checked: false).each do |notification|
+      #     notification.update_attributes(checked: true)
+      #   end
+      # end
+
+      # 自分がチャットを送った時の通知は表示しない。(相手がチャットを送った時のみ)
+  #     @my_notifications = notifications.where.not(visitor_id: current_user.id)
+  #   end
+  # end
 
   #ログイン後の遷移パス
   def after_sign_in_path_for(resource)

@@ -2,9 +2,7 @@
 
   <div class="room-show-area">
     <% @entries.each do |e| %>
-      <!-- eachで回したentryユーザーがログインユーザーであれば、@classに"current_user"の文字列を代入する。ログインユーザーであれば、空白を代入する -->
       <% current_user == e.user ? @class = "current_user" : @class = ""  %>
-        <!-- eachで回したentryユーザーがログインユーザーでなければ、entryユーザー名を表示する -->
         <% if e.user != current_user %>
           <p class="text-left <%= @class %>" id="<%= @class %>" style="font-size: 30px;" data-id="<%= e.user.id %>"></p>
 
@@ -16,12 +14,10 @@
         <% end %>
     <% end %>
 
-    <!-- メッセージ内容は、パーシャルにします -->
     <div id="direct_messages" data-room_id="<%= @room.id %>">
       <%= render @direct_messages %>
     </div>
 
-    <!-- メッセージフォーム -->
     <div class="create-message">
       <form id="target">
         <textarea type="text" class="create-message-input focus-green" id="chat-input" placeholder="　メッセージを入力" data-behavior="room_speaker"></textarea>

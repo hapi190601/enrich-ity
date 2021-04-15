@@ -103,19 +103,35 @@ header {
   margin-right: 40px!important;
 }
 
-#slide-btn {
+.slide-btn {
   width: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
   display: inline-block;
-	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, lavender 50%);
-	background-position: 0 0;
-	background-size: 200% auto;
+	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, lavender 50%)!important;
+	background-position: 0 0!important;
+	background-size: 200% auto!important;
 	transition: all .3s ease 0s;
 	text-decoration: none;
 }
 
-#slide-btn:hover {
-  cursor: pointer;
-	background-position: -100% 0;
+.slide-btn:hover {
+	background-position: -100% 0!important;
+}
+
+.slide-btn2 {
+  min-width: 110px;
+  color: #6c757d;
+  border: 1px solid #6c757d;
+	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, skyblue 50%)!important;
+	background-position: 0 0!important;
+	background-size: 200% auto!important;
+	transition: all .3s ease 0s;
+}
+
+.slide-btn2:hover {
+  color: white;
+	background-position: -100% 0!important;
 }
 
 .navbar-toggler {
@@ -140,10 +156,10 @@ header {
   top: 0;
 }
 .middle {
-  top: 18px;
+  top: 14px;
 }
 .bottom {
-  top: 36px;
+  top: 28px;
 }
 
 .top-click {
@@ -228,7 +244,7 @@ footer {
 }
 
 .page-title {
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
   text-align:center;
   padding: 70px 0;

@@ -194,4 +194,25 @@ $(document).on('turbolinks:load', function() {
    }
   });
 
+  // 通知機能
+  $('.notification-area').hide();
+  $('.slide-notification').click(function(){
+
+    if($('.notification-area').hasClass('open')) {
+      $('.notification-area').fadeOut();
+      $('.notification-area').removeClass('open');
+    } else {
+      $('.notification-area').addClass('open');
+      $('.notification-area').fadeIn();
+    }
+  });
+
+  $('#notification-close-btn').click(function(){
+    console.log("クリック");
+    if($('.notification-area').hasClass('open')) {
+      $('.notification-area').removeClass('open');
+      $('.notification-area').fadeOut();
+    }
+  });
+
 });

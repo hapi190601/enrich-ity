@@ -1,0 +1,28 @@
+<div class="notification-area">
+  <h3>チャット通知</h3>
+
+
+  <% if my_notifications.present? %>
+    <% my_notifications.each do |my_notification| %>
+
+    <% visitor = my_notification.visitor %>
+    <% visited = my_notification.visited %>
+
+    <div class="a-notification">
+      <%= visitor.name %>さんから<%= my_notification.action %>が届いています。
+      <br>
+      <%= link_to "チャットルームへ", room_path(my_notification.romm_id), class:"btn btn-sm btn-primary" %>
+      <br>
+      <%= my_notification.created_at.strftime('%Y/%m/%d')%>
+    </div>
+
+    <% end %>
+
+    <%= paginate my_notifications %>
+  <% else %>
+    <p>通知はありません</p>
+  <% end %>
+
+  <button id="notification-close-btn">閉じる</button>
+</div>
+

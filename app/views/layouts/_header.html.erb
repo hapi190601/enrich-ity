@@ -3,15 +3,15 @@
     <nav class="navbar navbar-nav navbar-left title">
       <div>
         <% if user_signed_in? %>
-          <%=link_to posts_top_path do %>
+          <%= link_to posts_top_path do %>
             <%= image_tag "logo.png", :size => '140x80' %>
           <% end %>
         <% elsif admin_signed_in? %>
-          <%=link_to private_users_path do %>
+          <%= link_to private_users_path do %>
             <%= image_tag "logo.png", :size => '140x80' %>
           <% end %>
         <% else %>
-          <%=link_to root_path do %>
+          <%= link_to root_path do %>
             <%= image_tag "logo.png", :size => '140x80' %>
           <% end %>
         <% end %>
@@ -23,7 +23,6 @@
         <span class="sign-in-nickname"><%= current_user.nickname %>  ログイン中</span>
       </div>
     <% end %>
-
 
     <!--会員ログイン時-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,72 +36,72 @@
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "　通知　", notifications_path, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "通知", notifications_path, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <span class="d-none d-lg-block btn m-2 slide-notification slide-btn2">通知</span>
+          <span class="d-lg-none nav-link p-3 slide-notification slide-btn">通知</span>
         </li>
         <li class="nav-item">
-          <%= link_to "マイページ", user_path(current_user), class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "マイページ", user_path(current_user), class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "マイページ", user_path(current_user), class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "マイページ", user_path(current_user), class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
         <li class="nav-item">
-          <%= link_to "詳細検索", searches_search_path, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "詳細検索", searches_search_path, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "詳細検索", searches_search_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "詳細検索", searches_search_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
         <li class="nav-item">
-          <%= link_to "新規投稿", new_post_path, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "新規投稿", new_post_path, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "新規投稿", new_post_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "新規投稿", new_post_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
         <li class="nav-item">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
 
       <!--管理者ログイン時-->
       <% elsif admin_signed_in? %>
         <li class="nav-item">
-          <%= link_to "投稿一覧", private_posts_path, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "投稿一覧", private_posts_path, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "投稿一覧", private_posts_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "投稿一覧", private_posts_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
         <li class="nav-item">
-          <%= link_to "ジャンル一覧", private_genres_path, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "ジャンル一覧", private_genres_path, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "ジャンル一覧", private_genres_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "ジャンル一覧", private_genres_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
         <li class="nav-item">
-          <%= link_to "詳細検索", private_searches_search_path, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "詳細検索", private_searches_search_path, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "詳細検索", private_searches_search_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "詳細検索", private_searches_search_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
         <li class="nav-item">
-          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
       </div>
 
       <% else %>
         <!--未ログイン時-->
         <li class="nav-item">
-          <%= link_to "　検索　", searches_incremental_search_path, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "検索", searches_incremental_search_path, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "検索", searches_incremental_search_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "検索", searches_incremental_search_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
 
         <li class="nav-item">
-          <%= link_to "About", homes_about_path, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "About", homes_about_path, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "About", homes_about_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "About", homes_about_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
         <li class="nav-item">
-          <%= link_to "How To", homes_explain_path, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "How To", homes_explain_path, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "How To", homes_explain_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "How To", homes_explain_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
         <li class="nav-item">
-          <%= link_to "新規登録", new_user_registration_path, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "新規登録", new_user_registration_path, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
         <li class="nav-item">
-          <%= link_to "ログイン", new_user_session_path, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "ログイン", new_user_session_path, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "ログイン", new_user_session_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "ログイン", new_user_session_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
         <li class="nav-item">
-          <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "d-none d-lg-block btn btn-outline-secondary m-3" %>
-          <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "d-lg-none nav-link p-3", id:"slide-btn" %>
+          <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
       <% end %>
       </ul>

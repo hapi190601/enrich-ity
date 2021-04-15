@@ -15,6 +15,9 @@
 
   <body>
     <%= render "layouts/header" %>
+    <% if user_signed_in? %>
+      <%= render "public/notifications/index", my_notifications: @my_notifications %>
+    <% end %>
     <%= yield %>
 
     <span id="up-scroll">

@@ -24,7 +24,6 @@
   var dm_user = document.getElementById('current_user');
   var current_user = dm_user.getAttribute('data-id')
 
-
   // 自分の投稿(右側css)
   if(direct_message == current_user) {
     $('div.' + <%= direct_message.id %>).css('display', 'none');
@@ -41,5 +40,4 @@
     $('div.' + <%= direct_message.id %> + '-chat-space').css('margin', '30px 0 30px 20px');
     $('.<%= direct_message.id %>' + '-span').css('margin-left', '50px')
   }
-  // setInterval("location.reload()",60000);
 </script>
