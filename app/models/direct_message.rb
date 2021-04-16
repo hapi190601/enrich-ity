@@ -5,5 +5,6 @@ class DirectMessage < ApplicationRecord
 
   validates :message, presence: true
 
+  # 処理⑥
   after_create_commit { DirectMessageBroadcastJob.perform_later self }
 end

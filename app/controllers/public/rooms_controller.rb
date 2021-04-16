@@ -17,5 +17,12 @@ class Public::RoomsController < ApplicationController
     else
       redirect_back(fallback_location: root_path)
     end
+
+    # チャット相手のidを@opponent_idに
+     @entries.each do |e|
+        if e.user != current_user
+          @opponent_id = e.user.id
+        end
+     end
   end
 end

@@ -9,6 +9,7 @@
   this.App || (this.App = {});
 
   /* global ActionCable */
+  // これによりWebSocket通信を確立させている
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
