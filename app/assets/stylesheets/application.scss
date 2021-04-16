@@ -43,13 +43,7 @@ input {
   background: linear-gradient(to right, #5B86E5, #36D1DC);
   padding-top: 120px;
   padding-bottom: 100px;
-}
-
-// ボタン
-.bigger-btn {
-  padding: 8px 15px;
-  font-weight: bold;
-  letter-spacing: 2px;
+  opacity: 0.9;
 }
 
 // ヘッダー
@@ -131,6 +125,7 @@ header {
 
 .slide-btn2:hover {
   color: white;
+  border: 1px solid skyblue;
 	background-position: -100% 0!important;
 }
 
@@ -215,6 +210,7 @@ footer {
 // トップへスクロールボタン
 
 #up-scroll {
+  z-index: 5;
   position: fixed;
   right: 20px;
   bottom: 100px;
@@ -331,12 +327,82 @@ footer {
   margin-bottom: 0!important;
 }
 
-// 仮css
-// 共有Mサイズボタンにするかも
+
+// ボタン関連
+
+// ボタン
+.bigger-btn {
+  padding: 8px 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
 .m-size-btn {
   display: inline-block;
-  width: 80%;
+  font-weight: bold;
+  letter-spacing: 2px;
+  min-width: 200px;
   margin: 20px auto;
-  padding: 15px 0!important;
-  font-size: 1.3rem!important;
+  padding: 12px 0!important;
+  font-size: 1.2em!important;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.3);
+}
+
+.m-size-btn:hover {
+  margin: 22px auto 18px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+}
+
+// 問い合わせボタン
+.inquiry-btn-color {
+  background-color: #faebd7;
+  border: 1px solid #faebd7;
+}
+
+.inquiry-btn-color:hover {
+  background-color: rgba(250, 235, 215, 0.9);
+}
+
+// アバウトボタン
+.about-btn-color {
+  background-color: #ffeff9;
+  border: 1px solid #ffeff9;
+}
+
+.about-btn-color:hover {
+  background-color: #ffeff9;
+  opacity: 0.9;
+}
+
+// ホームへボタン
+.home-btn-color {
+  background-color: #faebd7;
+  border: 1px solid #faebd7;
+}
+
+.home-btn-color:hover {
+  background-color: rgba(250, 235, 215, 0.9);
+}
+
+// 使い方を見るボタン
+.how-to-btn-color {
+  background-color: #b4eaf7;
+  border: 1px solid #b4eaf7;
+}
+
+.how-to-btn-color:hover {
+  background-color: #b4eaf7;
+  opacity: 0.9;
+}
+
+// 投稿をみるボタン
+
+.post-btn-color {
+  background-color: #d7f7be;
+  border: 1px solid #d7f7be;
+}
+
+.post-btn-color:hover {
+  background-color: #d7f7be;
+  opacity: 0.9;
 }

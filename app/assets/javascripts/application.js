@@ -101,10 +101,11 @@ $(document).on('turbolinks:load', function() {
   ScrollReveal().reveal('.left-message', option);
   ScrollReveal().reveal('.right-message', delaieroption);
   ScrollReveal().reveal('.animate',delaiestoption);
-  ScrollReveal().reveal('.link-box',lastoption);
-  ScrollReveal().reveal('.three-btn',early);
+  ScrollReveal().reveal('.animate-link-box',lastoption);
   ScrollReveal().reveal('.two-btn',early);
   ScrollReveal().reveal('.search-form',early);
+  // ScrollReveal().reveal('.link-box',lastoption);
+  // ScrollReveal().reveal('.three-btn',early);
 
   // プレビュー機能
   function readURL(input) {

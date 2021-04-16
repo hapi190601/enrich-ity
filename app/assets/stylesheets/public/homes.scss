@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .slide-image {
-  height: 500px;
-  width: 90%;
+  height: 550px;
+  width: 100%;
   margin:  auto;
   opacity: 0.7;
 }
@@ -48,7 +48,7 @@
 }
 .position-box {
   position: relative;
-  padding-top: 75px;
+  padding-top: 90px;
 }
 
 .ityped-message-box {
@@ -81,8 +81,8 @@
   margin: 10px 0 30px!important;
   padding: 10px 20px;
   font-size: 1.5rem!important;
-  background-color: #e0e0e0;
-  border-radius: 10px;
+  background-color: lavender;
+  border-radius: 3px;
 }
 
 .about-h4 {
@@ -90,13 +90,11 @@
   margin: 10px 0 30px!important;
   padding: 10px 20px;
   font-size: 1.25rem!important;
-  background-color: #e0e0e0;
-  border-radius: 10px;
+  background-color: lavender;
+  border-radius: 3px;
 }
 
-.main-message > div {
-  margin-bottom: 50px;
-}
+
 
 .recommented-user {
   padding-bottom: 50px;
@@ -112,20 +110,20 @@ p {
 }
 
 .top-messages {
-  width: 75%;
+  width: 90%;
   margin: 0 auto;
-  padding: 50px 0 30px;
+  padding: 75px 0 30px;
 }
 
 .top-message {
   text-align:center;
-  font-size: 1.4rem;
+
   font-weight: bold;
   padding-bottom: 75px;
 }
 
 .common-message-style {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding-bottom: 75px;
 }
 
@@ -149,15 +147,69 @@ p {
 }
 
 .recommended-ul > li {
-  font-size: 1.2rem;
-  line-height: 2.5rem;
+  font-size: 1.3rem;
+  line-height: 2.8rem;
+  font-weight: bold;
+  opacity: 0.8;
 }
 
 .manner-ul > li {
-  font-size: 1.2rem;
-  line-height: 2.5rem;
+  font-size: 1.3rem;
+  line-height: 2.8rem;
+  font-weight: bold;
+  opacity: 0.8;
 }
 
 .animate {
+  padding: 50px 0 30px;
   font-size: 2rem!important;
+}
+
+// アバウトページパララックス
+.parallax {
+  // height: 600px;
+}
+
+.cd-fixed-bg {
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(255,255,255,0.4);
+    background-blend-mode: lighten;
+    z-index: 2;
+}
+
+/*--固定背景01--*/
+.cd-fixed-bg.cd-bg-1  {
+  background-image: image-url('nakama1.png');
+}
+
+/*--固定背景02--*/
+.cd-fixed-bg.cd-bg-2  {
+  background-image: image-url('nakama5.png');
+}
+
+/*--固定背景03--*/
+.cd-fixed-bg.cd-bg-3  {
+  background-image: image-url('nakama2.png');
+}
+
+.about-content {
+  width: 75%;
+  margin-right: 50px;
+  margin-left: auto;
+}
+
+.about-content > p {
+  color: black;
+  font-size: 1.3rem!important;
+  opacity: 0.8;
+  padding-left: 20px;
+  letter-spacing: 2px;
+}
+
+.notitle-about-content {
+  padding: 50px 0;
 }

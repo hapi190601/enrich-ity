@@ -12,17 +12,17 @@
   <div class="link-box two-btn">
     <div class="link">
       <% if user_signed_in? %>
-        <%= link_to "トップへ", posts_top_path, class:"btn btn-sm btn-success bigger-btn p-3" %>
+        <%= link_to "トップへ", posts_top_path, class:"btn btn-sm home-btn-color m-size-btn" %>
       <% else %>
-        <%= link_to "トップへ", root_path, class:"btn btn-sm btn-success bigger-btn p-3" %>
+        <%= link_to "トップへ", root_path, class:"btn btn-sm home-btn-color m-size-btn" %>
       <% end %>
     </div>
 
     <div class="link">
-      <%= link_to "投稿一覧へ", posts_path, class:"btn btn-sm btn-info bigger-btn p-3"%>
+      <%= link_to "投稿一覧へ", posts_path, class:"btn btn-sm post-btn-color m-size-btn" %>
     </div>
   </div>
-
+</div>
 <script>
   // インクリメンタルサーチ
   $(document).on('turbolinks:load', function() {

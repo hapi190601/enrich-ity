@@ -1,11 +1,9 @@
-<div class="background-color">
-  <%= render "layouts/flash" %>
-
-  <div class="container">
-    <h2 class="page-title">【About】</h2>
+<div style="padding-top: 120px;">
+  <div class="parallax cd-fixed-bg cd-bg-1">
+    <h2 class="page-title">About</h2>
 
     <div class="main-message">
-      <div>
+      <div class="about-content">
         <h3 class="about-h3">Enrich-ityとは</h3>
         <p>Enrich-ityは<br>人生を充実にするための<storng>「仲間」</storng>を見つけることができるWebアプリです。</p>
 
@@ -16,36 +14,44 @@
         </p>
       </div>
 
-      <div>
-        <h4 class="about-h4">-- 検索 --</h4>
-        <p>
-          気の合いそうな投稿を見つけたら、投稿者とチャットでやりとりができます。<br><br>
-          オンラインで話すもよし、実際に会うもよし、<br>その後のやりとりは皆さまにお任せしています。<br>
-          <span>※ Enrich-ityはやり取り間でのトラブルについて一切責任を負いません。</span>
-        </p>
-      </div>
+      <div class="link-box">
+        <div class="link">
+          <%= link_to "ホームへ", homes_top_path, class:"btn btn-sm home-btn-color m-size-btn" %>
+        </div>
 
-      <div>
-        <h4 class="about-h4">-- 投稿 --</h4>
-        <p>
-          自ら投稿したい場合は、エリアや年代、性別などの希望条件を選ぶことができます。<br>
-          投稿ができたら、チャットが来るのを楽しみに待ちましょう。<br><br>
-          皆さんの人生がこのEnrich-ityを使うことによって少しでも好転することを祈っています！
-        </p>
+        <div class="link">
+          <%= link_to "使い方を見る", homes_explain_path, class:"btn btn-sm how-to-btn-color m-size-btn" %>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="link-box">
-      <div class="link">
-        <%= link_to "　　ホームへ　　", homes_top_path, class:"btn btn-sm btn-light bigger-btn" %>
-      </div>
 
-      <div class="link">
-        <%= link_to "使い方を見てみよう！", homes_explain_path, class:"btn btn-sm btn-info bigger-btn" %>
-      </div>
+
+  <!--固定背景02-->
+  <div class="parallax cd-fixed-bg cd-bg-2">
+    <div class="about-content notitle-about-content">
+      <h4 class="about-h4">　　検索　　</h4>
+      <p>
+        気の合いそうな投稿を見つけたら、投稿者とチャットでやりとりができます。<br><br>
+        オンラインで話すもよし、実際に会うもよし、<br>その後のやりとりは皆さまにお任せしています。<br>
+        <span>※ Enrich-ityはやり取り間でのトラブルについて一切責任を負いません。</span>
+      </p>
     </div>
 
-    <div class="recommended-user">
+    <div class="about-content notitle-about-content">
+      <h4 class="about-h4">　　投稿　　</h4>
+      <p>
+        自ら投稿したい場合は、エリアや年代、性別などの希望条件を選ぶことができます。<br>
+        投稿ができたら、チャットが来るのを楽しみに待ちましょう。<br><br>
+        皆さんの人生がこのEnrich-ityを使うことによって少しでも好転することを祈っています！
+      </p>
+    </div>
+  </div>
+
+  <!--固定背景03-->
+  <div class="parallax cd-fixed-bg cd-bg-3">
+    <div class="recommended-user about-content notitle-about-content">
       <h4 class="about-h4">こんな人におすすめ！</h4>
       <ul class="recommended-ul">
         <li>新しい習慣形成をしたい人</li>
@@ -55,7 +61,7 @@
       </ul>
     </div>
 
-    <div class="manner">
+    <div class="manner about-content last-about-content">
       <h4 class="about-h4">マナーは守って使おう！</h4>
       <ul class="manner-ul">
         <li>相手に失礼な発言は控えよう</li>
