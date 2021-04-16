@@ -59,6 +59,12 @@ header {
   color: green;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .flex-between {
   display: flex;
   justify-content: space-between;
@@ -342,6 +348,7 @@ footer {
   font-weight: bold;
   letter-spacing: 2px;
   min-width: 200px;
+  max-width: 300px;
   margin: 20px auto;
   padding: 12px 0!important;
   font-size: 1.2em!important;
@@ -403,6 +410,16 @@ footer {
 }
 
 .post-btn-color:hover {
+  background-color: #d7f7be;
+  opacity: 0.9;
+}
+
+.post-show-btn-color {
+  background-color: #d7f7be;
+  border: 1px solid #d7f7be;
+}
+
+.post-show-btn-color:hover {
   background-color: #d7f7be;
   opacity: 0.9;
 }

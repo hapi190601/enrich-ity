@@ -41,10 +41,10 @@
   padding-bottom: 30px;
 }
 
-.field > span {
-  color: white;
+.sign-up-span {
+  color: #b4eaf7;
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   padding-left: 25px;
 }
 
@@ -64,13 +64,15 @@
   margin:0 auto;
   text-align: center;
   padding: 20px 0 40px;
+  font-size: 1.2rem;
 }
 
 .sign-up-link {
   width: 80%;
-  margin:0 auto;
+  margin: 0 auto;
   text-align: center;
   padding: 20px 0 40px;
+  font-size: 1.2rem;
 }
 
 label {
@@ -88,14 +90,19 @@ label {
 
 #user_birthday_1i {
   height: 35px;
+  margin: 0 3px;
 }
 
 #user_birthday_2i {
   height: 35px;
+  width: 60px;
+  margin: 0 3px;
 }
 
 #user_birthday_3i {
   height: 35px;
+  width: 60px;
+  margin: 0 3px;
 }
 
 .current-icon {
@@ -128,11 +135,12 @@ label {
   background-color: lavender;
 }
 
+.sign-in-area {
+  width: 90%;
+  margin: 0 auto;
+}
 
-.m-size-btn {
-  display: inline-block;
-  width: 80%;
-  margin: 20px auto;
-  padding: 15px 0!important;
-  font-size: 1.3rem!important;
+.sign-up-area {
+  width: 90%;
+  margin: 0 auto;
 }

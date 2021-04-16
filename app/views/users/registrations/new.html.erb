@@ -5,74 +5,129 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-10 offset-2">
+      <div class="sign-up-area">
         <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
           <%= render "users/shared/error_messages", resource: resource %>
 
-          <div class="field">
-            <%= f.label :"【名前(フルネーム)】", class:"col-sm-5" %>
-            <%= f.text_field :name, class:"input-longer-form p-2", autofocus: true %><br>
-            <span>※苗字と名前の間スペースは不要</span>
+          <div class="field flex">
+            <div class="col-sm-5">
+              <%= f.label :"【名前(フルネーム)】" %>
+              <br>
+              <span class="sign-up-span">※苗字と名前の間スペースは不要</span>
+            </div>
+            <div>
+              <%= f.text_field :name, class:"input-longest-form p-2", autofocus: true %><br>
+            </div>
           </div>
 
-          <div class="field">
-            <%= f.label :"【フリガナ(フルネーム)】", class:"col-sm-5" %>
-            <%= f.text_field :name_kana, class:"input-longer-form p-2" %>
+          <div class="field flex">
+            <div class="col-sm-5">
+              <%= f.label :"【フリガナ(フルネーム)】" %>
+            </div>
+            <div>
+              <%= f.text_field :name_kana, class:"input-longest-form p-2" %>
+            </div>
           </div>
 
-          <div class="field">
-            <%= f.label :"【ニックネーム】", class:"col-sm-5" %>
-            <%= f.text_field :nickname, class:"input-longer-form p-2" %>
+          <div class="field flex">
+            <div class="col-sm-5">
+              <%= f.label :"【ニックネーム】" %>
+            </div>
+            <div>
+              <%= f.text_field :nickname, class:"input-longest-form p-2" %>
+            </div>
           </div>
 
-          <div class="field">
-            <%= f.label :"【生年月日】", class:"col-sm-5" %>
-            <%== sprintf(f.date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=> Time.now.year-15, :end_year =>1950, prompt:"--"), '年　','月　') + '日　' %>
+          <div class="field flex">
+            <div class="col-sm-5">
+              <%= f.label :"【生年月日】" %>
+            </div>
+            <div style="width:300px; font-size: 1.2rem;">
+              <%== sprintf(f.date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=> Time.now.year-15, :end_year =>1950, prompt:"  --  "), '年','月') + '日' %>
+            </div>
           </div>
 
-          <div class="field">
-            <%= f.label :"【性別】", class:"col-sm-5" %>
-            <label>男性 <%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"m-3" %></label>
-            <label>女性 <%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"m-3" %></label>
-            <label>ひみつ <%= f.radio_button :gender, :"ひみつ", checked: true, style:"transform:scale(2.0);", class:"m-3" %></label>
+          <div class="field flex">
+            <div class="col-sm-5">
+              <%= f.label :"【性別】" %>
+            </div>
+            <div style="width:300px;">
+              <label>男性 <%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"m-2" %></label>
+              <label>女性 <%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"m-2" %></label>
+              <label>ひみつ <%= f.radio_button :gender, :"ひみつ", checked: true, style:"transform:scale(2.0);", class:"m-2" %></label>
+            </div>
           </div>
 
-          <div class="field">
-            <%= f.label :"【郵便番号】", class:"col-sm-5" %>
-            <%= f.text_field :postal_code, class:"input-longer-form p-2", autocomplete: "postcode" %><br>
-            <span>ハイフン不要</span>
+          <div class="field flex">
+            <div class="col-sm-5">
+              <%= f.label :"【郵便番号】" %>
+              <br>
+              <span class="sign-up-span">ハイフン不要</span>
+            </div>
+            <div>
+              <%= f.text_field :postal_code, class:"input-longest-form p-2", autocomplete: "postcode" %><br>
+            </div>
+
           </div>
 
-          <div class="field">
-            <%= f.label :"【お住まいの都道府県】", class:"col-sm-5" %>
-            <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, prompt:"---", class:" p-2", id:"user_prefecture_code" %>
+          <div class="field flex">
+            <div class="col-sm-5">
+              <%= f.label :"【お住まいの都道府県】" %>
+            </div>
+            <div style="width:300px;">
+              <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {prompt:"  ----  "}, class:" p-2", id:"user_prefecture_code" %>
+            </div>
           </div>
 
-          <div class="field">
-            <%= f.label :"【お住まいの市区町村】", class:"col-sm-5" %>
-            <%= f.text_field :municipality, class:"input-longer-form p-2", autocomplete: "municipality" %>
+          <div class="field flex">
+            <div class="col-sm-5">
+              <%= f.label :"【お住まいの市区町村】" %>
+            </div>
+            <div>
+              <%= f.text_field :municipality, class:"input-longest-form p-2", autocomplete: "municipality" %>
+            </div>
+
           </div>
 
-          <div class="field">
-            <%= f.label :"【最寄駅】", class:"col-sm-5" %>
-            <%= f.text_field :nearest_station, class:"input-longer-form p-2", autocomplete: "nearest_station" %><br>
-            <span>※駅不要 例：×東京駅 ○東京</span>
+          <div class="field flex">
+            <div class="col-sm-5">
+              <%= f.label :"【最寄駅】" %>
+              <br>
+              <span class="sign-up-span">※駅不要 例：×東京駅 ○東京</span>
+            </div>
+            <div>
+              <%= f.text_field :nearest_station, class:"input-longest-form p-2", autocomplete: "nearest_station" %><br>
+            </div>
           </div>
 
-          <div class="field">
-            <%= f.label :"【メールアドレス】", class:"col-sm-5" %>
-            <%= f.email_field :email, class:"input-longest-form p-2", autocomplete: "email" %>
+          <div class="field flex">
+            <div class="col-sm-5">
+              <%= f.label :"【メールアドレス】" %>
+            </div>
+            <div>
+              <%= f.email_field :email, class:"input-longest-form p-2", autocomplete: "email" %>
+            </div>
           </div>
 
-          <div class="field">
-            <%= f.label :"【パスワード】", class:"col-sm-5" %>
-            <%= f.password_field :password, class:"input-longest-form p-2", autocomplete: "new-password" %>
-            <br><span>※６文字以上</span>
+          <div class="field flex">
+            <div class="col-sm-5">
+              <%= f.label :"【パスワード】" %>
+              <br>
+              <span class="sign-up-span">※６文字以上</span>
+            </div>
+
+            <div>
+              <%= f.password_field :password, class:"input-longest-form p-2", autocomplete: "new-password" %>
+            </div>
           </div>
 
-          <div class="field">
-            <%= f.label :"【パスワード確認】", class:"col-sm-5" %>
-            <%= f.password_field :password_confirmation, class:"input-longest-form p-2", autocomplete: "new-password" %>
+          <div class="field flex">
+            <div class="col-sm-5">
+              <%= f.label :"【パスワード確認】" %>
+            </div>
+            <div>
+              <%= f.password_field :password_confirmation, class:"input-longest-form p-2", autocomplete: "new-password" %>
+            </div>
           </div>
 
           <div>
@@ -80,7 +135,7 @@
           </div>
 
           <div class="actions">
-            <%= f.submit "　新規登録　", class:"btn btn-sm btn-success bigger-btn pl-3 pr-3" %>
+            <%= f.submit "　新規登録　", class:"btn btn-sm btn-success m-size-btn" %>
           </div>
         <% end %>
 

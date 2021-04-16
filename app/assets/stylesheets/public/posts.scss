@@ -25,7 +25,8 @@
 }
 
 .post-box {
-  margin: 30px 0;
+  width: 90%;
+  margin: 30px auto;
   border-radius: 10px;
   background-color: rgb(230, 230, 250);
 }
@@ -34,14 +35,25 @@
   padding: 15px;
 }
 
+.post-iondex-label {
+  font-size: 1.2rem;
+  color: #4169e1;
+}
+
 .img-size {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   padding-bottom: 10px;
 }
 
 .posts-index-width {
   width: 50%!important;
+  margin-left: 5%;
+}
+
+.right-post {
+  width: 40%;
+  margin-right: 5%;
 }
 
 .main-messages {
