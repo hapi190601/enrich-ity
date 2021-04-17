@@ -34,10 +34,18 @@
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
+        <% if @notification_counts != 0 %>
+          <span class="notification-counts">
+            <span><%= @notification_counts %></span>
+          </span>
+        <% end %>
         <% if user_signed_in? %>
         <li class="nav-item">
           <span class="d-none d-lg-block btn m-2 slide-notification slide-btn2">通知</span>
-          <span class="d-lg-none nav-link p-3 slide-notification slide-btn">通知</span>
+          <span class="d-lg-none nav-link p-3 slide-notification slide-btn">
+            通知
+            <span class="d-lg-none nav-link inline ml-3">未読：<%= @notification_counts %>件</span>
+          </span>
         </li>
         <li class="nav-item">
           <%= link_to "マイページ", user_path(current_user), class: "d-none d-lg-block btn m-2 slide-btn2" %>

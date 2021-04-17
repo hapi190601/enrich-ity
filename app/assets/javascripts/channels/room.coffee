@@ -27,11 +27,9 @@ document.addEventListener 'turbolinks:load', ->
     if event.keyCode is 13
 
       opponent_id = document.getElementById('opponent_id').value
-      # デバック用
-      console.log('チャット相手の会員idは' + opponent_id )
       # 22行目のspeakメソッドを呼び出す(引数はフォームのメッセージ本文とチャット相手のid)
       App.room.speak event.target.value, opponent_id
-      
+
       # サーバー側に処理をお願いした為、入力フォームを空にする(valueで初期値を空に)
       event.target.value = ''
       # サーバー側に処理をお願いした為、入力フォームでのデータ送信(クライアント側でのフォーム送信)処理は止める。.preventDefault：直前のイベントをキャンセルという意味.

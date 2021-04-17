@@ -24,5 +24,12 @@ class Public::RoomsController < ApplicationController
           @opponent_id = e.user.id
         end
      end
+
+    # 通知のリンクからチャットルームへ来た時にそのroom_idの通知を既読扱いにする
+    checked_notifications = current_user.passive_notifications.where(room_id: @room.id)
+
+    checked_notifications.where(checked: false).each do |notification|
+      notification.update_attributes(checked: true)
+    end
   end
 end

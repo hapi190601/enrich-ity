@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .notification-area {
-  width: 50%;
+  width: 60%;
   position: absolute;
   top: 125px;
   right: 5px;
@@ -22,4 +22,35 @@
 .no-notification-message {
   text-align: center;
   padding: 40px 0;
+}
+
+.a-notification {
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 3px solid white;
+}
+
+.chat-notification:hover {
+  text-decoration: none!important;
+}
+
+.chat-link-strong {
+  font-size: 1.2rem;
+  color: #3cb371;
+}
+
+.checked-btn {
+  display: block;
+  text-align: right;
+  padding: 10px;
+}
+
+.fa-trash {
+  font-size: 1.7rem;
+  color: black;
+}
+
+.checked-area {
+  width: 90%;
+  margin: 0 auto;
 }

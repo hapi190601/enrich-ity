@@ -33,6 +33,10 @@ input {
   display: none!important;
 }
 
+.sircle-img {
+  border-radius: 50%;
+}
+
 .input-longer-form {
   width: 200px;
 }
@@ -59,6 +63,25 @@ header {
   background-color: rgb(240,248,255);
 }
 
+// 未読通知数表示
+.notification-counts {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  color: white;
+  text-align: center;
+  position: relative;
+  left: 30px;
+}
+
+.notification-counts > span {
+  display: inline-block;
+  line-height: 35px;
+  font-weight: bold;
+}
+
 .sign-in-nickname {
   color: green;
 }
@@ -72,6 +95,12 @@ header {
 .flex-between {
   display: flex;
   justify-content: space-between;
+}
+
+.flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .flex-around {
@@ -185,7 +214,6 @@ header {
   transition: 0.55s 0.5s;
 }
 
-
 // フッター
 footer {
   height: 100px;
@@ -255,6 +283,10 @@ footer {
   text-align:center;
   padding: 70px 0;
   font-weight: bold;
+}
+
+.block {
+  display: block;
 }
 
 .inline {
@@ -488,4 +520,14 @@ footer {
 .notification-close-btn-color:hover {
   background-color: #e7eced;
   opacity: 0.9;
+}
+
+
+
+// 以下レスポンシブ
+
+@media screen and (max-width: 992px) {
+  .notification-counts {
+    display: none;
+  }
 }

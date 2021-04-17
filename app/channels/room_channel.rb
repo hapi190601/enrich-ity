@@ -15,10 +15,7 @@ class RoomChannel < ApplicationCable::Channel
 
   # 処理⑤
   def speak(data)
-
-    # 元のコード newとsaveを同時に行うcreate
-    # direct_message = DirectMessage.create! message: data['direct_message'], user_id: current_user.id, room_id: params['room']
-    direct_message = DirectMessage.new(message: data['direct_message'], user_id: current_user.id, room_id: params['room'])
+    direct_message = DirectMessage.create! message: data['direct_message'], user_id: current_user.id, room_id: params['room']
 
     opponent_id = data['opponent_id']
 
@@ -30,12 +27,6 @@ class RoomChannel < ApplicationCable::Channel
       visitor_id: current_user.id,
       action: 'チャット',
     )
-
-    # 通知の保存
-    # メッセージの保存より先にしないと通知作る前にブロードキャストに指示がうつっちゃう？
     notification.save
-
-    # メッセージの保存
-    direct_message.save
   end
 end

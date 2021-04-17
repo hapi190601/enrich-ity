@@ -12,7 +12,6 @@ class Public::PostsController < ApplicationController
     @weekly_posts = Post.where(updated_at: from...to)
 
     # ランキング機能+ジャンル毎の投稿数
-    # もっと良い書き方考える
     @genre_ranks = Genre.find(Post.group(:genre_id).order('count(genre_id) desc').limit(3).pluck(:genre_id))
 
     three_hash = Post.group(:genre_id).order('count(genre_id) desc').limit(3).count

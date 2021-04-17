@@ -4,7 +4,7 @@
   <div class="<%= direct_message.id %>">
     <%= attachment_image_tag direct_message.user, :image, fallback: "no-image.jpeg", class:"#{direct_message.id}chat-icon chat-icon" %>
     <br>
-    <%= direct_message.user.nickname %>
+    <span class="block text-center"><%= direct_message.user.nickname %></span>
   </div>
 
   <!--自分側は右側にテキストを表示する-->
