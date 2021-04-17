@@ -18,8 +18,11 @@
 //= require jquery.jpostal
 //= require_tree .
 
-
 /*global $*/
+document.addEventListener("turbolinks:before-cache", function() {
+  $('.slide-images').slick('unslick');
+});
+
 $(document).on('turbolinks:load', function() {
   // トップへスクロールするアニメーション
   $('#up-scroll').hide();
@@ -217,8 +220,9 @@ $(document).on('turbolinks:load', function() {
   });
 
   $(window).scroll(function() {
-    $('.notification-area').removeClass('open');
-    $('.notification-area').fadeOut();
+    if ($(this).scrollTop() > 400) {
+      $('.notification-area').removeClass('open');
+      $('.notification-area').fadeOut();
+    }
   });
-
 });

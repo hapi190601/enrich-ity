@@ -18,7 +18,7 @@
 }
 
 .post-content-area {
-  padding: 20px 20px 40px;
+  padding: 35px 0 0;
 }
 
 .post-index-link {
@@ -107,9 +107,9 @@
   transform: scale(1.1, 1.1);
 }
 
-// .new-post-top {
-//   min-height: 300px;
-// }
+.new-post-top {
+  min-height: 400px;
+}
 
 .new-post-top > p {
   font-size: 1rem!important;
@@ -181,7 +181,7 @@
 
 .post-top-img {
   width: 80%;
-  margin: 20px auto 0;
+  margin: 0 auto;
 }
 
 #fa-1 {

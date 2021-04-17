@@ -5,12 +5,14 @@ class ApplicationController < ActionController::Base
   # 通知
   def all_page_notification
     if user_signed_in?
-      notifications = current_user.passive_notifications.where(checked: false).page(params[:page]).per(7)
+      notifications = current_user.passive_notifications.where(checked: false).page(params[:page]).per(5)
 
       # 自分がチャットを送った時の通知は表示しない。(相手がチャットを送った時のみ)
       @my_notifications = notifications.where.not(visitor_id: current_user.id)
 
-      @notification_counts = @my_notifications.count
+      all_false_notifications = current_user.passive_notifications.where(checked: false).all
+      my_all_false_notifications = all_false_notifications.where.not(visitor_id: current_user)
+      @notification_counts = my_all_false_notifications.count
     end
   end
 

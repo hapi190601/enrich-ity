@@ -29,6 +29,9 @@ input {
   text-align: center;
 }
 
+.no-bottom-p {
+  margin-bottom: 0!important;
+}
 .alert {
   display: none!important;
 }
@@ -246,7 +249,6 @@ footer {
 }
 
 // トップへスクロールボタン
-
 #up-scroll {
   z-index: 5;
   position: fixed;
@@ -260,9 +262,9 @@ footer {
 
 // フラッシュメッセージ
 .notice {
-  padding: 75px 0 40px;
+  padding: 60px 0 40px;
   text-align: center;
-  color: #7fff00;
+  color: green;
   font-size: 1.3rem;
   font-weight: bold;
   background: #36D1DC;

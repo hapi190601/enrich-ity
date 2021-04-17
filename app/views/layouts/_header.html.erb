@@ -34,11 +34,12 @@
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
-        <% if @notification_counts != 0 %>
+        <% if @notification_counts != 0 and user_signed_in? %>
           <span class="notification-counts">
             <span><%= @notification_counts %></span>
           </span>
         <% end %>
+
         <% if user_signed_in? %>
         <li class="nav-item">
           <span class="d-none d-lg-block btn m-2 slide-notification slide-btn2">通知</span>

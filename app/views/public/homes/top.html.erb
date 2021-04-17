@@ -67,8 +67,10 @@
 </div>
 
 <script>
-$(document).on('turbolinks:load', function() {
-    /*global ityped*/
+//$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
+  //console.log("hoge");
+  /*global ityped*/
   ityped.init(document.querySelector('#ityped'), {
     strings: [
       "Welcome to Enrich-ity !",

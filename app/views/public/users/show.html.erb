@@ -62,7 +62,7 @@
         <% unless @user.id == current_user.id %>
           <div class="text-center">
             <% if @isRoom == true %>
-              <%= link_to "チャットページへ", room_path(@roomId), class:"btn btn-sm chat-btn-color m-size-btn" %>
+              <%= link_to "チャットページへ", room_path(@roomId), data: {"turbolinks"=>false}, class:"btn btn-sm chat-btn-color m-size-btn" %>
             <% else %>
               <%= form_with model: @room, local: true do |f| %>
                 <%= fields_for @entry do |e| %>

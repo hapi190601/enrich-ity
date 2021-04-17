@@ -1,4 +1,5 @@
-document.addEventListener 'turbolinks:load', ->
+window.addEventListener 'load', ->
+
   if App.room
     App.cable.subscriptions.remove App.room
 
@@ -25,8 +26,11 @@ document.addEventListener 'turbolinks:load', ->
   # data-behavior属性がroom_speakerである入力フォームでのキーボード入力イベントで発火
   $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
     if event.keyCode is 13
-
+      # デバッグ用
+      # console.log(event.target.value)
       opponent_id = document.getElementById('opponent_id').value
+      if !event.target.value
+        return
       # 22行目のspeakメソッドを呼び出す(引数はフォームのメッセージ本文とチャット相手のid)
       App.room.speak event.target.value, opponent_id
 
