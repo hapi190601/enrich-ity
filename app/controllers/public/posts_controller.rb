@@ -1,5 +1,6 @@
 class Public::PostsController < ApplicationController
   before_action :calculate_current_user_age, only: [:create, :update]
+  before_action :authenticate_user!, only: [:top, :create, :update, :edit, :destroy]
 
   impressionist :actions=> [:show]
 

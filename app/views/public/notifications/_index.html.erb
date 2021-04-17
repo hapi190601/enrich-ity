@@ -20,9 +20,11 @@
 
     <%= paginate my_notifications %>
   <% else %>
-    <p>通知はありません</p>
+    <p class="no-notification-message">通知はありません</p>
   <% end %>
 
-  <button id="notification-close-btn">閉じる</button>
+  <div class="text-center py-3">
+    <span id="notification-close-btn" class="btn btn-sm notification-close-btn-color bigger-btn">閉じる</span>
+  </div>
 </div>
 

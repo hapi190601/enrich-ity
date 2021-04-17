@@ -3,16 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .notification-area {
-  width: 40%;
+  width: 50%;
   position: absolute;
   top: 125px;
   right: 5px;
   z-index: 5;
-  background-color: lavender;
-  border: 2px solid lavender;
+  background-color: #d9e9f9;
+  border: 2px solid #d9e9f9;
   border-radius: 5px;
+  position: fixed;
 }
 
 .notification-area > h3 {
-  padding: 10px 15px;
+  padding: 20px 15px 10px;
+  text-align: center;
+}
+
+.no-notification-message {
+  text-align: center;
+  padding: 40px 0;
 }

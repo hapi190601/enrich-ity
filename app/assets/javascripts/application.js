@@ -216,4 +216,9 @@ $(document).on('turbolinks:load', function() {
     }
   });
 
+  $(window).scroll(function() {
+    $('.notification-area').removeClass('open');
+    $('.notification-area').fadeOut();
+  });
+
 });

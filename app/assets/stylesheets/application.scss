@@ -29,6 +29,10 @@ input {
   text-align: center;
 }
 
+.alert {
+  display: none!important;
+}
+
 .input-longer-form {
   width: 200px;
 }
@@ -230,7 +234,7 @@ footer {
 .notice {
   padding: 75px 0 40px;
   text-align: center;
-  color: #D3E173;
+  color: #7fff00;
   font-size: 1.3rem;
   font-weight: bold;
   background: #36D1DC;
@@ -338,9 +342,17 @@ footer {
 
 // ボタン
 .bigger-btn {
-  padding: 8px 15px;
+  padding: 12px 25px;
+  margin: 10px 0;
   font-weight: bold;
   letter-spacing: 2px;
+  font-size: 1rem;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.3);
+}
+
+.bigger-btn:hover {
+  margin: 12px 0 8px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.3);
 }
 
 .m-size-btn {
@@ -350,7 +362,7 @@ footer {
   min-width: 200px;
   max-width: 300px;
   margin: 20px auto;
-  padding: 12px 0!important;
+  padding: 12px!important;
   font-size: 1.2em!important;
   box-shadow: 0 5px 0 rgba(0,0,0,0.3);
 }
@@ -403,7 +415,6 @@ footer {
 }
 
 // 投稿をみるボタン
-
 .post-btn-color {
   background-color: #d7f7be;
   border: 1px solid #d7f7be;
@@ -414,6 +425,7 @@ footer {
   opacity: 0.9;
 }
 
+// 投稿詳細ボタン
 .post-show-btn-color {
   background-color: #b4eaf7;
   border: 1px solid #b4eaf7;
@@ -421,5 +433,59 @@ footer {
 
 .post-show-btn-color:hover {
   background-color: #b4eaf7;
+  opacity: 0.9;
+}
+
+// 編集(会員も投稿も)ボタン
+.edit-btn-color {
+  background-color: #d7f7be;
+  border: 1px solid #d7f7be;
+}
+
+.edit-btn-color:hover {
+  background-color: #d7f7be;
+  opacity: 0.9;
+}
+
+// お気に入り追加ボタン
+.favorite-btn-color {
+  background-color: #b4eaf7;
+  border: 1px solid #b4eaf7;
+}
+
+.favorite-btn-color:hover {
+  background-color: #b4eaf7;
+  opacity: 0.9;
+}
+
+// チャットルーム移動or作成ボタン
+.chat-btn-color {
+  background-color: #d7f7be;
+  border: 1px solid #d7f7be;
+}
+
+.chat-btn-color:hover {
+  background-color: #d7f7be;
+  opacity: 0.9;
+}
+
+// 会員詳細へボタン
+.user-show-btn-color {
+  background-color: #fed8f2;
+  border: 1px solid #fed8f2;
+}
+
+.user-show-btn-color:hover {
+  background-color: #fed8f2;
+  opacity: 0.9;
+}
+
+.notification-close-btn-color {
+  background-color: #e7eced;
+  border: 1px solid #e7eced;
+}
+
+.notification-close-btn-color:hover {
+  background-color: #e7eced;
   opacity: 0.9;
 }

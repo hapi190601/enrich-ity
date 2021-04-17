@@ -11,11 +11,14 @@
 }
 
 .post-info-area {
-  padding-bottom: 75px;
+  background-color: lavender;
+  opacity: 0.9;
+  border-radius: 5px;
+  padding: 40px 20px;
 }
 
 .post-content-area {
-  padding-bottom: 75px;
+  padding: 20px 20px 40px;
 }
 
 .post-index-link {
@@ -71,7 +74,7 @@
 
 .new-post-title, .genre-ranking-title {
   display: inline-block;
-  margin: 10px 0 30px !important;
+  margin: 10px 0 40px !important;
   padding: 10px 20px;
   font-size: 1.5rem !important;
   background-color: lavender;
@@ -96,7 +99,7 @@
   width: 30%;
   background-color: lavender;
   border-radius: 10px;
-  margin: 0 20px;
+  margin: 0 20px 30px;
   transition: all 0.4s;
 }
 
@@ -104,19 +107,23 @@
   transform: scale(1.1, 1.1);
 }
 
-.new-post-top {
-  min-height: 330px;
+// .new-post-top {
+//   min-height: 300px;
+// }
+
+.new-post-top > p {
+  font-size: 1rem!important;
+
 }
 
 .new-post > div > span {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 7px 20px;
 }
 
 .new-posts-area {
   margin: 75px 0;
 }
-
 
 .ranking-number {
   font-size: 1.5rem;
@@ -128,6 +135,11 @@
   padding: 10px 20px;
   width: 25%;
   font-size: 1.3rem;
+  transition: all 0.4s;
+}
+
+.genre-ranking-box:hover {
+  transform: scale(1.1, 1.1);
 }
 
 .genre-ranking {
@@ -142,11 +154,49 @@
 .match-messages-box {
   width: 80%;
   margin: 0 auto;
-  padding-bottom: 75px;
+  padding-bottom: 50px;
   text-align: center;
 }
 
 .match-messages {
   font-size: 1.2rem;
-  color: #D3E173;
+}
+
+.no-sign-in-message {
+  font-size: 1rem!important;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.no-sign-in-message > strong {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.post-show-img {
+  width: 80%;
+  height: auto;
+  margin-top: 50px;
+}
+
+.post-top-img {
+  width: 80%;
+  margin: 20px auto 0;
+}
+
+#fa-1 {
+  color: #DBB400;
+}
+
+#fa-2 {
+  color:#C9CACA;
+}
+
+#fa-3 {
+  color:#C47022;
+}
+
+.ranking-genre-name {
+  margin: 1rem 0;
+  font-size: 1.3rem!important;
 }

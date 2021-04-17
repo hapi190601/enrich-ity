@@ -1,6 +1,7 @@
 class Public::UsersController < ApplicationController
-  before_action :calculate_user_age, except: [:favorites, :withdraw]
+  before_action :authenticate_user!
   before_action :check_guest, only: :withdraw
+  before_action :calculate_user_age, except: [:favorites, :withdraw]
 
   def show
     @user = User.find(params[:id])

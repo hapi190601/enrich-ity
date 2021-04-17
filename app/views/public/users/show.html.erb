@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col-md-5 profile-area">
         <h3 class="profile-h3">プロフィール詳細</h3>
-        <table class="table text-center">
+        <table class="table profile-table text-center">
           <tbody>
             <tr>
               <td width="45%" class="icon-height">アイコン</td>
@@ -49,10 +49,10 @@
 
             <tr>
               <td>
-                <%= link_to "会員情報編集", edit_user_path, class:"btn btn-sm btn-success bigger-btn"%>
+                <%= link_to "会員情報編集", edit_user_path, class:"btn btn-sm edit-btn-color m-size-btn" %>
               </td>
               <td>
-                <%= link_to "お気に入り一覧", favorites_users_path, class:"btn btn-sm btn-primary bigger-btn" %>
+                <%= link_to "お気に入り一覧", favorites_users_path, class:"btn btn-sm favorite-btn-color m-size-btn" %>
               </td>
             </tr>
             <% end %>
@@ -62,13 +62,13 @@
         <% unless @user.id == current_user.id %>
           <div class="text-center">
             <% if @isRoom == true %>
-              <%= link_to "チャットページへ", room_path(@roomId), class:"btn btn-info m-size-btn" %>
+              <%= link_to "チャットページへ", room_path(@roomId), class:"btn btn-sm chat-btn-color m-size-btn" %>
             <% else %>
               <%= form_with model: @room, local: true do |f| %>
                 <%= fields_for @entry do |e| %>
                   <%= e.hidden_field :user_id, :value=> @user.id %>
                 <% end %>
-                <%= f.submit "チャットを始める", class:"btn btn-success m-size-btn" %>
+                <%= f.submit "チャットを始める", class:"btn chat-btn-color m-size-btn" %>
               <% end %>
             <% end %>
           </div>
@@ -76,24 +76,25 @@
       </div>
 
       <div class="col-md-6 offset-md-1">
-        <h3 class="profile-h3">最近の投稿 (最大3件) </h3>
+        <h3 class="profile-h3">最近の投稿 (直近2件) </h3>
 
-        <% @user.posts.order("created_at desc").first(3).each do |pos| %>
+        <% @user.posts.order("created_at desc").first(2).each do |pos| %>
         <div class="post-box">
           <div class="left-post">
-            <span>■タイトル</span><br>
-            <%= pos.title %>
+            <div class="text-center my-3">
+              <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size" %>
+            </div>
+            <span class="inline mb-3" style="font-size: 1.2rem;">■タイトル</span>
+            <p class="mb-0 px-3"><%= pos.title %></p>
             <br>
-            <br>
-            <span>■本文</span><br>
-            <%= safe_join(pos.content.truncate(75).split("\n"),tag(:br)) %>
+            <span class="inline mb-3" style="font-size: 1.2rem;">■本文</span>
+            <p class="mb-0 px-3"><%= safe_join(pos.content.truncate(75).split("\n"),tag(:br)) %></p>
           </div>
 
-          <div class="right-post text-center">
-            <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm btn-light bigger-btn mb-3" %>
-            <br>
-            <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size" %>
+          <div width="100%" class="text-center">
+            <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm post-show-btn-color m-size-btn" %>
           </div>
+
         </div>
         <% end %>
       </div>

@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 position-relative">
-        <div class="slide-images pt-3">
+        <div class="slide-images pt-3 mt-3">
           <div class="image-box">
             <%= image_tag 'pc.jpg', class:"slide-image" %>
           </div>
@@ -48,28 +48,37 @@
             <% @posts_all.order("created_at desc").first(3).each do |pos| %>
             <div class="new-post">
               <div class="new-post-top">
-                <span>■投稿者<br>　<%= pos.user.nickname %></span>
-                <br>
-                <span>■タイトル<br>　<%= pos.title %></span>
-                <br>
+                <span>■投稿者</span>
+                <p class="mb-0 ml-3 pl-3"><%= pos.user.nickname %></p>
+
+                <span>■ジャンル</span>
+                <p class="mb-0 ml-3 pl-3"><%= pos.genre.name %></p>
+
                 <% unless pos.prefecture_code == nil %>
-                  <span>■エリア<br>　<%= pos.prefecture_name %><%= pos.municipality %> 近辺</span>
+                  <span>■エリア</span>
+                  <p class="mb-0 ml-3 pl-3"><%= pos.prefecture_name %><%= pos.municipality %> 近辺</p>
                 <% else %>
-                  <span>■エリア<br>　指定なし</span>
+                  <span>■エリア</span>
+                  <p class="mb-0 ml-3 pl-3">指定なし</p>
                 <% end %>
-                <br>
-                <span>■本文<br><%= safe_join(pos.content.truncate(30).split("\n"),tag(:br)) %></span>
+
+                <span>■タイトル</span>
+                <p class="mb-0 ml-3 pl-3"><%= pos.title %></p>
+
+                <span>■本文</span>
+                <p class="mb-0 mx-3 px-3"><%= safe_join(pos.content.truncate(30).split("\n"),tag(:br)) %></p>
               </div>
+
               <div class="new-post-bottom text-center">
-                <span><%= attachment_image_tag pos, :image, :fill ,90 ,70, fallback: "no-post-image.png", size:"90x70" %></span>
-                <span><%= link_to "詳細へ", post_path(pos.id), class:"btn btn-sm btn-info" %></span>
+                <span><%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"post-top-img" %></span>
+                <span><%= link_to "詳細へ", post_path(pos.id), class:"btn btn-sm btn-info m-size-btn" %></span>
               </div>
             </div>
             <% end %>
           </div>
 
           <div class="link-to-index">
-            <%= link_to "一覧を見る", posts_path, class:"btn btn-sm btn-info btn-bigger p-3" %>
+            <%= link_to "一覧を見る", posts_path, class:"btn btn-sm post-btn-color m-size-btn" %>
           </div>
         </div>
 
@@ -79,11 +88,10 @@
           <div class="flex-around">
           <% @genre_ranks.zip(@three_key, @three_index) do |genre_rank, posts_count, i| %>
             <div class="genre-ranking-box">
-              <span class="ranking-number"><i class="fas fa-crown"></i> 第<%= i %>位</span>
-              <br>
+              <span class="ranking-number"><i class="fas fa-crown" id="fa-<%= i %>"></i> 第<%= i %>位</span>
               <br>
               <p class="ranking-genre-name text-center"><%= genre_rank.name %></p>
-              <p class="text-center">投稿数：<%= posts_count %></p>
+              <p class="text-center">投稿数：　<strong style="font-size: 1.5rem;"><%= posts_count %></strong></p>
             </div>
           <% end %>
           </div>
