@@ -2,6 +2,12 @@
   <%= render "layouts/flash" %>
   <h2 class="page-title">投稿一覧</h2>
 
+  <div class="index-number">
+    <span>全<strong> <%= @posts.total_count %> </strong>件中</span>
+    <br>
+    <span><strong> <%= @posts.offset_value + 1 %> </strong>〜<strong> <%= @posts.offset_value + @posts.length %> </strong>件を表示しています。</span>
+  </div>
+
   <div class="container">
     <div class="row">
       <div class="col-md-12">

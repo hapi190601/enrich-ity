@@ -1,11 +1,6 @@
 // Place all the styles related to the public::searches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-
-
-
 .search-form {
   width: 70%;
   margin: 0 auto 75px;
@@ -92,4 +87,13 @@
 
 .incremental-search-area {
   padding: 50px 0 100px  ;
+}
+
+.index-number {
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.index-number > span > strong {
+  font-size: 1.3rem;
 }
