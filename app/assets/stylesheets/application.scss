@@ -29,6 +29,10 @@ input {
   text-align: center;
 }
 
+select {
+  border-radius: 5px;
+}
+
 .no-bottom-p {
   margin-bottom: 0!important;
 }
@@ -116,6 +120,11 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: top;
+}
+
+.flex-no-center {
+  display: flex;
+  align-items: center;
 }
 
 .hamburger-design {
@@ -521,6 +530,26 @@ footer {
 
 .notification-close-btn-color:hover {
   background-color: #e7eced;
+  opacity: 0.9;
+}
+
+.search-btn-color {
+  background-color: #b4eaf7;
+  border: 1px solid #b4eaf7;
+}
+
+.search-btn-color:hover {
+  background-color: #b4eaf7;
+  opacity: 0.9;
+}
+
+.incremental-btn-color {
+  background-color: #fed8f2;
+  border: 1px solid #fed8f2;
+}
+
+.incremental-btn-color:hover {
+  background-color: #fed8f2;
   opacity: 0.9;
 }
 

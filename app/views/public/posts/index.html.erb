@@ -10,7 +10,9 @@
 
   <div class="container">
     <div class="row">
-      <%= render "public/posts/index_page", posts: @posts %>
+      <div class="col-sm-12" id="render-index-page">
+        <%= render "public/posts/index_page", posts: @posts %>
+      </div>
     </div>
   </div>
 

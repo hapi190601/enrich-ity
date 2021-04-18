@@ -38,7 +38,7 @@
   padding: 15px 0;
 }
 
-.post-iondex-label {
+.post-index-label {
   font-size: 1.2rem;
   font-weight: bold;
   color: #0000cd;
@@ -52,7 +52,7 @@
 
 .posts-index-width {
   width: 50%!important;
-  margin-left: 5%;
+  margin-left: 3%;
 }
 
 .right-post {
@@ -93,8 +93,12 @@
 
 .choose-area-of-hope > span {
   display: inline-block;
-  padding-left: 30px;
+  padding-left: 50px;
   font-size: 1.1rem;
+}
+
+.new-post-prefecture-select {
+  margin-left: 50px;
 }
 
 .new-post {
@@ -202,4 +206,11 @@
 .ranking-genre-name {
   margin: 1rem 0;
   font-size: 1.3rem!important;
+}
+
+.new-post-field {
+  line-height: 2.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
 }

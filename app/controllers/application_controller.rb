@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
         format.html
         format.js
       end
+      
     end
   end
 

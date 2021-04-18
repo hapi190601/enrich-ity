@@ -1,10 +1,12 @@
 <div class="notification-area">
   <h3>チャット通知</h3>
 
-  <%= render "public/notifications/index_notification", my_notifications: my_notifications %>
+  <div id="render-index-notification" style="width: 100%;">
+    <%= render "public/notifications/index_notification", my_notifications: my_notifications %>
+  </div>
 
   <div class="my-3">
-    <%= paginate my_notifications, remote: true %>
+    <%= paginate my_notifications, window: 1, remote: true %>
   </div>
 
   <div class="text-center py-3">

@@ -1,31 +1,31 @@
 <% if my_notifications.present? %>
-    <div class="checked-area">
-      <%= link_to notifications_checked_path, method: :patch, data: { confirm: "本当に削除しますか？" }, class:"checked-btn" do %>
-        <i class="fa fa-trash"></i>
-      <% end %>
-    </div>
-    <% my_notifications.each do |my_notification| %>
-
-    <% visitor = my_notification.visitor %>
-    <% visited = my_notification.visited %>
-
-    <div class="a-notification">
-      <%= link_to room_path(my_notification.room_id), data: {"turbolinks"=>false}, class:"text-dark chat-notification" do %>
-        <div class="flex-between-center py-2">
-          <div>
-            <span class="inline mr-2"><%= attachment_image_tag visited.image, :image, fallback: "no-image.jpeg", size:"40x40", class:"sircle-img" %></span>
-            <span class="inline"><%= visitor.nickname %>さんから<strong class="chat-link-strong"><%= my_notification.action %></strong>が届いています。</span>
-          </div>
-
-          <div>
-            <span class="inline"><%= time_ago_in_words(my_notification.created_at) %>前</span>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
+  <div class="checked-area">
+    <%= link_to notifications_checked_path, method: :patch, data: { confirm: "本当に削除しますか？" }, class:"checked-btn" do %>
+      <i class="fa fa-trash"></i>
     <% end %>
+  </div>
+  <% my_notifications.each do |my_notification| %>
 
-  <% else %>
-    <p class="no-notification-message">未確認の通知はありません</p>
+  <% visitor = my_notification.visitor %>
+  <% visited = my_notification.visited %>
+
+  <div class="a-notification">
+    <%= link_to room_path(my_notification.room_id), data: {"turbolinks"=>false}, class:"text-dark chat-notification" do %>
+      <div class="flex-between-center py-2">
+        <div>
+          <span class="inline mr-2"><%= attachment_image_tag visited.image, :image, fallback: "no-image.jpeg", size:"40x40", class:"sircle-img" %></span>
+          <span class="inline"><%= visitor.nickname %>さんから<strong class="chat-link-strong"><%= my_notification.action %></strong>が届いています。</span>
+        </div>
+
+        <div>
+          <span class="inline"><%= time_ago_in_words(my_notification.created_at) %>前</span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
   <% end %>
+
+<% else %>
+  <p class="no-notification-message">未確認の通知はありません</p>
+<% end %>

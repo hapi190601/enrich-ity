@@ -6,7 +6,7 @@
     <div class"row">
       <% if @results.present? %>
       <div class='posts-lists col-sm-12'>
-        <div class="sort-area">
+        <div class="sort-area flex-around">
           <span class="sort-btn"><%= sort_link(@p, :gender, "希望性別で並び替え") %></span>
           <span class="sort-btn"><%= sort_link(@p, :genre_id, "ジャンルで並び替え") %></span>
           <span class="sort-btn"><%= sort_link(@p, :prefecture_code, "都道府県で並び替え") %></span>
@@ -14,30 +14,46 @@
         <% @results.each do |pos| %>
         <div class="post-box flex-around">
           <div class="left-post posts-index-width">
-            <span>■タイトル</span>
+            <span class="inline py-3  post-index-label">【タイトル】</span>
             <br>
-            <%= pos.title %>
+            <span class="inline ml-3">
+              <%= pos.title %>
+            </span>
+
             <br>
+
+            <span class="inline py-3 post-index-label">【希望性別】</span>
             <br>
-            <span>■希望性別</span>
+            <span class="inline ml-3">
+              <%= pos.gender %>
+            </span>
+
             <br>
-            <%= pos.gender %>
+
+            <span class="inline py-3 post-index-label">【希望エリア】</span>
             <br>
+            <% unless pos.prefecture_code == nil %>
+              <span class="inline ml-3">
+                <%= pos.prefecture_name %>
+                <%= pos.municipality %>
+              </span>
+            <% else %>
+              <span class="inline ml-3">指定なし</span>
+            <% end %>
+
             <br>
-            <span>■希望エリア</span>
+
+            <span class="inline py-3 post-index-label">【本文】</span>
             <br>
-            <%= pos.prefecture_name %>
-            <%= pos.municipality %>
-            <br>
-            <br>
-            <span>■本文</span><br>
-            <%= safe_join(pos.content.truncate(75).split("\n"),tag(:br)) %>
+            <span class="inline ml-3">
+              <%= safe_join(pos.content.truncate(75).split("\n"),tag(:br)) %>
+            </span>
           </div>
 
           <div class="right-post text-center posts-index-width" width="50%">
             <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size pt-3 mt-3" %>
             <br>
-            <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm btn-light bigger-btn mb-3" %>
+            <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm m-size-btn post-show-btn-color" %>
           </div>
         </div>
         <% end %>
@@ -50,15 +66,15 @@
 
         <div class="link-box three-btn">
           <div class="link">
-            <%= link_to "再検索", searches_search_path, class:"btn btn-sm btn-primary bigger-btn p-3" %>
+            <%= link_to "再検索", searches_search_path, class:"btn btn-sm search-btn-color m-size-btn" %>
           </div>
 
           <div class="link">
-            <%= link_to "簡易検索へ", searches_incremental_search_path, class:"btn btn-sm btn-success bigger-btn p-3" %>
+            <%= link_to "簡易検索へ", searches_incremental_search_path, class:"btn btn-sm incremental-btn-color m-size-btn" %>
           </div>
 
           <div class="link">
-            <%= link_to "投稿一覧へ", posts_path, class:"btn btn-sm btn-info bigger-btn p-3"%>
+            <%= link_to "投稿一覧へ", posts_path, class:"btn btn-sm post-btn-color m-size-btn" %>
           </div>
         </div>
       <% end %>
@@ -66,6 +82,6 @@
   </div>
 
   <div class="paginate">
-    <%= paginate @results %>
+    <%= paginate @results, window: 1 %>
   </div>
 </div>
