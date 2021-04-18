@@ -1,40 +1,11 @@
 <div class="notification-area">
   <h3>チャット通知</h3>
 
-  <% if my_notifications.present? %>
-    <div class="checked-area">
-      <%= link_to notifications_checked_path, method: :patch, data: { confirm: "本当に削除しますか？" }, class:"checked-btn" do %>
-        <i class="fa fa-trash"></i>
-      <% end %>
-    </div>
-    <% my_notifications.each do |my_notification| %>
+  <%= render "public/notifications/index_notification", my_notifications: my_notifications %>
 
-    <% visitor = my_notification.visitor %>
-    <% visited = my_notification.visited %>
-
-    <div class="a-notification">
-      <%= link_to room_path(my_notification.room_id), data: {"turbolinks"=>false}, class:"text-dark chat-notification" do %>
-        <div class="flex-between-center py-2">
-          <div>
-            <span class="inline mr-2"><%= attachment_image_tag visited.image, :image, fallback: "no-image.jpeg", size:"40x40", class:"sircle-img" %></span>
-            <span class="inline"><%= visitor.nickname %>さんから<strong class="chat-link-strong"><%= my_notification.action %></strong>が届いています。</span>
-          </div>
-
-          <div>
-            <span class="inline"><%= time_ago_in_words(my_notification.created_at) %>前</span>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
-    <% end %>
-
-    <div class="my-3">
-      <%= paginate my_notifications, remote: true %>
-    </div>
-  <% else %>
-    <p class="no-notification-message">未確認の通知はありません</p>
-  <% end %>
+  <div class="my-3">
+    <%= paginate my_notifications, remote: true %>
+  </div>
 
   <div class="text-center py-3">
     <span id="notification-close-btn" class="btn btn-sm notification-close-btn-color bigger-btn">閉じる</span>
