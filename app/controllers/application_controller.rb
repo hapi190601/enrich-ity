@@ -13,11 +13,16 @@ class ApplicationController < ActionController::Base
       all_false_notifications = current_user.passive_notifications.where(checked: false).all
       my_all_false_notifications = all_false_notifications.where.not(visitor_id: current_user)
       @notification_counts = my_all_false_notifications.count
+
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
   end
 
-  protected
 
+  protected
   #ログイン後の遷移パス
   def after_sign_in_path_for(resource)
     if user_signed_in?

@@ -35,12 +35,13 @@
 }
 
 .left-post {
-  padding: 15px;
+  padding: 15px 0;
 }
 
 .post-iondex-label {
   font-size: 1.2rem;
-  color: #4169e1;
+  font-weight: bold;
+  color: #0000cd;
 }
 
 .img-size {
@@ -77,7 +78,8 @@
   margin: 10px 0 40px !important;
   padding: 10px 20px;
   font-size: 1.5rem !important;
-  background-color: lavender;
+  // background-color: lavender;
+  background-color: white;
   border-radius: 10px;
 }
 
@@ -108,7 +110,7 @@
 }
 
 .new-post-top {
-  min-height: 400px;
+  min-height: 330px;
 }
 
 .new-post-top > p {
@@ -130,7 +132,8 @@
 }
 
 .genre-ranking-box {
-  background-color: lavender;
+  // background-color: lavender;
+  background-color: blanchedalmond;
   border-radius: 10px;
   padding: 10px 20px;
   width: 25%;
