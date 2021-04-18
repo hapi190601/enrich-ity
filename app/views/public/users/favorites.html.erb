@@ -5,10 +5,6 @@
     <span style="font-size: 1.2rem;">　( <%= @favorites_index.count %> 件)</span>
   </h2>
 
-
-  <%#= link_to "詳細へ", post_path(pos.id), class:"btn btn-info bigger-btn"%>
-  <%#= link_to "お気に入り解除", post_favorites_path(pos.id), method: :delete, class:"btn btn-sm btn-danger bigger-btn"%>
-
   <div class="container">
     <div class"row">
       <% @favorites_index.each do |pos| %>

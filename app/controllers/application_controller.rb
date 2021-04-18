@@ -11,14 +11,7 @@ class ApplicationController < ActionController::Base
       @my_notifications = notifications.where.not(visitor_id: current_user.id)
 
       all_false_notifications = current_user.passive_notifications.where(checked: false).all
-      my_all_false_notifications = all_false_notifications.where.not(visitor_id: current_user)
-      @notification_counts = my_all_false_notifications.count
-
-      respond_to do |format|
-        format.html
-        format.js
-      end
-      
+      @unchecked_notifications = all_false_notifications.where.not(visitor_id: current_user)
     end
   end
 

@@ -52,27 +52,24 @@
                 <!--<p class="mb-0 ml-3 pl-3"><%#= pos.user.nickname %></p>-->
 
                 <span>【ジャンル】</span>
-                <p class="mb-0 ml-3 pl-3"><%= pos.genre.name %></p>
+                <p class="mb-0 px-3"><%= pos.genre.name %></p>
 
                 <% unless pos.prefecture_code == nil %>
                   <span>【エリア】</span>
-                  <p class="mb-0 ml-3 pl-3"><%= pos.prefecture_name %><%= pos.municipality %> 近辺</p>
+                  <p class="mb-0 px-3"><%= pos.prefecture_name %><%= pos.municipality %> 近辺</p>
                 <% else %>
                   <span>【エリア】</span>
-                  <p class="mb-0 ml-3 pl-3">指定なし</p>
+                  <p class="mb-0 px-3">指定なし</p>
                 <% end %>
 
                 <span>【タイトル】</span>
-                <p class="mb-0 ml-3 pl-3"><%= pos.title %></p>
+                <p class="mb-0 px-3"><%= pos.title %></p>
 
                 <span>【本文】</span>
-                <p class="mb-0 mx-3 px-3"><%= safe_join(pos.content.truncate(30).split("\n"),tag(:br)) %></p>
+                <p class="mb-0 px-3"><%= safe_join(pos.content.truncate(30).split("\n"),tag(:br)) %></p>
               </div>
 
               <div class="new-post-bottom text-center">
-                <!--<span>-->
-                  <%#= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"post-top-img" %>
-                <!--</span>-->
                 <span><%= link_to "詳細へ", post_path(pos.id), class:"btn btn-sm btn-info m-size-btn" %></span>
               </div>
             </div>

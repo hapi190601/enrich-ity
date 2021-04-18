@@ -6,7 +6,7 @@
   </div>
 
   <div class="my-3">
-    <%= paginate my_notifications, window: 1, remote: true %>
+    <%= paginate my_notifications, remote: true, params: {controller: 'public/notifications', action: 'index'}, window: 1 %>
   </div>
 
   <div class="text-center py-3">

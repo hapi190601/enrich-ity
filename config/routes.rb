@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     post 'inquiries/create' => 'inquiries#create'
 
     patch 'notifications/checked' => 'notifications#checked'
+    resources :notifications, only: [:index]
     # resources :notifications, only: [:index]
     resources :direct_messages, only: [:create]
     resources :rooms, only: [:create, :show]
