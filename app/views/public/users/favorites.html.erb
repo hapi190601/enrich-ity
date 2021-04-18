@@ -5,53 +5,53 @@
     <span style="font-size: 1.2rem;">　( <%= @favorites_index.count %> 件)</span>
   </h2>
 
-  <div class="container">
-    <div class="row">
-      <div class="favorites-index col-sm-12">
-        <table class="table favorites-post">
-          <thead class="text-center favorites-thead">
-            <tr>
-              <th width="21%">タイトル</th>
-              <th width="14%">投稿者</th>
-              <th width="12%">希望</th>
-              <th width="35%">本文</th>
-              <th width="28%"></th>
-            </tr>
-          </thead>
 
-          <% @favorites_index.each do |pos| %>
-          <tbody>
-            <tr>
-              <td class="vertical-middle">
-                <%= pos.title %>
-              </td>
-              <td class="text-center vertical-middle">
-                <%= link_to pos.user.nickname, user_path(pos.user.id), class:"text-dark" %>
-              </td>
-              <td class="text-center vertical-middle">
-                <%= pos.gender %>
-                <br>
-                <br>
-                <% unless pos.prefecture_code == nil %>
-                  <%= pos.prefecture_name %>
-                  <%= pos.municipality %>
-                <% else %>
-                  希望エリアなし
-                <% end %>
-              </td>
-              <td class="vertical-middle">
-                <%= safe_join(pos.content.truncate(50).split("\n"),tag(:br)) %>
-              </td>
-              <td class="vertical-middle">
-                <%= link_to "詳細へ", post_path(pos.id), class:"btn btn-info bigger-btn"%>
-                <br><br>
-                <%= link_to "お気に入り解除", post_favorites_path(pos.id), method: :delete, class:"btn btn-sm btn-danger bigger-btn"%>
-              </td>
-            </tr>
-          </tbody>
-          <% end %>
-        </table>
-      </div>
+  <%#= link_to "詳細へ", post_path(pos.id), class:"btn btn-info bigger-btn"%>
+  <%#= link_to "お気に入り解除", post_favorites_path(pos.id), method: :delete, class:"btn btn-sm btn-danger bigger-btn"%>
+
+  <div class="container">
+    <div class"row">
+      <% @favorites_index.each do |pos| %>
+        <div class="post-box flex-around">
+          <div class="left-post posts-index-width">
+            <span class="inline py-3 post-index-label">【投稿者】</span>
+            <br>
+            <span class="inline ml-3">
+              <%= link_to pos.user.nickname, user_path(pos.user.id), class:"text-dark" %>
+            </span>
+            <br>
+            <span class="inline py-3 post-index-label">【希望エリア】</span>
+            <br>
+            <% unless pos.prefecture_code == nil %>
+              <span class="inline ml-3">
+                <%= pos.prefecture_name %>
+                <%= pos.municipality %>
+              </span>
+            <% else %>
+              <span class="inline ml-3">指定なし</span>
+            <% end %>
+            <br>
+            <span class="inline py-3  post-index-label">【タイトル】</span>
+            <br>
+            <span class="inline ml-3">
+              <%= pos.title %>
+            </span>
+            <br>
+            <span class="inline py-3 post-index-label">【本文】</span>
+            <br>
+            <span class="inline ml-3">
+              <%= safe_join(pos.content.truncate(100).split("\n"),tag(:br)) %>
+            </span>
+          </div>
+
+          <div class="right-post text-center posts-index-width" width="50%">
+            <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size pt-3 mt-3" %>
+            <br>
+            <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm m-size-btn post-show-btn-color" %>
+            <%= link_to "お気に入り解除", post_favorites_path(pos.id), method: :delete, class:"btn btn-sm btn-light m-size-btn"%>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

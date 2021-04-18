@@ -114,7 +114,7 @@
               <%= fields_for @entry do |e| %>
                 <%= e.hidden_field :user_id, :value=> @user.id %>
               <% end %>
-              <%= f.submit "#{@post.user.nickname}とチャットをする", class:"btn btn-sm chat-btn-color m-size-btn" %>
+              <%= f.submit "チャットをする", class:"btn btn-sm chat-btn-color m-size-btn" %>
             <% end %>
           <% end %>
         </div>
@@ -122,7 +122,6 @@
         <div class="link">
           <%= link_to "#{@post.user.nickname}のページへ", user_path(@post.user.id), class:"btn btn-sm user-show-btn-color m-size-btn" %>
         </div>
-
       <% end %>
     </div>
     <% end %>
