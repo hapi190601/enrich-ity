@@ -83,7 +83,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
-gem 'dotenv-rails'
+
 
 gem 'ransack'
 
@@ -94,3 +94,9 @@ gem 'whenever', require: false
 gem 'impressionist', '~>1.6.1'
 
 gem 'pry-rails'
+
+gem 'dotenv-rails'
+
+group :production do
+  gem 'mysql2'
+end
