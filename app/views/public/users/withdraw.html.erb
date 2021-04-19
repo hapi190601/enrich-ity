@@ -7,23 +7,29 @@
     <div class="withdraw-message">
       <p>
         ご不満をお持ちの方は
-        <%= link_to "お問い合わせ", inquiries_get_path, class:"text-dark" %>
+        <strong class="link-to-inquiry"><%= link_to "お問い合わせ", inquiries_get_path %></strong>
         よりご意見お待ちしております。
       </p>
-      <br>
-      <p>
-        退会されると、ログインができなくなります。<br>
-        また、チャット機能やお気に入り機能などは閲覧不可になります。
-          ※投稿の閲覧や検索は可能
-        <br><br>
-        退会する場合は、「退会する」をクリックしてください。
-      </p>
+      <div class="mt-3 pt-3">
+        <p class="mb-1">
+          退会すると、登録したメールアドレスではログインができなくなります。
+        </p>
+        <p class="py-3">
+          また、チャット機能やお気に入り機能などは閲覧不可になります。
+          <br>
+          ※一部機能はログインなしで利用できます。
+        </p>
+
+        <p>
+          退会する場合は、「退会する」をクリックしてください。
+        </p>
+      </div>
 
     </div>
     <div class="link-box">
-      <%= link_to "退会しない", user_path(current_user), class:"btn btn-sm btn-primary bigger-btn" %>
+      <%= link_to "退会しない", user_path(current_user), class:"btn btn-sm user-show-btn-color m-size-btn" %>
       <span>　　　</span>
-      <%= link_to "退会する", users_out_path, method: :patch, data: { confirm: "本当に退会しますか？" }, class:"btn btn-sm btn-danger bigger-btn" %>
+      <%= link_to "退会する", users_out_path, method: :delete, data: { confirm: "本当に退会しますか？" }, class:"btn btn-sm btn-danger m-size-btn" %>
     </div>
   </div>
 </div>

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     get 'homes/explain' => 'homes#explain'
 
     get 'users/withdraw' => 'users#withdraw'
-    patch 'users/out' => 'users#out'
+    delete 'users/out' => 'users#out'
     resources :users, only: [:show,:update,:edit] do
       get :favorites, on: :collection
     end
@@ -40,7 +40,6 @@ Rails.application.routes.draw do
 
     patch 'notifications/checked' => 'notifications#checked'
     resources :notifications, only: [:index]
-    # resources :notifications, only: [:index]
     resources :direct_messages, only: [:create]
     resources :rooms, only: [:create, :show]
 

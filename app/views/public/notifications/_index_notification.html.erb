@@ -1,9 +1,14 @@
 <% if my_notifications.present? %>
-  <div class="checked-area">
+  <div class="checked-area flex-between-center">
+    <span>
+    <%= my_notifications.current_page %>ページ / <%= my_notifications.total_pages %>ページ
+    </span>
+
     <%= link_to notifications_checked_path, method: :patch, data: { confirm: "本当に削除しますか？" }, class:"checked-btn" do %>
       <i class="fa fa-trash"></i>
     <% end %>
   </div>
+
   <% my_notifications.each do |my_notification| %>
 
   <% visitor = my_notification.visitor %>
@@ -25,7 +30,11 @@
   </div>
 
   <% end %>
-
 <% else %>
   <p class="no-notification-message">未確認の通知はありません</p>
 <% end %>
+
+<div class="my-3 pt-3">
+  <!--window：１が部分的に効いていない-->
+  <%= paginate my_notifications, window:1, remote: true, params: {controller: 'public/notifications', action: 'index'} %>
+</div>

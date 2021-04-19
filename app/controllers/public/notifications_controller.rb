@@ -2,14 +2,13 @@ class Public::NotificationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if user_signed_in?
-      notifications = current_user.passive_notifications.where(checked: false).page(params[:page]).per(5)
+    # kaminari用
+    notifications = current_user.passive_notifications.where(checked: false).page(params[:page]).per(4)
+    @my_notifications = notifications.where.not(visitor_id: current_user.id)
 
-      @my_notifications = notifications.where.not(visitor_id: current_user.id)
-
-      all_false_notifications = current_user.passive_notifications.where(checked: false).all
-      @unchecked_notifications = all_false_notifications.where.not(visitor_id: current_user)
-    end
+    # 通知全件用
+    all_false_notifications = current_user.passive_notifications.where(checked: false).all
+    @unchecked_notifications = all_false_notifications.where.not(visitor_id: current_user)
 
     respond_to do |format|
       format.html

@@ -212,7 +212,6 @@ $(document).on('turbolinks:load', function() {
   });
 
   $('#notification-close-btn').click(function(){
-    console.log("クリック");
     if($('.notification-area').hasClass('open')) {
       $('.notification-area').removeClass('open');
       $('.notification-area').fadeOut();

@@ -5,10 +5,6 @@
     <%= render "public/notifications/index_notification", my_notifications: my_notifications %>
   </div>
 
-  <div class="my-3">
-    <%= paginate my_notifications, remote: true, params: {controller: 'public/notifications', action: 'index'}, window: 1 %>
-  </div>
-
   <div class="text-center py-3">
     <span id="notification-close-btn" class="btn btn-sm notification-close-btn-color bigger-btn">閉じる</span>
   </div>

@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def check_guest
     if current_user.email == "guest@guest.com"
       redirect_to posts_top_path
-      flash[:notice] = "ゲストユーザーは削除はできません。"
+      flash[:notice] = "ゲストユーザーの編集、削除はできません。"
     end
   end
   # before_action :configure_sign_up_params, only: [:create]

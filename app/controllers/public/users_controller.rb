@@ -1,7 +1,7 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_guest, only: :withdraw
-  before_action :calculate_user_age, except: [:favorites, :withdraw]
+  before_action :check_guest, only: :out
+  before_action :calculate_user_age, except: [:favorites, :withdraw, :out]
 
   def show
     @user = User.find(params[:id])
@@ -46,14 +46,15 @@ class Public::UsersController < ApplicationController
   end
 
   def out
+    @user = current_user
+    @user.destroy
+    reset_session
+    flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
+    redirect_to root_path
   end
 
   def withdraw
     @user = current_user
-    @user.update(is_deleted: true)
-    reset_session
-    flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
-    redirect_to root_path
   end
 
   def favorites

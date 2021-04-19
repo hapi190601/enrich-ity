@@ -164,3 +164,18 @@ label {
   text-align: center;
   padding-bottom: 40px;
 }
+
+.link-to-inquiry {
+  font-size: 2rem;
+  color: #faebd7!important;
+}
+
+.no-favorites-message {
+  min-height: 350px;
+}
+
+.no-favorites-message > p {
+  margin-bottom: 0;
+  line-height: 350px;
+  font-size: 1.8rem!important;
+}

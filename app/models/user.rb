@@ -41,9 +41,10 @@ class User < ApplicationRecord
     self.prefecture_code = JpPrefecture::Prefecture.find(name: prefecture_name).code
   end
 
-  def active_for_authentication?
-    super && (self.is_deleted == false)
-  end
+  # 論理削除にするなら
+  # def active_for_authentication?
+  #   super && (self.is_deleted == false)
+  # end
 
   def self.guest
     find_or_create_by(email: "guest@guest.com") do |user|
