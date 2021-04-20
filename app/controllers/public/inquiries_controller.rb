@@ -6,9 +6,10 @@ class Public::InquiriesController < ApplicationController
 
   def create
     @inquiry = Inquiry.new(inquiry_params)
+    @user = current_user
 
     if @inquiry.save
-      flash[:notice] = "問い合わせを受け付けました。"
+      flash[:notice] = "問い合わせを受け付けました。後日メールにてご連絡します。"
       redirect_back(fallback_location: {action: "new"})
     else
       flash[:notice] = "記入漏れがあります"

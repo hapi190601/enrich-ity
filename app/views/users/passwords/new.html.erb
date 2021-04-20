@@ -8,21 +8,19 @@
           <%= render "users/shared/error_messages", resource: resource %>
 
           <div class="field">
-            <%= f.label :"メールアドレス", class:"col-sm-5" %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= f.label :"メールアドレス", class:"col-sm-5 text-center" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-longest-form focus-green" %>
           </div>
-
-          <div class="actions">
-            <%= f.submit "パスワード再発行メールを送る", class:"btn btn-sm btn-success bigger-btn pl-3 pr-3" %>
-          </div>
-        <% end %>
       </div>
     </div>
   </div>
+
+  <div class="actions">
+    <%= f.submit "パスワード再発行メールを送る", class:"btn btn-sm btn-success m-size-btn" %>
+  </div>
+        <% end %>
+
   <div class="sign-up-link">
     <%= render "users/shared/links" %>
   </div>
-
 </div>
-
-

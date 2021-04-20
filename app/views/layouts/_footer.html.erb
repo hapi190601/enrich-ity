@@ -11,22 +11,23 @@
     <div class="sns-rink">
       <!--下記３つのリンクのURLはドメインを取得したら変更する！-->
       <span>
-        <%= link_to("https://twitter.com/intent/tweet?text=君もEnrich-ityで「仲間」を探そう！%20%0d&url=https://qiita.com/", target: :_blank) do %>
+        <%= link_to("https://twitter.com/intent/tweet?text=君もEnrich-ityで「仲間」を探そう！%20%0d&url=http://enrich-ity.com/", target: :_blank) do %>
           <i class="fab fa-twitter-square fa-2x"></i>
         <% end %>
       </span>
 
       <span>
-        <%= link_to("https://www.facebook.com/", target: :_blank) do %>
+        <%= link_to("https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fenrich-ity.com%2F&amp;src=sdkpreparse", target: :_blank) do %>
           <i class="fab fa-facebook-square fa-2x"></i>
         <% end %>
       </span>
 
-      <span>
-        <%= link_to("https://www.instagram.com/", target: :_blank) do %>
-          <i class="fab fa-instagram fa-2x"></i>
-        <% end %>
-      </span>
+      <!--Instagramはソーシャルボタン存在しない？-->
+      <!--<span>-->
+      <!--  <%#= link_to("https://www.instagram.com/", target: :_blank) do %>-->
+      <!--    <i class="fab fa-instagram fa-2x"></i>-->
+      <!--  <%# end %>-->
+      <!--</span>-->
     </div>
   </div>
 

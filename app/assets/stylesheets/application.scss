@@ -29,8 +29,21 @@ input {
   text-align: center;
 }
 
+label {
+  margin: 0!important;
+}
+
 select {
   border-radius: 5px;
+}
+
+p {
+  font-size: 1.3rem!important;
+  font-weight: bold!important;
+}
+
+span {
+  font-size: 1.2rem;
 }
 
 .no-bottom-p {
@@ -45,7 +58,7 @@ select {
 }
 
 .input-longer-form {
-  width: 200px;
+  width: 250px;
 }
 
 .input-longest-form {
@@ -153,7 +166,7 @@ header {
   font-size: 1.2rem;
   font-weight: bold;
   display: inline-block;
-	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, lavender 50%)!important;
+	background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, #9bd5ff 50%)!important;
 	background-position: 0 0!important;
 	background-size: 200% auto!important;
 	transition: all .3s ease 0s;
@@ -161,6 +174,7 @@ header {
 }
 
 .slide-btn:hover {
+  color: white!important;
 	background-position: -100% 0!important;
 }
 
@@ -251,11 +265,11 @@ footer {
   color: royalblue;
 }
 
-.fa-instagram {
-  color:#fff;
-  background:radial-gradient(at 20% 120%,orange, #f15a4d 25%, #f13f79 55%, #9933ff 100%) no-repeat;
-  border-radius:20%;
-}
+// .fa-instagram {
+//   color:#fff;
+//   background:radial-gradient(at 20% 120%,orange, #f15a4d 25%, #f13f79 55%, #9933ff 100%) no-repeat;
+//   border-radius:20%;
+// }
 
 // トップへスクロールボタン
 #up-scroll {
@@ -271,10 +285,10 @@ footer {
 
 // フラッシュメッセージ
 .notice {
-  padding: 60px 0 40px;
+  padding: 60px 0 20px;
   text-align: center;
   color: green;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   background: #36D1DC;
   background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);
@@ -328,14 +342,14 @@ footer {
 }
 
 .current {
-  color: gray;
+  color: black;
   font-weight: bold;
   display: inline-block;
   margin: 0 10px;
   padding: 10px;
   width: 75px;
-  border: 1px solid skyblue;
-  background-color: skyblue;
+  border: 1px solid lightgray;
+  background-color: lightgray;
   border-radius: 5px;
 }
 
@@ -406,7 +420,7 @@ footer {
   max-width: 300px;
   margin: 20px auto;
   padding: 12px!important;
-  font-size: 1.2em!important;
+  font-size: 1.1em!important;
   box-shadow: 0 5px 0 rgba(0,0,0,0.3);
 }
 

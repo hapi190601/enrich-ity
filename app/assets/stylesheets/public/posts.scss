@@ -41,7 +41,7 @@
 .post-index-label {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #0000cd;
+  color: #4682b4;
 }
 
 .img-size {
@@ -64,7 +64,6 @@
   position: absolute;
   top: 5%;
   left: 10%;
-  color: white;
   letter-spacing: 3px;
 }
 
@@ -124,6 +123,7 @@
 .new-post > div > span {
   display: inline-block;
   padding: 7px 0;
+  color: #4682b4;
 }
 
 .new-posts-area {
@@ -208,8 +208,16 @@
 }
 
 .new-post-field {
-  line-height: 2.5rem;
+  line-height: 2.3rem;
   width: 100%;
   border: none;
+  border-radius: 5px;
+}
+
+#weekly-posts-message {
+  padding: 5px 5px 10px;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  background-color: rgba(255, 250, 240, 0.6);
   border-radius: 5px;
 }

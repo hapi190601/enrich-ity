@@ -4,7 +4,7 @@
     <%= my_notifications.current_page %>ページ / <%= my_notifications.total_pages %>ページ
     </span>
 
-    <%= link_to notifications_checked_path, method: :patch, data: { confirm: "本当に削除しますか？" }, class:"checked-btn" do %>
+    <%= link_to notifications_checked_path, method: :patch, data: { confirm: "通知を全削除しますか？" }, class:"checked-btn" do %>
       <i class="fa fa-trash"></i>
     <% end %>
   </div>

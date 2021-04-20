@@ -25,23 +25,23 @@
   <div class="container">
     <div class="row post-info-area">
       <div class="col-md-7">
-        <div class="post-show-element">
+        <div class="post-show-element mb-1">
           <label class="col-md-5">掲載期間</label>
           <p class="inline no-bottom-p"><%= @deadline.strftime("%m月%d日") %>まで (残り<%= @remain %>日)
           </p>
         </div>
 
-        <div class="post-show-element">
+        <div class="post-show-element mb-1">
           <label class="col-md-5">投稿者</label>
           <p class="inline no-bottom-p"><%= @post.user.nickname %></p>
         </div>
 
-        <div class="post-show-element">
+        <div class="post-show-element mb-1">
           <label class="col-md-5">投稿者の年齢</label>
           <p class="inline no-bottom-p"><%= @post.age %> 歳</p>
         </div>
 
-        <div class="post-show-element">
+        <div class="post-show-element mb-1">
           <label class="col-md-5">ジャンル</label>
           <p class="inline no-bottom-p"><%= @post.genre.name %></p>
         </div>
@@ -51,7 +51,7 @@
           <p class="inline no-bottom-p"><%= @post.gender %></p>
         </div>
 
-        <div class="post-show-element">
+        <div class="post-show-element mb-1">
           <label class="col-md-5">希望のエリア</label>
           <% if @post.prefecture_code == nil %>
             <p class="inline no-bottom-p">指定なし</p>
@@ -61,7 +61,7 @@
           <% end %>
         </div>
 
-        <div class="post-show-element">
+        <div class="post-show-element mb-1">
           <label class="col-md-5">閲覧数</label>
           <p class="inline no-bottom-p"><%=  @post.impressionist_count %>　views</p>
         </div>

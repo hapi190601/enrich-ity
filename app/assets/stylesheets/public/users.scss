@@ -1,9 +1,10 @@
 // Place all the styles related to the public::users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.design-height {
-  height: 600px;
-}
+
+// .design-height {
+//   height: 600px;
+// }
 
 #forget-password-title {
   padding-top: 130px;
@@ -153,6 +154,7 @@ label {
 
 .profile-table td {
   padding: 1.2rem 0.75rem!important;
+  font-size: 1.4rem!important;
 }
 
 .edit-width {

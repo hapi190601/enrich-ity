@@ -1,14 +1,13 @@
-
 <div class="<%= direct_message.id %>-chat-space">
   <!--自分側はdisplay:none;で非表示にする-->
-  <div class="<%= direct_message.id %>">
+  <div class="<%= direct_message.id %> chat-opponent-icon">
     <%= attachment_image_tag direct_message.user, :image, fallback: "no-image.jpeg", class:"#{direct_message.id}chat-icon chat-icon" %>
     <br>
-    <span class="block text-center"><%= direct_message.user.nickname %></span>
+    <span class="block chat-room-nickname"><%= direct_message.user.nickname %></span>
   </div>
 
   <!--自分側は右側にテキストを表示する-->
-  <div class="<%= direct_message.id %>-discrimination">
+  <div class="<%= direct_message.id %>-discrimination common-discrimination">
     <!--自分側は背景の色を緑にする-->
     <div class="balloon-top balloon-top<%= direct_message.id %>">
       <p class="dm_content"><%= direct_message.message %></p>
@@ -37,7 +36,7 @@
   } else {
     $('div.' + <%= direct_message.id %> + '-chat-space').css('display', 'flex');
     $('div.' + <%= direct_message.id %> + '-chat-space').css('align-items', 'center');
-    $('div.' + <%= direct_message.id %> + '-chat-space').css('margin', '30px 0 30px 20px');
+    $('div.' + <%= direct_message.id %> + '-chat-space').css('margin', '30px 0 30px 5px');
     $('.<%= direct_message.id %>' + '-span').css('margin-left', '50px')
   }
 </script>
