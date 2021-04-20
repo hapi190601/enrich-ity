@@ -35,6 +35,5 @@
 <% end %>
 
 <div class="my-3 pt-3">
-  <!--window：１が部分的に効いていない-->
-  <%= paginate my_notifications, window:1, remote: true, params: {controller: 'public/notifications', action: 'index'} %>
+  <%= paginate my_notifications, window: 1, left: -1, right: -1, remote: true, params: {controller: 'public/notifications', action: 'index'} %>
 </div>

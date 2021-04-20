@@ -24,7 +24,7 @@
 
   <div class="container">
     <div class="row post-info-area">
-      <div class="col-md-7">
+      <div class="col-md-8 col-lg-7">
         <div class="post-show-element mb-1">
           <label class="col-md-5">掲載期間</label>
           <p class="inline no-bottom-p"><%= @deadline.strftime("%m月%d日") %>まで (残り<%= @remain %>日)
@@ -67,7 +67,7 @@
         </div>
       </div>
 
-      <div class="col-md-5">
+      <div class="col-md-4 col-lg-5">
         <%= attachment_image_tag @post, :image, fallback: "no-post-image.png", class:"post-show-img" %>
       </div>
 

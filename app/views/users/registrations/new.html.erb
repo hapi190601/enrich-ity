@@ -10,7 +10,7 @@
           <%= render "users/shared/error_messages", resource: resource %>
 
           <div class="field flex">
-            <div class="col-sm-5">
+            <div class="col-lg-5 col-md-6">
               <%= f.label :"【名前(フルネーム)】" %>
               <br>
               <span class="sign-up-span">※苗字と名前の間スペースは不要</span>
@@ -21,7 +21,7 @@
           </div>
 
           <div class="field flex">
-            <div class="col-sm-5">
+            <div class="col-lg-5 col-md-6">
               <%= f.label :"【フリガナ(フルネーム)】" %>
             </div>
             <div>
@@ -30,7 +30,7 @@
           </div>
 
           <div class="field flex">
-            <div class="col-sm-5">
+            <div class="col-lg-5 col-md-6">
               <%= f.label :"【ニックネーム】" %>
             </div>
             <div>
@@ -39,7 +39,7 @@
           </div>
 
           <div class="field flex">
-            <div class="col-sm-5">
+            <div class="col-lg-5 col-md-6">
               <%= f.label :"【生年月日】" %>
             </div>
             <div style="width:300px; font-size: 1.2rem;">
@@ -48,7 +48,7 @@
           </div>
 
           <div class="field flex">
-            <div class="col-sm-5">
+            <div class="col-lg-5 col-md-6">
               <%= f.label :"【性別】" %>
             </div>
             <div style="width:300px;">
@@ -59,19 +59,19 @@
           </div>
 
           <div class="field flex">
-            <div class="col-sm-5">
+            <div class="col-lg-5 col-md-6">
               <%= f.label :"【郵便番号】" %>
               <br>
               <span class="sign-up-span">ハイフン不要</span>
             </div>
             <div>
-              <%= f.text_field :postal_code, class:"input-longest-form p-2", autocomplete: "postcode" %>
+              <%= f.text_field :postal_code, class:"input-longest-form p-2", autocomplete: "postcode" %><br>
             </div>
 
           </div>
 
           <div class="field flex">
-            <div class="col-sm-5">
+            <div class="col-lg-5 col-md-6">
               <%= f.label :"【お住まいの都道府県】" %>
             </div>
             <div style="width:300px;">
@@ -80,7 +80,7 @@
           </div>
 
           <div class="field flex">
-            <div class="col-sm-5">
+            <div class="col-lg-5 col-md-6">
               <%= f.label :"【お住まいの市区町村】" %>
             </div>
             <div>
@@ -90,7 +90,7 @@
           </div>
 
           <div class="field flex">
-            <div class="col-sm-5">
+            <div class="col-lg-5 col-md-6">
               <%= f.label :"【最寄駅】" %>
               <br>
               <span class="sign-up-span">※駅不要 例：×東京駅 ○東京</span>
@@ -101,7 +101,7 @@
           </div>
 
           <div class="field flex">
-            <div class="col-sm-5">
+            <div class="col-lg-5 col-md-6">
               <%= f.label :"【メールアドレス】" %>
             </div>
             <div>
@@ -110,7 +110,7 @@
           </div>
 
           <div class="field flex">
-            <div class="col-sm-5">
+            <div class="col-lg-5 col-md-6">
               <%= f.label :"【パスワード】" %>
               <br>
               <span class="sign-up-span">※６文字以上</span>
@@ -122,7 +122,7 @@
           </div>
 
           <div class="field flex">
-            <div class="col-sm-5">
+            <div class="col-lg-5 col-md-6">
               <%= f.label :"【パスワード確認】" %>
             </div>
             <div>

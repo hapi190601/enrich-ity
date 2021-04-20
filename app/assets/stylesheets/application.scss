@@ -24,6 +24,14 @@ body {
   font-family: 'Kiwi Maru', serif;
 }
 
+.first {
+  display: none;
+}
+
+.last {
+  display: none;
+}
+
 input {
   font-size: 1.1rem;
   text-align: center;
@@ -331,6 +339,7 @@ footer {
 
 .pagination > span > a {
   color: gray;
+  font-size: 0.9rem!important;
   font-weight: bold;
   display: inline-block;
   margin: 0 10px;
@@ -568,9 +577,46 @@ footer {
 }
 
 // 以下レスポンシブ
+@media (max-width: 992px) {
 
-@media screen and (max-width: 992px) {
+  p {
+    font-size: 1.1rem!important;
+  }
+
+  .container-md, .container-sm, .container {
+    max-width: 90%!important;
+    margin: 0 auto!important;
+  }
+
+  .top-message {
+    font-size: 1.6rem;
+  }
+  .common-message-style {
+    font-size: 1.2rem;
+  }
+
   .notification-counts {
     display: none;
   }
+
+  .post-show-img {
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  span {
+    font-size: 1.1rem;
+  }
+
+  .about-content > p {
+    font-size: 1.1rem !important;
+  }
+
+  .md-margin1 {
+    margin-left: 15px!important;
+  }
+}
+
+@media (min-width: 768px) {
+
 }

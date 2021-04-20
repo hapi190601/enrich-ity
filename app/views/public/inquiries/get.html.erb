@@ -8,7 +8,7 @@
       <div class="inquiry-form">
         <%= form_with(model: @inquiry, url: inquiries_create_path, local: true) do |f| %>
         <div class="form-content">
-          <p class="form-item-label col-sm-4">
+          <p class="form-item-label col-lg-4 col-md-5">
             <span class="form-item-label-required">必須</span>
             名前
           </p>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="form-content">
-          <p class="form-item-label col-sm-4">
+          <p class="form-item-label col-lg-4 col-md-5">
             <span class="form-item-label-required">必須</span>
             メールアドレス
           </p>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-content">
-          <p class="form-item-label col-sm-4">
+          <p class="form-item-label col-lg-4 col-md-5">
             <span class="form-item-label-required">必須</span>
             タイトル
           </p>
@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-content">
-          <p class="form-item-label col-sm-4 adjustment"><span class="form-item-label-required">必須</span>お問い合わせ内容</p>
+          <p class="form-item-label col-lg-4 col-md-5 adjustment"><span class="form-item-label-required">必須</span>お問い合わせ内容</p>
           <%= f.text_area :content, placeholder:"入力してください", class:"form-item-textarea" %>
         </div>
 
