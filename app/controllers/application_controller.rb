@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
   protected
   #ログイン後の遷移パス
   def after_sign_in_path_for(resource)
