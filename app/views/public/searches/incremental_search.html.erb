@@ -70,10 +70,9 @@
       });
     });
 
-
-
     function addPost(post) {
       if (post.image_url == null)
+      // 本番環境では/assets/不要？
         var image_source = '/assets/no-post-image.png'
       else
         var image_source = post.image_url
@@ -104,7 +103,7 @@
           <div class="right-post text-center posts-index-width" width="50%">
             <img class="change-src" src="${image_source}" style="width:250px;">
             <br>
-            <a href="/posts/${post.id}" data-method="get" class="btn btn-sm bigger-btn btn-info m-3 p-3">くわしく見る</a>
+            <a href="/posts/${post.id}" data-method="get" class="btn btn-sm m-size-btn post-show-btn-color">くわしく見る</a>
           </div>
         </div>
       `;

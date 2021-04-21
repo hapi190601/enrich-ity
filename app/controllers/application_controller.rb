@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   #ログイン後の遷移パス
   def after_sign_in_path_for(resource)
     if user_signed_in?
-      flash[:notice] = "ログインに成功しました！"
+      flash[:notice] = "ログインしました！"
       posts_top_path
     else
       root_path

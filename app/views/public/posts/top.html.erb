@@ -48,9 +48,6 @@
             <% @posts_all.order("created_at desc").first(3).each do |pos| %>
             <div class="new-post">
               <div class="new-post-top">
-                <!--<span>■投稿者</span>-->
-                <!--<p class="mb-0 ml-3 pl-3"><%#= pos.user.nickname %></p>-->
-
                 <span>【ジャンル】</span>
                 <p class="mb-0 px-3"><%= pos.genre.name %></p>
 
@@ -70,14 +67,14 @@
               </div>
 
               <div class="new-post-bottom text-center">
-                <span><%= link_to "詳細へ", post_path(pos.id), class:"btn btn-sm btn-info m-size-btn" %></span>
+                <span><%= link_to "詳細へ", post_path(pos.id), class:"btn btn-sm post-show-btn-color m-size-btn" %></span>
               </div>
             </div>
             <% end %>
           </div>
 
           <div class="link-to-index">
-            <%= link_to "一覧を見る", posts_path, class:"btn btn-sm post-btn-color m-size-btn" %>
+            <%= link_to "一覧を見る", posts_path, class:"btn btn-sm post-btn-color l-size-btn" %>
           </div>
         </div>
 
@@ -90,7 +87,7 @@
               <span class="ranking-number"><i class="fas fa-crown" id="fa-<%= i %>"></i> 第<%= i %>位</span>
               <br>
               <p class="ranking-genre-name text-center"><%= genre_rank.name %></p>
-              <p class="text-center">投稿数：　<strong style="font-size: 1.5rem;"><%= posts_count %></strong></p>
+              <p class="text-center">投稿数：　<strong style="font-size: 2rem;"><%= posts_count %></strong></p>
             </div>
           <% end %>
           </div>

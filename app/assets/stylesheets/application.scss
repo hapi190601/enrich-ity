@@ -50,9 +50,9 @@ p {
   font-weight: bold!important;
 }
 
-span {
-  font-size: 1.2rem;
-}
+// span {
+//   font-size: 1.2rem;
+// }
 
 .no-bottom-p {
   margin-bottom: 0!important;
@@ -438,6 +438,24 @@ footer {
   box-shadow: 0 1px 0 rgba(0,0,0,0.3);
 }
 
+.l-size-btn {
+  display: inline-block;
+  font-weight: bold;
+  letter-spacing: 2px;
+  min-width: 250px;
+  max-width: 350px;
+  margin: 20px auto;
+  padding: 12px!important;
+  font-size: 1.1em!important;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.3);
+}
+
+.l-size-btn:hover {
+  margin: 22px auto 18px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+}
+
+
 // 問い合わせボタン
 .inquiry-btn-color {
   background-color: #faebd7;
@@ -584,7 +602,7 @@ footer {
   }
 
   .container-md, .container-sm, .container {
-    max-width: 90%!important;
+    max-width: 95%!important;
     margin: 0 auto!important;
   }
 
@@ -615,8 +633,69 @@ footer {
   .md-margin1 {
     margin-left: 15px!important;
   }
+
+  .sign-in-display {
+    min-width: 200px;
+  }
+
+  .m-size-btn  {
+    min-width: 150px;
+  }
+
+  .about-content {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .new-post {
+    width: 40%;
+  }
+
+  .new-post:last-child {
+    display: none;
+  }
+
+  .genre-ranking-box {
+    padding: 10px;
+    width: 30%;
+  }
+
+  .match-messages-box {
+    padding-bottom: 10px;
+  }
+
+  .post-box {
+    width: 95%
+  }
+
+  .offset-2 {
+    margin-left: 5%!important;
+  }
+
+  #post_municipality {
+    max-width: 220px;
+    font-size: 0.8rem;
+  }
+
+  .new-post-prefecture-select {
+    vertical-align: bottom;
+  }
+
+  .media-list-style {
+    margin-left: 0;
+  }
+
+  .fix-post-field-padding {
+    padding-left: 7px!important;
+  }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+
+}
+
+
+// スマホサイズ
+@media (max-width: 576px) {
 
 }

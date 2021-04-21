@@ -4,6 +4,7 @@
 
 #post_prefecture_code {
   height: 44px!important;
+  border: none;
 }
 
 #post_genre_id {
@@ -158,7 +159,7 @@
 }
 
 .match-messages-box {
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
   padding-bottom: 50px;
   text-align: center;
@@ -208,7 +209,9 @@
 }
 
 .new-post-field {
-  line-height: 2.3rem;
+  // height: 44px;
+  padding: 5px;
+  line-height: 2rem;
   width: 100%;
   border: none;
   border-radius: 5px;
@@ -220,4 +223,12 @@
   font-size: 1.5rem;
   background-color: rgba(255, 250, 240, 0.6);
   border-radius: 5px;
+}
+
+.media-list-style {
+  margin-left: 1rem;
+}
+
+.title-width {
+  width: 100%!important;
 }

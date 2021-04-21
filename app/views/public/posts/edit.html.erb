@@ -13,7 +13,7 @@
         </div>
 
         <div class="field flex-around">
-          <div class="col-sm-3 offset-2">
+          <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【　写真　】" %>
           </div>
           <div class="col-sm-7">
@@ -22,16 +22,16 @@
         </div>
 
         <div class="field flex-around">
-          <div class="col-sm-3 offset-2">
+          <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【タイトル】" %>
           </div>
           <div class="col-sm-7">
-            <%= f.text_field :title, placeholder: "　タイトルを入力してください", class:" text-left input-longest-form focus-green new-post-field" %>
+            <%= f.text_field :title, placeholder: "　タイトルを入力してください", class:" text-left input-longest-form focus-green new-post-field title-width" %>
           </div>
         </div>
 
         <div class="field flex-around-top">
-          <div class="col-sm-3 offset-2">
+          <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【　本文　】", style:" vertical-align:top" %>
           </div>
           <div class="col-sm-7">
@@ -40,7 +40,7 @@
         </div>
 
         <div class="field flex">
-          <div class="col-sm-3 offset-2">
+          <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【ジャンル】" %>
           </div>
           <div class="col-sm-7">
@@ -49,7 +49,7 @@
         </div>
 
         <div class="field flex">
-          <div class="col-sm-3 offset-2">
+          <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【希望の性別】" %>
           </div>
           <div class="col-sm-7">
@@ -60,11 +60,11 @@
         </div>
 
         <div class="area-of-hope field flex-around-top">
-          <div class="col-sm-3 offset-2">
+          <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【希望のエリア】" %>
           </div>
 
-          <div class="col-sm-7">
+          <div class="col-sm-7 fix-post-field-padding">
             <section class="choose-area-of-hope">
               <label class="my-2">
               <%= f.radio_button :option, 0, checked: "checked", class:"radio-button mx-3", style:"transform:scale(2.0);" %>
@@ -114,11 +114,11 @@
         </div>
 
         <div class="field flex-around-top">
-          <div class="col-sm-3 offset-2">
+          <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【注意事項】" %>
-          </div>
-          <div class="col-sm-7">
-            <ul class="ml-3">
+          </div>*
+          <div class="col-sm-7 fix-post-field-padding">
+            <ul class="media-list-style">
               <li>投稿は編集してから1ヶ月後に自動削除されます</li>
               <li>公序良俗に反する投稿は削除される可能性があります</li>
             </ul>

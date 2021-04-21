@@ -19,8 +19,8 @@
     </nav>
 
     <% if user_signed_in? %>
-      <div class="nav-item mr-3 mt-2">
-        <span class="sign-in-nickname"><%= current_user.nickname %>  ログイン中</span>
+      <div class="nav-item sign-in-display mr-3 mt-2">
+        <span class="inline sign-in-nickname"><%= current_user.nickname %>  ログイン中</span>
       </div>
     <% end %>
 
