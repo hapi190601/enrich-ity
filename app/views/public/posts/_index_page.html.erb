@@ -1,19 +1,23 @@
 <% posts.each do |pos| %>
 <div class="post-box flex-around">
   <div class="left-post posts-index-width">
-    <span class="inline mt-2 post-index-label">【タイトル】</span>
+    <div class="none-block text-center">
+      <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size py-3 my-2" %>
+    </div>
+
+    <span class="inline my-2 post-index-label">【タイトル】</span>
     <br>
     <span class="inline mb-2 ml-2 pl-3"><%= pos.title %></span>
     <br>
-    <span class="inline mt-2 post-index-label">【ジャンル】</span>
+    <span class="inline my-2 post-index-label">【ジャンル】</span>
     <br>
     <span class="inline mb-2 ml-2 pl-3"><%= pos.genre.name %></span>
     <br>
-    <span class="inline mt-2 post-index-label">【希望性別】</span>
+    <span class="inline my-2 post-index-label">【希望性別】</span>
     <br>
     <span class="inline mb-2 ml-2 pl-3"><%= pos.gender %></span>
     <br>
-    <span class="inline mt-2 post-index-label">【希望エリア】</span>
+    <span class="inline my-2 post-index-label">【希望エリア】</span>
     <br>
     <% if pos.prefecture_code == nil %>
       <span class="inline mb-2 ml-2 pl-3">指定なし</span>
@@ -24,15 +28,19 @@
       </span>
     <% end %>
     <br>
-    <span class="inline mt-2 post-index-label">【本文】</span><br>
+    <span class="inline my-2 post-index-label">【本文】</span><br>
     <span class="inline mb-2 ml-2 pl-3">
       <%= safe_join(pos.content.truncate(75).split("\n"),tag(:br)) %>
     </span>
   </div>
 
-  <div class="right-post text-center">
+  <div class="right-post text-center media-none">
     <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size pt-3 mt-3" %>
     <br>
+    <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm post-show-btn-color m-size-btn" %>
+  </div>
+
+  <div class="none-block text-center">
     <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm post-show-btn-color m-size-btn" %>
   </div>
 </div>

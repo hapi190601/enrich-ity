@@ -1,15 +1,14 @@
 <footer>
   <div class="flex-around footer-box">
-    <div class="inquiry-btn">
-      <%= link_to "お問い合わせ", inquiries_get_path, class:"btn btn-sm inquiry-btn-color m-size-btn" %>
+    <div class="inquiry-btn smartphone-none">
+      <%= link_to "お問い合わせ", inquiries_get_path, class:"btn btn-sm inquiry-btn-color m-size-btn fix-media-btn" %>
     </div>
 
     <div class="footer-message">
       <p>Copyright © Enrich-ity All Rights Reserved.</p>
     </div>
 
-    <div class="sns-rink">
-      <!--下記３つのリンクのURLはドメインを取得したら変更する！-->
+    <div class="sns-rink smartphone-none">
       <span>
         <%= link_to("https://twitter.com/intent/tweet?text=君もEnrich-ityで「仲間」を探そう！%20%0d&url=http://enrich-ity.com/", target: :_blank) do %>
           <i class="fab fa-twitter-square fa-2x"></i>
@@ -28,6 +27,21 @@
       <!--    <i class="fab fa-instagram fa-2x"></i>-->
       <!--  <%# end %>-->
       <!--</span>-->
+    </div>
+
+    <!--スマホサイズ用-->
+    <div class="sns-rink none-for-smartphone smartphone-block">
+      <span>
+        <%= link_to("https://twitter.com/intent/tweet?text=君もEnrich-ityで「仲間」を探そう！%20%0d&url=http://enrich-ity.com/", target: :_blank) do %>
+          <i class="fab fa-twitter-square fa-2x"></i>
+        <% end %>
+      </span>
+
+      <span>
+        <%= link_to("https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fenrich-ity.com%2F&amp;src=sdkpreparse", target: :_blank) do %>
+          <i class="fab fa-facebook-square fa-2x"></i>
+        <% end %>
+      </span>
     </div>
   </div>
 

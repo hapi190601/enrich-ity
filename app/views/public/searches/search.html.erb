@@ -17,7 +17,7 @@
           <div class="field search-fields">
             <%= f.label :"【ジャンル】", class:"mb-3" %>
             <br>
-            <%= f.collection_select :genre_id_eq, Genre.where.not(id: 0), :id, :name, {prompt: "指定なし"}, class: "col-sm-6 search-select focus-green ml-3" %>
+            <%= f.collection_select :genre_id_eq, Genre.where.not(id: 0), :id, :name, {prompt: "指定なし"}, class: "search-select focus-green ml-3" %>
           </div>
 
           <div class="field search-fields">
@@ -31,23 +31,23 @@
           <div class="field search-fields">
             <%= f.label :"【年齢】", class:"mb-3" %>
             <br>
-            <%= f.select :age_gteq, (15..75).to_a, {prompt: "指定なし"}, class:"col-sm-3 search-select focus-green ml-3" %>
-            <strong>　　〜　　</strong>
-            <%= f.select :age_lteq, (15..75).to_a, {prompt: "指定なし"}, class:"col-sm-3 search-select focus-green" %>
+            <%= f.select :age_gteq, (15..75).to_a, {prompt: "指定なし"}, class:"search-select focus-green ml-3" %>
+            <strong>　〜　</strong>
+            <%= f.select :age_lteq, (15..75).to_a, {prompt: "指定なし"}, class:"search-select focus-green" %>
             まで
           </div>
 
           <div class="field search-fields">
             <%= f.label :"【エリア】", class:"mb-3" %>
-            <span class="media-span-size text-dark">※指定するとヒット件数が大幅に減る可能性があります</span>
-            <br>
+            <span class="media-span-size media-none text-dark">※指定するとヒット件数が大幅に減る可能性があります</span>
+
             <div class="flex-no-center">
-              <div class="col-sm-4">
+              <div class="col-md-4 col-sm-5" style="padding: 0;">
                 <%= f.label :"都道府県", class:"pl-3 mb-2" %>
                 <br>
                 <%= f.collection_select :prefecture_code_eq, JpPrefecture::Prefecture.all, :code, :name, {prompt:" 指定なし "}, class:"search-select focus-green px-3 ml-3", id:"post_prefecture_code" %>
               </div>
-              <div class="col-sm-5">
+              <div class="col-md-4 col-sm-5" style="padding: 0;">
                 <%= f.label :"市区町村", class:"pl-3 mb-2" %>
                 <br>
                 <%= f.text_field :municipality_cont, placeholder: "指定なし", class: "search-field focus-green text-left ml-3" %>

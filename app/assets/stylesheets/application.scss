@@ -54,6 +54,18 @@ span {
   font-size: 1.1rem;
 }
 
+.none {
+  display: none;
+}
+
+.none-for-smartphone {
+  display: none;
+}
+
+.none-block {
+  display: none;
+}
+
 .no-bottom-p {
   margin-bottom: 0!important;
 }
@@ -112,6 +124,7 @@ header {
 
 .sign-in-nickname {
   color: green;
+  max-width: 200px;
 }
 
 .flex {
@@ -429,7 +442,7 @@ footer {
   max-width: 300px;
   margin: 20px auto;
   padding: 12px!important;
-  font-size: 1.1em!important;
+  font-size: 1.1rem!important;
   box-shadow: 0 5px 0 rgba(0,0,0,0.3);
 }
 
@@ -734,11 +747,356 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .slide-image {
+    height: 400px;
+  }
 
+  .weekly_posts {
+    font-size: 1.8rem;
+  }
+
+  .new-post:last-child {
+    display: block;
+  }
+
+  .release-flex {
+    display: block;
+  }
+
+  .new-post {
+    width: 85%;
+    margin: 0 auto 30px;
+  }
+
+  .genre-ranking-box {
+    width: 70%;
+    margin: 0 auto 40px;
+  }
+
+  .genre-ranking {
+    padding-bottom: 0;
+  }
+
+  .footer-message > p {
+    font-size: 0.8rem!important;
+  }
+
+  .sns-rink > span {
+    margin: 0px 7px;
+  }
+
+  .fix-media-btn {
+    padding: 5px!important;
+  }
+
+  .none {
+    display: inline;
+  }
+
+  .none-block {
+    display: block;
+  }
+
+  .media-none {
+    display: none;
+  }
+
+  .post-info-area {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .post-show-element {
+    display: flex;
+  }
+
+  .post-show-element > label {
+    display: inline;
+    width: 50%;
+    padding-bottom: 7px;
+  }
+
+  .post-show-img {
+    display: block;
+    width: 70%;
+    height: auto;
+    margin: 0px auto 30px;
+  }
+
+  .link-box {
+    display: block;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .background-color {
+    padding-bottom: 30px;
+  }
+
+  .no-bottom-p {
+    margin-top: 7px;
+  }
+
+  .posts-index-width {
+    width: 90%!important;
+    margin: 0 auto;
+  }
+
+  .post-box {
+    display: block;
+  }
+
+  .left-post  {
+    padding-bottom: 0;
+  }
+
+  .fix-media-field {
+    display: block;
+    padding-bottom: 15px!important;
+  }
+
+  .fix-media-field > div {
+    margin-bottom: 10px!important;
+  }
+
+  .media-new-post-fix-margin {
+    margin-left: 40px;
+  }
+
+  .new-post-field {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .inquiry-form {
+    width: 95%;
+  }
+
+  .change-block {
+    display: block;
+  }
+
+  .form-item-label.adjustment {
+    margin-bottom: 20px;
+  }
+
+  .form-item-textarea {
+    width: 90%;
+  }
+
+  .qa-area {
+    width: 85%
+  }
+
+  .room-show-area {
+    min-height: 550px;
+  }
+
+  .notification-area {
+    width: 90%;
+  }
+
+  .fix-noti-width {
+    max-width: 90%;
+  }
+
+  .page-title {
+    width: 95%;
+  }
+
+  .top-messages {
+    width: 100%;
+  }
+
+  .top-message {
+    font-size: 1.4rem;
+  }
+
+  .common-message-style {
+    font-size: 1.1rem;
+  }
+
+  .animate {
+    font-size: 1.5rem !important;
+  }
+
+  .absolute-flex {
+    display: flex!important;
+  }
+
+  .ityped-message-box {
+    position: absolute;
+    left: 3%;
+  }
+
+  .right-post {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .search-fields {
+    width: 95%;
+    margin-left: 5%;
+  }
+
+  .sort-btn {
+    margin: 15px auto;
+    display: block;
+    text-align: center;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .sort-btn > a {
+    display: block;
+    position: absolute;
+    top: 50%;
+    -webkit-transform : translateY(-50%);
+    transform : translateY(-50%);
+
+  }
+
+  .sort-area {
+    padding: 0;
+  }
+
+  .sign-in-area {
+    width: 100%;
+  }
+
+  .sign-up-area {
+    width: 100%;
+  }
+
+  .input-longest-form {
+    margin-top: 10px;
+  }
+
+  label {
+    font-size: 1.2rem;
+  }
+
+  .select-width {
+    margin: 10px auto 0;
+  }
+
+  .sign-up-span {
+    padding-left: 0;
+  }
+
+  .media-pass-form {
+    display: block;
+    margin: 10px auto 0;
+  }
+
+  .profile-area {
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  .m-size-btn {
+    font-size: 1rem!important;
+  }
+
+  .media-center {
+    text-align: center;
+  }
+  .profile-table td {
+    font-size: 1.3rem !important;
+  }
+
+  .profile-area {
+    padding-bottom: 30px;
+  }
+
+  .link-to-inquiry {
+    font-size: 1.5rem;
+  }
 }
 
 
 // スマホサイズ
 @media (max-width: 576px) {
+  .main-messages {
+    position: absolute;
+    top: 3%;
+    left: 5%;
+  }
+
+  .smartphone-none {
+    display: none;
+  }
+
+  .smartphone-block {
+    display: block;
+  }
+
+  .smartphone-inline {
+    display: inline-block;
+  }
+
+  footer {
+    position: relative;
+  }
+
+  .sns-rink {
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+  }
+
+  .top-message {
+    line-height: 2.5rem;
+  }
+
+  .ityped-message {
+    font-size: 1.6rem;
+  }
+
+  .form-item-input {
+    margin-left : 0;
+  }
+
+  .sircle-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .a-notification {
+    width: 98%;
+  }
+
+  .chat-link-strong {
+    font-size: 1.1rem;
+  }
+
+  .no-bottom-p {
+    margin-top: 0;
+  }
+
+  .post-content-area {
+    padding-right: 0!important;
+    padding-left: 0!important;
+  }
+
+  .chat-opponent-icon {
+    min-width: 75px;
+    max-width: 100px;
+  }
+
+  .balloon-top {
+    max-width: 70%;
+    padding: 7px 15px;
+  }
+
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .profile-h3 {
+    margin-bottom: 0!important;
+  }
 
 }

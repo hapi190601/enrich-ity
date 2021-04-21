@@ -75,10 +75,15 @@ class Public::UsersController < ApplicationController
   end
 
   def calculate_user_age
-    user = User.find(params[:id])
-    today = Date.today.strftime("%Y%m%d").to_i
-    birthday = user.birthday.strftime("%Y%m%d").to_i
-    @age = (today - birthday) / 10000
+    if User.exists?(id: params[:id])
+      user = User.find(params[:id])
+      today = Date.today.strftime("%Y%m%d").to_i
+      birthday = user.birthday.strftime("%Y%m%d").to_i
+      @age = (today - birthday) / 10000
+    else
+      redirect_to root_path
+      flash[:notice] = "閲覧ご希望のユーザーは退会済みです。"
+    end
   end
 
   def check_guest

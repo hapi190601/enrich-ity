@@ -7,9 +7,7 @@
           <p class="text-left <%= @class %>" id="<%= @class %>" style="font-size: 30px;" data-id="<%= e.user.id %>"></p>
 
           <h2 class="page-title">
-            <%= link_to e.user.nickname, user_path(e.user.id), class:"text-dark" %>さんとのチャットルーム
-            <%#= e.user.nickname %>
-            <!--さんとのチャットルーム-->
+            <%= link_to e.user.nickname, user_path(e.user.id), class:"text-dark" %>との<span class="none"><br></span>チャットルーム
           </h2>
         <% else %>
           <p class="text-left <%= @class %>" id="<%= @class %>" data-id="<%= e.user.id %>"></p>

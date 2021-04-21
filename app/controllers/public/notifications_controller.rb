@@ -24,6 +24,7 @@ class Public::NotificationsController < ApplicationController
       notification.update_attributes(checked: true)
     end
 
+    flash[:notice] = "通知を全て既読処理しました"
     redirect_back(fallback_location: root_url)
   end
 end

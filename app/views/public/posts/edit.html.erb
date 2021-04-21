@@ -7,64 +7,65 @@
         <%= form_with model: @post, url: post_path, local: true do |f| %>
 
         <div class="field">
-          <div class="offset-5 pl-3">
+          <div class="offset-lg-2 offset-md-0 text-center pl-3">
             <%= attachment_image_tag @post, :image, fallback: "no-post-image.png", id: "preview", style: "height: 200px; width:300px;" %>
           </div>
         </div>
 
-        <div class="field flex-around">
+        <div class="field flex-around fix-media-field">
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【　写真　】" %>
           </div>
-          <div class="col-sm-7">
+          <div class="col-lg-7 col-md-12 media-new-post-fix-margin">
             <%= f.attachment_field :image, class:"choose-post-image" %>
           </div>
         </div>
 
-        <div class="field flex-around">
+        <div class="field flex-around fix-media-field">
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【タイトル】" %>
           </div>
-          <div class="col-sm-7">
+          <div class="col-lg-7 col-md-12 media-new-post-fix-margin">
             <%= f.text_field :title, placeholder: "　タイトルを入力してください", class:" text-left input-longest-form focus-green new-post-field title-width" %>
           </div>
         </div>
 
-        <div class="field flex-around-top">
+        <div class="field flex-around-top fix-media-field">
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【　本文　】", style:" vertical-align:top" %>
           </div>
-          <div class="col-sm-7">
+          <div class="col-lg-7 col-md-12 media-new-post-fix-margin">
             <%= f.text_area :content, class:"focus-green new-post-field", rows:10, placeholder: "　あなたが探している仲間を具体的に書きましょう！" %>
           </div>
         </div>
 
-        <div class="field flex">
+        <div class="field flex fix-media-field">
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【ジャンル】" %>
           </div>
-          <div class="col-sm-7">
+          <div class="col-lg-7 col-md-12 media-new-post-fix-margin">
             <%= f.collection_select :genre_id, Genre.all, :id, :name, {prompt: "-- 選択してください --"}, class:"input-longer-form p-2 text-left focus-green" %></td>
           </div>
         </div>
 
-        <div class="field flex">
+        <div class="field flex fix-media-field">
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【希望の性別】" %>
           </div>
-          <div class="col-sm-7">
+          <div class="col-lg-7 col-md-12 media-new-post-fix-margin">
             <label><%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"mx-3" %> 男性</label>
             <label><%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"mx-3" %> 女性</label>
             <label><%= f.radio_button :gender, :"どちらでも", checked: true, style:"transform:scale(2.0);", class:"mx-3" %> どちらでも</label>
           </div>
         </div>
 
-        <div class="area-of-hope field flex-around-top">
+        <div class="area-of-hope field flex-around-top fix-media-field">
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【希望のエリア】" %>
           </div>
 
-          <div class="col-sm-7 fix-post-field-padding">
+
+          <div class="col-lg-7 col-md-12 fix-post-field-padding media-new-post-fix-margin">
             <section class="choose-area-of-hope">
               <label class="my-2">
               <%= f.radio_button :option, 0, checked: "checked", class:"radio-button mx-3", style:"transform:scale(2.0);" %>
@@ -113,11 +114,11 @@
           </div>
         </div>
 
-        <div class="field flex-around-top">
+        <div class="field flex-around-top fix-media-field">
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【注意事項】" %>
-          </div>*
-          <div class="col-sm-7 fix-post-field-padding">
+          </div>
+          <div class="col-lg-7 col-md-12 fix-post-field-padding media-new-post-fix-margin">
             <ul class="media-list-style">
               <li>投稿は編集してから1ヶ月後に自動削除されます</li>
               <li>公序良俗に反する投稿は削除される可能性があります</li>

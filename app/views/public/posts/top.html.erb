@@ -44,7 +44,7 @@
 
         <div class="new-posts-area">
           <h3 class="text-left new-post-title">新着投稿</h3>
-          <div class="flex-around-top">
+          <div class="flex-around-top release-flex">
             <% @posts_all.order("created_at desc").first(3).each do |pos| %>
             <div class="new-post">
               <div class="new-post-top">
@@ -81,7 +81,7 @@
         <div class="genre-ranking">
           <h3 class="genre-ranking-title">ジャンルランキング</h3>
 
-          <div class="flex-around">
+          <div class="flex-around release-flex">
           <% @genre_ranks.zip(@three_key, @three_index) do |genre_rank, posts_count, i| %>
             <div class="genre-ranking-box">
               <span class="ranking-number"><i class="fas fa-crown" id="fa-<%= i %>"></i> 第<%= i %>位</span>

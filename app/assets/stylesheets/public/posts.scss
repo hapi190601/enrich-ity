@@ -115,6 +115,7 @@
 
 .new-post-top {
   min-height: 330px;
+  padding: 20px 0 0 20px;
 }
 
 .new-post-top > p {
@@ -125,6 +126,7 @@
   display: inline-block;
   padding: 7px 0;
   color: #4682b4;
+  font-weight: bold;
 }
 
 .new-posts-area {
@@ -211,7 +213,7 @@
 .new-post-field {
   // height: 44px;
   padding: 5px;
-  line-height: 2rem;
+  line-height: 1.8rem;
   width: 100%;
   border: none;
   border-radius: 5px;
@@ -230,5 +232,10 @@
 }
 
 .title-width {
-  width: 100%!important;
+  width: 90%!important;
+  margin: 0 auto;
+}
+
+.post-show-element > label {
+  color: #4682b4;
 }

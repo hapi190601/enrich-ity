@@ -12,16 +12,16 @@
             <span class="inline"><%= attachment_image_tag @user, :image, fallback: "no-image.jpeg", id: "preview", style: "height: 150px; width:150px;" %></span>
         </div>
 
-        <div class="field flex">
+        <div class="field flex release-flex media-center">
           <div class="col-lg-5 col-md-6">
             <%= f.label :"【アイコン】" %>
           </div>
-          <div style="width: 300px;">
+          <div class="select-width">
             <%= f.attachment_field :image, class:"choose-image", class:"pl-0" %>
           </div>
         </div>
 
-        <div class="field flex">
+        <div class="field flex release-flex media-center">
           <div class="col-lg-5 col-md-6">
             <%= f.label :"【名前】" %>
           </div>
@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <div class="field flex">
+        <div class="field flex release-flex media-center">
           <div class="col-lg-5 col-md-6">
             <%= f.label :"【フリガナ】" %>
           </div>
@@ -41,7 +41,7 @@
           </div>
         </div>
 
-        <div class="field flex">
+        <div class="field flex release-flex media-center">
           <div class="col-lg-5 col-md-6">
             <%= f.label :"【ニックネーム】" %>
           </div>
@@ -50,67 +50,67 @@
           </div>
         </div>
 
-        <div class="field flex">
+        <div class="field flex release-flex media-center">
           <div class="col-lg-5 col-md-6">
             <%= f.label :"【生年月日】" %>
           </div>
-          <div style="width: 300px;">
-            <%== sprintf(f.date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=> Time.now.year-15, :end_year =>1950, prompt:"---"), '年　','月　') + '日　' %>
+          <div class="select-width">
+            <%== sprintf(f.date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=> Time.now.year-15, :end_year =>1950, prompt:"---"), '年','月') + '日' %>
           </div>
         </div>
 
-        <div class="field flex">
+        <div class="field flex release-flex media-center">
           <div class="col-lg-5 col-md-6">
             <%= f.label :"【性別】" %>
           </div>
-          <div style="width: 300px;">
+          <div class="select-width">
             <label>男性 <%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"mx-2" %></label>
             <label>女性 <%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"mx-2" %></label>
             <label>ひみつ <%= f.radio_button :gender, :"ひみつ", style:"transform:scale(2.0);", class:"mx-2" %></label>
           </div>
         </div>
 
-        <div class="field flex">
+        <div class="field flex release-flex media-center">
           <div class="col-lg-5 col-md-6">
             <%= f.label :"【郵便番号】" %>
           </div>
-          <div style="width: 300px;">
+          <div class="select-width">
             <%= f.text_field :postal_code, class:"input-longest-form p-2 focus-green", autocomplete: "postcode" %>
             <br>
             <span class="inline">※ハイフン不要</span>
           </div>
         </div>
 
-        <div class="field flex">
+        <div class="field flex release-flex media-center">
           <div class="col-lg-5 col-md-6">
             <%= f.label :"【お住まいの都道府県】" %>
           </div>
-          <div style="width: 300px;">
+          <div class="select-width">
             <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {prompt:"---"}, class:" text-center input-longer-form p-2 focus-green", id:"user_prefecture_code" %>
           </div>
         </div>
 
-        <div class="field flex">
+        <div class="field flex release-flex media-center">
           <div class="col-lg-5 col-md-6">
             <%= f.label :"【お住まいの市区町村】" %>
           </div>
-          <div style="width: 300px;">
+          <div class="select-width">
             <%= f.text_field :municipality, class:"input-longest-form p-2 focus-green", autocomplete: "municipality" %>
           </div>
         </div>
 
-        <div class="field flex">
+        <div class="field flex release-flex media-center">
           <div class="col-lg-5 col-md-6">
             <%= f.label :"【最寄駅】" %>
           </div>
-          <div style="width: 300px;">
+          <div class="select-width">
             <%= f.text_field :nearest_station, class:"input-longest-form p-2 focus-green", autocomplete: "nearest_station", width:"60%" %>
             <br>
             <span class="inline">※駅不要 例：×東京駅 ○東京</span>
           </div>
         </div>
 
-        <div class="link-box">
+        <div class="link-box absolute-flex">
           <div class="link">
             <%= f.submit "編集内容を保存する", class:"btn btn-sm m-size-btn edit-btn-color user-edit-btn" %>
           </div>
