@@ -53,7 +53,7 @@
           <div class="right-post text-center">
             <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size pt-3 mt-3" %>
             <br>
-            <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm m-size-btn post-show-btn-color" %>
+            <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm m-size-btn post-show-btn-color btn-for-smartphone" %>
           </div>
         </div>
         <% end %>
@@ -66,15 +66,15 @@
 
         <div class="link-box three-btn">
           <div class="link">
-            <%= link_to "再検索", searches_search_path, class:"btn btn-sm search-btn-color m-size-btn" %>
+            <%= link_to "再検索", searches_search_path, class:"btn btn-sm search-btn-color m-size-btn btn-for-smartphone" %>
           </div>
 
           <div class="link">
-            <%= link_to "簡易検索へ", searches_incremental_search_path, class:"btn btn-sm incremental-btn-color m-size-btn" %>
+            <%= link_to "簡易検索へ", searches_incremental_search_path, class:"btn btn-sm incremental-btn-color m-size-btn btn-for-smartphone" %>
           </div>
 
           <div class="link">
-            <%= link_to "投稿一覧へ", posts_path, class:"btn btn-sm post-btn-color m-size-btn" %>
+            <%= link_to "投稿一覧へ", posts_path, class:"btn btn-sm post-btn-color m-size-btn btn-for-smartphone" %>
           </div>
         </div>
       <% end %>

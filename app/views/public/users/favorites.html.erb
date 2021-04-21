@@ -44,9 +44,9 @@
             <div class="right-post text-center posts-index-width" width="50%">
               <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size pt-3 mt-3" %>
               <br>
-              <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm m-size-btn post-show-btn-color" %>
+              <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm m-size-btn post-show-btn-color btn-for-smartphone" %>
               <br>
-              <%= link_to "お気に入り解除", post_favorites_path(pos.id), method: :delete, class:"btn btn-sm btn-light m-size-btn"%>
+              <%= link_to "お気に入り解除", post_favorites_path(pos.id), method: :delete, class:"btn btn-sm btn-light m-size-btn btn-for-smartphone"%>
             </div>
           </div>
         <% end %>

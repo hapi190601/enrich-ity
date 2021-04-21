@@ -98,35 +98,35 @@
     <div class="link-box three-btn">
       <% if @post.user_id == current_user.id %>
         <div class="link">
-          <%= link_to "編集する", edit_post_path(@post.id), class:"btn btn-sm edit-btn-color m-size-btn" %>
+          <%= link_to "編集する", edit_post_path(@post.id), class:"btn btn-sm edit-btn-color m-size-btn btn-for-smartphone" %>
         </div>
         <div class="link">
-          <%= link_to "削除する", post_path(@post.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class:"btn btn-sm btn-danger m-size-btn" %>
+          <%= link_to "削除する", post_path(@post.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class:"btn btn-sm btn-danger m-size-btn btn-for-smartphone" %>
         </div>
       <% else %>
         <div class="link">
           <% if @post.favorited_by?(current_user) %>
-            <%= link_to "お気に入り削除", post_favorites_path(@post.id), method: :delete, class:"btn btn-sm btn-light m-size-btn" %>
+            <%= link_to "お気に入り削除", post_favorites_path(@post.id), method: :delete, class:"btn btn-sm btn-light m-size-btn btn-for-smartphone" %>
           <% else %>
-            <%= link_to "お気に入り追加", post_favorites_path(@post.id), method: :post, class:"btn btn-sm favorite-btn-color m-size-btn" %>
+            <%= link_to "お気に入り追加", post_favorites_path(@post.id), method: :post, class:"btn btn-sm favorite-btn-color m-size-btn btn-for-smartphone" %>
           <% end %>
         </div>
 
         <div class="link">
           <% if @isRoom == true %>
-            <%= link_to "チャットページへ", room_path(@roomId), data: {"turbolinks"=>false}, class:"btn btn-sm chat-btn-color m-size-btn" %>
+            <%= link_to "チャットページへ", room_path(@roomId), data: {"turbolinks"=>false}, class:"btn btn-sm chat-btn-color m-size-btn btn-for-smartphone" %>
           <% else %>
             <%= form_with model: @room, local: true do |f| %>
               <%= fields_for @entry do |e| %>
                 <%= e.hidden_field :user_id, :value=> @user.id %>
               <% end %>
-              <%= f.submit "チャットをする", class:"btn btn-sm chat-btn-color m-size-btn" %>
+              <%= f.submit "チャットをする", class:"btn btn-sm chat-btn-color m-size-btn btn-for-smartphone" %>
             <% end %>
           <% end %>
         </div>
 
         <div class="link">
-          <%= link_to "#{@post.user.nickname}のページへ", user_path(@post.user.id), class:"btn btn-sm user-show-btn-color m-size-btn" %>
+          <%= link_to "#{@post.user.nickname}のページへ", user_path(@post.user.id), class:"btn btn-sm user-show-btn-color m-size-btn btn-for-smartphone" %>
         </div>
       <% end %>
     </div>

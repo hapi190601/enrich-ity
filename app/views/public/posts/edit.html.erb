@@ -16,7 +16,7 @@
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【　写真　】" %>
           </div>
-          <div class="col-lg-7 col-md-12 media-new-post-fix-margin">
+          <div class="col-lg-7 col-md-8 media-new-post-fix-margin">
             <%= f.attachment_field :image, class:"choose-post-image" %>
           </div>
         </div>
@@ -25,7 +25,7 @@
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【タイトル】" %>
           </div>
-          <div class="col-lg-7 col-md-12 media-new-post-fix-margin">
+          <div class="col-lg-7 col-md-8 media-new-post-fix-margin">
             <%= f.text_field :title, placeholder: "　タイトルを入力してください", class:" text-left input-longest-form focus-green new-post-field title-width" %>
           </div>
         </div>
@@ -34,7 +34,7 @@
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【　本文　】", style:" vertical-align:top" %>
           </div>
-          <div class="col-lg-7 col-md-12 media-new-post-fix-margin">
+          <div class="col-lg-7 col-md-8 media-new-post-fix-margin">
             <%= f.text_area :content, class:"focus-green new-post-field", rows:10, placeholder: "　あなたが探している仲間を具体的に書きましょう！" %>
           </div>
         </div>
@@ -43,7 +43,7 @@
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【ジャンル】" %>
           </div>
-          <div class="col-lg-7 col-md-12 media-new-post-fix-margin">
+          <div class="col-lg-7 col-md-8 media-new-post-fix-margin">
             <%= f.collection_select :genre_id, Genre.all, :id, :name, {prompt: "-- 選択してください --"}, class:"input-longer-form p-2 text-left focus-green" %></td>
           </div>
         </div>
@@ -52,7 +52,7 @@
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【希望の性別】" %>
           </div>
-          <div class="col-lg-7 col-md-12 media-new-post-fix-margin">
+          <div class="col-lg-7 col-md-8 media-new-post-fix-margin">
             <label><%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"mx-3" %> 男性</label>
             <label><%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"mx-3" %> 女性</label>
             <label><%= f.radio_button :gender, :"どちらでも", checked: true, style:"transform:scale(2.0);", class:"mx-3" %> どちらでも</label>
@@ -65,7 +65,7 @@
           </div>
 
 
-          <div class="col-lg-7 col-md-12 fix-post-field-padding media-new-post-fix-margin">
+          <div class="col-lg-7 col-md-8 fix-post-field-padding media-new-post-fix-margin">
             <section class="choose-area-of-hope">
               <label class="my-2">
               <%= f.radio_button :option, 0, checked: "checked", class:"radio-button mx-3", style:"transform:scale(2.0);" %>
@@ -118,7 +118,7 @@
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【注意事項】" %>
           </div>
-          <div class="col-lg-7 col-md-12 fix-post-field-padding media-new-post-fix-margin">
+          <div class="col-lg-7 col-md-8 fix-post-field-padding media-new-post-fix-margin">
             <ul class="media-list-style">
               <li>投稿は編集してから1ヶ月後に自動削除されます</li>
               <li>公序良俗に反する投稿は削除される可能性があります</li>
@@ -127,7 +127,7 @@
         </div>
 
         <div class="actions">
-          <%= f.submit "編集する", class:"btn btn-sm btn-success m-size-btn" %>
+          <%= f.submit "編集する", class:"btn btn-sm btn-success m-size-btn btn-for-smartphone" %>
         </div>
         <% end %>
       </div>

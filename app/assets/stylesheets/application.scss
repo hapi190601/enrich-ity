@@ -747,6 +747,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .btn-for-smartphone {
+    min-width: 250px;
+  }
+
   .slide-image {
     height: 400px;
   }
