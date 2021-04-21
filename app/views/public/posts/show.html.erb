@@ -100,7 +100,7 @@
       <% else %>
         <div class="link">
           <% if @post.favorited_by?(current_user) %>
-            <%= link_to "お気に入り削除", post_favorites_path(@post.id), method: :delete, class:"btn btn-sm btn-danger m-size-btn" %>
+            <%= link_to "お気に入り削除", post_favorites_path(@post.id), method: :delete, class:"btn btn-sm btn-light m-size-btn" %>
           <% else %>
             <%= link_to "お気に入り追加", post_favorites_path(@post.id), method: :post, class:"btn btn-sm favorite-btn-color m-size-btn" %>
           <% end %>

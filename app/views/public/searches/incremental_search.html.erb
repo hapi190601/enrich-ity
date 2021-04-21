@@ -3,7 +3,7 @@
   <h2 class="page-title">タイトルかんたん検索</h2>
 
   <div class="incremental-search-area text-center">
-    <%= text_field_tag :title, '', class: "js-text_field focus-green col-sm-6 m-3", placeholder: 'タイトルを入力してください' %>
+    <%= text_field_tag :title, '', class: "js-text_field focus-green col-lg-6 col-sm-8 m-3", placeholder: 'タイトルを入力してください' %>
   </div>
 
   <div class="incremental-search-result">
@@ -34,7 +34,6 @@
       * if(e.key != 'Enter') {
       *
       */
-
       var title = $.trim($(this).val());
 
       $.ajax({
@@ -60,13 +59,14 @@
           console.log("title.length => 0")
           $(".incremental-search-result").empty();
           return false;
-
-        //検索に一致する投稿がない場合はaddNoPost
-        } else {
-          // デバッグ用
-          console.log("other");
-          addNoPost();
         }
+
+        // //検索に一致する投稿がない場合はaddNoPost
+        // } else {
+        //   // デバッグ用
+        //   console.log("other");
+        //   addNoPost();
+        // }
       });
     });
 
@@ -80,28 +80,28 @@
       var html = `
         <div class="post-box flex-around">
           <div class="left-post posts-index-width">
-            <span>■タイトル</span>
+            <span class="inline mt-2 post-index-label">【タイトル】</span>
             <br>
-            ${post.title}
+            <span class="inline mb-2 ml-2 pl-3">${post.title}</span>
             <br>
+            <span class="inline mt-2 post-index-label">【希望性別】</span>
             <br>
-            <span>■希望性別</span>
+            <span class="inline mb-2 ml-2 pl-3">${post.gender}</span>
             <br>
-            ${post.gender}
+            <span class="inline mt-2 post-index-label">【希望エリア】</span>
             <br>
+            <span class="inline mb-2 ml-2 pl-3">
+              ${post.prefecture_name}
+              ${post.municipality}
+            </span>
             <br>
-            <span>■希望エリア</span>
+            <span class="inline mt-2 post-index-label">【 本文 】</span>
             <br>
-            ${post.prefecture_name}
-            ${post.municipality}
-            <br>
-            <br>
-            <span>■本文</span><br>
-            <span style="white-space: pre-wrap;">${post.content}</span>
+            <span class="inline mb-2 ml-2 pl-3" style="white-space: pre-wrap;">${post.content}</span>
           </div>
 
-          <div class="right-post text-center posts-index-width" width="50%">
-            <img class="change-src" src="${image_source}" style="width:250px;">
+          <div class="right-post text-center">
+            <img class="change-src img-size" src="${image_source}">
             <br>
             <a href="/posts/${post.id}" data-method="get" class="btn btn-sm m-size-btn post-show-btn-color">くわしく見る</a>
           </div>
@@ -111,7 +111,6 @@
       // 変数htmlをviewに反映
       $(".incremental-search-result").append(html);
     }
-
 
     function addNoPost(post) {
       var html = `

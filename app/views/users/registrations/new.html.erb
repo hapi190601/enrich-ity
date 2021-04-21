@@ -16,7 +16,7 @@
               <span class="sign-up-span">※苗字と名前の間スペースは不要</span>
             </div>
             <div>
-              <%= f.text_field :name, class:"input-longest-form p-2", autofocus: true %><br>
+              <%= f.text_field :name, class:"input-longest-form p-2 focus-green", autofocus: true %><br>
             </div>
           </div>
 
@@ -25,7 +25,7 @@
               <%= f.label :"【フリガナ(フルネーム)】" %>
             </div>
             <div>
-              <%= f.text_field :name_kana, class:"input-longest-form p-2" %>
+              <%= f.text_field :name_kana, class:"input-longest-form p-2 focus-green" %>
             </div>
           </div>
 
@@ -34,7 +34,7 @@
               <%= f.label :"【ニックネーム】" %>
             </div>
             <div>
-              <%= f.text_field :nickname, class:"input-longest-form p-2" %>
+              <%= f.text_field :nickname, class:"input-longest-form p-2 focus-green" %>
             </div>
           </div>
 
@@ -65,7 +65,7 @@
               <span class="sign-up-span">ハイフン不要</span>
             </div>
             <div>
-              <%= f.text_field :postal_code, class:"input-longest-form p-2", autocomplete: "postcode" %><br>
+              <%= f.text_field :postal_code, class:"input-longest-form p-2 focus-green", autocomplete: "postcode" %><br>
             </div>
 
           </div>
@@ -96,7 +96,7 @@
               <span class="sign-up-span">※駅不要 例：×東京駅 ○東京</span>
             </div>
             <div>
-              <%= f.text_field :nearest_station, class:"input-longest-form p-2", autocomplete: "nearest_station" %><br>
+              <%= f.text_field :nearest_station, class:"input-longest-form p-2 focus-green", autocomplete: "nearest_station" %><br>
             </div>
           </div>
 
@@ -105,7 +105,7 @@
               <%= f.label :"【メールアドレス】" %>
             </div>
             <div>
-              <%= f.email_field :email, class:"input-longest-form p-2", autocomplete: "email" %>
+              <%= f.email_field :email, class:"input-longest-form p-2 focus-green", autocomplete: "email" %>
             </div>
           </div>
 
@@ -117,7 +117,7 @@
             </div>
 
             <div>
-              <%= f.password_field :password, class:"input-longest-form p-2", autocomplete: "new-password" %>
+              <%= f.password_field :password, class:"input-longest-form p-2 focus-green", autocomplete: "new-password" %>
             </div>
           </div>
 
@@ -126,7 +126,7 @@
               <%= f.label :"【パスワード確認】" %>
             </div>
             <div>
-              <%= f.password_field :password_confirmation, class:"input-longest-form p-2", autocomplete: "new-password" %>
+              <%= f.password_field :password_confirmation, class:"input-longest-form p-2 focus-green", autocomplete: "new-password" %>
             </div>
           </div>
 

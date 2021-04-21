@@ -50,9 +50,9 @@ p {
   font-weight: bold!important;
 }
 
-// span {
-//   font-size: 1.2rem;
-// }
+span {
+  font-size: 1.1rem;
+}
 
 .no-bottom-p {
   margin-bottom: 0!important;
@@ -687,6 +687,49 @@ footer {
 
   .fix-post-field-padding {
     padding-left: 7px!important;
+  }
+
+  .media-span-size {
+    font-size: 0.8rem!important;
+  }
+
+  .pagination > span > a {
+    width: 55px;
+    padding: 7px 5px;
+  }
+
+  .room-show-area {
+    width: 90%;
+  }
+
+  .search-form {
+    width: 85%;
+  }
+
+  .fix-noti-width {
+    max-width: 80%;
+  }
+
+  .img-size {
+    width: 85%;
+  }
+
+  .sort-area {
+    width: 100%;
+  }
+
+  .incremental-search-result {
+    width: 90%;
+  }
+
+  .profile-area {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .current-post-area {
+    width: 85%;
+    margin: 0 auto;
   }
 }
 

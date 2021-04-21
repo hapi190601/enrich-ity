@@ -7,14 +7,20 @@
       <% if @results.present? %>
       <div class='posts-lists col-sm-12'>
         <div class="sort-area flex-around">
-          <span class="sort-btn"><%= sort_link(@p, :gender, "希望性別で並び替え") %></span>
           <span class="sort-btn"><%= sort_link(@p, :genre_id, "ジャンルで並び替え") %></span>
+          <span class="sort-btn"><%= sort_link(@p, :gender, "希望性別で並び替え") %></span>
           <span class="sort-btn"><%= sort_link(@p, :prefecture_code, "都道府県で並び替え") %></span>
         </div>
         <% @results.each do |pos| %>
         <div class="post-box flex-around">
           <div class="left-post posts-index-width">
-            <span class="inline py-3  post-index-label">【タイトル】</span>
+            <span class="inline py-3 post-index-label">【ジャンル】</span>
+            <br>
+            <span class="inline ml-3">
+              <%= pos.genre.name %>
+            </span>
+            <br>
+            <span class="inline py-3 post-index-label">【タイトル】</span>
             <br>
             <span class="inline ml-3">
               <%= pos.title %>
@@ -44,7 +50,7 @@
             </span>
           </div>
 
-          <div class="right-post text-center posts-index-width" width="50%">
+          <div class="right-post text-center">
             <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size pt-3 mt-3" %>
             <br>
             <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm m-size-btn post-show-btn-color" %>

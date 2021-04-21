@@ -17,13 +17,13 @@
   <div class="a-notification">
     <%= link_to room_path(my_notification.room_id), data: {"turbolinks"=>false}, class:"text-dark chat-notification" do %>
       <div class="flex-between-center py-2">
-        <div>
-          <span class="inline mr-2"><%= attachment_image_tag visited.image, :image, fallback: "no-image.jpeg", size:"40x40", class:"sircle-img" %></span>
-          <span class="inline"><%= visitor.nickname %>さんから<strong class="chat-link-strong"><%= my_notification.action %></strong>が届いています。</span>
+        <div class="fix-noti-width">
+          <span class="media-span-size inline mr-2"><%= attachment_image_tag visited.image, :image, fallback: "no-image.jpeg", size:"40x40", class:"sircle-img" %></span>
+          <span class="media-span-size inline"><%= visitor.nickname %>さんから<strong class="chat-link-strong"><%= my_notification.action %></strong>が届いています。</span>
         </div>
 
         <div>
-          <span class="inline"><%= time_ago_in_words(my_notification.created_at) %>前</span>
+          <span class="media-span-size inline"><%= time_ago_in_words(my_notification.created_at) %>前</span>
         </div>
       </div>
     <% end %>

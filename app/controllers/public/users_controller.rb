@@ -54,7 +54,7 @@ class Public::UsersController < ApplicationController
     @user = current_user
     @user.destroy
     reset_session
-    flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
+    flash[:notice] = "ありがとうございました。またのご利用をお待ちしております。"
     redirect_to root_path
   end
 

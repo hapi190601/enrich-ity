@@ -11,7 +11,7 @@
     </h2>
 
     <div class="row">
-      <div class="col-md-6 profile-area">
+      <div class="col-lg-6 profile-area">
         <h3 class="profile-h3">プロフィール詳細</h3>
         <table class="table profile-table text-center">
           <tbody>
@@ -75,7 +75,7 @@
         <% end %>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-lg-6 current-post-area">
         <h3 class="profile-h3">最近の投稿 (直近3件) </h3>
 
         <% @user.posts.order("created_at desc").first(3).each do |pos| %>

@@ -8,20 +8,20 @@
       <div class="search-form">
         <%= search_form_for @p, url: searches_index_path do |f| %>
           <div class="field search-fields first-search-field">
-            <%= f.label :"【キーワード】" %>
+            <%= f.label :"【キーワード】", class:"mb-3" %>
             <br>
             <%= f.text_field :title_or_content_cont, placeholder: "キーワードを入力してください", class: "search-field focus-green ml-3" %>
             <br>
           </div>
 
           <div class="field search-fields">
-            <%= f.label :"【ジャンル】" %>
+            <%= f.label :"【ジャンル】", class:"mb-3" %>
             <br>
             <%= f.collection_select :genre_id_eq, Genre.where.not(id: 0), :id, :name, {prompt: "指定なし"}, class: "col-sm-6 search-select focus-green ml-3" %>
           </div>
 
           <div class="field search-fields">
-            <%= f.label :"【性別】" %>
+            <%= f.label :"【性別】", class:"mb-3" %>
             <br>
             <label><%= f.radio_button :gender_eq, :"", checked: true, style:"transform:scale(2.0);", class:"mx-3" %> 指定しない</label>
             <label><%= f.radio_button :gender_eq, :"1", style:"transform:scale(2.0);", class:"mx-3" %> 男性</label>
@@ -29,7 +29,7 @@
           </div>
 
           <div class="field search-fields">
-            <%= f.label :"【年齢】" %>
+            <%= f.label :"【年齢】", class:"mb-3" %>
             <br>
             <%= f.select :age_gteq, (15..75).to_a, {prompt: "指定なし"}, class:"col-sm-3 search-select focus-green ml-3" %>
             <strong>　　〜　　</strong>
@@ -38,17 +38,17 @@
           </div>
 
           <div class="field search-fields">
-            <%= f.label :"【エリア】" %>
-            <span class="text-dark">※指定するとヒット件数が大幅に減る可能性があります</span>
+            <%= f.label :"【エリア】", class:"mb-3" %>
+            <span class="media-span-size text-dark">※指定するとヒット件数が大幅に減る可能性があります</span>
             <br>
             <div class="flex-no-center">
               <div class="col-sm-4">
-                <%= f.label :"都道府県", class:"pl-3" %>
+                <%= f.label :"都道府県", class:"pl-3 mb-2" %>
                 <br>
                 <%= f.collection_select :prefecture_code_eq, JpPrefecture::Prefecture.all, :code, :name, {prompt:" 指定なし "}, class:"search-select focus-green px-3 ml-3", id:"post_prefecture_code" %>
               </div>
               <div class="col-sm-5">
-                <%= f.label :"市区町村", class:"pl-3" %>
+                <%= f.label :"市区町村", class:"pl-3 mb-2" %>
                 <br>
                 <%= f.text_field :municipality_cont, placeholder: "指定なし", class: "search-field focus-green text-left ml-3" %>
               </div>
@@ -65,6 +65,6 @@
   </div>
 
   <div class="post-index-link text-center">
-    <%= link_to "全投稿を見る", posts_path, class:"btn btn-sm post-btn-color m-size-btn" %>
+    <%= link_to "全投稿を見る", posts_path, class:"btn btn-sm post-btn-color l-size-btn" %>
   </div>
 </div>
