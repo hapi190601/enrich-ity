@@ -1,18 +1,18 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_guest, only: :out
-  before_action :calculate_user_age, except: [:favorites, :withdraw, :out]
+  before_action :check_guest, :only => :out
+  before_action :calculate_user_age, :except => [:favorites, :withdraw, :out]
 
   def show
     @user = User.find(params[:id])
 
     @posts = @user.posts
-    favorites = Favorite.where(user_id: current_user.id).pluck(:post_id)
+    favorites = Favorite.where(:user_id => current_user.id).pluck(:post_id)
     @favorites_index = Post.find(favorites)
 
     # チャット機能
-    @currentUserEntry = Entry.where(user_id: current_user.id)
-    @userEntry = Entry.where(user_id: @user.id)
+    @currentUserEntry = Entry.where(:user_id => current_user.id)
+    @userEntry = Entry.where(:user_id => @user.id)
 
     unless @user.id == current_user.id
       @currentUserEntry.each do |cu|
@@ -63,7 +63,7 @@ class Public::UsersController < ApplicationController
 
   def favorites
     @posts = current_user.posts
-    favorites = Favorite.where(user_id: current_user.id).pluck(:post_id)
+    favorites = Favorite.where(:user_id => current_user.id).pluck(:post_id)
     @favorites_index = Post.find(favorites)
   end
 
@@ -74,7 +74,7 @@ class Public::UsersController < ApplicationController
   end
 
   def calculate_user_age
-    if User.exists?(id: params[:id])
+    if User.exists?(:id => params[:id])
       user = User.find(params[:id])
       today = Date.today.strftime("%Y%m%d").to_i
       birthday = user.birthday.strftime("%Y%m%d").to_i

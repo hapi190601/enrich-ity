@@ -1,7 +1,7 @@
 class Genre < ApplicationRecord
   has_many :posts
 
-  validates :name, presence: true
+  validates :name, :presence => true
   # バッチ処理確認用にコメントアウトしてる
   # 確認後にコメントアウト外す！
   # validates :name, uniqueness: true

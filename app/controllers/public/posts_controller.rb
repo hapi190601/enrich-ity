@@ -1,6 +1,6 @@
 class Public::PostsController < ApplicationController
-  before_action :calculate_current_user_age, only: [:create, :update]
-  before_action :authenticate_user!, only: [:top, :create, :update, :edit, :destroy]
+  before_action :calculate_current_user_age, :only => [:create, :update]
+  before_action :authenticate_user!, :only => [:top, :create, :update, :edit, :destroy]
 
   impressionist :actions=> [:show]
 
@@ -9,7 +9,7 @@ class Public::PostsController < ApplicationController
 
     from  = (Time.current - 6.day).at_beginning_of_day
     to    = Time.current.at_end_of_day
-    @weekly_posts = Post.where(updated_at: from...to)
+    @weekly_posts = Post.where(:updated_at => from...to)
 
     # ランキング機能+ジャンル毎の投稿数
     @genre_ranks = Genre.find(Post.group(:genre_id).order('count(genre_id) desc').limit(3).pluck(:genre_id))
@@ -24,7 +24,7 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.page(params[:page]).per(5).order(updated_at: :desc)
+    @posts = Post.page(params[:page]).per(5).order(:updated_at => :desc)
 
     respond_to do |format|
       format.html
@@ -82,8 +82,8 @@ class Public::PostsController < ApplicationController
     # チャット機能用
     if user_signed_in?
       @user = User.find(@post.user_id)
-      @currentUserEntry = Entry.where(user_id: current_user.id)
-      @userEntry = Entry.where(user_id: @user.id)
+      @currentUserEntry = Entry.where(:user_id => current_user.id)
+      @userEntry = Entry.where(:user_id => @user.id)
 
       unless @user.id == current_user.id
         @currentUserEntry.each do |cu|
@@ -128,12 +128,12 @@ class Public::PostsController < ApplicationController
     end
 
     if @post.update(
-        genre_id: params[:post][:genre_id],
-        title: params[:post][:title],
-        content: params[:post][:content],
-        age: @post.age,
-        gender: params[:post][:gender],
-        image: params[:post][:image],
+        :genre_id => params[:post][:genre_id],
+        :title => params[:post][:title],
+        :content => params[:post][:content],
+        :age => @post.age,
+        :gender => params[:post][:gender],
+        :image => params[:post][:image],
     )
       flash[:notice] = "投稿内容を編集しました！"
       redirect_to post_path(@post.id)

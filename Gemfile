@@ -34,11 +34,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.1.0', :require => false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', :platforms => [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
@@ -62,11 +62,11 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', :platforms => [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 
-gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile", :require => "refile/rails", :github => 'manfe/refile'
 gem "refile-mini_magick"
 
 gem 'bootstrap', '~> 4.5'
@@ -76,8 +76,9 @@ gem 'kaminari','~> 1.2.1'
 
 gem 'jquery-rails'
 
-gem 'rubocop', require: false
-gem 'rubocop-rails', require: false
+gem 'rubocop', :require => false
+gem 'rubocop-rails', :require => false
+
 
 gem 'omniauth'
 gem 'omniauth-twitter'
@@ -89,7 +90,7 @@ gem 'ransack'
 
 gem 'jp_prefecture'
 
-gem 'whenever', require: false
+gem 'whenever', :require => false
 
 gem 'impressionist', '~>1.6.1'
 

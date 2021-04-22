@@ -1,17 +1,17 @@
 class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, :if => :devise_controller?
   before_action :all_page_notification
 
   # 通知
   def all_page_notification
     if user_signed_in?
-      notifications = current_user.passive_notifications.where(checked: false).page(params[:page]).per(4)
+      notifications = current_user.passive_notifications.where(:checked => false).page(params[:page]).per(4)
 
       # 自分がチャットを送った時の通知は表示しない。(相手がチャットを送った時のみ)
-      @my_notifications = notifications.where.not(visitor_id: current_user.id)
+      @my_notifications = notifications.where.not(:visitor_id => current_user.id)
 
-      all_false_notifications = current_user.passive_notifications.where(checked: false).all
-      @unchecked_notifications = all_false_notifications.where.not(visitor_id: current_user)
+      all_false_notifications = current_user.passive_notifications.where(:checked => false).all
+      @unchecked_notifications = all_false_notifications.where.not(:visitor_id => current_user)
     end
   end
 
@@ -47,8 +47,9 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :name_kana, :nickname, :gender, :birthday, :postal_code, :prefecture_code, :municipality, :nearest_station, :is_deleted, :uid, :provider])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
+    devise_parameter_sanitizer.permit(:sign_up,
+                                      :keys => [:name, :name_kana, :nickname, :gender, :birthday, :postal_code, :prefecture_code, :municipality, :nearest_station, :is_deleted, :uid, :provider])
+    devise_parameter_sanitizer.permit(:sign_in, :keys => [:email])
   end
 
 end

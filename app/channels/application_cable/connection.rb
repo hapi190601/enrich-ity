@@ -12,7 +12,7 @@ module ApplicationCable
     protected
     def find_verified_user
       #ユーザーidで認証する
-      verified_user = User.find_by(id: env['warden'].user.id)
+      verified_user = User.find_by(:id => env['warden'].user.id)
       # 認証したユーザー(verified_user)出ない限りはreturn
       return reject_unauthorized_connection unless verified_user
       verified_user

@@ -15,17 +15,17 @@ class RoomChannel < ApplicationCable::Channel
 
   # 処理⑤
   def speak(data)
-    direct_message = DirectMessage.create! message: data['direct_message'], user_id: current_user.id, room_id: params['room']
+    direct_message = DirectMessage.create! :message => data['direct_message'], :user_id => current_user.id, :room_id => params['room']
 
     opponent_id = data['opponent_id']
 
     # 通知
     notification = current_user.active_notifications.new(
-      room_id: params['room'],
-      direct_message_id: direct_message.id,
-      visited_id: opponent_id.to_i,
-      visitor_id: current_user.id,
-      action: 'チャット',
+      :room_id => params['room'],
+      :direct_message_id => direct_message.id,
+      :visited_id => opponent_id.to_i,
+      :visitor_id => current_user.id,
+      :action => 'チャット',
     )
     notification.save
   end

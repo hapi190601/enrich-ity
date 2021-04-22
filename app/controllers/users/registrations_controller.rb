@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :check_guest, only: [:destroy, :update]
+  before_action :check_guest, :only => [:destroy, :update]
 
   def check_guest
     if current_user.email == "guest@guest.com"
