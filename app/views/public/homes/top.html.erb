@@ -5,35 +5,39 @@
     <div class="position-box">
       <div class="slide-images">
         <div class="image-box">
-          <%= image_tag 'posts/pc.jpg', class:"slide-image" %>
+          <%= image_tag 'slides/pc.jpg', class:"slide-image" %>
         </div>
 
         <div class="image-box">
-          <%= image_tag 'posts/baseball.jpg', class:"slide-image" %>
+          <%= image_tag 'slides/slide1.jpg', class:"slide-image" %>
         </div>
 
         <div class="image-box">
-          <%= image_tag 'posts/gym.jpg', class:"slide-image" %>
+          <%= image_tag 'slides/live.jpg', class:"slide-image" %>
         </div>
 
         <div class="image-box">
-          <%= image_tag 'posts/live.jpg', class:"slide-image" %>
+          <%= image_tag 'slides/slide2.jpg', class:"slide-image" %>
         </div>
 
         <div class="image-box">
-          <%= image_tag 'posts/running.jpg', class:"slide-image" %>
+          <%= image_tag 'slides/running.jpg', class:"slide-image" %>
         </div>
 
         <div class="image-box">
-          <%= image_tag 'posts/party.jpg', class:"slide-image" %>
+          <%= image_tag 'slides/slide5.jpg', class:"slide-image" %>
         </div>
 
         <div class="image-box">
-          <%= image_tag 'posts/reading.jpg', class:"slide-image" %>
+          <%= image_tag 'slides/party.jpg', class:"slide-image" %>
+        </div>
+
+        <div class="image-box">
+          <%= image_tag 'slides/slide3.jpg', class:"slide-image" %>
         </div>
       </div>
 
-      <div class = "ityped-message-box">
+      <div class="ityped-message-box">
       　<span class="ityped-message" id="ityped"></span>
       </div>
     </div>
@@ -77,19 +81,17 @@
 </div>
 
 <script>
-//$(document).on('turbolinks:load', function() {
-$(document).ready(function() {
-  //console.log("hoge");
-  /*global ityped*/
-  ityped.init(document.querySelector('#ityped'), {
-    strings: [
-      "Welcome to Enrich-ity !",
-      "Let's make friends !",
-    ],
-    typeSpeed: 130,
-    backSpeed: 10,
-    showCursor: true,
-    cursorChar: '|'
+  $(document).ready(function() {
+    /*global ityped*/
+    ityped.init(document.querySelector('#ityped'), {
+      strings: [
+        "Welcome to Enrich-ity !",
+        "Let's make friends !",
+      ],
+      typeSpeed: 130,
+      backSpeed: 10,
+      showCursor: true,
+      cursorChar: '|'
+    });
   });
-});
 </script>

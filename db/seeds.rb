@@ -487,7 +487,7 @@ Post.create!(
   prefecture_code: 11,
   municipality: "さいたま市北区",
   image_id: post1.id,
-  # age:
+  age:28
 )
 
 post2 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post2.jpg")))
@@ -508,7 +508,7 @@ Post.create!(
   prefecture_code: 11,
   municipality: "さいたま市北区",
   image_id: post2.id,
-  # age:
+  age:28
 )
 
 post3 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post3.jpg")))
@@ -531,7 +531,7 @@ Post.create!(
   prefecture_code: 11,
   municipality: "入間市",
   image_id: post3.id,
-  # age:
+  age:22
 )
 
 post4 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post4.jpg")))
@@ -555,7 +555,7 @@ Post.create!(
   prefecture_code: 11,
   municipality: "入間市",
   image_id: post4.id,
-  # age:
+  age:22
 )
 
 post5 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post5.jpg")))
@@ -574,7 +574,22 @@ Post.create!(
   prefecture_code: 11,
   municipality: "草加市",
   image_id: post5.id,
-  # age:
+  age:45
+)
+
+Post.create!(
+  user_id: 3,
+  genre_id: 7,
+  title: "その他デモデータ",
+  content:
+  "デモデータです。
+  デモデータです。デモデータです。
+
+  デモデータです。デモデータです。デモデータです。",
+  gender: 1,
+  prefecture_code: 11,
+  municipality: "草加市",
+  age:45
 )
 
 post6 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post6.jpg")))
@@ -596,7 +611,7 @@ Post.create!(
   prefecture_code: 11,
   municipality: "草加市",
   image_id: post6.id,
-  # age:
+  age:45
 )
 post7 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post7.jpg")))
 Post.create!(
@@ -617,7 +632,7 @@ Post.create!(
   prefecture_code: 12,
   municipality: "船橋市",
   image_id: post7.id,
-  # age:
+  age:41
 )
 
 post8 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post8.jpg")))
@@ -640,7 +655,7 @@ Post.create!(
   prefecture_code: 13,
   municipality: "江東区",
   image_id: post8.id,
-  # age:
+  age:43
 )
 
 post9 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post9.jpg")))
@@ -661,7 +676,7 @@ Post.create!(
   prefecture_code: 12,
   municipality: "木更津市",
   image_id: post9.id,
-  # age:
+  age:43
 )
 
 post10 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post10.jpg")))
@@ -679,7 +694,7 @@ Post.create!(
   prefecture_code: 12,
   municipality: "木更津市",
   image_id: post10.id,
-  # age:
+  age:43
 )
 
 post11 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post11.jpg")))
@@ -700,7 +715,7 @@ Post.create!(
   prefecture_code: 12,
   municipality: "松戸市",
   image_id: post11.id,
-  # age:
+  age:37
 )
 
 post12 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post12.jpg")))
@@ -722,7 +737,7 @@ Post.create!(
   prefecture_code: 12,
   municipality: "松戸市",
   image_id: post12.id,
-  # age:
+  age:37
 )
 
 post13 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post13.jpg")))
@@ -741,7 +756,7 @@ Post.create!(
   prefecture_code: 13,
   municipality: "新宿区",
   image_id: post13.id,
-  # age:
+  age:30
 )
 
 post14 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post14.jpg")))
@@ -760,7 +775,7 @@ Post.create!(
   prefecture_code: 13,
   municipality: "渋谷区",
   image_id: post14.id,
-  # age:
+  age:30
 )
 
 post15 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post15.jpg")))
@@ -781,7 +796,7 @@ Post.create!(
   prefecture_code: 13,
   municipality: "渋谷区",
   image_id: post15.id,
-  # age:
+  age:34
 )
 
 post16 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post16.jpg")))
@@ -806,7 +821,7 @@ Post.create!(
   prefecture_code: 13,
   municipality: "世田谷区",
   image_id: post16.id,
-  # age:
+  age:20
 )
 
 post17 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post17.jpg")))
@@ -826,7 +841,7 @@ Post.create!(
   prefecture_code: 13,
   municipality: "世田谷区",
   image_id: post17.id,
-  # age:
+  age:20
 )
 
 post18 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post18.jpg")))
@@ -848,7 +863,7 @@ Post.create!(
   prefecture_code: 14,
   municipality: "鎌倉市",
   image_id: post18.id,
-  # age:
+  age:50
 )
 
 post19 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post19.jpg")))
@@ -867,111 +882,123 @@ Post.create!(
   prefecture_code: 14,
   municipality: "鎌倉市",
   image_id: post19.id,
-  # age:
+  age:50
 )
 
 post20 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post20.jpg")))
 Post.create!(
   user_id: 11,
   genre_id: 2,
-  title: "デモデータ内容考え中(勉強)",
+  title: "簿記仲間募集！勉強報告し合いたい！",
   content:
   "こんにちは。
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。
+  私は現在、簿記の勉強をしています。
 
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。",
+  私は自分に甘く、一人だと継続ができない為、
+  毎日進捗を報告し合い、時には叱咤激励をくださる方を探しています。
+
+  簿記以外の勉強をしている方でも構いません。
+  LINEやFacebookなどでコミュニケーションをとっていきたいです！
+
+  同じような仲間を探してる方がいましたらチャットください。
+  よろしくお願いします。",
   gender: 3,
   prefecture_code: 14,
   municipality: "相模原市",
   image_id: post20.id,
-  # age:
+  age:31
 )
 
 post21 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post21.jpg")))
 Post.create!(
   user_id: 11,
   genre_id: 3,
-  title: "デモデータ内容考え中(スポーツ)",
+  title: "打ちっぱなし行きませんか？(ゴルフ)",
   content:
   "こんにちは。
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。
+  私はゴルフ始めたての初心者です。
 
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。",
+  職場の付き合いで休日にゴルフに行くことが増えてきたのですが、
+  へたくそすぎて恥ずかしいです。。。
+
+  練習して上手になりたいので、同じような初心者の方を探しています！
+
+  該当エリア内であれば車移動可能です！
+  ご興味ある方、チャットお待ちしています！",
   gender: 3,
   prefecture_code: 14,
   municipality: "相模原市",
   image_id: post21.id,
-  # age:
+  age:31
 )
 
 post22 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post22.jpg")))
 Post.create!(
   user_id: 11,
   genre_id: 6,
-  title: "デモデータ内容考え中(友達募集)",
+  title: "ゴルフ仲間募集中",
   content:
   "こんにちは。
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。
+  私はゴルフ始めたての初心者です。
 
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。",
+  職場の付き合いで休日にゴルフに行くことが増えてきたのですが、
+  へたくそすぎて恥ずかしいです。。。
+
+  練習して上手になりたいので、同じような初心者の方を探しています！
+
+  該当エリア内であれば車移動可能です！
+  ご興味ある方、チャットお待ちしています！
+  ",
   gender: 2,
   municipality: "相模原市",
   prefecture_code: 14,
   image_id: post22.id,
-  # age:
+  age:31
 )
 
-post23 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post23.jpg")))
+# post23 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post23.jpg")))
 Post.create!(
   user_id: 12,
   genre_id: 1,
-  title: "デモデータ内容考え中(筋トレ",
+  title: "川崎近辺でジム行きませんか？",
   content:
-  "こんにちは。
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。
+  "一緒にベンチプレスあげませんか？
 
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。",
+  川崎駅前のジムでやりましょう。",
   gender: 1,
   prefecture_code: 14,
   municipality: "川崎市川崎区",
-  image_id: post23.id,
-  # age:
+  # image_id: post23.id,
+  age:19
 )
 
 post24 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post24.jpg")))
 Post.create!(
   user_id: 12,
   genre_id: 2,
-  title: "デモデータ内容考え中(勉強)",
+  title: "一緒にTOEICの勉強しませんか？",
   content:
-  "こんにちは。
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。
+  "閲覧ありがとうございます。
 
-  デモデータ内容考え中です。
-  デモデータ内容考え中です。",
+  現在、TOEIC730点を目指して勉強中です。
+
+  ○○図書館で一緒に勉強しませんか？
+
+  一緒に勉強する人がいるという
+  やらざるを得ない環境に身をおきたいです。
+
+  基本土日であれば終日対応可能です。
+
+  一緒に勉強して成長できるといいですね。",
   gender: 1,
   prefecture_code: 14,
   municipality: "川崎市川崎区",
   image_id: post24.id,
-  # age:
+  age:19
 )
 
-post25 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post25.jpg")))
 # 女性の投稿
+post25 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post25.jpg")))
 Post.create!(
   user_id: 13,
   genre_id: 1,
@@ -990,5 +1017,391 @@ Post.create!(
   prefecture_code: 11,
   municipality: "川越市",
   image_id: post25.id,
-  # age:
+  age:29
+)
+
+post26 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post26.jpg")))
+Post.create!(
+  user_id: 13,
+  genre_id: 2,
+  title: "女性限定！勉強仲間募集(ジャンル不問)",
+  content:
+  "女性限定で勉強仲間募集します！
+
+  基本的に仕事をしているので、
+  土日にルールを決めて勉強したいです！
+
+  直接会うわけではなく、オンラインでやりとりしていきたいです！",
+  gender: 2,
+  image_id: post26.id,
+  age:29
+)
+
+post27 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post27.jpg")))
+Post.create!(
+  user_id: 14,
+  genre_id: 2,
+  title: "(PHP)一緒にプログラミングの勉強しませんか？",
+  content:
+  "プログラミング一緒にやりませんか？
+
+  平日の朝に駅前のドトール集合で、
+  勉強する習慣を形成しませんか！？！？(2時間前後)
+
+  私は転職を目指して現在PHPを独学で勉強中です。
+
+  勉強の習慣形成はもちろん、
+  IT業界の情報も共有して一緒に成長していけたら嬉しいです。
+
+  よろしくおねがいします！",
+  gender: 2,
+  prefecture_code: 11,
+  municipality: "所沢市",
+  image_id: post27.id,
+  age:29
+)
+
+post28 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post28.jpg")))
+Post.create!(
+  user_id: 14,
+  genre_id: 2,
+  title: "(PHP)一緒にプログラミングの勉強しませんか？",
+  content:
+  "プログラミング一緒にやりませんか？
+
+  平日の朝に駅前のドトール集合で、
+  勉強する習慣を形成しませんか！？！？(2時間前後)
+
+  私は転職を目指して現在PHPを独学で勉強中です。
+
+  勉強の習慣形成はもちろん、
+  IT業界の情報も共有して一緒に成長していけたら嬉しいです。
+
+  よろしくおねがいします！
+  ※所沢市でも募集してます。",
+  gender: 2,
+  prefecture_code: 11,
+  municipality: "秋津市",
+  image_id: post28.id,
+  age:29
+)
+
+post29 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post29.jpg")))
+Post.create!(
+  user_id: 15,
+  genre_id: 2,
+  title: "(Python)一緒にプログラミングの勉強しませんか？",
+  content:
+  "プログラミング一緒にやりませんか？
+
+  平日の朝に駅前のスターバックス集合で、
+  勉強する習慣を形成しませんか！？！？(2時間前後)
+
+  私は転職を目指して現在Pythonを独学で勉強中です。
+
+  勉強の習慣形成はもちろん、
+  IT業界の情報も共有して一緒に成長していけたら嬉しいです。
+
+  よろしくおねがいします！",
+  gender: 3,
+  prefecture_code: 11,
+  municipality: "川口市",
+  image_id: post29.id,
+  age:43
+)
+
+Post.create!(
+  user_id: 15,
+  genre_id: 1,
+  title: "ヨガ仲間探しています！",
+  content:
+  "はじめまして！
+  川口駅前にあるヨガ教室に一緒に通っていくれる人募集中です！
+
+  私は最近始めたばかりなので、初心者です。
+  同じような初心者の方と一緒に通って仲良くなれたら嬉しいです！
+
+  チャット待ってます！",
+  gender: 2,
+  prefecture_code: 11,
+  municipality: "川口市",
+  age:43
+)
+
+Post.create!(
+  user_id: 15,
+  genre_id: 1,
+  title: "ヨガ仲間探しています！",
+  content:
+  "はじめまして！
+  西川口駅前にあるヨガ教室に一緒に通っていくれる人募集中です！
+
+  私は最近始めたばかりなので、初心者です。
+  同じような初心者の方と一緒に通って仲良くなれたら嬉しいです！
+
+  チャット待ってます！
+  ※川口駅前のヨガ教室でも可能です！",
+  gender: 2,
+  prefecture_code: 11,
+  municipality: "西川口市",
+  age:43
+)
+
+post30 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post30.jpg")))
+Post.create!(
+  user_id: 16,
+  genre_id: 3,
+  title: "ダイビング仲間募集！",
+  content:
+  "はじめまして！
+  訪問ありがとうございます！
+
+  私は趣味でダイビングをやっています。
+
+  年に4,5回国内国外問わず、潜っています。
+
+  いつもダイビングツアーなるものに参加しているのですが、
+  初対面の方がバディになることが多い為、仲良しな知り合いと潜れたらなと思い募集することにしました。
+
+  いきなり国外はハードルが高いと思うので、
+  まずは伊豆らへんで一潜りいかがでしょうか？",
+  gender: 2,
+  image_id: post30.id,
+  age:29
+)
+
+post31 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post31.jpg")))
+Post.create!(
+  user_id: 16,
+  genre_id: 2,
+  title: "(TypeScript)一緒にプログラミングの勉強しませんか？",
+  content:
+  "プログラミング一緒にやりませんか？
+
+  平日の朝に駅前のサンマルク集合で、
+  勉強する習慣を形成しませんか！？！？(2時間前後)
+
+  私は転職を目指して現在TypeScriptを独学で勉強中です。
+  ※JavaScriptは一通り勉強してます。
+
+  勉強の習慣形成はもちろん、
+  IT業界の情報も共有して一緒に成長していけたら嬉しいです。
+
+  よろしくおねがいします！",
+  gender: 3,
+  prefecture_code: 12,
+  municipality: "市川市",
+  image_id: post31.id,
+  age:29
+)
+
+post32 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post32.jpg")))
+Post.create!(
+  user_id: 17,
+  genre_id: 2,
+  title: "(WordPress)一緒にプログラミングの勉強しませんか？副業目的",
+  content:
+  "プログラミング一緒にやりませんか？
+
+  平日の朝に駅前のプロント集合で、
+  勉強する習慣を形成しませんか！？！？(2時間前後)
+
+  私は副業で稼ぐために現在WordPressを独学で勉強中です。
+  ※HTML、CSSは一通り勉強済みです。
+
+  LP制作やHP制作を個人でやっていきたいと思っています。
+
+  勉強の習慣形成はもちろん、
+  副業の情報も共有して一緒に成長していけたら嬉しいです。
+
+  よろしくおねがいします！",
+  gender: 3,
+  prefecture_code: 12,
+  municipality: "柏市",
+  image_id: post32.id,
+  age:28
+)
+
+post33 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post33.jpg")))
+Post.create!(
+  user_id: 17,
+  genre_id: 1,
+  title: "柏市○○川横をランニングしませんか？",
+  content:
+  "はじめまして！
+
+  ○○川の河川敷を一緒にランニングしてくれる人を募集しています！
+
+  頻度は週3回程度、時間帯は夜(19時以降で)で考えています。
+
+  まったく速く走れないので、同じような方だと嬉しいです。
+  ※私は、1km走るのに8分ぐらいかかります。
+
+  運動不足を感じている柏市のそこのあなた！
+  チャット待ってますね！",
+  gender: 2,
+  prefecture_code: 12,
+  municipality: "柏市",
+  image_id: post33.id,
+  age:28
+)
+
+post34 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post34.jpg")))
+Post.create!(
+  user_id: 18,
+  genre_id: 5,
+  title: "稲毛海岸 ××フェスティバルに一緒に行きませんか！",
+  content:
+  "はじめまして！
+
+  7月10日に開催される××フェスティバルに一緒に行ってくれる人を探しています！
+
+  毎年一人で行っているのですが、
+  一緒に楽しさを共有できる友達がいたらもっと楽しいと思い、募集することにしました。
+
+  よろしくおねがいします！",
+  gender: 2,
+  prefecture_code: 12,
+  municipality: "千葉市稲毛区",
+  image_id: post34.id,
+  age:26
+)
+
+post35 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post35.jpg")))
+Post.create!(
+  user_id: 18,
+  genre_id: 4,
+  title: "NovelbrightのLIVE同行者募集です！",
+  content:
+  "閲覧ありがとうございます！
+
+  ○月×日に幕張メッセで開催されるNovelbrightのLIVEに一緒に行きませんか？
+
+  2枚連番でチケットがあるのですが、
+  一緒に行く予定だった友人が行けなくなってしまった為、募集中です。
+
+  Novelbright好きであれば誰でも構いません！
+  お値段は当日定価でいただければ大丈夫です！
+
+  一緒にLIVEをたのしみましょう！",
+  gender: 3,
+  prefecture_code: 12,
+  municipality: "千葉市美浜区",
+  image_id: post35.id,
+  age:26
+)
+
+post36 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post36.jpg")))
+Post.create!(
+  user_id: 19,
+  genre_id: 4,
+  title: "KAT-TUNのLIVE同行者募集です！",
+  content:
+  "閲覧ありがとうございます！
+
+  ○月×日に東京ドームで開催されるKAT-TUNのLIVEに一緒に行きませんか？
+
+  2枚連番でチケットがあるのですが、
+  一緒に行く予定だった友人が行けなくなってしまった為、募集中です。
+
+  KAT-TUN好きであれば誰でも構いません！
+  お値段は当日定価でいただければ大丈夫です！
+
+  一緒にLIVEをたのしみましょう！",
+  gender: 2,
+  prefecture_code: 13,
+  municipality: "文京区",
+  image_id: post36.id,
+  age:31
+)
+
+post37 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post37.jpg")))
+Post.create!(
+  user_id: 19,
+  genre_id: 3,
+  title: "スノボ(スノーボード)仲間募集中！",
+  content:
+  "はじめまして！
+  訪問ありがとうございます！
+
+  私は趣味でスノーボードをやっています。
+
+  年に4,5回北関東メインで滑りに行っています。
+  ※移動手段は車です。
+
+  自前の板などはなく、
+  ウェアをもっているだけの中級者です。
+
+  ジャンプ台などは使いません。
+
+  こんな私ですが、一緒に楽しく滑ることのできる方がいましたら是非よろしくお願いします！",
+  gender: 2,
+  image_id: post37.id,
+  age:31
+)
+
+post38 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post38.jpg")))
+Post.create!(
+  user_id: 20,
+  genre_id: 6,
+  title: "将棋友達を探しています",
+  content:
+  "はじめまして！
+  訪問ありがとうございます！
+
+  私は趣味で将棋をやっています。
+
+  地元の公園や私の家で一緒に将棋やりませんか？
+  ※同じぐらいの年齢の方だと嬉しいです。",
+  gender: 3,
+  prefecture_code: 13,
+  municipality: "羽村市",
+  image_id: post38.id,
+  age:52
+)
+
+post39 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post39.jpg")))
+Post.create!(
+  user_id: 21,
+  genre_id: 2,
+  title: "(Go)一緒にプログラミングの勉強しませんか？",
+  content:
+  "一緒にプログラミングの勉強しませんか？
+
+  平日の朝に駅前の珈琲館で、
+  勉強する習慣を形成しませんか！？(2時間前後)
+
+  私は転職を目的に現在Goを独学で勉強中です。
+
+  勉強の習慣形成はもちろん、
+  IT業界の情報も共有して一緒に成長していけたら嬉しいです。
+
+  よろしくおねがいします！",
+  gender: 3,
+  prefecture_code: 13,
+  municipality: "港区",
+  image_id: post39.id,
+  age:21
+)
+
+post40 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post40.jpg")))
+Post.create!(
+  user_id: 22,
+  genre_id: 1,
+  title: "一緒にジムに通って痩せませんか？",
+  content:
+  "ジム友募集中です。
+
+  最近ジムに通い始めたのですが、自分の意思が弱く一人ではなかなか継続して通うことができません。
+
+  そこで毎日決まった曜日、決まった時間に一緒にジムに行ってくれる方を探しています。
+  ※女性限定でお願いします。
+
+  希望エリア内であればジムを指定していただいても構いません。
+  チャット待ってます。よろしくお願いします！",
+  gender: 2,
+  prefecture_code: 14,
+  municipality: "海老名市",
+  image_id: post40.id,
+  age:32
 )
