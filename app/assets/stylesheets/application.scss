@@ -597,6 +597,16 @@ footer {
   opacity: 0.9;
 }
 
+.post-new-btn-color {
+  background-color: #fed8f2;
+  border: 1px solid #fed8f2;
+}
+
+.post-new-btn-color:hover {
+  background-color: #fed8f2;
+  opacity: 0.9;
+}
+
 .incremental-btn-color {
   background-color: #fed8f2;
   border: 1px solid #fed8f2;
@@ -765,6 +775,15 @@ footer {
 
   .release-flex {
     display: block;
+  }
+
+  .howto-side-box {
+    width: 90%;
+    marigin: 0 auto;
+  }
+
+  .howto-box {
+    margin-bottom: 40px;
   }
 
   .new-post {

@@ -1,3 +1,86 @@
+<div class="background-color">
 <%= render "layouts/flash" %>
-<h1>Public::Homes#explain</h1>
-<p>Find me in app/views/public/homes/explain.html.erb</p>
+
+  <h2 class="page-title">使い方紹介ページ</h2>
+
+  <!--<div class="container">-->
+  <!--  <div class="row">-->
+      <!--１列目-->
+      <div class="howto-side-box flex-around release-flex">
+        <div class="col-md-5 col-sm-12 howto-box">
+          <h3>1：登録</h3>
+
+          <%= image_tag 'howto/howto2.png', class:"howto-image" %>
+        </div>
+
+        <div class="col-md-5 col-sm-12 howto-box">
+          <h3>2：ログイン</h3>
+
+          <%= image_tag 'howto/howto5.png', class:"howto-image" %>
+        </div>
+      </div>
+      <!--2列目-->
+      <div class="howto-side-box flex-around release-flex">
+        <div class="col-md-5 col-sm-12 howto-box">
+          <h3>3-1：検索</h3>
+
+          <%= image_tag 'howto/howto4.png', class:"howto-image" %>
+        </div>
+
+        <div class="col-md-5 col-sm-12 howto-box">
+          <h3>3-2：新規投稿</h3>
+
+          <%= image_tag 'howto/howto9.png', class:"howto-image" %>
+        </div>
+
+      </div>
+      <!--3列目-->
+      <div class="howto-side-box flex-around release-flex">
+        <div class="col-md-5 col-sm-12 howto-box">
+          <h3>4:詳細ページ</h3>
+
+          <%= image_tag 'howto/howto1.png', class:"howto-image" %>
+        </div>
+
+        <div class="col-md-5 col-sm-12 howto-box">
+          <h3>5：通知</h3>
+
+          <%= image_tag 'howto/howto6.png', class:"howto-image" %>
+        </div>
+
+      </div>
+      <!--4列目-->
+      <div class="howto-side-box flex-around release-flex">
+        <div class="col-md-5 col-sm-12 howto-box">
+          <h3>6-1：チャット送信</h3>
+
+          <%= image_tag 'howto/howto7.png', class:"howto-image" %>
+        </div>
+
+        <div class="col-md-5 col-sm-12 howto-box">
+          <h3>6-2：チャット受信</h3>
+
+          <%= image_tag 'howto/howto8.png', class:"howto-image" %>
+        </div>
+
+      </div>
+
+      <div class="howto-message">
+        <p>さあ、最高の仲間を見つけましょう！</p>
+      </div>
+
+      <div class="link-box absolute-flex">
+        <div class="link">
+          <%= link_to "詳細検索", searches_search_path, class:"btn btn-sm search-btn-color m-size-btn" %>
+        </div>
+
+        <div class="link">
+          <%= link_to "新規投稿", new_post_path, class:"btn btn-sm post-new-btn-color m-size-btn" %>
+
+        </div>
+      </div>
+  <!--  </div>-->
+  <!--</div>-->
+</div>
+
+

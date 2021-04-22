@@ -208,3 +208,42 @@
 .notitle-about-content {
   padding: 50px 0;
 }
+
+.howto-side-box {
+  width: 95%;
+  margin: 60px auto;
+}
+
+.howto-box {
+  text-align: center;
+  border-radius: 5px;
+  background-color: #faf0e6;
+  transition: all 0.4s;
+}
+
+.howto-box:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.howto-box > h3 {
+  font-size: 1.5rem;
+  padding: 18px 0 12px;
+  color: midnightblue;
+}
+
+.howto-image {
+  width: 95%;
+  margin-bottom: 12px;
+  height: 350px;
+}
+
+.howto-message {
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.howto-message > p {
+  margin-bottom: 0!important;
+}
