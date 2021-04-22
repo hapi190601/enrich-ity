@@ -84,10 +84,10 @@
             <div class="text-center my-3">
               <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size" %>
             </div>
-            <span class="inline mb-3 ml-2" style="color:#4682b4;">【タイトル】</span>
+            <h4 class="inline mb-3 ml-2" style="color:#4682b4;">【タイトル】</h4>
             <p class="mb-0 ml-3 px-3"><%= pos.title %></p>
             <br>
-            <span class="inline mb-3 ml-2" style="color:#4682b4;">【本文】</span>
+            <h4 class="inline mb-3 ml-2" style="color:#4682b4;">【本文】</h4>
             <p class="mb-0 ml-3 px-3"><%= safe_join(pos.content.truncate(75).split("\n"),tag(:br)) %></p>
           </div>
 
