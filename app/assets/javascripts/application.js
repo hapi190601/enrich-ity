@@ -23,6 +23,7 @@ document.addEventListener("turbolinks:before-cache", function() {
   $('.slide-images').slick('unslick');
 });
 
+
 $(document).on('turbolinks:load', function() {
   // トップへスクロールするアニメーション
   $('#up-scroll').hide();
