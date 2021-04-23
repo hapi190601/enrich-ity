@@ -16,8 +16,12 @@
         <table class="table profile-table text-center">
           <tbody>
             <tr>
-              <td width="45%" class="icon-height">アイコン</td>
-              <td width="55%"><%= attachment_image_tag @user, :image, :fill ,80 ,80, fallback: asset_path("no-image.jpeg"), size:"80x80" %></td>
+              <td width="45%" class="icon-height">
+                アイコン
+              </td>
+              <td width="55%">
+                <%= attachment_image_tag @user, :image, :fill ,80 ,80, fallback: asset_path("no-image.jpeg"), size:"80x80" %>
+              </td>
             </tr>
             <tr>
               <td>ニックネーム</td>
