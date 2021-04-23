@@ -94,5 +94,5 @@ Rails.application.configure do
 
   # 本番環境でActionCableを動かすために必要？
   ActionCable.server.config.disable_request_forgery_protection = true
-  config.action_cable.allowed_request_origins = [ 'http://enrich-ity.com', /https:\/\/enrich-ity.*/ ]
+  config.action_cable.allowed_request_origins = [ 'http://enrich-ity.com', /http:\/\/enrich-ity.*/ ]
 end
