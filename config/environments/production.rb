@@ -91,4 +91,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # 本番環境でActionCableを動かすために必要？
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.allowed_request_origins = [ 'http://enrich-ity.com', /https:\/\/enrich-ity.*/ ]
 end
