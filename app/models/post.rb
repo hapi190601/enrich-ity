@@ -5,6 +5,7 @@ class Post < ApplicationRecord
 
   validates :title, :presence => true
   validates :content, :presence => true
+  validates :gender, :presence => true
 
   enum :gender => { :"男性" => 1, :"女性" => 2, :"どちらでも" => 3 }
 

@@ -3,11 +3,9 @@ class Notification < ApplicationRecord
   default_scope -> { order(:created_at => :desc) }
   belongs_to :visitor, :class_name => 'User', :foreign_key => 'visitor_id', :optional => true
   belongs_to :visited, :class_name => 'User', :foreign_key => 'visited_id', :optional => true
-  # nilを保存することを許可するなら追記する→optional: true
-  # お気に入りにも通知を送るのであれば必要
   belongs_to :direct_message
   belongs_to :room
-  
+
 
   validates :action, :presence => true
   validates :checked, :inclusion => { :in => [true, false] }

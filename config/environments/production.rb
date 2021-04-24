@@ -93,8 +93,9 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # 本番環境でActionCableを動かすために必要？
-  ActionCable.server.config.disable_request_forgery_protection = true
+
   config.action_cable.url = 'ws://enrich-ity.com/cable'
-  config.action_cable.allowed_request_origins = [ 'http://enrich-ity.com' ]
-  # config.action_cable.allowed_request_origins = [ 'http://enrich-ity.com', /http:\/\/enrich-ity.*/ ]
+  # config.action_cable.allowed_request_origins = [ 'http://enrich-ity.com' ]
+  config.action_cable.allowed_request_origins = [ 'http://enrich-ity.com', /http:\/\/enrich-ity.*/ ]
+  ActionCable.server.config.disable_request_forgery_protection = true
 end
