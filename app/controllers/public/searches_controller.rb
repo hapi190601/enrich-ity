@@ -1,4 +1,5 @@
 class Public::SearchesController < ApplicationController
+  before_action :authenticate_user!, :except => [:incremental_search]
 
   def index
     @user = current_user

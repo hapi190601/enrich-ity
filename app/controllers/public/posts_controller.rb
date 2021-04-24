@@ -1,6 +1,6 @@
 class Public::PostsController < ApplicationController
   before_action :calculate_current_user_age, :only => [:create, :update]
-  before_action :authenticate_user!, :only => [:top, :create, :update, :edit, :destroy]
+  before_action :authenticate_user!, :except => [:index, :show, :top]
 
   impressionist :actions=> [:show]
 
@@ -104,6 +104,11 @@ class Public::PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+
+    if @post.user_id != current_user.id
+      redirect_to posts_top_path
+      flash[:notice] = "他ユーザーの投稿編集はできません。"
+    end
   end
 
   def update

@@ -33,8 +33,9 @@ class Public::UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
 
-    unless @user.id == current_user.id
+    if @user.id != current_user.id
       redirect_to root_path
+      flash[:notice] = "他ユーザーの編集はできません。"
     end
   end
 
