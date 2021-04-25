@@ -10,7 +10,3 @@ end
 every 1.day, at: '6:00 am' do
   runner "User.guest_delete"
 end
-
-every 3.minutes do
-  runner "User.guest_delete"
-end
