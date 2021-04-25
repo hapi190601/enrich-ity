@@ -106,7 +106,7 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.user_id != current_user.id
-      redirect_to posts_top_path
+      redirect_to root_path
       flash[:notice] = "他ユーザーの投稿編集はできません。"
     end
   end
