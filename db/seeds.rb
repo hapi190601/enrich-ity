@@ -8,7 +8,7 @@
 
 # 管理者
 Admin.create!(
-  email: "admin@test.com",
+  email: "gc1206ro@gmail.com",
   password: "password"
 )
 
