@@ -1,10 +1,13 @@
 <div class="background-color">
+  <div class="alert"><%= alert %></div>
+
   <h2 class="page-title">ログイン</h2>
 
   <div class="container">
     <div class="row">
       <div class="sign-in-area">
       <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+        <%= render "users/shared/error_messages", resource: resource %>
         <div class="field flex release-flex media-center">
           <div class="col-lg-4 col-md-5">
             <%= f.label :"【メールアドレス】" %>
