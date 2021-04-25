@@ -11,6 +11,10 @@ class Public::RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
 
+    # unless @room.entries.where(user_id: current_user.id)
+    #   redirect_back(:fallback_location => root_path)
+    # end
+
     # 通知のリンクからチャットルームへ来た時にそのroom_idの通知を既読扱いにする
     unchecked_notifications = current_user.passive_notifications.where(:room_id => @room.id, :checked => false)
     unchecked_notifications.update_all(:checked => true)
@@ -18,15 +22,16 @@ class Public::RoomsController < ApplicationController
     if Entry.where(:user_id => current_user.id, :room_id => @room.id).present?
       @direct_messages = @room.direct_messages
       @entries = @room.entries
+
+        # チャット相手のidを@opponent_idに代入
+       @entries.each do |e|
+          if e.user != current_user
+            @opponent_id = e.user.id
+          end
+       end
     else
       redirect_back(:fallback_location => root_path)
+      flash[:notice] = "他人のチャットルームを見ることはできません。"
     end
-
-    # チャット相手のidを@opponent_idに代入
-     @entries.each do |e|
-        if e.user != current_user
-          @opponent_id = e.user.id
-        end
-     end
   end
 end
