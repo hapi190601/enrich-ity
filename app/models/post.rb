@@ -25,7 +25,7 @@ class Post < ApplicationRecord
     favorites.where(:user_id => user.id).exists?
   end
 
-  # バッチ処理1
+  # バッチ処理
   _monthly_to  = Time.current.at_beginning_of_day
   _monthly_from = (_monthly_to - 1.month)
 

@@ -26,6 +26,20 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: 名前
+        name_kana:  フリガナ
+        nickname: ニックネーム
+        postal_code: 郵便番号
+        email: メールアドレス
+        birthday: 誕生日
+        nearest_station: 最寄駅
+        prefecture_code: お住まいの都道府県
+        municipality: お住まいの市区町村
   date:
     abbr_day_names:
     - 日

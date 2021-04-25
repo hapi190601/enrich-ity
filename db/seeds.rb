@@ -434,7 +434,6 @@ User.create!(
 )
 
 # ひみつ
-
 himitsu1 = backend.upload(File.open(Rails.root.join("app/assets/images/people/himitsu1.jpg")))
 User.create!(
   name: "二ノ美屋銀",

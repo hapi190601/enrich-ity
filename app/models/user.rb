@@ -49,7 +49,6 @@ class User < ApplicationRecord
   def self.guest
     find_or_create_by(:email => "guest@guest.com") do |user|
       user.password = SecureRandom.urlsafe_base64
-
       user.name = "ゲストユーザー(閲覧用)"
       user.name_kana = "ゲストユーザー(エツランヨウ)"
       user.nickname = "ゲスト"
@@ -59,7 +58,6 @@ class User < ApplicationRecord
       user.prefecture_code = 13
       user.municipality = "新宿区"
       user.nearest_station = "新宿"
-      # user.is_deleted = false
     end
   end
 

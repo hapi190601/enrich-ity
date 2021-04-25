@@ -7,6 +7,7 @@ every 1.day, at: '6:00 am' do
   runner "Post.monthly_destroy_all"
 end
 
+# ゲストユーザー毎日削除
 every 1.day, at: '6:00 am' do
   runner "User.guest_delete"
 end

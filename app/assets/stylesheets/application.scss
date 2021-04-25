@@ -29,6 +29,8 @@ body {
 
 img {
   border-radius: 3px;
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-backface-visibility: hidden;
 }
 
 .last {
@@ -87,16 +89,20 @@ span {
 #error_explanation {
   width: 90%;
   margin: 0 auto 75px;
+  background-color: #e8e8e8;
+  border-radius: 5px;
 }
 
 #error_explanation > h4 {
   font-sise: 1.5rem!important;
   text-align: center;
+  padding-top: 30px;
 }
 
 #error_explanation > ul {
   margin-top: 15px;
   margin-left: 30px;
+  padding-bottom: 30px;
 }
 
 #error_explanation > ul > li {
@@ -650,6 +656,27 @@ footer {
 // 以下レスポンシブ
 @media (max-width: 992px) {
 
+  .howto-side-box {
+    display: block
+  }
+
+  .howto-box {
+    width: 90%;
+    margin: 0 auto 75px;
+  }
+
+  .howto-box > h3 {
+    font-size: 2rem;
+  }
+
+  .howto-image {
+    height: auto;
+  }
+
+  .howto-box:hover {
+    transform: scale(1.1, 1.1);
+  }
+
   p {
     font-size: 1.1rem!important;
   }
@@ -787,6 +814,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .no-favorites-message > p {
+    font-size: 1.4rem!important;
+  }
+
   .btn-for-smartphone {
     min-width: 250px;
   }
@@ -809,11 +840,15 @@ footer {
 
   .howto-side-box {
     width: 90%;
-    marigin: 0 auto;
+    margin: 0 auto;
   }
 
   .howto-box {
-    margin-bottom: 40px;
+    margin-bottom: 75px;
+  }
+
+  .howto-box:hover {
+    transform: scale(1.1, 1.1);
   }
 
   .new-post {
