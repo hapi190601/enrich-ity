@@ -21,16 +21,17 @@ class Post < ApplicationRecord
     self.prefecture_code = JpPrefecture::Prefecture.find(:name => prefecture_name).code
   end
 
-  # バッチ処理
-  _monthly_from  = Time.current.at_beginning_of_day
-  _monthly_to    = (_monthly_from + 1.month)
-
-  def self.monthly_destroy_all
-    posts = Post.where(:updated_at => _monthly_from..._monthly_to)
-    posts.destroy_all
-  end
-
   def favorited_by?(user)
     favorites.where(:user_id => user.id).exists?
   end
+
+  # バッチ処理1
+  _monthly_to  = Time.current.at_beginning_of_day
+  _monthly_from = (_monthly_to - 1.month)
+
+  def self.monthly_destroy_all
+    posts = Post.where.not(:updated_at => _monthly_from..._monthly_to)
+    posts.destroy_all
+  end
+
 end

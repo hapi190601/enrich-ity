@@ -19,5 +19,10 @@ module EnrichIty
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    config.autoload_paths += Dir["#{config.root}/lib"]
+    config.eager_load_paths += Dir["#{config.root}/lib/**/"]
+    # config.eager_load_paths += Dir["#{config.root}/lib/"]
+    # config.paths.add 'lib', eager_load: true
   end
 end

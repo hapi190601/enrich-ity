@@ -1,8 +1,16 @@
 set :output, 'log/crontab.log'
-# デプロイする時、:developmentを変える必要あり？後で調べる
-set :environment, :development
+# set :environment, :development
+set :environment, :production
 
 # 投稿掲載期限1ヶ月
-every 1.month do
+every 1.day, at: '6:00 am' do
   runner "Post.monthly_destroy_all"
+end
+
+every 1.day, at: '6:00 am' do
+  runner "User.guest_delete"
+end
+
+every 3.minutes do
+  runner "User.guest_delete"
 end

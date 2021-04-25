@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_25_015917) do
+ActiveRecord::Schema.define(version: 2021_04_22_110149) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,8 +30,6 @@ ActiveRecord::Schema.define(version: 2021_04_25_015917) do
     t.string "message", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["message"], name: "index_direct_messages_on_message"
-    t.index ["user_id", "room_id"], name: "index_direct_messages_on_user_id_and_room_id"
   end
 
   create_table "entries", force: :cascade do |t|
@@ -39,7 +37,6 @@ ActiveRecord::Schema.define(version: 2021_04_25_015917) do
     t.integer "room_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "room_id"], name: "index_entries_on_user_id_and_room_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -47,7 +44,6 @@ ActiveRecord::Schema.define(version: 2021_04_25_015917) do
     t.integer "post_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "post_id"], name: "index_favorites_on_user_id_and_post_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -101,7 +97,6 @@ ActiveRecord::Schema.define(version: 2021_04_25_015917) do
     t.boolean "checked", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["visitor_id", "visited_id"], name: "index_notifications_on_visitor_id_and_visited_id"
   end
 
   create_table "posts", force: :cascade do |t|

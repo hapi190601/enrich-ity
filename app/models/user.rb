@@ -59,7 +59,13 @@ class User < ApplicationRecord
       user.prefecture_code = 13
       user.municipality = "新宿区"
       user.nearest_station = "新宿"
-      user.is_deleted = false
+      # user.is_deleted = false
     end
+  end
+
+  # バッチ処理
+  def self.guest_delete
+    guest = User.find_by(email: "guest@guest.com")
+    guest.destroy
   end
 end
