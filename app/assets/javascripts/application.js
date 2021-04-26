@@ -146,7 +146,6 @@ $(document).on('turbolinks:load', function() {
 
   // ハンバーガーアイコンアニメーション
   var Menu = {
-
     el: {
       ham: $('.navbar-toggler'),
       menuTop: $('.top'),
