@@ -4,7 +4,6 @@ Metrics/BlockLength:
  Exclude:
    - "spec/**/*"
 
-# 長さチェックから
 Metrics/ClassLength:
  Exclude:
    - "app/controllers/public/posts_controller.rb"
