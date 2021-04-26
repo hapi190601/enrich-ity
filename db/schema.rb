@@ -136,6 +136,7 @@ ActiveRecord::Schema.define(version: 2021_04_22_110149) do
     t.string "postal_code"
     t.string "nearest_station", null: false
     t.boolean "is_deleted", default: false, null: false
+    # uid,providerはSNS認証実装用
     t.string "uid"
     t.string "provider"
     t.string "municipality"
