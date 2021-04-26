@@ -273,9 +273,11 @@ header {
 .top {
   top: 0;
 }
+
 .middle {
   top: 14px;
 }
+
 .bottom {
   top: 28px;
 }
@@ -336,6 +338,7 @@ footer {
   right: 20px;
   bottom: 100px;
 }
+
 .up {
   width: 50px;
   height: 50px;
@@ -354,7 +357,6 @@ footer {
 }
 
 // 共通
-
 .focus-green:focus {
   border: 3px solid green;
   outline: 0;
@@ -425,7 +427,6 @@ footer {
 }
 
 // 管理者関連
-
 .admin-btn-area {
   width: 80%;
   margin: 0 auto;
@@ -819,6 +820,7 @@ footer {
 }
 
 @media (max-width: 768px) {
+
   .no-favorites-message > p {
     font-size: 1.4rem!important;
   }
@@ -1109,9 +1111,9 @@ footer {
   }
 }
 
-
 // スマホサイズ
 @media (max-width: 576px) {
+
   .main-messages {
     position: absolute;
     top: 3%;
@@ -1191,5 +1193,4 @@ footer {
   .profile-h3 {
     margin-bottom: 0!important;
   }
-
 }

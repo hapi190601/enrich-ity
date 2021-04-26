@@ -26,7 +26,7 @@ class Post < ApplicationRecord
   end
 
   # バッチ処理
-  _monthly_to  = Time.current.at_beginning_of_day
+  _monthly_to = Time.current.at_beginning_of_day
   _monthly_from = (_monthly_to - 1.month)
 
   def self.monthly_destroy_all

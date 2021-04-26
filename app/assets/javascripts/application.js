@@ -178,7 +178,6 @@ $(document).on('turbolinks:load', function() {
 
   Menu.init();
 
-
   // よくある質問
   $('.hide-class').hide();
   $('.qa-icon2').hide();

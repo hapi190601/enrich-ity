@@ -1,10 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'Entryモデルのテスト', type: :model do
-
+RSpec.describe 'Entryモデルのテスト', :type => :model do
   let(:user) { create(:user) }
   let(:room) { create(:room) }
-  let(:entry) { Entry.create(user_id: user.id, room_id: room.id)}
+  let(:entry) { Entry.create(:user_id => user.id, :room_id => room.id) }
 
   describe "保存する" do
     it "エントリー" do
