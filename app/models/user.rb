@@ -63,7 +63,7 @@ class User < ApplicationRecord
 
   # バッチ処理
   def self.guest_delete
-    guest = User.find_by(:email => "guest@guest.com")
+    guest = User.find_by(email: "guest@guest.com")
     guest.destroy
   end
 end

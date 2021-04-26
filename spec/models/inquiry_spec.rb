@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Inquiryモデルのテスト', :type => :model do
+RSpec.describe 'Inquiryモデルのテスト', type: :model do
   let(:inquiry) { FactoryBot.build(:inquiry) }
 
   describe "保存する" do

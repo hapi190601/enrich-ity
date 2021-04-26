@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'Genreモデルのテスト', :type => :model do
+RSpec.describe 'Genreモデルのテスト', type: :model do
+
   let(:genre) { FactoryBot.build(:genre) }
 
   describe "保存する" do
@@ -27,4 +28,5 @@ RSpec.describe 'Genreモデルのテスト', :type => :model do
       end
     end
   end
+
 end
