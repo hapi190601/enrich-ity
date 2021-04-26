@@ -211,7 +211,7 @@
 
 .howto-side-box {
   width: 95%;
-  margin: 60px auto;
+  margin: 20px auto 60px;
 }
 
 .howto-box {
@@ -247,4 +247,12 @@
 .howto-message > p {
   font-size: 1.6rem!important;
   margin-bottom: 0!important;
+}
+
+.expand-message {
+  display: block;
+  text-align: center;
+  font-size: 1rem!important;
+  color: white;
+  margin-bottom: 20px;
 }

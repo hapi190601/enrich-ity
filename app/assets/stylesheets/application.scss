@@ -19,6 +19,7 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap');
 
+
 body {
   font-family: 'Kiwi Maru', serif;
 }
@@ -658,6 +659,10 @@ footer {
 
   .howto-side-box {
     display: block
+  }
+
+  .expand-message {
+    margin-bottom: 60px;
   }
 
   .howto-box {
