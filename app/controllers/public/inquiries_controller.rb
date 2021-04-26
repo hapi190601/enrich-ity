@@ -9,6 +9,7 @@ class Public::InquiriesController < ApplicationController
     @user = current_user
 
     if @inquiry.save
+      InquiryMailer.send_mail(@inquiry).deliver
       flash[:notice] = "問い合わせを受け付けました。後日メールにてご連絡します。"
       redirect_back(:fallback_location => {:action => "new"})
     else

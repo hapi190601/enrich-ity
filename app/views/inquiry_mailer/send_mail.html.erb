@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+
+  <body>
+    <div>
+      <h3>問い合わせが届きました！</h3>
+      ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      <p>■問い合わせ者</p>
+      <p><%= @inquiry.name %> 様</p>
+      <br>
+      <p>■連絡先</p>
+      <p><%= @inquiry.email %></p>
+      <br>
+      <p>■タイトル</p>
+      <p><strong><%= @inquiry.title %></strong></p>
+      <br>
+      <p>■本文</p>
+      <p><strong><%= @inquiry.content %></strong></p>
+      <br>
+      ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+      <p>至急ご対応お願いします。</p>
+    </div>
+  </body>
+</html>
+
+
+
+<!--問い合わせが届きました。-->
+
+<!--・問い合わせ者-->
+<!--<%#= @inquiry.name %> 様-->
+
+<!--・連絡先-->
+<!--<%#= @inquiry.email %>-->
+
+<!--・タイトル-->
+<!--<%#= @inquiry.title %>-->
+
+<!--・本文-->
+<!--<%# @inquiry.content %>-->
+

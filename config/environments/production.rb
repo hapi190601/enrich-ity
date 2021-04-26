@@ -98,4 +98,19 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://enrich-ity.com' ]
   config.action_cable.allowed_request_origins = [ 'http://enrich-ity.com', /http:\/\/enrich-ity.*/ ]
   ActionCable.server.config.disable_request_forgery_protection = true
+
+  mail = ENV['MAIL_ADDRESS']
+  pass = ENV['MAIL_PASSWORD']
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+   address:              'smtp.gmail.com',
+   port:                  587,
+   domain:               'gmail.com',
+   user_name:             mail,
+   password:              pass,
+   authentication:       'plain',
+   enable_starttls_auto:  true
+  }
 end
