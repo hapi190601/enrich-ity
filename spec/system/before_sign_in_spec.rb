@@ -29,17 +29,17 @@ describe 'ユーザログイン前のテスト' do
 
       it '検索リンクの内容が正しい' do
         search_link = find_all('a')[1].native.inner_text
-        expect(page).to have_link search_link, :href => searches_incremental_search_path
+        expect(page).to have_link search_link, href: searches_incremental_search_path
       end
 
       it '新規登録リンクの内容が正しい' do
         sign_up_link = find_all('a')[7].native.inner_text
-        expect(page).to have_link sign_up_link, :href => new_user_registration_path
+        expect(page).to have_link sign_up_link, href: new_user_registration_path
       end
 
       it 'ゲストログインリンクの内容が正しい' do
-        guest_sign_in_link = find_all('a')[11].native.inner_text
-        expect(page).to have_link guest_sign_in_link, :href => users_guest_sign_in_path
+        guest_sign_in_link= find_all('a')[11].native.inner_text
+        expect(page).to have_link guest_sign_in_link, href: users_guest_sign_in_path
       end
     end
   end
@@ -93,21 +93,21 @@ describe 'ユーザログイン前のテスト' do
 
     context '新規登録成功のテスト' do
       before do
-        fill_in 'user[name]', :with => Faker::Lorem.characters(:number => 10)
-        fill_in 'user[name_kana]', :with => Faker::Lorem.characters(:number => 10)
-        fill_in 'user[nickname]', :with => Faker::Lorem.characters(:number => 10)
+        fill_in 'user[name]', with:  Faker::Lorem.characters(number: 10)
+        fill_in 'user[name_kana]', with: Faker::Lorem.characters(number: 10)
+        fill_in 'user[nickname]', with: Faker::Lorem.characters(number: 10)
         choose 'user_gender_男性'
         # どのセレクトタグを対象にするのか指定
         find("#user_birthday_1i").find("option[value= 1999]").select_option
         find("#user_birthday_2i").find("option[value= 1]").select_option
         find("#user_birthday_3i").find("option[value= 23]").select_option
         find("#user_prefecture_code").find("option[value= 13]").select_option
-        fill_in 'user[municipality]', :with => Faker::Lorem.characters(:number => 5)
-        fill_in 'user[postal_code]', :with => Faker::Lorem.characters(:number => 7)
-        fill_in 'user[nearest_station]', :with => Faker::Lorem.characters(:number => 3)
-        fill_in 'user[email]', :with => Faker::Internet.email
-        fill_in 'user[password]', :with => 'password'
-        fill_in 'user[password_confirmation]', :with => 'password'
+        fill_in 'user[municipality]', with: Faker::Lorem.characters(number: 5)
+        fill_in 'user[postal_code]', with: Faker::Lorem.characters(number: 7)
+        fill_in 'user[nearest_station]', with: Faker::Lorem.characters(number: 3)
+        fill_in 'user[email]', with: Faker::Internet.email
+        fill_in 'user[password]', with: 'password'
+        fill_in 'user[password_confirmation]', with: 'password'
       end
 
       it '正しく新規登録される' do
@@ -152,8 +152,8 @@ describe 'ユーザログイン前のテスト' do
 
     context 'ログイン成功のテスト' do
       before do
-        fill_in 'user[email]', :with => user.email
-        fill_in 'user[password]', :with => user.password
+        fill_in 'user[email]', with: user.email
+        fill_in 'user[password]', with: user.password
         click_button 'ログイン'
       end
 
@@ -164,8 +164,8 @@ describe 'ユーザログイン前のテスト' do
 
     context 'ログイン失敗のテスト' do
       before do
-        fill_in 'user[email]', :with => ''
-        fill_in 'user[password]', :with => ''
+        fill_in 'user[email]', with: ''
+        fill_in 'user[password]', with: ''
         click_button 'ログイン'
       end
 
@@ -180,17 +180,17 @@ describe 'ユーザログイン前のテスト' do
 
     before do
       visit new_user_session_path
-      fill_in 'user[email]', :with => user.email
-      fill_in 'user[password]', :with => user.password
-      click_button 'ログイン', :match => :first
+      fill_in 'user[email]', with: user.email
+      fill_in 'user[password]', with: user.password
+      click_button 'ログイン', match: :first
       # logout_link = find_all('a')[9].native.inner_text
       # logout_link = logout_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-      click_link 'ログアウト', :match => :first
+      click_link 'ログアウト', match: :first
     end
 
     context 'ログアウト機能のテスト' do
       it '正しくログアウトできている: ログアウト後のリダイレクト先においてAbout画面へのリンクが存在する' do
-        expect(page).to have_link '', :href => '/homes/about'
+        expect(page).to have_link '', href: '/homes/about'
       end
 
       it 'ログアウト後のリダイレクト先が、トップになっている' do
@@ -206,7 +206,7 @@ describe 'ユーザログイン前のテスト' do
 
     context 'ログイン' do
       it "正しくログインできているか" do
-        click_link "ゲストログイン", :match => :first
+        click_link "ゲストログイン", match: :first
         expect(current_path).to eq '/posts/top'
         expect(page).to have_content '1都3県'
       end

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'Roomモデルのテスト', :type => :model do
+RSpec.describe 'Roomモデルのテスト', type: :model do
+
   let(:room) { FactoryBot.build(:room) }
 
   describe "保存する" do
@@ -42,4 +43,5 @@ RSpec.describe 'Roomモデルのテスト', :type => :model do
       end
     end
   end
+
 end

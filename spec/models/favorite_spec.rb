@@ -1,10 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe 'Favoriteモデルのテスト', :type => :model do
+RSpec.describe 'Favoriteモデルのテスト', type: :model do
+
   let(:user) { create(:user) }
   let(:genre) { create(:genre) }
-  let(:post) { create(:post, :user_id => user.id, :genre_id => genre.id) }
-  let(:favorite) { Favorite.create(:user_id => user.id, :post_id => post.id) }
+  let(:post) { create(:post, user_id: user.id, genre_id: genre.id) }
+  let(:favorite) { Favorite.create(user_id: user.id, post_id: post.id)}
 
   describe "保存する" do
     it "お気に入り登録" do

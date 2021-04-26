@@ -6,6 +6,7 @@ class Notification < ApplicationRecord
   belongs_to :direct_message
   belongs_to :room
 
+
   validates :action, :presence => true
   validates :checked, :inclusion => { :in => [true, false] }
 end
