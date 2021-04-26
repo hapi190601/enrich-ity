@@ -1,10 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'DirectMessageモデルのテスト', type: :model do
-
+RSpec.describe 'DirectMessageモデルのテスト', :type => :model do
   let(:user) { FactoryBot.create(:user) }
   let(:room) { FactoryBot.create(:room) }
-  let(:direct_message) { FactoryBot.build(:direct_message, user_id: user.id, room_id: room.id ) }
+  let(:direct_message) { FactoryBot.build(:direct_message, :user_id => user.id, :room_id => room.id) }
 
   describe "メッセージを保存する" do
     it "有効な投稿は保存されるか" do

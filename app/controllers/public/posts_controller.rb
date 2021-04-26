@@ -7,7 +7,7 @@ class Public::PostsController < ApplicationController
   def top
     @posts_all = Post.all
 
-    from  = (Time.current - 6.day).at_beginning_of_day
+    from  = (Time.current - 6.days).at_beginning_of_day
     to    = Time.current.at_end_of_day
     @weekly_posts = Post.where(:updated_at => from...to)
 

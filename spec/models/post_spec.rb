@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe 'Postモデルのテスト', type: :model do
+RSpec.describe 'Postモデルのテスト', :type => :model do
   # 外部キーを参照したい場合は必ずcreateでデータベースに保存する
-  let(:user) { FactoryBot.create(:user)}
-  let(:genre) { FactoryBot.create(:genre)}
-  let!(:post) { FactoryBot.build(:post, user_id: user.id, genre_id: genre.id) }
+  let(:user) { FactoryBot.create(:user) }
+  let(:genre) { FactoryBot.create(:genre) }
+  let!(:post) { FactoryBot.build(:post, :user_id => user.id, :genre_id => genre.id) }
 
   describe "投稿を保存する" do
     it "有効な投稿は保存されるか" do
@@ -36,7 +36,6 @@ RSpec.describe 'Postモデルのテスト', type: :model do
       end
     end
   end
-
 
   describe 'アソシエーションのテスト' do
     context 'Userモデルとの関係' do

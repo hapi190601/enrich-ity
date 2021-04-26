@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'Userモデルのテスト', type: :model do
-
-  let(:user) { FactoryBot.build(:user)}
+RSpec.describe 'Userモデルのテスト', :type => :model do
+  let(:user) { FactoryBot.build(:user) }
 
   describe "保存する" do
     it "会員登録する" do
@@ -76,7 +75,6 @@ RSpec.describe 'Userモデルのテスト', type: :model do
       end
     end
   end
-
 
   describe 'アソシエーションのテスト' do
     context 'Postモデルとの関係' do
