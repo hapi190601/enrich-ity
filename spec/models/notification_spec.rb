@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe 'Notificationモデルのテスト', type: :model do
+RSpec.describe 'Notificationモデルのテスト', :type => :model do
   let(:visitor) { FactoryBot.create(:user) }
   let(:visited) { FactoryBot.create(:user) }
   let(:room) { FactoryBot.create(:room) }
-  let(:direct_message) { FactoryBot.create(:direct_message, user_id: visitor.id, room_id: room.id) }
-  let(:notification) { FactoryBot.build(:notification, visitor_id: visitor.id, visited_id: visited.id, room_id: room.id, direct_message_id: direct_message.id) }
+  let(:direct_message) { FactoryBot.create(:direct_message, :user_id => visitor.id, :room_id => room.id) }
+  let(:notification) { FactoryBot.build(:notification, :visitor_id => visitor.id, :visited_id => visited.id, :room_id => room.id, :direct_message_id => direct_message.id) }
 
   describe "保存する" do
     it "通知作成" do
@@ -37,5 +37,4 @@ RSpec.describe 'Notificationモデルのテスト', type: :model do
       end
     end
   end
-
 end

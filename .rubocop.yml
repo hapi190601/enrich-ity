@@ -1,1 +1,25 @@
 inherit_from: .rubocop_todo.yml
+
+Metrics/BlockLength:
+ Exclude:
+   - "spec/**/*"
+
+Metrics/ClassLength:
+ Exclude:
+   - "app/controllers/public/posts_controller.rb"
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# クラスのコメント必須を無視
+Documentation:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# 文字リテラルのイミュータブル宣言を無視（freezeになるのはRuby3以降）
+Style/FrozenStringLiteralComment:
+  Enabled: false
