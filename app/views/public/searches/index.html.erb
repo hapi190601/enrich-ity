@@ -3,7 +3,9 @@
   <h2 class="page-title">検索結果：<%= @results_all.count %>件</h2>
 
   <div class="index-number">
+    <% if @results.present? %>
     <span><strong> <%= @results.offset_value + 1 %> </strong>〜<strong> <%= @results.offset_value + @results.length %> </strong>件を表示中</span>
+    <% end %>
   </div>
 
   <div class="container">
