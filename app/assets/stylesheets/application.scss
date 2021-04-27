@@ -774,10 +774,6 @@ footer {
     // font-size: 0.8rem;
   }
 
-  .new-post-prefecture-select {
-    vertical-align: bottom;
-  }
-
   .media-list-style {
     margin-left: 0;
   }
@@ -1126,6 +1122,7 @@ footer {
 // スマホサイズ
 @media (max-width: 576px) {
   .main-messages {
+    width: 85%;
     position: absolute;
     top: 4%;
     left: 7%;
@@ -1406,6 +1403,8 @@ footer {
 
   .media-new-post-fix-margin {
     margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   #preview {
@@ -1429,10 +1428,6 @@ footer {
 
   .media-list-style > li {
     margin: 12px 0;
-  }
-
-  .new-post-prefecture-select {
-    margin-left: 1.5rem;
   }
 
   .form-content > div {
@@ -1489,5 +1484,21 @@ footer {
 
   .sign-up-link {
     width: 100%
+  }
+
+  #post_prefecture_code {
+    margin-top: 10px;
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+
+  textarea {
+    font-size: 1rem;
+  }
+
+  .offset-2 {
+    margin-left: 0!important;
   }
 }

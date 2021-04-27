@@ -25,8 +25,9 @@
           <div class="col-lg-3 offset-2 col-md-4">
             <%= f.label :"【タイトル】" %>
           </div>
-          <div class="col-lg-7 col-md-8 media-new-post-fix-margin">
-            <%= f.text_field :title, placeholder: " タイトルを入力してください", class:" text-left input-longest-form focus-green new-post-field title-width" %>
+          <div class="col-lg-7 col-md-8 col-sm-12 media-new-post-fix-margin">
+            <%= f.text_field :title, placeholder: " タイトルを入力してください", class:"text-left input-longest-form focus-green new-post-field title-width smartphone-none" %>
+            <%= f.text_area :title, placeholder: " タイトルを入力してください", class:"text-left input-longest-form focus-green new-post-field title-width smartphone-block rows-titleform-smartphone" %>
           </div>
         </div>
 
@@ -35,7 +36,7 @@
             <%= f.label :"【　本文　】", style:" vertical-align:top" %>
           </div>
           <div class="col-lg-7 col-md-8 media-new-post-fix-margin">
-            <%= f.text_area :content, class:"focus-green new-post-field", rows:10, placeholder: " あなたが探している仲間を具体的に書きましょう！" %>
+            <%= f.text_area :content, class:"focus-green new-post-field", rows:10, placeholder: "あなたが探している仲間を具体的に書きましょう！" %>
           </div>
         </div>
 
@@ -89,12 +90,12 @@
             <section class="choose-area-of-hope">
               <label class="my-2" style="width: 100%;">
               <%= f.radio_button :option, 2, class:"radio-button mx-3", style:"transform:scale(2.0);" %>
-              <span class="inline-block">新しく入力する</span>
+              新しく入力する
               </label>
               <br>
-              <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {prompt:"------"}, id:"post_prefecture_code", class:"new-post-prefecture-select" %>
+              <span><%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {prompt:"------"}, id:"post_prefecture_code", class:"new-post-prefecture-select" %></span>
               <span class="none smartphone-block my-2" style="display: none;"></span>
-              <%= f.text_field :municipality, placeholder: "希望の市区町村を入力", class:"input-longest-form new-post-field text-left ml-4 focus-green", style:"height: 44px;" %>
+              <span><%= f.text_field :municipality, placeholder: "希望の市区町村を入力", class:"input-longest-form new-post-field text-left focus-green", style:"height: 44px;" %></span>
             </section>
           </div>
         </div>

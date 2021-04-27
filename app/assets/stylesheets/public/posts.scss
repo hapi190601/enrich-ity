@@ -100,10 +100,6 @@
   font-size: 1.1rem;
 }
 
-.new-post-prefecture-select {
-  margin-left: 50px;
-}
-
 .new-post {
   width: 30%;
   background-color: lavender;
@@ -240,4 +236,8 @@
 
 .post-show-element > label {
   color: #4682b4;
+}
+
+.rows-titleform-smartphone {
+  display: none;
 }
