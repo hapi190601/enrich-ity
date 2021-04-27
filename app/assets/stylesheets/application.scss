@@ -1163,6 +1163,8 @@ footer {
 
   .form-item-input {
     margin-left : 0;
+    min-width: 240px;
+    font-size: 0.9rem!important;
   }
 
   .sircle-img {
@@ -1429,11 +1431,11 @@ footer {
   }
 
   .form-content > div {
-    text-align: right;
+    text-align: center;
   }
 
   .form-item-textarea {
-    min-width: 270px;
+    min-width: 90%;
     margin-left: 0px;
   }
 
