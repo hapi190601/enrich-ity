@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col-lg-6 profile-area">
         <h3 class="profile-h3">プロフィール詳細</h3>
-        <table class="table profile-table text-center">
+        <table class="table profile-table text-center smartphone-none">
           <tbody>
             <tr>
               <td width="45%" class="icon-height">
@@ -36,8 +36,11 @@
               <td><%= @user.gender %></td>
             </tr>
             <tr>
-              <td>エリア</td>
-              <td><%= @user.municipality %></td>
+              <td style="vertical-align: middle;">エリア</td>
+              <td>
+                <%= @user.prefecture_name %><br />
+                <%= @user.municipality %>
+              </td>
             </tr>
 
             <tr>
@@ -63,6 +66,64 @@
           </tbody>
         </table>
 
+        <!--スマホサイズ用-->
+        <div class="smartphone-block smartphone-user-show">
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">アイコン</label>
+              <div class="mb-1" style="min-width:50%; font-weight:bold;">
+              <%= attachment_image_tag @user, :image, :fill ,80 ,80, fallback: asset_path("no-image.jpeg"), size:"80x80" %>
+            </div>
+          </div>
+
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">ニックネーム</label>
+            <div style="min-width:50%; font-weight:bold;">
+              <%= @user.nickname %>
+            </div>
+          </div>
+
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">年齢</label>
+            <div style="min-width:50%; font-weight:bold;">
+              <%= @age %>歳
+            </div>
+          </div>
+
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">性別</label>
+            <div style="min-width:50%; font-weight:bold;">
+              <%= @user.gender %>
+            </div>
+          </div>
+
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">エリア</label>
+            <div  class="mb-2" style="min-width:50%; font-weight:bold;">
+              <%= @user.prefecture_name %><br />
+              <%= @user.municipality %>
+            </div>
+          </div>
+
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">最寄駅</label>
+            <div style="min-width:50%; font-weight:bold;">
+              <%= @user.nearest_station %>
+            </div>
+          </div>
+
+          <% if @user.id == current_user.id %>
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">お気に入り</label>
+            <div style="min-width:50%; font-weight:bold;">
+              <%= @user.favorites.count %>件
+            </div>
+          </div>
+
+          <%= link_to "会員情報編集", edit_user_path, class:"btn btn-sm edit-btn-color m-size-btn" %>
+          <%= link_to "お気に入り一覧", favorites_users_path, class:"btn btn-sm favorite-btn-color m-size-btn" %>
+          <% end %>
+        </div>
+
         <% unless @user.id == current_user.id %>
           <div class="text-center">
             <% if @isRoom == true %>
@@ -80,7 +141,7 @@
       </div>
 
       <div class="col-lg-6 current-post-area">
-        <h3 class="profile-h3">最近の投稿 (直近3件) </h3>
+        <h3 class="profile-h3">最近の投稿 <span class="none smartphone-block"></span>(直近3件)</h3>
 
         <% @user.posts.order("created_at desc").first(3).each do |pos| %>
         <div class="post-box">

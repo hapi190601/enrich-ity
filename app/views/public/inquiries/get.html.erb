@@ -7,36 +7,42 @@
     <div class="row">
       <div class="inquiry-form">
         <%= form_with(model: @inquiry, url: inquiries_create_path, local: true) do |f| %>
-        <div class="form-content">
+        <div class="form-content smartphone-block">
           <p class="form-item-label col-lg-4 col-md-5">
             <span class="form-item-label-required">必須</span>
             名前
           </p>
-          <% if user_signed_in? %>
-            <%= f.text_field :name, placeholder:"フルネームで入力してください", value: @user.name, class:"form-item-input" %>
-          <% else %>
-            <%= f.text_field :name, placeholder:"フルネームで入力してください", class:"form-item-input" %>
-          <% end %>
+          <div>
+            <% if user_signed_in? %>
+              <%= f.text_field :name, placeholder:"フルネームで入力してください", value: @user.name, class:"form-item-input" %>
+            <% else %>
+              <%= f.text_field :name, placeholder:"フルネームで入力してください", class:"form-item-input" %>
+            <% end %>
+          </div>
         </div>
 
-        <div class="form-content">
+        <div class="form-content smartphone-block">
           <p class="form-item-label col-lg-4 col-md-5">
             <span class="form-item-label-required">必須</span>
             メールアドレス
           </p>
-          <% if user_signed_in? %>
-            <%= f.text_field :email, placeholder:"例）example@gmail.com", value: @user.email, class:"form-item-input" %>
-          <% else %>
-            <%= f.text_field :email, placeholder:"例）example@gmail.com", class:"form-item-input" %>
-          <% end %>
+          <div>
+            <% if user_signed_in? %>
+              <%= f.text_field :email, placeholder:"例）example@gmail.com", value: @user.email, class:"form-item-input" %>
+            <% else %>
+              <%= f.text_field :email, placeholder:"例）example@gmail.com", class:"form-item-input" %>
+            <% end %>
+          </div>
         </div>
 
-        <div class="form-content">
+        <div class="form-content smartphone-block">
           <p class="form-item-label col-lg-4 col-md-5">
             <span class="form-item-label-required">必須</span>
             タイトル
           </p>
-          <%= f.select :title, [["ジャンル追加希望", "ジャンル追加希望"], ["問い合わせ", "問い合わせ"], ["その他要望など", "その他要望など"]], {include_blank: "選択して下さい"}, class:"form-item-input" %>
+          <div>
+            <%= f.select :title, [["ジャンル追加希望", "ジャンル追加希望"], ["問い合わせ", "問い合わせ"], ["その他要望など", "その他要望など"]], {include_blank: "選択して下さい"}, class:"form-item-input" %>
+          </div>
         </div>
 
         <div class="form-content change-block">
@@ -44,7 +50,9 @@
             <span class="form-item-label-required">必須</span>
             問い合わせ内容
           </p>
-          <%= f.text_area :content, placeholder:"入力してください", class:"form-item-textarea" %>
+          <div style="width: 100%;">
+            <%= f.text_area :content, placeholder:"入力してください", class:"form-item-textarea" %>
+          </div>
         </div>
 
         <div class="actions">

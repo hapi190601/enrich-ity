@@ -27,7 +27,7 @@
   if(direct_message == current_user) {
     $('div.' + <%= direct_message.id %>).css('display', 'none');
     $('div.' + <%= direct_message.id %> + '-discrimination').css('text-align', 'right');
-    $('div.' + <%= direct_message.id %> + '-discrimination').css('margin', '30px 0');
+    $('div.' + <%= direct_message.id %> + '-discrimination').css('margin', '20px 0');
     $('.balloon-top' + <%= direct_message.id %>).css('background-color', 'rgb(121, 226, 120)')
     $('.balloon-top' + <%= direct_message.id %>).css('margin-right', '20px')
     $('.<%= direct_message.id %>' + '-span').css('margin-right', '30px')
@@ -36,7 +36,8 @@
   } else {
     $('div.' + <%= direct_message.id %> + '-chat-space').css('display', 'flex');
     $('div.' + <%= direct_message.id %> + '-chat-space').css('align-items', 'center');
-    $('div.' + <%= direct_message.id %> + '-chat-space').css('margin', '30px 0 30px 5px');
-    $('.<%= direct_message.id %>' + '-span').css('margin-left', '50px')
+    $('div.' + <%= direct_message.id %> + '-chat-space').css('margin', '30px 0 40px 5px');
+    $('.<%= direct_message.id %>' + '-span').css('position', 'absolute')
+    $('.<%= direct_message.id %>' + '-span').css('left', '35px')
   }
 </script>

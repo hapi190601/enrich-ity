@@ -24,8 +24,11 @@
             <%= f.label :"【性別】", class:"mb-3" %>
             <br>
             <label><%= f.radio_button :gender_eq, :"", checked: true, style:"transform:scale(2.0);", class:"mx-3" %> 指定しない</label>
+            <span class="none smartphone-block my-2"></span>
             <label><%= f.radio_button :gender_eq, :"1", style:"transform:scale(2.0);", class:"mx-3" %> 男性</label>
+            <span class="none smartphone-block my-2"></span>
             <label><%= f.radio_button :gender_eq, :"2", style:"transform:scale(2.0);", class:"mx-3" %> 女性</label>
+            <span class="none smartphone-block mt-2"></span>
           </div>
 
           <div class="field search-fields">

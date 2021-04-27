@@ -9,12 +9,14 @@
         ご不満をお持ちの方は
         <span class="none"><br></span>
         <strong class="link-to-inquiry"><%= link_to "お問い合わせ", inquiries_get_path %></strong>
+        <span class="none smartphone-block"></span>
         よりご意見お待ちしております。
       </p>
+      
       <div style="padding-top: 90px;">
         <p class="mb-1">
           退会すると、登録したメールアドレスでは
-          <span class="none"><br></span>
+          <span class="none smartphone-none"><br></span>
           ログインができなくなります。
         </p>
         <p class="py-3">
@@ -31,7 +33,6 @@
     </div>
     <div class="link-box">
       <%= link_to "退会しない", user_path(current_user), class:"btn btn-sm user-show-btn-color m-size-btn" %>
-      <span>　　　</span>
       <%= link_to "退会する", users_out_path, method: :delete, data: { confirm: "本当に退会しますか？" }, class:"btn btn-sm btn-danger m-size-btn" %>
     </div>
   </div>

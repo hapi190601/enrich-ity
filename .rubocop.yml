@@ -36,3 +36,6 @@ ClassAndModuleChildren:
 # 文字リテラルのイミュータブル宣言を無視（freezeになるのはRuby3以降）
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false

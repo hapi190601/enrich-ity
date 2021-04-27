@@ -92,13 +92,11 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # 本番環境でActionCableを動かすために必要？
-
   config.action_cable.url = 'ws://enrich-ity.com/cable'
-  # config.action_cable.allowed_request_origins = [ 'http://enrich-ity.com' ]
   config.action_cable.allowed_request_origins = [ 'http://enrich-ity.com', %r{http://enrich-ity.*} ]
   ActionCable.server.config.disable_request_forgery_protection = true
 
+  # actionmailer用
   mail = ENV['MAIL_ADDRESS']
   pass = ENV['MAIL_PASSWORD']
 

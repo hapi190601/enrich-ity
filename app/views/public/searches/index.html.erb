@@ -7,10 +7,10 @@
   </div>
 
   <div class="container">
-    <div class"row">
+    <div class="row">
       <% if @results.present? %>
       <div class='posts-lists col-sm-12'>
-        <div class="sort-area flex-around">
+        <div class="sort-area flex-around smartphone-block">
           <span class="sort-btn"><%= sort_link(@p, :genre_id, "ジャンルで並び替え") %></span>
           <span class="sort-btn"><%= sort_link(@p, :gender, "希望性別で並び替え") %></span>
           <span class="sort-btn"><%= sort_link(@p, :prefecture_code, "都道府県で並び替え") %></span>

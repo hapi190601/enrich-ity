@@ -54,7 +54,9 @@
           </div>
           <div class="col-lg-7 col-md-8 media-new-post-fix-margin">
             <label><%= f.radio_button :gender, :"男性", style:"transform:scale(2.0);", class:"mx-3" %> 男性</label>
+            <span class="none smartphone-block my-2"></span>
             <label><%= f.radio_button :gender, :"女性", style:"transform:scale(2.0);", class:"mx-3" %> 女性</label>
+            <span class="none smartphone-block my-2"></span>
             <label><%= f.radio_button :gender, :"どちらでも", checked: true, style:"transform:scale(2.0);", class:"mx-3" %> どちらでも</label>
           </div>
         </div>
@@ -100,6 +102,7 @@
               </label>
               <br>
               <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {prompt:"------"}, id:"post_prefecture_code", class:"new-post-prefecture-select" %>
+              <span class="none smartphone-block my-2"></span>
               <%= f.text_field :municipality, placeholder: "希望の市区町村を入力してください", class:"input-longest-form new-post-field text-left ml-4 focus-green" %>
             </section>
 
