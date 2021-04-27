@@ -34,9 +34,9 @@
           <div class="field search-fields">
             <%= f.label :"【年齢】", class:"mb-3" %>
             <br>
-            <%= f.select :age_gteq, (15..75).to_a, {prompt: "指定なし"}, class:"search-select focus-green ml-3" %>
+            <%= f.select :age_gteq, (15..75).to_a, {prompt: "　---　"}, class:"search-select focus-green ml-3" %>
             <strong>　〜　</strong>
-            <%= f.select :age_lteq, (15..75).to_a, {prompt: "指定なし"}, class:"search-select focus-green" %>
+            <%= f.select :age_lteq, (15..75).to_a, {prompt: "　---　"}, class:"search-select focus-green" %>
             まで
           </div>
 
