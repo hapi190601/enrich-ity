@@ -66,18 +66,18 @@
             <%= f.label :"【希望のエリア】" %>
           </div>
 
-          <div class="col-lg-7 col-md-8 fix-post-field-padding media-new-post-fix-margin">
+          <div class="col-lg-7 col-md-8 col-sm-12 fix-post-field-padding media-new-post-fix-margin">
             <section class="choose-area-of-hope">
               <label class="my-2">
               <%= f.radio_button :option, 0, checked: "checked", class:"radio-button mx-3", style:"transform:scale(2.0);" %>
-              指定しない
+              <span class="inline-block">指定しない</span>
               </label>
             </section>
 
             <section class="choose-area-of-hope">
               <label class="my-2">
               <%= f.radio_button :option, 1, class:"radio-button mx-3", style:"transform:scale(2.0);" %>
-              ご自身の住所
+              <span class="inline-block">ご自身の住所</span>
               </label>
               <br>
               <span style="font-size: 1.2rem;">
@@ -89,7 +89,7 @@
             <section class="choose-area-of-hope">
               <label class="my-2">
               <%= f.radio_button :option, 2, class:"radio-button mx-3", style:"transform:scale(2.0);" %>
-              新しく入力する
+              <span class="inline-block">新しく入力する</span>
               </label>
               <br>
               <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {prompt:"------"}, id:"post_prefecture_code", class:"new-post-prefecture-select" %>
