@@ -85,7 +85,7 @@
             <section class="choose-area-of-hope">
               <label class="my-2">
               <%= f.radio_button :option, 1, class:"radio-button mx-3", style:"transform:scale(2.0);" %>
-              ご自身の住所に変更する
+              自分の住所に変更する
               </label>
               <br>
               <span style="font-size: 1.2rem;">
@@ -102,8 +102,8 @@
               </label>
               <br>
               <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {prompt:"------"}, id:"post_prefecture_code", class:"new-post-prefecture-select" %>
-              <span class="none smartphone-block my-2"></span>
-              <%= f.text_field :municipality, placeholder: "希望の市区町村を入力してください", class:"input-longest-form new-post-field text-left ml-4 focus-green" %>
+              <span class="smartphone-block my-2" style="display: none;"></span>
+              <%= f.text_field :municipality, placeholder: "希望の市区町村を入力", class:"input-longest-form new-post-field text-left ml-4 focus-green", style:"height:44px;" %>
             </section>
 
             <% unless @post.prefecture_code == nil %>
