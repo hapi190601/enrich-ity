@@ -73,7 +73,7 @@ describe 'ユーザログイン後のテスト' do
     context '新規投稿のテスト' do
       before do
         visit posts_new_path
-        fill_in 'post[title]', :with => Faker::Lorem.characters(:number => 5)
+        fill_in 'post[title]', match: :first, :with => Faker::Lorem.characters(:number => 4)
         fill_in 'post[content]', :with => Faker::Lorem.characters(:number => 20)
         find("#post_genre_id").find("option[value= 1]").select_option
         choose 'post_gender_男性'
@@ -192,7 +192,7 @@ describe 'ユーザログイン後のテスト' do
       before do
         @post_old_title = post.title
         @post_old_content = post.content
-        fill_in 'post[title]', :with => Faker::Lorem.characters(:number => 4)
+        fill_in 'post[title]', match: :first, :with => Faker::Lorem.characters(:number => 4)
         fill_in 'post[content]', :with => Faker::Lorem.characters(:number => 19)
         click_button '編集する'
       end
