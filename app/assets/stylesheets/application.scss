@@ -1317,7 +1317,7 @@ footer {
   }
 
   .notice {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .withdraw-message > div > p {
@@ -1496,5 +1496,9 @@ footer {
 
   .offset-2 {
     margin-left: 0!important;
+  }
+
+  .incremental-search-area > input {
+    font-size: 1.2rem!important;
   }
 }
