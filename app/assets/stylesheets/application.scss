@@ -656,6 +656,10 @@ footer {
   opacity: 0.9;
 }
 
+.smartphone-user-show {
+  display: none;
+}
+
 // 以下レスポンシブ
 @media (max-width: 992px) {
 
@@ -700,10 +704,6 @@ footer {
 
   .common-message-style {
     font-size: 1.2rem;
-  }
-
-  .smartphone-user-show {
-    display: none;
   }
 
   .notification-counts {

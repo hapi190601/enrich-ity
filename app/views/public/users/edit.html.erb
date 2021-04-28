@@ -9,7 +9,7 @@
         <%= form_with model: @user, url: user_path, local: true do |f| %>
 
         <div class="review-image-area">
-            <span class="inline"><%= attachment_image_tag @user, :image, fallback: "no-image.jpeg", id: "preview", style: "height: 150px; width:150px;" %></span>
+            <span class="inline"><%= attachment_image_tag @user, :image, fallback: "no-image.jpeg", id: "preview", style: "height: 200px; width:200px;" %></span>
         </div>
 
         <div class="field flex release-flex media-center">
