@@ -77,36 +77,68 @@
       else
         var image_source = post.image_url
 
-      var html = `
-        <div class="post-box flex-around">
-          <div class="left-post posts-index-width">
-            <span class="inline mt-2 post-index-label">【タイトル】</span>
-            <br>
-            <span class="inline mb-2 ml-2 pl-3">${post.title}</span>
-            <br>
-            <span class="inline mt-2 post-index-label">【希望性別】</span>
-            <br>
-            <span class="inline mb-2 ml-2 pl-3">${post.gender}</span>
-            <br>
-            <span class="inline mt-2 post-index-label">【希望エリア】</span>
-            <br>
-            <span class="inline mb-2 ml-2 pl-3">
-              ${post.prefecture_name}
-              ${post.municipality}
-            </span>
-            <br>
-            <span class="inline mt-2 post-index-label">【 本文 】</span>
-            <br>
-            <span class="inline mb-2 ml-2 pl-3" style="white-space: pre-wrap;">${post.content}</span>
-          </div>
+      if (post.prefecture_code == null)
+        var html = `
+          <div class="post-box flex-around">
+            <div class="left-post posts-index-width">
+              <span class="inline mt-2 post-index-label">【タイトル】</span>
+              <br>
+              <span class="inline mb-2 ml-2 pl-3">${post.title}</span>
+              <br>
+              <span class="inline mt-2 post-index-label">【希望性別】</span>
+              <br>
+              <span class="inline mb-2 ml-2 pl-3">${post.gender}</span>
+              <br>
+              <span class="inline mt-2 post-index-label">【希望エリア】</span>
+              <br>
+              <span class="inline mb-2 ml-2 pl-3">
+                指定なし
+              </span>
+              <br>
+              <span class="inline mt-2 post-index-label">【 本文 】</span>
+              <br>
+              <span class="inline mb-2 ml-2 pl-3" style="white-space: pre-wrap;">${post.content}</span>
+            </div>
 
-          <div class="right-post text-center">
-            <img class="change-src img-size" src="${image_source}">
-            <br>
-            <a href="/posts/${post.id}" data-method="get" class="btn btn-sm m-size-btn post-show-btn-color">くわしく見る</a>
+            <div class="right-post text-center">
+              <img class="change-src img-size" src="${image_source}">
+              <br>
+              <a href="/posts/${post.id}" data-method="get" class="btn btn-sm m-size-btn post-show-btn-color">くわしく見る</a>
+            </div>
           </div>
-        </div>
-      `;
+        `;
+
+      else
+        var html = `
+          <div class="post-box flex-around">
+            <div class="left-post posts-index-width">
+              <span class="inline mt-2 post-index-label">【タイトル】</span>
+              <br>
+              <span class="inline mb-2 ml-2 pl-3">${post.title}</span>
+              <br>
+              <span class="inline mt-2 post-index-label">【希望性別】</span>
+              <br>
+              <span class="inline mb-2 ml-2 pl-3">${post.gender}</span>
+              <br>
+              <span class="inline mt-2 post-index-label">【希望エリア】</span>
+              <br>
+              <span class="inline mb-2 ml-2 pl-3">
+                ${post.prefecture_name}
+                ${post.municipality}
+              </span>
+              <br>
+              <span class="inline mt-2 post-index-label">【 本文 】</span>
+              <br>
+              <span class="inline mb-2 ml-2 pl-3" style="white-space: pre-wrap;">${post.content}</span>
+            </div>
+
+            <div class="right-post text-center">
+              <img class="change-src img-size" src="${image_source}">
+              <br>
+              <a href="/posts/${post.id}" data-method="get" class="btn btn-sm m-size-btn post-show-btn-color">くわしく見る</a>
+            </div>
+          </div>
+        `;
 
       // 変数htmlをviewに反映
       $(".incremental-search-result").append(html);
