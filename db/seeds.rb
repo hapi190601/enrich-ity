@@ -571,19 +571,19 @@ Post.create!(
   :age =>   45
 )
 
-Post.create!(
-  :user_id => 3,
-  :genre_id => 7,
-  :title => "その他デモデータ",
-  :content =>   "デモデータです。
-  デモデータです。デモデータです。
+# Post.create!(
+#   :user_id => 3,
+#   :genre_id => 7,
+#   :title => "その他デモデータ",
+#   :content =>   "デモデータです。
+#   デモデータです。デモデータです。
 
-  デモデータです。デモデータです。デモデータです。",
-  :gender => 1,
-  :prefecture_code => 11,
-  :municipality => "草加市",
-  :age =>   45
-)
+#   デモデータです。デモデータです。デモデータです。",
+#   :gender => 1,
+#   :prefecture_code => 11,
+#   :municipality => "草加市",
+#   :age =>   45
+# )
 
 post6 = backend.upload(File.open(Rails.root.join("app/assets/images/posts/post6.jpg")))
 Post.create!(
