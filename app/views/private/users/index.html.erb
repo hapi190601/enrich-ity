@@ -1,2 +1,18 @@
-<h1>Private::Users#index</h1>
-<p>Find me in app/views/private/users/index.html.erb</p>
+<div class="background-color">
+  <%= render "layouts/flash" %>
+
+  <h2 class="page-title">会員一覧</h2>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12" id="render-index-page">
+        <%= render "private/users/index_page", users: @users %>
+      </div>
+
+      <div class="paginate">
+        <%= paginate @users, window: 1, left: -1, right: -1 %>
+      </div>
+    </div>
+  </div>
+
+</div>
