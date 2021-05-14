@@ -101,9 +101,12 @@ Enrich-ityでの出会いを充実した人生のプラスにしてほしいと�
 [アプリケーション詳細設計書](https://docs.google.com/spreadsheets/d/1GfmoIgWYWwRi0FsoZoKnm0xGThhiSfdfCTNaqozyDP4/edit#gid=1224226657)
 <br>
 <br>
+[AWSインフラ設計書](https://docs.google.com/spreadsheets/d/1IHKD7vsht5Z17kucgRij2zv9GGeylAUiZX0q9JfbjEU/edit#gid=400780309)
+<br>
+<br>
 
 ## チャレンジ要素一覧
-
+<br>
 [実装機能一覧](https://docs.google.com/spreadsheets/d/1R0m2ik__0ZudC0S6QdJczHlEcfyxd7Cc7yBdT_-YnA8/edit#gid=0 "実装機能")
 
 <br>
