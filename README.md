@@ -101,6 +101,8 @@ Enrich-ityでの出会いを充実した人生のプラスにしてほしいと�
 [アプリケーション詳細設計書](https://docs.google.com/spreadsheets/d/1GfmoIgWYWwRi0FsoZoKnm0xGThhiSfdfCTNaqozyDP4/edit#gid=1224226657)
 <br>
 <br>
+![AWS構成図](https://user-images.githubusercontent.com/65483033/118254555-2fa8c700-b4e6-11eb-82f0-6862ce2f09fd.png)
+<br>
 [AWSインフラ設計書](https://docs.google.com/spreadsheets/d/1IHKD7vsht5Z17kucgRij2zv9GGeylAUiZX0q9JfbjEU/edit#gid=400780309)
 <br>
 <br>
