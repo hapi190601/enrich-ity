@@ -78,12 +78,10 @@ gem 'jquery-rails'
 gem 'rubocop', :require => false
 gem 'rubocop-rails', :require => false
 
-
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
-
 
 gem 'ransack'
 
