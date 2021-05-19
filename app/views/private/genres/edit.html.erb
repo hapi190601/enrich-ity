@@ -1,15 +1,15 @@
-<div class="background-color">
+<div class="background-color" style="min-height: 850px;">
   <h2 class="page-title">ジャンル編集</h2>
   <div class="new-genre-form">
     <%= form_with model: @genre, url: private_genre_path(@genre.id), local: true do |f| %>
       <div class="field">
-        <%= f.label :"【ジャンル名】" , class:"col-sm-8" %>
+        <%= f.label :"【ジャンル名】" , class:"col-sm-8 pb-3 mb-3" %>
         <br>
-        <%= f.text_field :name, class:"col-sm-8 text-left" %>
+        <%= f.text_field :name, class:"col-sm-6 edit-genre-form focus-green" %>
       </div>
 
       <div class="admin-btn-area">
-        <%= f.submit "　編集する　", class:"btn btn-sm btn-success bigger-btn p-3" %>
+        <%= f.submit "　編集する　", class:"btn btn-sm btn-success m-size-btn" %>
       </div>
     <% end %>
   </div>
