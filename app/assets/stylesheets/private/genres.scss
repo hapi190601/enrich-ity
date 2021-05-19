@@ -1,3 +1,12 @@
 // Place all the styles related to the private::genres controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.genre-new-btn-color {
+  background-color: #faebd7!important;
+  border: 1px solid #faebd7!important;
+}
+
+.genre-new-btn-color:hover {
+  background-color: #faebd7!important;
+  opacity: 0.9;
+}
