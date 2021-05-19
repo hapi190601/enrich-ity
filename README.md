@@ -95,13 +95,13 @@ Enrich-ityでの出会いを充実した人生のプラスにしてほしいと�
 ![ER図](https://user-images.githubusercontent.com/65483033/116206141-77ef8780-a779-11eb-9425-73b2eb3d0ee7.png)
 <br>
 <br>
-![AWS構成図](https://user-images.githubusercontent.com/65483033/118254555-2fa8c700-b4e6-11eb-82f0-6862ce2f09fd.png)
-<br>
-<br>
 [テーブル定義書](https://docs.google.com/spreadsheets/d/1YgOBLgpdU9jex5Q32fSng10eN3muoxe-w-8gzkpTG7c/edit#gid=1247326819)
 <br>
 <br>
 [アプリケーション詳細設計書](https://docs.google.com/spreadsheets/d/1GfmoIgWYWwRi0FsoZoKnm0xGThhiSfdfCTNaqozyDP4/edit#gid=1224226657)
+<br>
+<br>
+[AWS構成図](https://user-images.githubusercontent.com/65483033/118254555-2fa8c700-b4e6-11eb-82f0-6862ce2f09fd.png)
 <br>
 <br>
 [AWSインフラ設計書](https://docs.google.com/spreadsheets/d/1IHKD7vsht5Z17kucgRij2zv9GGeylAUiZX0q9JfbjEU/edit#gid=400780309)
@@ -133,7 +133,7 @@ Enrich-ityでの出会いを充実した人生のプラスにしてほしいと�
 <br>
 ・[FreeVectors](https://www.freepik.com/)
 <br>
-<br> 
+<br>
 
 ## 実装のアピールポイント・苦労したところ
 
