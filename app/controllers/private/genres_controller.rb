@@ -15,7 +15,7 @@ class Private::GenresController < ApplicationController
       flash[:notice] = "作成完了！"
       redirect_to private_genres_path
     else
-      flash[:notice] = "未入力"
+      flash[:notice] = "未入力です！"
       render :new
     end
   end
@@ -27,10 +27,10 @@ class Private::GenresController < ApplicationController
   def update
     @genre = Genre.find(params[:id])
     if @genre.update(genre_params)
-      flash[:notice] = "編集完了"
+      flash[:notice] = "編集完了！"
       redirect_to private_genres_path
     else
-      flash[:notice] = "未入力"
+      flash[:notice] = "未入力です！"
       render :edit
     end
   end
@@ -38,7 +38,7 @@ class Private::GenresController < ApplicationController
   def destroy
     @genre = Genre.find(params[:id])
     @genre.destroy
-    flash[:notice] = "ジャンル削除完了"
+    flash[:notice] = "ジャンル削除完了！"
     redirect_to private_genres_path
   end
 
