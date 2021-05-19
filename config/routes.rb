@@ -55,16 +55,14 @@ Rails.application.routes.draw do
   }
 
   namespace :private do
-    resources :inquiries, :only => [:index, :show]
-
     resources :genres, :except => [:show]
 
     get 'searches/index' => 'searches#index'
     get 'searches/search' => 'searches#search'
 
-    resources :posts, :only => [:index, :show, :destroy]
+    resources :posts, :only => [:destroy]
 
-    patch 'users/out' => 'users#out'
+    delete 'users/:id/out' => 'users#out'
     resources :users, :only => [:index, :show]
   end
 end
