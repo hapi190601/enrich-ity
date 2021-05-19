@@ -3,7 +3,7 @@
   <div class="new-genre-form">
     <%= form_with model: @genre, url: private_genres_path, local: true do |f| %>
       <div class="field py-3 my-3">
-        <%= f.label :"【ジャンル名】" , class:"pm-3 mb-3 col-sm-8" %>
+        <%= f.label :"【ジャンル名】" , class:"pb-3 mb-3 col-sm-8" %>
         <br>
         <%= f.text_field :name, placeholder: "ジャンル名を入力してください", class:"col-sm-6 new-genre-form focus-green" %>
       </div>
