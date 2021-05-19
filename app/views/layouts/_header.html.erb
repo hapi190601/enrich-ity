@@ -22,6 +22,10 @@
       <div class="nav-item sign-in-display mr-3 mt-2 smartphone-none">
         <span class="inline sign-in-nickname"><%= current_user.nickname %>  ログイン中</span>
       </div>
+    <% elsif admin_signed_in? %>
+      <div class="nav-item sign-in-display mr-3 mt-2 smartphone-none">
+        <span class="inline sign-in-nickname">管理者ログイン中</span>
+      </div>
     <% end %>
 
     <!--会員ログイン時-->
@@ -71,23 +75,24 @@
       <!--管理者ログイン時-->
       <% elsif admin_signed_in? %>
         <li class="nav-item">
-          <%= link_to "投稿一覧", private_posts_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
-          <%= link_to "投稿一覧", private_posts_path, class: "d-lg-none nav-link p-3 slide-btn" %>
+          <%= link_to "会員一覧", private_users_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "会員一覧", private_users_path, class: "d-lg-none nav-link p-3 slide-btn" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "投稿一覧", posts_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "投稿一覧", posts_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
         <li class="nav-item">
           <%= link_to "ジャンル一覧", private_genres_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
           <%= link_to "ジャンル一覧", private_genres_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
         <li class="nav-item">
-          <%= link_to "詳細検索", private_searches_search_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
-          <%= link_to "詳細検索", private_searches_search_path, class: "d-lg-none nav-link p-3 slide-btn" %>
+          <%= link_to "詳細検索", searches_search_path, class: "d-none d-lg-block btn m-2 slide-btn2" %>
+          <%= link_to "詳細検索", searches_search_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
         <li class="nav-item">
           <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "d-none d-lg-block btn m-2 slide-btn2" %>
           <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "d-lg-none nav-link p-3 slide-btn" %>
-        </li>
-        <li class="nav-item none smartphone-block">
-          <%= link_to "お問い合わせ", inquiries_get_path, class: "d-lg-none nav-link p-3 slide-btn" %>
         </li>
       </div>
 
