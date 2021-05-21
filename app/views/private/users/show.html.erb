@@ -1,2 +1,137 @@
-<h1>Private::Users#show</h1>
-<p>Find me in app/views/private/users/show.html.erb</p>
+<div class="background-color">
+  <%= render "layouts/flash" %>
+
+  <div class="container">
+    <h2 class="page-title">会員詳細(<%= @user.name %>さん)</h2>
+
+    <div class="row">
+      <div class="col-lg-6 profile-area">
+        <h3 class="profile-h3">プロフィール詳細</h3>
+        <table class="table profile-table text-center smartphone-none">
+          <tbody>
+            <tr>
+              <td width="45%" class="icon-height">
+                アイコン
+              </td>
+              <td width="55%">
+                <%= attachment_image_tag @user, :image, :fill ,80 ,80, fallback: asset_path("no-image.jpeg"), size:"80x80" %>
+              </td>
+            </tr>
+            <tr>
+              <td>ニックネーム</td>
+              <td><%= @user.nickname %></td>
+            </tr>
+            <tr>
+              <td>年齢</td>
+              <td><%= @age %>歳</td>
+            </tr>
+            <tr>
+              <td>性別</td>
+              <td><%= @user.gender %></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: middle;">エリア</td>
+              <td>
+                <%= @user.prefecture_name %><br />
+                <%= @user.municipality %>
+              </td>
+            </tr>
+
+            <tr>
+              <td>最寄駅</td>
+              <td><%= @user.nearest_station %></td>
+            </tr>
+
+            <tr>
+              <td>お気に入り</td>
+              <td><%= @user.favorites.count %>件</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <div class="py-3 my-3 text-center">
+          <%= link_to "退会させる", private_path(@user.id), method: :delete, data: { confirm: "本当に退会させますか？" }, class:"btn btn-sm btn-danger m-size-btn" %>
+        </div>
+
+        <!--スマホサイズ用-->
+        <div class="smartphone-block smartphone-user-show">
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">アイコン</label>
+              <div class="mb-1" style="min-width:50%; font-weight:bold;">
+              <%= attachment_image_tag @user, :image, :fill ,80 ,80, fallback: asset_path("no-image.jpeg"), size:"80x80" %>
+            </div>
+          </div>
+
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">ニックネーム</label>
+            <div style="min-width:50%; font-weight:bold;">
+              <%= @user.nickname %>
+            </div>
+          </div>
+
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">年齢</label>
+            <div style="min-width:50%; font-weight:bold;">
+              <%= @age %>歳
+            </div>
+          </div>
+
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">性別</label>
+            <div style="min-width:50%; font-weight:bold;">
+              <%= @user.gender %>
+            </div>
+          </div>
+
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">エリア</label>
+            <div  class="mb-2" style="min-width:50%; font-weight:bold;">
+              <%= @user.prefecture_name %><br />
+              <%= @user.municipality %>
+            </div>
+          </div>
+
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">最寄駅</label>
+            <div style="min-width:50%; font-weight:bold;">
+              <%= @user.nearest_station %>
+            </div>
+          </div>
+
+          <div class="flex-around pt-3">
+            <label class="smartphone-user-show-label">お気に入り</label>
+            <div style="min-width:50%; font-weight:bold;">
+              <%= @user.favorites.count %>件
+            </div>
+          </div>
+
+          <%= link_to "退会させる", private_path(@user.id), method: :delete, data: { confirm: "本当に退会させますか？" }, class:"btn btn-sm btn-danger m-size-btn" %>
+        </div>
+      </div>
+
+      <div class="col-lg-6 current-post-area">
+        <h3 class="profile-h3">最近の投稿 <span class="none smartphone-block"></span>(直近3件)</h3>
+
+        <% @user.posts.order("created_at desc").first(3).each do |pos| %>
+        <div class="post-box">
+          <div class="left-post">
+            <div class="text-center my-3">
+              <%= attachment_image_tag pos, :image, fallback: "no-post-image.png", class:"img-size" %>
+            </div>
+            <h4 class="inline mb-3 ml-2" style="color:#4682b4;">【タイトル】</h4>
+            <p class="mb-0 ml-3 px-3"><%= pos.title %></p>
+            <br>
+            <h4 class="inline mb-3 ml-2" style="color:#4682b4;">【本文】</h4>
+            <p class="mb-0 ml-3 px-3"><%= safe_join(pos.content.truncate(75).split("\n"),tag(:br)) %></p>
+          </div>
+
+          <div width="100%" class="text-center">
+            <%= link_to "くわしく見る", post_path(pos.id), class:"btn btn-sm post-show-btn-color m-size-btn btn-for-smartphone" %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
