@@ -132,5 +132,11 @@
       <% end %>
     </div>
     <% end %>
+
+    <% if admin_signed_in? %>
+    <div class="py-3 my-3 text-center">
+      <%= link_to "強制削除", private_post_path(@post.id), class:"btn btn-sm btn-danger m-size-btn" %>
+    </div>
+    <% end %>
   </div>
 </div>
