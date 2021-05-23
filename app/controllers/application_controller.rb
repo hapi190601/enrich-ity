@@ -21,6 +21,9 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       flash[:notice] = "ログインしました！"
       posts_top_path
+    elsif admin_signed_in?
+      flash[:notice] = "管理者ログインしました！"
+      private_users_path
     else
       root_path
     end
@@ -39,6 +42,7 @@ class ApplicationController < ActionController::Base
   #ログアウト後の遷移
   def after_sign_out_path_for(resource)
     if resource == :admin
+      flash[:notice] = "ログアウトしました！"
       admin_session_path
     else
       flash[:notice] = "ログアウトしました！"
