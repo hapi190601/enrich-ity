@@ -1,6 +1,8 @@
 class Private::UsersController < ApplicationController
+  before_action :authenticate_admin!
+
   def index
-    @users = User.page(params[:page]).per(20)
+    @users = User.page(params[:page]).per(15)
 
     respond_to do |format|
       format.html
@@ -13,5 +15,9 @@ class Private::UsersController < ApplicationController
   end
 
   def out
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:notice] = "ユーザーを強制退会させました。"
+    redirect_to private_users_path
   end
 end
