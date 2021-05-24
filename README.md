@@ -109,7 +109,7 @@ Enrich-ityでの出会いを充実した人生のプラスにしてほしいと�
 <br>
 <br>
 ## チャレンジ要素一覧
-<br>
+
 [実装機能一覧](https://docs.google.com/spreadsheets/d/1R0m2ik__0ZudC0S6QdJczHlEcfyxd7Cc7yBdT_-YnA8/edit#gid=0)
 <br>
 <br>
