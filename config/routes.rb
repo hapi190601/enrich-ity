@@ -56,12 +56,7 @@ Rails.application.routes.draw do
 
   namespace :private do
     resources :genres, :except => [:show]
-
-    get 'searches/index' => 'searches#index'
-    get 'searches/search' => 'searches#search'
-
     resources :posts, :only => [:destroy]
-
     delete 'users/:id/out' => 'users#out'
     resources :users, :only => [:index, :show]
   end
