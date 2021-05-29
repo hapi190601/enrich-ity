@@ -18,11 +18,11 @@
 //= require jquery.jpostal
 //= require_tree .
 
+
 /*global $*/
 document.addEventListener("turbolinks:before-cache", function() {
   $('.slide-images').slick('unslick');
 });
-
 
 $(document).on('turbolinks:load', function() {
   // トップへスクロールするアニメーション
@@ -176,7 +176,6 @@ $(document).on('turbolinks:load', function() {
   };
 
   Menu.init();
-
 
   // よくある質問
   $('.hide-class').hide();
