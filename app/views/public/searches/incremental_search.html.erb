@@ -24,7 +24,6 @@
   </div>
 </div>
 <script>
-  // インクリメンタルサーチ
   $(document).on('turbolinks:load', function() {
     $('.js-text_field').on('keyup', function (e) {
 
@@ -149,7 +148,6 @@
         <div style="text-align:center;">投稿が見つかりません</div>
       `;
 
-      // 変数htmlをviewに反映
       $(".incremental-search-result").append(html);
     }
   });
