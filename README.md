@@ -1,4 +1,4 @@
-# Enrich-ity (えんりっちてぃー)
+# Enrich-ity
 ※ポートフォリオ作品
 <br>
 <br>
