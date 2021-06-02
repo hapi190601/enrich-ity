@@ -126,11 +126,15 @@ Enrich-ityでの出会いを充実した人生のプラスにしてほしいと�
 
 ## 使用素材
 
+
 ・[ぱくたそ](https://www.pakutaso.com/)
+<br>
 <br>
 ・[StockSnap](https://stocksnap.io/)
 <br>
+<br>
 ・[pixabay](https://pixabay.com/ja/)
+<br>
 <br>
 ・[FreeVectors](https://www.freepik.com/)
 <br>
