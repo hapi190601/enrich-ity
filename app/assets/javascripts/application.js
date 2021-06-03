@@ -25,7 +25,6 @@ document.addEventListener("turbolinks:before-cache", function() {
 });
 
 $(document).on('turbolinks:load', function() {
-  // トップへスクロールするアニメーション
   $('#up-scroll').hide();
   $(window).scroll(function(){
     $('#pos').text($(this).scrollTop());
