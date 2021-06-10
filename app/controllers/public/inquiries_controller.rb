@@ -13,7 +13,7 @@ class Public::InquiriesController < ApplicationController
       flash[:notice] = "問い合わせを受け付けました。後日メールにてご連絡します。"
       redirect_back(:fallback_location => {:action => "new"})
     else
-      flash[:notice] = "記入漏れがあります"
+      flash[:notice] = "記入漏れがあります。"
       render :get
     end
   end

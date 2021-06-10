@@ -51,7 +51,7 @@ class Public::PostsController < ApplicationController
       @post.municipality = current_user.municipality
     elsif params[:post][:option] == "2"
       if  params[:post][:municipality].empty? or params[:post][:prefecture_code] == "----"
-        flash[:notice] = "希望エリア未入力です！"
+        flash[:notice] = "希望エリア未入力です。"
         render :new and return
       end
       @post.prefecture_code = params[:post][:prefecture_code]
@@ -62,7 +62,7 @@ class Public::PostsController < ApplicationController
       flash[:notice] = "投稿しました！"
       redirect_to post_path(@post.id)
     else
-      flash[:notice] = "投稿に必要な情報が足りません"
+      flash[:notice] = "投稿に必要な情報が足りません。"
       render :new
     end
   end
@@ -116,13 +116,13 @@ class Public::PostsController < ApplicationController
 
     # 希望のエリア条件分岐
     if params[:post][:option] == "0"
-      # 0のときはprefecture_codeもmunicipalityもそのまま＝なにも処理しない
+    # 0のときはprefecture_codeもmunicipalityもそのまま＝なにも処理しない
     elsif params[:post][:option] == "1"
       @post.prefecture_code = current_user.prefecture_code
       @post.municipality = current_user.municipality
     elsif params[:post][:option] == "2"
       if  params[:post][:municipality].empty?
-        flash[:notice] = "希望エリア未入力です！"
+        flash[:notice] = "希望エリア未入力です。"
         render :edit and return
       end
       @post.prefecture_code = params[:post][:prefecture_code]
@@ -143,7 +143,7 @@ class Public::PostsController < ApplicationController
       flash[:notice] = "投稿内容を編集しました！"
       redirect_to post_path(@post.id)
     else
-      flash[:notice] = "編集できませんでした"
+      flash[:notice] = "編集できませんでした。"
       render :edit
     end
   end
