@@ -30,11 +30,6 @@ class Public::PostsController < ApplicationController
       format.html
       format.js
     end
-
-    # 使い道ないかも
-    # @posts_all = Post.all
-    # @my_posts= Post.where(user_id: current_user.id)
-    # @other_posts= Post.where.not(user_id: current_user.id)
   end
 
   def create
